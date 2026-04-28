@@ -16,11 +16,14 @@ In [[2020 Denoising Diffusion Probabilistic Models]], a diffusion model starts w
 - Reverse process: `p_theta(x_{t-1}|x_t)` is a learned Gaussian transition.
 - Training uses a variational bound and, in DDPM, a simplified noise-prediction objective.
 - In DDPM, predicting the added noise `epsilon` is closely related to estimating the score of a Gaussian-perturbed distribution. Needs verification: exact scaling and weighting depend on parameterization.
+- In [[2021 Score-Based Generative Modeling through SDEs]], diffusion models are interpreted in continuous time with a [[Forward SDE]] from data to noise and a [[Reverse-Time SDE]] from noise back to data.
 
 ## Historical development
 [[2020 Denoising Diffusion Probabilistic Models]] demonstrates high-quality image synthesis with diffusion probabilistic models and highlights a connection to denoising score matching.
 
 [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] develops a score-based framework using multiple Gaussian noise levels and annealed Langevin dynamics. At a high level, DDPM's noise-prediction objective is related to denoising score matching, but the exact correspondence depends on parameterization and weighting. Needs verification.
+
+[[2021 Score-Based Generative Modeling through SDEs]] presents SMLD and DDPM as discretizations of different SDEs. In that framing, DDPM is related to a variance-preserving SDE. Needs verification: exact discretization details are not expanded here.
 
 ## Basic sampling idea
 Sampling starts from `x_T ~ N(0, I)` and repeatedly applies the learned reverse transition until reaching `x_0`.
@@ -35,8 +38,12 @@ Sampling starts from `x_T ~ N(0, I)` and repeatedly applies the learned reverse 
 - [[Score-Based Generative Models]]
 - [[Noise Conditional Score Networks]]
 - [[Annealed Langevin Dynamics]]
+- [[Forward SDE]]
+- [[Reverse-Time SDE]]
+- [[Probability Flow ODE]]
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]]
 - [[2020 Denoising Diffusion Probabilistic Models]]
+- [[2021 Score-Based Generative Modeling through SDEs]]
 
 ## Open questions
 - Needs verification: how later diffusion literature generalizes the DDPM setup.

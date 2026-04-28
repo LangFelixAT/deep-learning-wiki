@@ -12,6 +12,7 @@ Define objectives that learn score functions for probability models.
 - The score of a probability density `p(x)` is `grad_x log p(x)`.
 - The score is invariant to the normalization constant: if `p(x) = unnormalized_p(x) / Z`, then `grad_x log p(x) = grad_x log unnormalized_p(x)`.
 - A score network `s_theta(x)` is trained to approximate `grad_x log p_data(x)`.
+- In continuous-time formulations, the score becomes time-dependent: `s_theta(x,t) approx grad_x log p_t(x)`.
 - Conceptually, score matching targets:
 
 `1/2 E_{p_data}[||s_theta(x) - grad_x log p_data(x)||_2^2]`.
@@ -29,6 +30,7 @@ Define objectives that learn score functions for probability models.
 `grad_{tilde_x} log q_sigma(tilde_x|x) = -(tilde_x - x) / sigma^2`.
 
 - [[2020 Denoising Diffusion Probabilistic Models]] connects the DDPM noise-prediction parameterization to denoising score matching over multiple noise levels.
+- [[2021 Score-Based Generative Modeling through SDEs]] uses a time-dependent score model `s_theta(x,t)` to approximate `grad_x log p_t(x)` along a continuous noising process.
 
 ## Assumptions
 - Samples are drawn i.i.d. from an unknown data distribution.
@@ -36,6 +38,7 @@ Define objectives that learn score functions for probability models.
 - Basic score matching can fail or become inconsistent when data lie on a low-dimensional manifold in ambient space.
 - Gaussian perturbations are used to make perturbed distributions better behaved for score estimation.
 - In the DDPM connection, noise levels are indexed by timestep `t`, and the model predicts the Gaussian noise added to `x_0`.
+- In the SDE formulation, `t` is continuous and indexes the marginal distribution `p_t(x)`.
 
 ## Derivation
 - Score matching avoids estimating the normalized density directly and instead learns its log-density gradient.
@@ -46,6 +49,10 @@ Define objectives that learn score functions for probability models.
 
 `L(theta; {sigma_i}) = (1/L) sum_i lambda(sigma_i) ell(theta; sigma_i)`.
 
+- In the SDE formulation, the discrete noise-level objective becomes a continuous-time objective over `t`:
+
+`E_t[lambda(t) E_{x(0)} E_{x(t)|x(0)} ||s_theta(x(t),t) - grad_{x(t)} log p_{0t}(x(t)|x(0))||_2^2]`.
+
 - In DDPM, the variational term for the reverse mean can be reparameterized so the model predicts `epsilon` from `x_t`.
 - The resulting weighted mean-squared noise-prediction objective resembles denoising score matching over multiple noise scales.
 - Needs verification: full DDPM equivalence requires checking the weighting and parameterization details from [[2020 Denoising Diffusion Probabilistic Models]].
@@ -54,6 +61,7 @@ Define objectives that learn score functions for probability models.
 - Score matching turns generative modeling into learning a vector field that points toward higher density.
 - Denoising score matching learns scores of noise-perturbed distributions, which is useful when the original data distribution is concentrated near a low-dimensional manifold.
 - DDPM uses the score-matching connection to motivate a simple denoising objective for training the reverse process.
+- The SDE framework treats score estimation as learning a time-indexed vector field along a continuous path from data to noise.
 
 ## Common mistakes
 - Confusing the score `grad_x log p(x)` with the probability density `p(x)` itself.
@@ -71,3 +79,4 @@ Define objectives that learn score functions for probability models.
 - [[Diffusion ELBO]]
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]]
 - [[2020 Denoising Diffusion Probabilistic Models]]
+- [[2021 Score-Based Generative Modeling through SDEs]]

@@ -130,3 +130,19 @@ Format:
 - Pages updated: [[Concept]], [[Math]], [[log]]
 - Key concepts: Obsidian links, note naming, status vocabulary, index coverage
 - Notes: Checked for broken simple wikilinks, folder-qualified links, duplicate note basenames, index coverage, and status consistency. No renames needed. Updated template status vocabularies to include `partially verified`.
+
+## [2026-04-28] ingest | Score-Based Generative Modeling through Stochastic Differential Equations
+
+- Source: data/raw/papers/sde_song_2021.pdf
+- Pages created: [[Forward SDE]], [[Reverse-Time SDE]], [[Probability Flow ODE]]
+- Pages updated: [[2021 Score-Based Generative Modeling through SDEs]], [[Score Matching]], [[Diffusion Models]], [[Langevin Dynamics]], [[index]], [[log]]
+- Key concepts: [[Forward SDE]], [[Reverse-Time SDE]], [[Probability Flow ODE]], [[Score Matching]], [[Diffusion Models]]
+- Notes: Ingested only foundational SDE concepts: forward SDE, reverse-time SDE, time-dependent scores, probability flow ODE, predictor-corrector sampling, and conceptual relations to DDPM and score matching. Did not ingest inverse problems, application sections, architecture details, experimental results, or detailed likelihood machinery.
+
+## [2026-04-28] manual | Refine SDE foundation notes
+
+- Source: user review
+- Pages created:
+- Pages updated: [[Forward SDE]], [[Reverse-Time SDE]], [[Probability Flow ODE]], [[Score Matching]], [[log]]
+- Key concepts: [[Forward SDE]], [[Reverse-Time SDE]], [[Probability Flow ODE]], [[Score Matching]]
+- Notes: Clarified reverse-time simulation direction, dependence on forward marginals, probability-flow marginal equivalence, and time-dependent score notation. Deferred SDE note renames because current titles are unique and clear.

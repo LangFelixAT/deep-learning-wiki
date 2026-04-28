@@ -31,6 +31,8 @@ Describe the sampling procedure that uses a score function to generate samples.
 ## Interpretation
 - Langevin dynamics is the sampling half of score-based generative modeling.
 - It only needs the score, not the normalized density.
+- In [[2021 Score-Based Generative Modeling through SDEs]], Langevin-style score-based MCMC can act as a corrector step inside predictor-corrector sampling.
+- My interpretation: the corrector uses the current score estimate to improve samples at a given time before continuing along the reverse-time process.
 
 ## Common mistakes
 - Forgetting the noise term.
@@ -41,4 +43,6 @@ Describe the sampling procedure that uses a score function to generate samples.
 - [[Score Matching]]
 - [[Annealed Langevin Dynamics]]
 - [[Score-Based Generative Models]]
+- [[Reverse-Time SDE]]
+- [[2021 Score-Based Generative Modeling through SDEs]]
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]]

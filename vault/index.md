@@ -19,6 +19,9 @@
 - [[Score Matching]] - objectives for learning score functions, including DDPM's denoising-score-matching connection (type: math, status: developing)
 - [[Langevin Dynamics]] - score-based stochastic sampling procedure (type: math, status: partially verified)
 - [[Annealed Langevin Dynamics]] - multi-noise-level Langevin sampler used by NCSNs (type: math, status: partially verified)
+- [[Forward SDE]] - continuous-time noising process from data to prior noise (type: math, status: partially verified)
+- [[Reverse-Time SDE]] - score-dependent reverse stochastic process for generation (type: math, status: partially verified)
+- [[Probability Flow ODE]] - deterministic process sharing SDE marginal distributions (type: math, status: partially verified)
 - [[Regularization]] - constraints and penalties for generalization and training behavior (type: math, status: stub)
 
 ## Generative models
@@ -60,6 +63,7 @@
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] - Song and Ermon paper introducing NCSNs and annealed Langevin sampling (type: paper, status: studied)
 - [[2020 Denoising Diffusion Probabilistic Models]] - Ho, Jain, and Abbeel paper introducing DDPM training and sampling foundations (type: paper, status: studied)
+- [[2021 Score-Based Generative Modeling through SDEs]] - Song et al. paper unifying score-based and diffusion models through SDEs (type: paper, status: studied)
 - [[Important Papers]] - catalog of anchor papers for the wiki (type: index, status: stub)
 - [[Important Videos]] - catalog of anchor lectures, talks, and videos (type: index, status: stub)
 - [[Open Questions]] - unresolved questions guiding future ingestion (type: concept, status: stub)
