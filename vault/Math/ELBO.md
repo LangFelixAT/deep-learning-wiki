@@ -50,6 +50,7 @@ Understand the evidence lower bound as a general variational inference objective
 - The paper connects this objective to auto-encoders: the likelihood term corresponds to a reconstruction term, while the KL term acts as a variational regularizer.
 - In the 2019 tutorial, the ELBO's tightness is controlled by how close the approximate posterior is to the true posterior in KL divergence.
 - Maximizing the ELBO jointly improves the generative model and the inference model in the tutorial's framing.
+- In DDPMs, the variational bound is applied to a Markov chain of latent variables and can be rewritten into Gaussian KL terms; see [[Diffusion ELBO]].
 
 ## Common mistakes
 - Needs development.
@@ -59,8 +60,10 @@ Understand the evidence lower bound as a general variational inference objective
 - [[Variational Inference]]
 - [[Variational Autoencoders]]
 - [[Reparameterization Trick]]
+- [[Diffusion ELBO]]
 - [[2013 Auto-Encoding Variational Bayes]]
 - [[2019 Introduction to Variational Autoencoders]]
+- [[2020 Denoising Diffusion Probabilistic Models]]
 
 ## Verification status
 - Status: partially verified

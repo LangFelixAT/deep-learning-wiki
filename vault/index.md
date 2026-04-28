@@ -13,14 +13,18 @@
 - [[ELBO]] - general variational inference objective used as a lower bound on marginal log likelihood (type: math, status: partially verified)
 - [[Variational Inference]] - approximate posterior inference as optimization over a tractable distribution family (type: math, status: partially verified)
 - [[Reparameterization Trick]] - change-of-variables method for differentiating stochastic ELBO estimators in VAEs (type: math, status: partially verified)
-- [[Score Matching]] - objectives for learning score functions (type: math, status: stub)
+- [[Diffusion Forward Process]] - fixed Gaussian noising Markov chain used by DDPMs (type: math, status: partially verified)
+- [[Diffusion Reverse Process]] - learned Gaussian denoising Markov chain used for DDPM sampling (type: math, status: partially verified)
+- [[Diffusion ELBO]] - variational bound and simplified denoising objective used in DDPM training (type: math, status: partially verified)
+- [[Score Matching]] - objectives for learning score functions, including DDPM's denoising-score-matching connection (type: math, status: developing)
 - [[Regularization]] - constraints and penalties for generalization and training behavior (type: math, status: stub)
 
 ## Generative models
 
 - [[Variational Autoencoders]] - latent-variable generative models with probabilistic encoders and decoders trained using the ELBO (type: concept, status: developing)
 - [[Amortized Variational Inference]] - concept page for shared inference models that avoid per-datapoint variational optimization (type: concept, status: developing)
-- [[Diffusion Models]] - generative models that reverse a noise process (type: concept, status: stub)
+- [[Diffusion Models]] - generative models that learn to reverse a gradual noising process (type: concept, status: developing)
+- [[Denoising]] - recovering clean signal from noisy observations, central to DDPM reverse processes (type: concept, status: stub)
 - [[Energy-Based Models]] - generative modeling with energy functions (type: concept, status: stub)
 - [[Normalizing Flows]] - invertible-transform generative models (type: concept, status: stub)
 - [[GANs]] - adversarially trained generative models (type: concept, status: stub)
@@ -50,6 +54,7 @@
 
 - [[2013 Auto-Encoding Variational Bayes]] - Kingma and Welling paper introducing SGVB, AEVB, and the VAE example (type: paper, status: studied)
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
+- [[2020 Denoising Diffusion Probabilistic Models]] - Ho, Jain, and Abbeel paper introducing DDPM training and sampling foundations (type: paper, status: studied)
 - [[Important Papers]] - catalog of anchor papers for the wiki (type: index, status: stub)
 - [[Important Videos]] - catalog of anchor lectures, talks, and videos (type: index, status: stub)
 - [[Open Questions]] - unresolved questions guiding future ingestion (type: concept, status: stub)

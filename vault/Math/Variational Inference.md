@@ -32,6 +32,7 @@ Approximate difficult posterior inference with an optimized distribution family.
 - Variational inference turns an intractable posterior inference problem into an optimization problem over a chosen approximate posterior family.
 - Variational inference turns inference into optimization over distributions `q_phi(z|x)`, where the objective is the [[ELBO]].
 - In VAEs, optimizing this objective requires gradient estimators for expectations under `q_phi(z|x)`; for continuous latent variables, [[Reparameterization Trick]] provides one such estimator.
+- In DDPMs, variational inference trains a learned reverse Markov chain against a fixed forward noising process; see [[Diffusion ELBO]].
 - Amortized variational inference uses a learned inference model to avoid separate per-datapoint optimization.
 
 ## Common mistakes
@@ -44,4 +45,6 @@ Approximate difficult posterior inference with an optimized distribution family.
 - [[Variational Autoencoders]]
 - [[Amortized Variational Inference]]
 - [[Reparameterization Trick]]
+- [[Diffusion ELBO]]
 - [[2019 Introduction to Variational Autoencoders]]
+- [[2020 Denoising Diffusion Probabilistic Models]]

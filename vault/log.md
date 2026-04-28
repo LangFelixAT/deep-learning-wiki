@@ -90,3 +90,19 @@ Format:
 - Pages updated: [[Reparameterization Trick]], [[log]]
 - Key concepts: [[Reparameterization Trick]], [[ELBO]]
 - Notes: Added the central expectation-rewrite identity, clarified gradient wording, added the distribution-family caveat, and marked the score-function estimator contrast as needing verification.
+
+## [2026-04-28] ingest | Denoising Diffusion Probabilistic Models
+
+- Source: data/raw/papers/ddpm_ho_jain_abbeel_2020.pdf
+- Pages created: [[Diffusion Forward Process]], [[Diffusion Reverse Process]], [[Diffusion ELBO]], [[Denoising]]
+- Pages updated: [[2020 Denoising Diffusion Probabilistic Models]], [[Diffusion Models]], [[Score Matching]], [[ELBO]], [[Variational Inference]], [[index]], [[log]]
+- Key concepts: [[Diffusion Models]], [[Diffusion Forward Process]], [[Diffusion Reverse Process]], [[Diffusion ELBO]], [[Denoising]], [[Score Matching]]
+- Notes: First diffusion-model ingest. Covered only forward noising, reverse denoising, variational/ELBO objective, denoising score-matching connection, and basic sampling. Did not ingest detailed implementation settings, detailed experimental tables, or later diffusion extensions.
+
+## [2026-04-28] manual | Clarify diffusion ELBO equation
+
+- Source: user review
+- Pages created:
+- Pages updated: [[Diffusion ELBO]], [[2020 Denoising Diffusion Probabilistic Models]], [[log]]
+- Key concepts: [[Diffusion ELBO]]
+- Notes: Rewrote the DDPM variational-bound expression to avoid ambiguous log/ratio formatting.
