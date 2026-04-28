@@ -9,15 +9,15 @@
 - [[Probability Theory]] - probability tools used throughout deep learning (type: math, status: stub)
 - [[Bayesian Inference]] - posterior inference framing for parameters and latent variables (type: math, status: stub)
 - [[Maximum Likelihood Estimation]] - likelihood-based parameter estimation (type: math, status: stub)
-- [[KL Divergence]] - divergence between probability distributions (type: math, status: stub)
-- [[ELBO]] - evidence lower bound used in variational methods (type: math, status: stub)
+- [[KL Divergence]] - divergence used in the VAE ELBO to compare approximate posteriors, true posteriors, and priors (type: math, status: partially verified)
+- [[ELBO]] - evidence lower bound used in variational methods and SGVB training (type: math, status: partially verified)
 - [[Variational Inference]] - approximate posterior inference via optimization (type: math, status: stub)
 - [[Score Matching]] - objectives for learning score functions (type: math, status: stub)
 - [[Regularization]] - constraints and penalties for generalization and training behavior (type: math, status: stub)
 
 ## Generative models
 
-- [[Variational Autoencoders]] - latent-variable generative models trained with ELBO (type: concept, status: stub)
+- [[Variational Autoencoders]] - latent-variable generative models with probabilistic encoders and decoders trained using the ELBO (type: concept, status: developing)
 - [[Diffusion Models]] - generative models that reverse a noise process (type: concept, status: stub)
 - [[Energy-Based Models]] - generative modeling with energy functions (type: concept, status: stub)
 - [[Normalizing Flows]] - invertible-transform generative models (type: concept, status: stub)
@@ -46,6 +46,7 @@
 
 ## Source collections
 
+- [[2013 Auto-Encoding Variational Bayes]] - Kingma and Welling paper introducing SGVB, AEVB, and the VAE example (type: paper, status: studied)
 - [[Important Papers]] - catalog of anchor papers for the wiki (type: index, status: stub)
 - [[Important Videos]] - catalog of anchor lectures, talks, and videos (type: index, status: stub)
 - [[Open Questions]] - unresolved questions guiding future ingestion (type: concept, status: stub)

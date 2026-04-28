@@ -2,23 +2,36 @@
 
 ## Metadata
 - Type: concept
-- Status: stub
+- Status: developing
 
 ## Short definition
 Latent-variable generative model trained using ELBO.
 
 ## Intuition
-Needs development from source notes.
+A variational autoencoder combines a probabilistic encoder with a probabilistic decoder. In [[2013 Auto-Encoding Variational Bayes]], the encoder is the recognition model `q_phi(z|x)`, which maps an observed datapoint to a distribution over latent codes. The decoder is `p_theta(x|z)`, which maps a latent code to a distribution over possible observations.
+
+The auto-encoder analogy comes from sampling a latent code from the encoder and scoring how well the decoder explains the original input, while also regularizing the encoder distribution toward the prior.
 
 ## Mathematical formulation
 - Related math: [[ELBO]], [[KL Divergence]]
+- Source formulation: maximize an ELBO of the form `-D_KL(q_phi(z|x) || p_theta(z)) + E_q[log p_theta(x|z)]`.
+- This objective is a lower bound on the marginal log likelihood log p_theta(x).
+
+## Role of latent variables
+The latent variable `z` is unobserved and is interpreted in the paper as a code or latent representation. The learned encoder approximates the intractable posterior over this code for a given datapoint.
+
+## Relation to ELBO
+VAEs in this paper are trained by optimizing the [[ELBO]] using the reparameterization trick. The ELBO supplies both the reconstruction-like likelihood term and the KL regularization term.
 
 ## Historical development
-Needs verification from source notes.
+[[2013 Auto-Encoding Variational Bayes]] introduces the AEVB algorithm and gives the neural-network encoder/decoder example that the paper calls the variational auto-encoder.
 
 ## Related concepts
 - [[ELBO]]
 - [[KL Divergence]]
 
+## Related papers
+- [[2013 Auto-Encoding Variational Bayes]]
+
 ## Open questions
-- Which paper note should anchor this page?
+- Needs verification: how this paper's framing relates historically to Rezende, Mohamed, and Wierstra 2014 and later VAE terminology.
