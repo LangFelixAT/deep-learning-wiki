@@ -162,3 +162,19 @@ Format:
 - Pages updated: [[DDIM Sampling]], [[Diffusion Models]], [[log]]
 - Key concepts: [[DDIM Sampling]], [[Diffusion Models]], [[Probability Flow ODE]]
 - Notes: Replaced an over-specific deterministic DDIM update with a safer prose statement, added a cautious ODE-connection note, and clarified DDIM as a deterministic trajectory through diffusion marginals.
+
+## [2026-04-28] ingest | Elucidating the Design Space of Diffusion-Based Generative Models
+
+- Source: data/raw/papers/edm_karras_2022.pdf.pdf
+- Pages created: [[Diffusion Parameterization]], [[Diffusion Design Space]]
+- Pages updated: [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]], [[Diffusion Models]], [[Probability Flow ODE]], [[index]], [[log]]
+- Key concepts: [[Diffusion Design Space]], [[Diffusion Parameterization]], [[Probability Flow ODE]], [[Diffusion Models]]
+- Notes: Ingested only conceptual EDM structure: decomposition of design choices, sigma-space parameterization, denoiser preconditioning, ODE sampling as numerical integration, relation to probability-flow ODEs, and equivalence under reparameterization. Did not ingest architecture details, dataset results, hyperparameters, code-level implementation, or detailed training tricks.
+
+## [2026-04-28] manual | Refine EDM design-space notes
+
+- Source: user review
+- Pages created:
+- Pages updated: [[Diffusion Parameterization]], [[Diffusion Design Space]], [[Diffusion Models]], [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]], [[log]]
+- Key concepts: [[Diffusion Parameterization]], [[Diffusion Design Space]], [[Diffusion Models]]
+- Notes: Clarified that the score-denoiser identity is conditional on Gaussian corruption, framed `sigma(t) = t` as a non-unique parameterization choice, and added EDM's reparameterization and numerical-discretization insights.

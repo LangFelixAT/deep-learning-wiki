@@ -24,17 +24,20 @@ Define the deterministic process associated with a score-based SDE.
 - Start from the forward SDE coefficients `f(x,t)` and `g(t)`.
 - Replace the stochastic reverse process with a deterministic flow that has matching time marginals.
 - Substitute the learned score network for the true score.
+- [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] emphasizes that using the ODE for sampling requires numerical integration: choose discrete times, choose an integration scheme, and evaluate the denoiser or score field along the trajectory.
 - Skipped steps: derivation from the Fokker-Planck equation / probability flow argument.
 
 ## Interpretation
 - The probability flow ODE gives a deterministic sampling path associated with the stochastic SDE.
 - It shares the same marginal distributions `p_t(x)` as the SDE, but produces deterministic trajectories.
+- In EDM's design-space view, sampler quality depends partly on numerical-analysis choices such as step spacing and integration order.
 - The paper notes that it enables deterministic sampling and exact likelihood computation; details are outside this foundational note.
 
 ## Common mistakes
 - Assuming the ODE path has the same individual trajectories as the SDE.
 - Confusing matching marginal distributions with matching sample paths.
 - Treating likelihood computation details as part of the basic definition.
+- Ignoring discretization error when turning the continuous ODE into a finite-step sampler.
 
 ## Related concepts
 - [[Forward SDE]]
@@ -42,3 +45,4 @@ Define the deterministic process associated with a score-based SDE.
 - [[Score Matching]]
 - [[Diffusion Models]]
 - [[2021 Score-Based Generative Modeling through SDEs]]
+- [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
