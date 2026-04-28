@@ -1,5 +1,10 @@
 # {{concept}}
 
+## Metadata
+- Type: math
+- Status: stub / developing / verified
+- Last reviewed:
+
 ## Goal
 
 ## Canonical notation
@@ -11,6 +16,8 @@
 ## Main result
 
 ## Derivation
+- Step-by-step derivation:
+- Skipped steps:
 
 ## Interpretation
 
@@ -28,3 +35,4 @@
 
 ## Verification status
 - Status: unverified / partially verified / verified
+- Needs verification:

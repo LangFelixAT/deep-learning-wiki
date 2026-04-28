@@ -29,9 +29,11 @@
 
 ## Limitations
 
-## Claims from source
+## Claim from source
 
 ## My interpretation
+
+## Unclear / Needs verification
 
 ## Connections to concepts
 - [[]]

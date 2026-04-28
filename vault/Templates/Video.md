@@ -4,9 +4,11 @@
 - Speaker:
 - Channel:
 - Link:
-- Source type: video transcript
+- Source type: video
+- Status: unread / skimmed / studied / verified
 - Visual context missing: yes
 - Reliability: medium
+- Added:
 
 ## Summary
 
@@ -17,6 +19,12 @@
 
 ## Equations / derivations mentioned
 
-## My notes
+## Claim from source
+
+## My interpretation
+
+## Unclear / Needs verification
+
+## My understanding
 
 ## Follow-up reading

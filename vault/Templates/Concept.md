@@ -1,19 +1,18 @@
 # {{concept}}
 
+## Metadata
+- Type: concept
+- Status: stub / developing / mature
+- Last reviewed:
+
 ## Short definition
 
 ## Intuition
 
 ## Mathematical formulation
+- Related math:
 
 ## Historical development
-
-## Why it matters
-
-## Key variants
-
-## Related math
-- [[]]
 
 ## Related papers
 - [[]]
@@ -23,6 +22,9 @@
 
 ## Open questions
 
-## My current understanding
+## My understanding
+
+## Source notes
+- [[]]
 
 ## Revision notes

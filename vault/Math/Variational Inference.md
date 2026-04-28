@@ -1,17 +1,17 @@
-# ELBO
+# Variational Inference
 
 ## Metadata
 - Type: math
 - Status: stub
 
 ## Goal
-Understand the evidence lower bound used in variational inference, VAEs, and diffusion models.
+Approximate difficult posterior inference with an optimized distribution family.
 
 ## Definitions
-- Needs verification.
+- Needs development.
 
 ## Assumptions
-- Needs verification.
+- Needs development.
 
 ## Derivation
 - Needs source-backed derivation.
@@ -23,9 +23,6 @@ Understand the evidence lower bound used in variational inference, VAEs, and dif
 - Needs development.
 
 ## Related concepts
+- [[ELBO]]
 - [[KL Divergence]]
-- [[Variational Inference]]
-- [[Variational Autoencoders]]
-
-## Verification status
-- Status: unverified
+- [[Bayesian Inference]]

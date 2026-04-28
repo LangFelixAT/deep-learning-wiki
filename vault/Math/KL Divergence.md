@@ -1,11 +1,11 @@
-# ELBO
+# KL Divergence
 
 ## Metadata
 - Type: math
 - Status: stub
 
 ## Goal
-Understand the evidence lower bound used in variational inference, VAEs, and diffusion models.
+Measure difference between probability distributions.
 
 ## Definitions
 - Needs verification.
@@ -23,9 +23,8 @@ Understand the evidence lower bound used in variational inference, VAEs, and dif
 - Needs development.
 
 ## Related concepts
-- [[KL Divergence]]
+- [[ELBO]]
 - [[Variational Inference]]
-- [[Variational Autoencoders]]
 
 ## Verification status
 - Status: unverified

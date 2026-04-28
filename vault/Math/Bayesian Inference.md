@@ -1,17 +1,17 @@
-# ELBO
+# Bayesian Inference
 
 ## Metadata
 - Type: math
 - Status: stub
 
 ## Goal
-Understand the evidence lower bound used in variational inference, VAEs, and diffusion models.
+Describe inference over latent variables or parameters using probability.
 
 ## Definitions
-- Needs verification.
+- Needs development.
 
 ## Assumptions
-- Needs verification.
+- Needs development.
 
 ## Derivation
 - Needs source-backed derivation.
@@ -23,9 +23,5 @@ Understand the evidence lower bound used in variational inference, VAEs, and dif
 - Needs development.
 
 ## Related concepts
-- [[KL Divergence]]
+- [[Probability Theory]]
 - [[Variational Inference]]
-- [[Variational Autoencoders]]
-
-## Verification status
-- Status: unverified
