@@ -137,6 +137,14 @@ Use Obsidian links:
 
 Prefer meaningful links over excessive linking.
 
+Prefer simple note-title links such as `[[Variational Inference]]`.
+Avoid folder-qualified links such as `[[Math/Variational Inference|Variational Inference]]` unless there is a deliberate reason.
+
+Filenames should generally be unique across the vault so links stay unambiguous.
+If a concept note and math note would otherwise have the same title, choose a more specific title for one of them, for example:
+- `[[Variational Inference]]` for the math note
+- `[[Amortized Variational Inference]]` for the concept note
+
 ## Reliability labels
 
 Every source note should include:
@@ -159,6 +167,7 @@ When editing the vault:
 9. Separate source claims from interpretation.
 10. Keep raw sources immutable.
 11. After meaningful changes, update `vault/index.md` and append an entry to `vault/log.md`.
+12. If the user limits an ingest to specific sections or topics, only ingest that scope and record the scope in the source note or log.
 
 ## Current phase
 

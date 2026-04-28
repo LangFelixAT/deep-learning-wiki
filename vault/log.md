@@ -42,3 +42,35 @@ Format:
 - Pages updated: [[2013 Auto-Encoding Variational Bayes]], [[ELBO]], [[KL Divergence]], [[Variational Autoencoders]], [[index]], [[log]]
 - Key concepts: [[ELBO]], [[KL Divergence]], [[Variational Inference]], [[Variational Autoencoders]]
 - Notes: First paper ingestion. Added source-faithful summary, problem framing, method, key equations, source claims, and short math/concept updates. Unverified regularity details are marked as needing verification.
+
+## [2026-04-28] ingest | An Introduction to Variational Autoencoders
+
+- Source: data/raw/papers/vae_intro_kingma_welling_2019.pdf
+- Pages created: [[Amortized Variational Inference]]
+- Pages updated: [[2019 Introduction to Variational Autoencoders]], [[ELBO]], [[KL Divergence]], [[Variational Inference]], [[Variational Autoencoders]], [[index]], [[log]]
+- Key concepts: [[ELBO]], [[KL Divergence]], [[Variational Inference]], [[Amortized Variational Inference]], [[Variational Autoencoders]]
+- Notes: Ingested only foundational sections on latent-variable models, probabilistic setup, inference, variational approximation, and ELBO/KL interpretation. Advanced sections and model extensions were not ingested.
+
+## [2026-04-28] manual | Normalize variational inference links
+
+- Source: user request
+- Pages created:
+- Pages updated: [[Home]], [[index]], [[log]], [[2013 Auto-Encoding Variational Bayes]], [[2019 Introduction to Variational Autoencoders]], [[Bayesian Inference]], [[ELBO]], [[KL Divergence]], [[Variational Inference]], [[Variational Autoencoders]], [[Amortized Variational Inference]]
+- Key concepts: [[Variational Inference]], [[Amortized Variational Inference]]
+- Notes: Removed active path-qualified variational inference links by keeping [[Variational Inference]] as the canonical math note and renaming the VAE-specific concept note to [[Amortized Variational Inference]].
+
+## [2026-04-28] manual | Clarify variational inference identity
+
+- Source: user review
+- Pages created:
+- Pages updated: [[Variational Inference]], [[ELBO]], [[index]], [[log]]
+- Key concepts: [[Variational Inference]], [[ELBO]], [[KL Divergence]]
+- Notes: Added the central ELBO/KL identity and made the optimization-over-distributions perspective explicit.
+
+## [2026-04-28] manual | Update repository instructions
+
+- Source: user request
+- Pages created:
+- Pages updated: AGENTS.md, [[log]]
+- Key concepts: Obsidian links, note naming, scoped ingestion
+- Notes: Added small rules for unique note titles, simple wikilinks, disambiguated concept/math naming, and respecting user-limited ingest scope.
