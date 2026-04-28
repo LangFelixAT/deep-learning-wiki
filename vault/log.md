@@ -178,3 +178,19 @@ Format:
 - Pages updated: [[Diffusion Parameterization]], [[Diffusion Design Space]], [[Diffusion Models]], [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]], [[log]]
 - Key concepts: [[Diffusion Parameterization]], [[Diffusion Design Space]], [[Diffusion Models]]
 - Notes: Clarified that the score-denoiser identity is conditional on Gaussian corruption, framed `sigma(t) = t` as a non-unique parameterization choice, and added EDM's reparameterization and numerical-discretization insights.
+
+## [2026-04-28] ingest | DPM-Solver
+
+- Source: data/raw/papers/dpm_solver_lu_2022.pdf
+- Pages created: [[Diffusion ODE Solvers]]
+- Pages updated: [[2022 DPM-Solver]], [[Probability Flow ODE]], [[Diffusion Design Space]], [[index]], [[log]]
+- Key concepts: [[Diffusion ODE Solvers]], [[Probability Flow ODE]], [[Diffusion Design Space]]
+- Notes: Ingested only conceptual and mathematical solver structure: sampling as probability-flow ODE integration, limits of simple solvers, high-order solver idea, exponential-integrator intuition, reduced step counts, and dependence on parameterization / noise schedule. Did not ingest implementation details, hyperparameters, extensive derivations, later solver variants, or benchmark tables beyond a brief source claim.
+
+## [2026-04-28] manual | Refine DPM-Solver notes
+
+- Source: user review
+- Pages created:
+- Pages updated: [[Diffusion ODE Solvers]], [[Diffusion Design Space]], [[log]]
+- Key concepts: [[Diffusion ODE Solvers]], [[Diffusion Design Space]]
+- Notes: Added a local caution that diffusion ODE signs and scalings are parameterization-dependent, and moved [[2022 DPM-Solver]] into related papers for the design-space page.

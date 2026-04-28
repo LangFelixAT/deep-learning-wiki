@@ -15,6 +15,7 @@ Define the deterministic process associated with a score-based SDE.
 `dx = [f(x,t) - 1/2 g(t)^2 grad_x log p_t(x)] dt`.
 
 - With a learned score model, use `s_theta(x,t) approx grad_x log p_t(x)`.
+- In practice, sampling requires numerically integrating this ODE with finitely many model evaluations.
 
 ## Assumptions
 - The score is known or accurately estimated.
@@ -25,12 +26,14 @@ Define the deterministic process associated with a score-based SDE.
 - Replace the stochastic reverse process with a deterministic flow that has matching time marginals.
 - Substitute the learned score network for the true score.
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] emphasizes that using the ODE for sampling requires numerical integration: choose discrete times, choose an integration scheme, and evaluate the denoiser or score field along the trajectory.
+- [[2022 DPM-Solver]] treats the diffusion ODE as semi-linear and designs higher-order solvers that exploit this structure.
 - Skipped steps: derivation from the Fokker-Planck equation / probability flow argument.
 
 ## Interpretation
 - The probability flow ODE gives a deterministic sampling path associated with the stochastic SDE.
 - It shares the same marginal distributions `p_t(x)` as the SDE, but produces deterministic trajectories.
 - In EDM's design-space view, sampler quality depends partly on numerical-analysis choices such as step spacing and integration order.
+- DPM-Solver emphasizes that higher-order ODE methods can reduce discretization error and therefore reduce the number of required sampling steps.
 - The paper notes that it enables deterministic sampling and exact likelihood computation; details are outside this foundational note.
 
 ## Common mistakes
@@ -44,5 +47,7 @@ Define the deterministic process associated with a score-based SDE.
 - [[Reverse-Time SDE]]
 - [[Score Matching]]
 - [[Diffusion Models]]
+- [[Diffusion ODE Solvers]]
 - [[2021 Score-Based Generative Modeling through SDEs]]
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
+- [[2022 DPM-Solver]]

@@ -17,6 +17,7 @@ Many diffusion formulations differ only by reparameterization of variables, not 
 - Model choice: what denoiser or score network is trained.
 - Parameterization choice: whether the network predicts clean data, noise, score, or a preconditioned output.
 - Sampler choice: how the denoiser is used to move from high noise to low noise.
+- Solver choice: which numerical method integrates the ODE or reverse process.
 - Schedule choice: how noise levels such as `sigma` are traversed.
 
 ## Historical development
@@ -26,15 +27,19 @@ Many diffusion formulations differ only by reparameterization of variables, not 
 
 [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] reorganizes these ideas into a practical design-space view, emphasizing modular choices and reparameterizations.
 
+[[2022 DPM-Solver]] sharpens the sampler axis by treating the choice of ODE solver as an independent design choice that can improve sampling without retraining the denoiser.
+
 ## Related papers
 - [[2020 Denoising Diffusion Probabilistic Models]]
 - [[2020 Denoising Diffusion Implicit Models]]
 - [[2021 Score-Based Generative Modeling through SDEs]]
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
+- [[2022 DPM-Solver]]
 
 ## Related concepts
 - [[Diffusion Models]]
 - [[Diffusion Parameterization]]
+- [[Diffusion ODE Solvers]]
 - [[Probability Flow ODE]]
 - [[Score Matching]]
 - [[DDIM Sampling]]
