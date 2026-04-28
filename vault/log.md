@@ -194,3 +194,19 @@ Format:
 - Pages updated: [[Diffusion ODE Solvers]], [[Diffusion Design Space]], [[log]]
 - Key concepts: [[Diffusion ODE Solvers]], [[Diffusion Design Space]]
 - Notes: Added a local caution that diffusion ODE signs and scalings are parameterization-dependent, and moved [[2022 DPM-Solver]] into related papers for the design-space page.
+
+## [2026-04-28] ingest | Classifier-Free Diffusion Guidance
+
+- Source: data/raw/papers/cfg_ho_salimans_2022.pdf
+- Pages created: [[Classifier-Free Guidance]]
+- Pages updated: [[2022 Classifier-Free Diffusion Guidance]], [[Diffusion Models]], [[Score Matching]], [[index]], [[log]]
+- Key concepts: [[Classifier-Free Guidance]], [[Diffusion Models]], [[Score Matching]]
+- Notes: Ingested only core classifier-free guidance ideas: conditional vs unconditional diffusion models, condition dropout during training, guidance formula, role of guidance scale `w`, and intuition for steering samples toward a condition. Did not ingest architecture details, CLIP/text encoders, implementation tricks, or large-system details.
+
+## [2026-04-28] manual | Refine classifier-free guidance note
+
+- Source: user review
+- Pages created:
+- Pages updated: [[Classifier-Free Guidance]], [[log]]
+- Key concepts: [[Classifier-Free Guidance]]
+- Notes: Clarified `w = 0` wording and added the implicit-classifier interpretation of the conditional-minus-unconditional score difference. Deferred a conditioning concept link until that page exists.

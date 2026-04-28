@@ -13,6 +13,7 @@ Define objectives that learn score functions for probability models.
 - The score is invariant to the normalization constant: if `p(x) = unnormalized_p(x) / Z`, then `grad_x log p(x) = grad_x log unnormalized_p(x)`.
 - A score network `s_theta(x)` is trained to approximate `grad_x log p_data(x)`.
 - In continuous-time formulations, the score becomes time-dependent: `s_theta(x,t) approx grad_x log p_t(x)`.
+- In conditional diffusion models, the score can also be conditioned: `s_theta(x,t,c) approx grad_x log p_t(x|c)`.
 - Conceptually, score matching targets:
 
 `1/2 E_{p_data}[||s_theta(x) - grad_x log p_data(x)||_2^2]`.
@@ -39,6 +40,7 @@ Define objectives that learn score functions for probability models.
 - Gaussian perturbations are used to make perturbed distributions better behaved for score estimation.
 - In the DDPM connection, noise levels are indexed by timestep `t`, and the model predicts the Gaussian noise added to `x_0`.
 - In the SDE formulation, `t` is continuous and indexes the marginal distribution `p_t(x)`.
+- For conditional generation, conditioning variable `c` is treated as given while estimating a conditional score.
 
 ## Derivation
 - Score matching avoids estimating the normalized density directly and instead learns its log-density gradient.
@@ -62,6 +64,7 @@ Define objectives that learn score functions for probability models.
 - Denoising score matching learns scores of noise-perturbed distributions, which is useful when the original data distribution is concentrated near a low-dimensional manifold.
 - DDPM uses the score-matching connection to motivate a simple denoising objective for training the reverse process.
 - The SDE framework treats score estimation as learning a time-indexed vector field along a continuous path from data to noise.
+- Classifier-free guidance combines conditional and unconditional score estimates at sampling time.
 
 ## Common mistakes
 - Confusing the score `grad_x log p(x)` with the probability density `p(x)` itself.
@@ -77,6 +80,8 @@ Define objectives that learn score functions for probability models.
 - [[Energy-Based Models]]
 - [[Denoising]]
 - [[Diffusion ELBO]]
+- [[Classifier-Free Guidance]]
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]]
 - [[2020 Denoising Diffusion Probabilistic Models]]
 - [[2021 Score-Based Generative Modeling through SDEs]]
+- [[2022 Classifier-Free Diffusion Guidance]]

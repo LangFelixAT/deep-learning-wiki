@@ -19,6 +19,7 @@ In [[2020 Denoising Diffusion Probabilistic Models]], a diffusion model starts w
 - [[2020 Denoising Diffusion Implicit Models]] uses the same trained noise-prediction objective as DDPM but changes the sampling process.
 - In [[2021 Score-Based Generative Modeling through SDEs]], diffusion models are interpreted in continuous time with a [[Forward SDE]] from data to noise and a [[Reverse-Time SDE]] from noise back to data.
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] frames diffusion models as separable design choices: parameterization, denoiser preconditioning, sampler, schedule, and training objective.
+- Conditional diffusion models can use [[Classifier-Free Guidance]] to steer samples toward conditioning information by combining conditional and unconditional predictions during sampling.
 
 ## Historical development
 [[2020 Denoising Diffusion Probabilistic Models]] demonstrates high-quality image synthesis with diffusion probabilistic models and highlights a connection to denoising score matching.
@@ -42,6 +43,8 @@ The EDM design-space view treats deterministic sampling as numerical integration
 
 EDM emphasizes that sampling quality depends strongly on numerical discretization choices, not only on the learned model.
 
+Classifier-free guidance is now a standard conditioning mechanism for diffusion models: a single model is trained with condition dropout, then sampling uses a guidance scale `w` to trade off condition strength, fidelity, and diversity.
+
 ## Related concepts
 - [[ELBO]]
 - [[Score Matching]]
@@ -52,6 +55,7 @@ EDM emphasizes that sampling quality depends strongly on numerical discretizatio
 - [[Diffusion Parameterization]]
 - [[Diffusion Design Space]]
 - [[DDIM Sampling]]
+- [[Classifier-Free Guidance]]
 - [[Score-Based Generative Models]]
 - [[Noise Conditional Score Networks]]
 - [[Annealed Langevin Dynamics]]
@@ -63,6 +67,7 @@ EDM emphasizes that sampling quality depends strongly on numerical discretizatio
 - [[2020 Denoising Diffusion Implicit Models]]
 - [[2021 Score-Based Generative Modeling through SDEs]]
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
+- [[2022 Classifier-Free Diffusion Guidance]]
 
 ## Open questions
 - Needs verification: how later diffusion literature generalizes the DDPM setup.
