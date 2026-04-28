@@ -12,6 +12,7 @@
 - [[KL Divergence]] - divergence used to express posterior approximation error and ELBO tightness (type: math, status: partially verified)
 - [[ELBO]] - general variational inference objective used as a lower bound on marginal log likelihood (type: math, status: partially verified)
 - [[Variational Inference]] - approximate posterior inference as optimization over a tractable distribution family (type: math, status: partially verified)
+- [[Reparameterization Trick]] - change-of-variables method for differentiating stochastic ELBO estimators in VAEs (type: math, status: partially verified)
 - [[Score Matching]] - objectives for learning score functions (type: math, status: stub)
 - [[Regularization]] - constraints and penalties for generalization and training behavior (type: math, status: stub)
 

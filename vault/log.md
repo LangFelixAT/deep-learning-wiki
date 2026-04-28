@@ -74,3 +74,19 @@ Format:
 - Pages updated: AGENTS.md, [[log]]
 - Key concepts: Obsidian links, note naming, scoped ingestion
 - Notes: Added small rules for unique note titles, simple wikilinks, disambiguated concept/math naming, and respecting user-limited ingest scope.
+
+## [2026-04-28] ingest | Reparameterization Trick
+
+- Source: data/raw/papers/vae_intro_kingma_welling_2019.pdf
+- Pages created: [[Reparameterization Trick]]
+- Pages updated: [[ELBO]], [[Variational Autoencoders]], [[Variational Inference]], [[index]], [[log]]
+- Key concepts: [[Reparameterization Trick]], [[ELBO]], [[Variational Autoencoders]], [[Variational Inference]]
+- Notes: Ingested only the focused 2019 tutorial material on stochastic ELBO gradients, differentiating expectations over `q_phi(z|x)`, `z = g_phi(epsilon, x)`, the Gaussian example, and backpropagation. Advanced variants, unrelated training tricks, and implementation details were not ingested.
+
+## [2026-04-28] manual | Refine reparameterization trick note
+
+- Source: user review
+- Pages created:
+- Pages updated: [[Reparameterization Trick]], [[log]]
+- Key concepts: [[Reparameterization Trick]], [[ELBO]]
+- Notes: Added the central expectation-rewrite identity, clarified gradient wording, added the distribution-family caveat, and marked the score-function estimator contrast as needing verification.

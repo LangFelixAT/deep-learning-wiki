@@ -38,6 +38,12 @@ Understand the evidence lower bound as a general variational inference objective
 - Skipped steps: full algebraic expansion of the KL decomposition and the Gaussian closed-form KL; see [[2013 Auto-Encoding Variational Bayes]] and [[KL Divergence]].
 - The 2019 tutorial derives the same decomposition by inserting `q_phi(z|x)` into `log p_theta(x)` and separating the result into the ELBO plus `D_KL(q_phi(z|x) || p_theta(z|x))`.
 
+## Optimization in practice
+- In VAEs, the individual-datapoint ELBO and its gradient are generally intractable, so stochastic estimators are used.
+- Gradients with respect to variational parameters are difficult because the ELBO expectation is over `q_phi(z|x)`, which depends on `phi`.
+- For continuous latent variables, [[Reparameterization Trick]] rewrites `z ~ q_phi(z|x)` as `z = g_phi(epsilon, x)` with `epsilon ~ p(epsilon)`.
+- This lets the ELBO estimator be represented as a differentiable computation graph and optimized with stochastic gradient methods.
+
 ## Interpretation
 - The ELBO is not specific to VAEs; it is the variational objective that turns posterior inference into optimization when the marginal likelihood or posterior is intractable.
 - In the VAE example, the ELBO has a term that rewards explaining `x` through sampled latent variables and a KL term that keeps `q_phi(z|x)` close to the prior.
@@ -52,6 +58,7 @@ Understand the evidence lower bound as a general variational inference objective
 - [[KL Divergence]]
 - [[Variational Inference]]
 - [[Variational Autoencoders]]
+- [[Reparameterization Trick]]
 - [[2013 Auto-Encoding Variational Bayes]]
 - [[2019 Introduction to Variational Autoencoders]]
 

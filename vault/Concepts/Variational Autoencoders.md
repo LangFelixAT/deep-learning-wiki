@@ -30,6 +30,11 @@ VAEs in this paper are trained by optimizing the [[ELBO]] using the reparameteri
 
 The tutorial emphasizes the identity `log p_theta(x) = ELBO + D_KL(q_phi(z|x) || p_theta(z|x))`: improving the ELBO both tightens the bound and improves the approximate posterior, within the chosen inference family.
 
+## Training with reparameterization
+In the 2019 tutorial, VAE training uses stochastic gradient optimization of the ELBO. The difficulty is that the ELBO expectation is over `q_phi(z|x)`, which depends on the encoder parameters `phi`.
+
+For continuous latent variables, [[Reparameterization Trick]] rewrites latent samples as `z = g_phi(epsilon, x)`, with noise `epsilon` drawn from a distribution independent of `phi`. This makes the sampled latent code part of a differentiable computation graph, so gradients can be backpropagated through the encoder and decoder.
+
 ## Historical development
 [[2013 Auto-Encoding Variational Bayes]] introduces the AEVB algorithm and gives the neural-network encoder/decoder example that the paper calls the variational auto-encoder.
 
@@ -38,6 +43,7 @@ The tutorial emphasizes the identity `log p_theta(x) = ELBO + D_KL(q_phi(z|x) ||
 - [[KL Divergence]]
 - [[Variational Inference]]
 - [[Amortized Variational Inference]]
+- [[Reparameterization Trick]]
 
 ## Related papers
 - [[2013 Auto-Encoding Variational Bayes]]
