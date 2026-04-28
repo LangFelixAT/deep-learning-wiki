@@ -7,12 +7,17 @@
 - Link:
 - arXiv:
 - Source type: paper
-- Status: unread / skimmed / studied
+- Status: unread / skimmed / studied / verified
 - Reliability: high
+- Added:
 
 ## One-sentence summary
 
+## Why this paper matters
+
 ## Problem
+
+## Background needed
 
 ## Core idea
 
@@ -24,9 +29,16 @@
 
 ## Limitations
 
-## Connections
+## Claims from source
+
+## My interpretation
+
+## Connections to concepts
 - [[]]
 
-## My understanding
+## Connections to papers
+- [[]]
 
-## Open questions
+## Questions
+
+## Follow-up reading

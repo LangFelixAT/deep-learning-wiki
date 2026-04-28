@@ -6,7 +6,14 @@
 
 ## Mathematical formulation
 
+## Historical development
+
 ## Why it matters
+
+## Key variants
+
+## Related math
+- [[]]
 
 ## Related papers
 - [[]]
@@ -14,6 +21,8 @@
 ## Related concepts
 - [[]]
 
-## Historical development
-
 ## Open questions
+
+## My current understanding
+
+## Revision notes

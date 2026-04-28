@@ -158,6 +158,7 @@ When editing the vault:
 8. Never invent paper claims.
 9. Separate source claims from interpretation.
 10. Keep raw sources immutable.
+11. After meaningful changes, update `vault/index.md` and append an entry to `vault/log.md`.
 
 ## Current phase
 
@@ -191,12 +192,20 @@ The LLM should update `index.md` after every ingest or major wiki edit.
 Chronological append-only record.
 
 Every important operation should add an entry using this format:
-
-```markdown
-## [YYYY-MM-DD] ingest | Source title
+[YYYY-MM-DD] ingest | Source title
 
 - Source:
 - Pages created:
 - Pages updated:
 - Key concepts:
 - Notes:
+
+Other operation types:
+
+- ingest
+- query
+- lint
+- refactor
+- manual
+
+Do not rewrite old log entries except to fix obvious formatting errors.
