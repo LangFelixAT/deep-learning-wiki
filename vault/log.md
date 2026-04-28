@@ -146,3 +146,19 @@ Format:
 - Pages updated: [[Forward SDE]], [[Reverse-Time SDE]], [[Probability Flow ODE]], [[Score Matching]], [[log]]
 - Key concepts: [[Forward SDE]], [[Reverse-Time SDE]], [[Probability Flow ODE]], [[Score Matching]]
 - Notes: Clarified reverse-time simulation direction, dependence on forward marginals, probability-flow marginal equivalence, and time-dependent score notation. Deferred SDE note renames because current titles are unique and clear.
+
+## [2026-04-28] ingest | Denoising Diffusion Implicit Models
+
+- Source: data/raw/papers/ddim_song_meng_ermon_2020.pdf.pdf
+- Pages created: [[DDIM Sampling]]
+- Pages updated: [[2020 Denoising Diffusion Implicit Models]], [[Diffusion Models]], [[Diffusion Reverse Process]], [[index]], [[log]]
+- Key concepts: [[DDIM Sampling]], [[Diffusion Models]], [[Diffusion Reverse Process]]
+- Notes: Ingested only foundational DDIM material: relation to DDPM, shared noise-prediction training objective, non-Markovian generative process, deterministic sampling when `eta = 0`, faster sampling with fewer steps, and role of `epsilon_theta(x_t,t)`. Did not ingest classifier guidance, later diffusion variants, latent diffusion, detailed implementation settings, or unrelated modern sampling methods.
+
+## [2026-04-28] manual | Refine DDIM sampling note
+
+- Source: user review
+- Pages created:
+- Pages updated: [[DDIM Sampling]], [[Diffusion Models]], [[log]]
+- Key concepts: [[DDIM Sampling]], [[Diffusion Models]], [[Probability Flow ODE]]
+- Notes: Replaced an over-specific deterministic DDIM update with a safer prose statement, added a cautious ODE-connection note, and clarified DDIM as a deterministic trajectory through diffusion marginals.

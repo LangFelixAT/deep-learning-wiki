@@ -18,6 +18,8 @@ Define the learned denoising chain used to sample from a DDPM.
 
 `p_theta(x_{t-1}|x_t) = N(x_{t-1}; mu_theta(x_t,t), Sigma_theta(x_t,t))`.
 
+- [[2020 Denoising Diffusion Implicit Models]] keeps the DDPM-trained noise predictor but defines a non-Markovian generative process for sampling.
+
 ## Assumptions
 - Reverse transitions are parameterized as Gaussian conditionals.
 - In the foundational DDPM setup, the model predicts noise `epsilon_theta(x_t,t)` to parameterize the reverse mean.
@@ -41,6 +43,8 @@ Define the learned denoising chain used to sample from a DDPM.
 ## Interpretation
 - The reverse process is a denoising chain: each step predicts how to move from a noisier latent to a slightly cleaner one.
 - The learned model does not generate a sample in one step; it iteratively denoises.
+- In DDPM, the reverse process is modeled as a Markov chain over adjacent timesteps.
+- In DDIM, sampling can follow a non-Markovian process and can become deterministic when the sampling noise coefficient is zero.
 
 ## Common mistakes
 - Confusing the fixed forward transition `q(x_t|x_{t-1})` with the learned reverse transition `p_theta(x_{t-1}|x_t)`.
@@ -52,4 +56,6 @@ Define the learned denoising chain used to sample from a DDPM.
 - [[Diffusion Forward Process]]
 - [[Denoising]]
 - [[Score Matching]]
+- [[DDIM Sampling]]
 - [[2020 Denoising Diffusion Probabilistic Models]]
+- [[2020 Denoising Diffusion Implicit Models]]
