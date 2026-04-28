@@ -17,6 +17,8 @@
 - [[Diffusion Reverse Process]] - learned Gaussian denoising Markov chain used for DDPM sampling (type: math, status: partially verified)
 - [[Diffusion ELBO]] - variational bound and simplified denoising objective used in DDPM training (type: math, status: partially verified)
 - [[Score Matching]] - objectives for learning score functions, including DDPM's denoising-score-matching connection (type: math, status: developing)
+- [[Langevin Dynamics]] - score-based stochastic sampling procedure (type: math, status: partially verified)
+- [[Annealed Langevin Dynamics]] - multi-noise-level Langevin sampler used by NCSNs (type: math, status: partially verified)
 - [[Regularization]] - constraints and penalties for generalization and training behavior (type: math, status: stub)
 
 ## Generative models
@@ -24,6 +26,8 @@
 - [[Variational Autoencoders]] - latent-variable generative models with probabilistic encoders and decoders trained using the ELBO (type: concept, status: developing)
 - [[Amortized Variational Inference]] - concept page for shared inference models that avoid per-datapoint variational optimization (type: concept, status: developing)
 - [[Diffusion Models]] - generative models that learn to reverse a gradual noising process (type: concept, status: developing)
+- [[Score-Based Generative Models]] - generative models that estimate score fields and sample with score-based dynamics (type: concept, status: developing)
+- [[Noise Conditional Score Networks]] - score networks conditioned on Gaussian noise level (type: concept, status: developing)
 - [[Denoising]] - recovering clean signal from noisy observations, central to DDPM reverse processes (type: concept, status: stub)
 - [[Energy-Based Models]] - generative modeling with energy functions (type: concept, status: stub)
 - [[Normalizing Flows]] - invertible-transform generative models (type: concept, status: stub)
@@ -54,6 +58,7 @@
 
 - [[2013 Auto-Encoding Variational Bayes]] - Kingma and Welling paper introducing SGVB, AEVB, and the VAE example (type: paper, status: studied)
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
+- [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] - Song and Ermon paper introducing NCSNs and annealed Langevin sampling (type: paper, status: studied)
 - [[2020 Denoising Diffusion Probabilistic Models]] - Ho, Jain, and Abbeel paper introducing DDPM training and sampling foundations (type: paper, status: studied)
 - [[Important Papers]] - catalog of anchor papers for the wiki (type: index, status: stub)
 - [[Important Videos]] - catalog of anchor lectures, talks, and videos (type: index, status: stub)

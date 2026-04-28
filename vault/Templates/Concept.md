@@ -2,7 +2,7 @@
 
 ## Metadata
 - Type: concept
-- Status: stub / developing / mature
+- Status: stub / developing / partially verified / verified
 - Last reviewed:
 
 ## Short definition

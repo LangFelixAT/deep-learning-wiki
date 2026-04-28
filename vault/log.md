@@ -106,3 +106,27 @@ Format:
 - Pages updated: [[Diffusion ELBO]], [[2020 Denoising Diffusion Probabilistic Models]], [[log]]
 - Key concepts: [[Diffusion ELBO]]
 - Notes: Rewrote the DDPM variational-bound expression to avoid ambiguous log/ratio formatting.
+
+## [2026-04-28] ingest | Generative Modeling by Estimating Gradients of the Data Distribution
+
+- Source: data/raw/papers/score_matching_song_ermon_2019.pdf
+- Pages created: [[Langevin Dynamics]], [[Annealed Langevin Dynamics]], [[Score-Based Generative Models]], [[Noise Conditional Score Networks]]
+- Pages updated: [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]], [[Score Matching]], [[Diffusion Models]], [[Energy-Based Models]], [[index]], [[log]]
+- Key concepts: [[Score Matching]], [[Score-Based Generative Models]], [[Noise Conditional Score Networks]], [[Langevin Dynamics]], [[Annealed Langevin Dynamics]]
+- Notes: Ingested only foundational score-based modeling material: score definition, score matching, manifold and low-density issues, Gaussian perturbations, NCSNs, annealed Langevin dynamics, and high-level DDPM relation. Did not ingest detailed experimental tables, implementation settings, or later extensions.
+
+## [2026-04-28] manual | Refine score-based foundations
+
+- Source: user review
+- Pages created:
+- Pages updated: [[Score Matching]], [[Langevin Dynamics]], [[Diffusion Models]], [[Energy-Based Models]], [[log]]
+- Key concepts: [[Score Matching]], [[Langevin Dynamics]], [[Diffusion Models]], [[Energy-Based Models]]
+- Notes: Clarified practical score matching objective, score normalization invariance, Langevin target distribution, DDPM noise prediction as score estimation, and the EBM score-energy relationship.
+
+## [2026-04-28] lint | Wiki consistency pass
+
+- Source: AGENTS.md; docs/ingestion_workflow.md; current vault
+- Pages created:
+- Pages updated: [[Concept]], [[Math]], [[log]]
+- Key concepts: Obsidian links, note naming, status vocabulary, index coverage
+- Notes: Checked for broken simple wikilinks, folder-qualified links, duplicate note basenames, index coverage, and status consistency. No renames needed. Updated template status vocabularies to include `partially verified`.

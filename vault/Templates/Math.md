@@ -2,7 +2,7 @@
 
 ## Metadata
 - Type: math
-- Status: stub / developing / verified
+- Status: stub / developing / partially verified / verified
 - Last reviewed:
 
 ## Goal
