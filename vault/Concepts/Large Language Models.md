@@ -30,6 +30,8 @@ Large language models often generate text autoregressively, one token at a time.
 
 [[2021 Switch Transformers]] is an important source for sparse expert scaling in language models, using top-1 routing to activate one expert per token.
 
+[[2024 DeepSeek-V2 Technical Report]] introduces MLA and DeepSeekMoE as mechanisms for efficient inference and economical sparse model training.
+
 [[2024 DeepSeek-V3 Technical Report]] combines sparse MoE, MLA, multi-token prediction, and FP8/systems co-design in a modern large language model.
 
 ## Related concepts
@@ -41,6 +43,7 @@ Large language models often generate text autoregressively, one token at a time.
 - [[KV Cache]]
 - [[FlashAttention]]
 - [[Mixture of Experts]]
+- [[DeepSeekMoE]]
 - [[Expert Routing]]
 - [[Multi-Head Latent Attention]]
 - [[LLM Training Systems]]
@@ -51,6 +54,7 @@ Large language models often generate text autoregressively, one token at a time.
 - [[2021 Switch Transformers]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
+- [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
 
 ## Open questions

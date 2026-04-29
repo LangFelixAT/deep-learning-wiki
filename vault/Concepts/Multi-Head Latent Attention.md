@@ -2,7 +2,7 @@
 
 ## Metadata
 - Type: concept
-- Status: stub
+- Status: developing
 - Last reviewed: 2026-04-29
 
 ## Short definition
@@ -13,14 +13,28 @@ In autoregressive decoding, the [[KV Cache]] can become a major memory bottlenec
 
 ## Mathematical formulation
 - Related math: [[Scaled Dot-Product Attention]]
-- In [[2024 DeepSeek-V3 Technical Report]], MLA computes a compressed KV latent `c_t^{KV}` from the token hidden state `h_t`.
-- The source states that only the compressed KV latent and a decoupled RoPE key need to be cached during generation.
-- Needs verification: full MLA equations and exact comparison to [[Multi-Head Attention]], [[Multi-Query Attention]], and [[Grouped-Query Attention]] should be handled in a focused follow-up.
+- Primary source context: [[2024 DeepSeek-V2 Technical Report]]
+- MLA computes a compressed KV latent from token hidden state `h_t`:
+
+`c_t^{KV} = W^{DKV} h_t`
+
+- Keys and values can be reconstructed from this latent with up-projection matrices:
+
+`k_t^C = W^{UK} c_t^{KV}`
+
+`v_t^C = W^{UV} c_t^{KV}`
+
+- The source states that, with decoupled RoPE, DeepSeek-V2 caches the compressed KV latent plus a decoupled RoPE key during generation.
+- In the source's notation, MHA caches `2 n_h d_h l` elements per token, while MLA caches `(d_c + d_h^R) l` elements per token.
+- Needs verification: full MLA equations should be moved into a math note after a focused derivation pass.
 
 ## Historical development
-[[2024 DeepSeek-V3 Technical Report]] uses MLA for efficient inference and states that it was validated in DeepSeek-V2.
+[[2024 DeepSeek-V2 Technical Report]] introduces MLA to reduce KV-cache cost relative to standard [[Multi-Head Attention]]. It compares MLA with [[Grouped-Query Attention]] and [[Multi-Query Attention]] as KV-cache reduction approaches.
+
+[[2024 DeepSeek-V3 Technical Report]] reuses MLA and states that the architecture was validated in DeepSeek-V2.
 
 ## Related papers
+- [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
 
 ## Related concepts
@@ -32,13 +46,14 @@ In autoregressive decoding, the [[KV Cache]] can become a major memory bottlenec
 - [[Large Language Models]]
 
 ## Open questions
-- Needs verification: determine whether the DeepSeek-V2 report should be the primary MLA source.
-- Needs verification: formalize the cache-size comparison against MHA, MQA, and GQA.
+- Needs verification: formalize the full cache-size comparison against MHA, MQA, and GQA.
+- Needs verification: derive the complete MLA equations from Appendix C into a dedicated math note if needed.
 
 ## My understanding
 MLA is primarily an inference-efficiency idea: reduce what must be cached and read during decoding while aiming to retain strong attention performance through reconstruction/projection from latent state.
 
 ## Source notes
 - [[2024 DeepSeek-V3 Technical Report]]
+- [[2024 DeepSeek-V2 Technical Report]]
 
 ## Revision notes

@@ -434,3 +434,19 @@ Format:
 - Pages updated: [[Multi-Head Latent Attention]], [[log]]
 - Key concepts: [[Multi-Head Latent Attention]], [[KV Cache]]
 - Notes: Softened the MLA interpretation so it does not imply full equivalence to standard multi-head attention before a focused MLA source pass.
+
+## [2026-04-29] ingest | DeepSeek-V2 Technical Report
+
+- Source: data/raw/papers/deepseek_v2_technical_report_deepseek_ai_2024.pdf
+- Pages created: [[2024 DeepSeek-V2 Technical Report]], [[DeepSeekMoE]]
+- Pages updated: [[Multi-Head Latent Attention]], [[KV Cache]], [[Mixture of Experts]], [[Expert Routing]], [[Large Language Models]], [[Transformers]], [[Home]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Multi-Head Latent Attention]], [[KV Cache]], [[DeepSeekMoE]], [[Mixture of Experts]], [[Expert Routing]]
+- Notes: Ingested only DeepSeek-V2 as source context for MLA and high-level DeepSeekMoE: KV-cache motivation, low-rank key-value joint compression, cached latent representation, decoupled RoPE key, relationship to MHA, limited comparison to MQA/GQA, shared and routed experts, fine-grained expert segmentation, total versus activated parameters, and how V2 prepares the architecture reused by DeepSeek-V3. Excluded benchmark-table detail, full data and alignment details, hardware/system implementation, complete MLA derivation, long-context details, DeepSeek-V3 changes, DeepSeek-R1 reasoning, and political/economic discussion.
+
+## [2026-04-29] manual | Refine DeepSeek-V2 ingest
+
+- Source: cross-check against [[2024 DeepSeek-V2 Technical Report]]
+- Pages created:
+- Pages updated: [[2024 DeepSeek-V2 Technical Report]], [[Multi-Head Latent Attention]], [[log]]
+- Key concepts: [[Multi-Head Latent Attention]], [[2024 DeepSeek-V3 Technical Report]]
+- Notes: Clarified that V2 grounds mechanisms later reused by V3, and removed the stale MLA question about whether V2 should be the primary MLA source.

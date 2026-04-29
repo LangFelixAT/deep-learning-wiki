@@ -45,6 +45,7 @@ Seed pages:
 - [[Multi-Head Latent Attention]]
 - [[KV Cache]]
 - [[Mixture of Experts]]
+- [[DeepSeekMoE]]
 - [[Expert Routing]]
 - [[Image Tokenization]]
 - [[Diffusion with Transformers]]
@@ -104,6 +105,7 @@ Current status: early foundation.
 Seed pages:
 - [[Mixture of Experts]]
 - [[Expert Routing]]
+- [[DeepSeekMoE]]
 - [[LLM Training Systems]]
 
 Needed backbone:
@@ -112,7 +114,7 @@ Needed backbone:
 - sparse activation
 - scaling laws for dense versus sparse models
 - modern MoE variants grounded in separate sources
-- DeepSeekMoE focused source pass
+- original DeepSeekMoE source pass
 
 ## Mathematical foundations
 

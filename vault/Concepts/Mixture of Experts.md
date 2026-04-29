@@ -19,19 +19,23 @@ This increases model capacity without requiring every token to use every paramet
 - The router computes probabilities over experts and selects the top expert.
 - Only the selected expert processes that token.
 - The expert layer typically replaces a transformer feed-forward sublayer, not the attention mechanism.
-- [[2024 DeepSeek-V3 Technical Report]] uses a later MoE design with shared experts and routed experts; details need a focused DeepSeekMoE pass.
+- [[DeepSeekMoE]] uses shared experts and routed experts; details still need the original DeepSeekMoE source before deep synthesis.
 
 ## Historical development
 Earlier MoE work predates transformers. [[2021 Switch Transformers]] makes a simplified transformer MoE practical by using top-1 expert routing inside feed-forward layers.
 
 [[2024 DeepSeek-V3 Technical Report]] shows MoE as part of a modern LLM systems stack, combining sparse activation with attention-cache and training-system efficiency.
 
+[[2024 DeepSeek-V2 Technical Report]] grounds the DeepSeek architecture context for shared experts, routed experts, and activated versus total parameters.
+
 ## Related papers
 - [[2021 Switch Transformers]]
+- [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
 
 ## Related concepts
 - [[Expert Routing]]
+- [[DeepSeekMoE]]
 - [[Transformers]]
 - [[Transformer Feed-Forward Networks]]
 - [[Large Language Models]]
@@ -48,6 +52,7 @@ MoE is a capacity-scaling idea. Instead of making the whole model denser for eve
 
 ## Source notes
 - [[2021 Switch Transformers]]
+- [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
 
 ## Revision notes

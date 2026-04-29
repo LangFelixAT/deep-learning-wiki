@@ -46,6 +46,7 @@
 - [[Rotary Position Embedding]]
 - [[Transformer Feed-Forward Networks]]
 - [[Mixture of Experts]]
+- [[DeepSeekMoE]]
 - [[Expert Routing]]
 - [[Residual Connections]]
 - [[Layer Normalization]]
@@ -59,6 +60,7 @@
 - [[Multi-Head Latent Attention]]
 - [[LLM Training Systems]]
 - [[Mixture of Experts]]
+- [[DeepSeekMoE]]
 - [[Expert Routing]]
 
 ### Optimization and training
