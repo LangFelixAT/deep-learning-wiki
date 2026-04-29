@@ -114,7 +114,7 @@ Needed backbone:
 - sparse activation
 - scaling laws for dense versus sparse models
 - modern MoE variants grounded in separate sources
-- original DeepSeekMoE source pass
+- expert specialization synthesis after more MoE sources
 
 ## Mathematical foundations
 

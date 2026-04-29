@@ -19,15 +19,19 @@ Attention mixes information across positions. The feed-forward block then transf
 
 - The same feed-forward network is applied separately and identically to each position.
 - In [[2021 Switch Transformers]], some dense feed-forward sublayers are replaced by sparse expert feed-forward layers selected by [[Expert Routing]].
+- [[2024 DeepSeekMoE]] further refines MoE feed-forward layers with fine-grained routed experts and shared experts.
 
 ## Historical development
 [[2017 Attention Is All You Need]] uses position-wise feed-forward networks as the second main sublayer type in transformer blocks, alongside attention.
 
 [[2021 Switch Transformers]] treats the feed-forward sublayer as the natural place to add [[Mixture of Experts]] capacity.
 
+[[2024 DeepSeekMoE]] focuses on expert specialization inside MoE feed-forward layers.
+
 ## Related papers
 - [[2017 Attention Is All You Need]]
 - [[2021 Switch Transformers]]
+- [[2024 DeepSeekMoE]]
 
 ## Related concepts
 - [[Transformers]]
@@ -35,6 +39,7 @@ Attention mixes information across positions. The feed-forward block then transf
 - [[Residual Connections]]
 - [[Layer Normalization]]
 - [[Mixture of Experts]]
+- [[DeepSeekMoE]]
 - [[Expert Routing]]
 
 ## Open questions
@@ -47,5 +52,6 @@ The feed-forward block is where each token representation is nonlinearly transfo
 ## Source notes
 - [[2017 Attention Is All You Need]]
 - [[2021 Switch Transformers]]
+- [[2024 DeepSeekMoE]]
 
 ## Revision notes

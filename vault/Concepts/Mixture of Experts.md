@@ -19,7 +19,7 @@ This increases model capacity without requiring every token to use every paramet
 - The router computes probabilities over experts and selects the top expert.
 - Only the selected expert processes that token.
 - The expert layer typically replaces a transformer feed-forward sublayer, not the attention mechanism.
-- [[DeepSeekMoE]] uses shared experts and routed experts; details still need the original DeepSeekMoE source before deep synthesis.
+- [[DeepSeekMoE]] uses shared experts and routed experts to reduce redundancy and increase expert specialization.
 
 ## Historical development
 Earlier MoE work predates transformers. [[2021 Switch Transformers]] makes a simplified transformer MoE practical by using top-1 expert routing inside feed-forward layers.
@@ -28,8 +28,11 @@ Earlier MoE work predates transformers. [[2021 Switch Transformers]] makes a sim
 
 [[2024 DeepSeek-V2 Technical Report]] grounds the DeepSeek architecture context for shared experts, routed experts, and activated versus total parameters.
 
+[[2024 DeepSeekMoE]] is the source note for the DeepSeekMoE mechanism itself, including fine-grained expert segmentation and shared expert isolation.
+
 ## Related papers
 - [[2021 Switch Transformers]]
+- [[2024 DeepSeekMoE]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
 
@@ -45,13 +48,14 @@ Earlier MoE work predates transformers. [[2021 Switch Transformers]] makes a sim
 ## Open questions
 - Needs verification: how modern MoE variants change routing, expert capacity, and token dropping.
 - Needs verification: create separate notes for expert parallelism and sparse activation after additional sources.
-- Needs verification: DeepSeekMoE should be grounded in its original source before detailed synthesis.
+- Needs verification: compare modern MoE variants beyond DeepSeekMoE against independent sources.
 
 ## My understanding
 MoE is a capacity-scaling idea. Instead of making the whole model denser for every token, it gives the model a larger menu of transformations and activates a small part of that menu per token.
 
 ## Source notes
 - [[2021 Switch Transformers]]
+- [[2024 DeepSeekMoE]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
 

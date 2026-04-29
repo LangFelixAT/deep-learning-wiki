@@ -28,6 +28,7 @@ Catalog paper notes that should anchor the wiki.
 - [[2022 FlashAttention]] - IO-aware exact attention without materializing the full attention matrix.
 - [[2022 Scalable Diffusion Models with Transformers]] - transformer backbones for diffusion.
 - [[2023 GQA]] - grouped-query attention for efficient Transformer decoding.
+- [[2024 DeepSeekMoE]] - fine-grained expert segmentation and shared expert isolation for MoE specialization.
 - [[2024 DeepSeek-V2 Technical Report]] - MLA and DeepSeekMoE in an efficient sparse MoE language model.
 - [[2024 DeepSeek-V3 Technical Report]] - architecture and systems map for sparse MoE LLM scaling.
 

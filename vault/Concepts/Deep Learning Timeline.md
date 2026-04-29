@@ -31,6 +31,7 @@ This page tracks source-grounded milestones already represented in the wiki. It 
 - 2022: [[2022 FlashAttention]] introduces IO-aware exact attention to reduce attention memory traffic.
 - 2022: [[2022 Scalable Diffusion Models with Transformers]] connects transformer backbones to diffusion models through DiT.
 - 2023: [[2023 GQA]] introduces grouped-query attention as a middle point between multi-head and multi-query attention.
+- 2024: [[2024 DeepSeekMoE]] introduces fine-grained expert segmentation and shared expert isolation for MoE specialization.
 - 2024: [[2024 DeepSeek-V2 Technical Report]] introduces MLA and DeepSeekMoE in an efficient sparse MoE language model.
 - 2024: [[2024 DeepSeek-V3 Technical Report]] combines sparse MoE scaling, MLA-based KV-cache reduction, and training-system co-design in a modern LLM.
 

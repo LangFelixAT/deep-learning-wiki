@@ -32,6 +32,8 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 
 [[2021 Switch Transformers]] introduces a simplified sparse expert feed-forward layer for scaling transformer parameter count with roughly fixed per-token expert compute.
 
+[[2024 DeepSeekMoE]] refines MoE feed-forward layers through fine-grained expert segmentation and shared expert isolation.
+
 [[2024 DeepSeek-V2 Technical Report]] introduces [[Multi-Head Latent Attention]] and uses [[DeepSeekMoE]] inside a transformer language model.
 
 [[2024 DeepSeek-V3 Technical Report]] combines MoE feed-forward scaling with MLA-based attention-cache compression and training-system co-design.
@@ -44,6 +46,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2021 Switch Transformers]]
 - [[2022 FlashAttention]]
+- [[2024 DeepSeekMoE]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
 - [[2023 GQA]]
@@ -82,6 +85,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2021 Switch Transformers]]
 - [[2022 FlashAttention]]
+- [[2024 DeepSeekMoE]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
 - [[2023 GQA]]

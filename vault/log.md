@@ -450,3 +450,19 @@ Format:
 - Pages updated: [[2024 DeepSeek-V2 Technical Report]], [[Multi-Head Latent Attention]], [[log]]
 - Key concepts: [[Multi-Head Latent Attention]], [[2024 DeepSeek-V3 Technical Report]]
 - Notes: Clarified that V2 grounds mechanisms later reused by V3, and removed the stale MLA question about whether V2 should be the primary MLA source.
+
+## [2026-04-29] ingest | DeepSeekMoE
+
+- Source: data/raw/papers/deepseekmoe_dai_2024.pdf
+- Pages created: [[2024 DeepSeekMoE]]
+- Pages updated: [[DeepSeekMoE]], [[Mixture of Experts]], [[Expert Routing]], [[Transformer Feed-Forward Networks]], [[Large Language Models]], [[Transformers]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[DeepSeekMoE]], [[Mixture of Experts]], [[Expert Routing]], [[Transformer Feed-Forward Networks]]
+- Notes: Ingested only DeepSeekMoE as the source for the MoE mechanism reused by DeepSeek-V2 and DeepSeek-V3: motivation for improving conventional MoE, knowledge hybridity and redundancy, fine-grained expert segmentation, shared expert isolation, routed versus shared experts, high-level top-k routed expert selection, relation to Switch Transformers, and preparation for V2/V3. Excluded full benchmark tables, full training setup, datasets, hardware/system details, hyperparameter sweeps, V2/V3-specific detail except later connections, and unrelated MoE variants beyond brief comparison.
+
+## [2026-04-29] manual | Refine DeepSeekMoE ingest
+
+- Source: cross-check against [[2024 DeepSeekMoE]]
+- Pages created:
+- Pages updated: [[2024 DeepSeekMoE]], [[DeepSeekMoE]], [[log]]
+- Key concepts: [[DeepSeekMoE]], [[Expert Routing]]
+- Notes: Clarified that shared expert isolation reduces the activated routed expert count to keep compute comparable, and made the Switch comparison question point to the source note.
