@@ -23,6 +23,19 @@ The wiki should help the user understand topics such as:
 - optimization
 - representation learning
 
+## Research trajectory
+
+The wiki is not only about diffusion models. Diffusion has been an early foundation-building track, but the broader goal is a connected mental model of modern deep learning research.
+
+Current research tracks include:
+- generative modeling: VAEs, GANs, normalizing flows, energy-based models, score-based models, diffusion models, and text-guided generation
+- transformer architecture: attention, self-attention, multi-head attention, multi-query attention, grouped-query attention, multi-head latent attention, sparse attention, FlashAttention, and related efficient attention variants
+- large model systems: KV cache, prefill/decode behavior, inference efficiency, memory bandwidth, mixture of experts, routing, and scaling constraints
+- optimization: gradient descent, Adam, Muon, second-order or matrix-aware optimizers, normalization, residual pathways, and training stability
+- representation learning: embeddings, contrastive learning, CLIP-like models, conditioning signals, and semantic representation spaces
+
+When moving into a new track, build the backbone first: seed the core concept and math pages, then ingest source papers that ground the details.
+
 ## Core rule
 
 Do not treat this as a blog or generic summary collection.
@@ -168,6 +181,8 @@ When editing the vault:
 10. Keep raw sources immutable.
 11. After meaningful changes, update `vault/index.md` and append an entry to `vault/log.md`.
 12. If the user limits an ingest to specific sections or topics, only ingest that scope and record the scope in the source note or log.
+13. Do not let one research track dominate the wiki structure. Keep overview pages connected across generative modeling, transformers, optimization, systems, and representation learning.
+14. Prefer source-grounded math and concepts. If a needed foundation is thin, create a stub or mark it as `Needs verification`, then strengthen it through later source ingests.
 
 ## Current phase
 

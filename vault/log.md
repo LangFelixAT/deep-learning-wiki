@@ -266,3 +266,19 @@ Format:
 - Pages updated: Math template, [[CLIP]], [[Diffusion with Transformers]], [[Latent Diffusion Models]], [[Image Tokenization]], [[Transformers]], [[Langevin Dynamics]], [[Diffusion Models]], [[index]], [[log]]
 - Key concepts: structure consistency, notation consistency, Obsidian linking
 - Notes: Normalized the math template status vocabulary, added missing lightweight concept sections, linked image tokenization to the DiT paper, clarified `z_t` versus Gaussian-noise notation, added diffusion notation conventions, and updated the Transformers status to developing.
+
+## [2026-04-29] manual | Expand project schema and roadmap
+
+- Source: user project direction and Karpathy LLM Wiki pattern
+- Pages created:
+- Pages updated: AGENTS.md, docs/ingestion_workflow.md, docs/research_roadmap.md, [[log]]
+- Key concepts: project schema, ingestion workflow, research roadmap
+- Notes: Added the broader research trajectory beyond diffusion, added synthesis checkpoint behavior to the ingestion workflow, and created a living roadmap for generative modeling, transformer architecture, efficient attention, optimization, mixture of experts, and mathematical foundations. The roadmap emphasizes source-grounded growth rather than filling math pages with unsupported explanations.
+
+## [2026-04-29] manual | Add reusable paper ingestion prompt
+
+- Source: user workflow refinement
+- Pages created: prompts/ingest_paper.md
+- Pages updated: docs/ingestion_workflow.md, [[log]]
+- Key concepts: paper ingestion, scope control, synthesis checkpoint
+- Notes: Added a reusable prompt so future paper ingests can be requested with only the PDF path, source identity, and paper-specific scope while preserving the existing source-grounded workflow.
