@@ -18,6 +18,7 @@ The cache speeds computation but creates a memory problem: every decoding step r
 - In standard multi-head attention, cached keys and values have a head dimension, such as `[batch, heads, sequence, dim]`.
 - In [[Multi-Query Attention]], cached keys and values share across query heads, reducing the cache shape to something like `[batch, sequence, dim]`.
 - In [[Grouped-Query Attention]], cached keys and values keep an intermediate number of key/value groups.
+- [[Multi-Head Latent Attention]] compresses key/value state into latent form to reduce what must be cached during generation.
 - Exact tensor layout is implementation-dependent.
 
 ## Historical development
@@ -27,10 +28,13 @@ The cache speeds computation but creates a memory problem: every decoding step r
 
 [[2022 FlashAttention]] targets a related but distinct memory problem: avoiding materialization of the full attention matrix during attention computation.
 
+[[2024 DeepSeek-V3 Technical Report]] uses [[Multi-Head Latent Attention]] to reduce KV-cache cost during inference.
+
 ## Related papers
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
+- [[2024 DeepSeek-V3 Technical Report]]
 
 ## Related concepts
 - [[Attention]]
@@ -39,6 +43,7 @@ The cache speeds computation but creates a memory problem: every decoding step r
 - [[Multi-Query Attention]]
 - [[Grouped-Query Attention]]
 - [[FlashAttention]]
+- [[Multi-Head Latent Attention]]
 - [[Transformers]]
 - [[Large Language Models]]
 
@@ -53,5 +58,6 @@ The KV cache is where attention architecture becomes a systems issue. The model 
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
+- [[2024 DeepSeek-V3 Technical Report]]
 
 ## Revision notes

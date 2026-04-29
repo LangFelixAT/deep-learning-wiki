@@ -67,6 +67,7 @@ The load-balancing loss is needed because a router that sends most tokens to the
 ## Alternative formulations
 - Top-k MoE routes each token to more than one expert and combines outputs.
 - Switch routing is the top-1 simplification studied in [[2021 Switch Transformers]].
+- [[2024 DeepSeek-V3 Technical Report]] uses top-k routed experts plus shared experts, and describes an auxiliary-loss-free load-balancing strategy.
 - Needs verification: later MoE variants may use different routing rules, expert-choice routing, or dropless capacity handling.
 
 ## Common mistakes
@@ -84,10 +85,13 @@ The load-balancing loss is needed because a router that sends most tokens to the
 
 ## Related papers
 - [[2021 Switch Transformers]]
+- [[2024 DeepSeek-V3 Technical Report]]
 
 ## Source references
 - [[2021 Switch Transformers]]
+- [[2024 DeepSeek-V3 Technical Report]]
 
 ## Verification status
 - Status: partially verified
 - Needs verification: exact behavior of dropped tokens in later MoE systems.
+- Needs verification: derive DeepSeekMoE routing and auxiliary-loss-free balancing from a focused source pass.

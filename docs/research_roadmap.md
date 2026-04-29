@@ -42,6 +42,7 @@ Seed pages:
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[FlashAttention]]
+- [[Multi-Head Latent Attention]]
 - [[KV Cache]]
 - [[Mixture of Experts]]
 - [[Expert Routing]]
@@ -49,7 +50,6 @@ Seed pages:
 - [[Diffusion with Transformers]]
 
 Needed backbone:
-- Multi-Head Latent Attention
 - sparse attention
 - XSA
 - later positional encoding and RoPE scaling variants
@@ -65,6 +65,8 @@ Seed pages:
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[FlashAttention]]
+- [[Multi-Head Latent Attention]]
+- [[LLM Training Systems]]
 
 Needed backbone:
 - prefill and decode
@@ -102,6 +104,7 @@ Current status: early foundation.
 Seed pages:
 - [[Mixture of Experts]]
 - [[Expert Routing]]
+- [[LLM Training Systems]]
 
 Needed backbone:
 - expert parallelism
@@ -109,6 +112,7 @@ Needed backbone:
 - sparse activation
 - scaling laws for dense versus sparse models
 - modern MoE variants grounded in separate sources
+- DeepSeekMoE focused source pass
 
 ## Mathematical foundations
 

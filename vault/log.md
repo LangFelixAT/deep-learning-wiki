@@ -418,3 +418,19 @@ Format:
 - Pages updated: [[2021 Switch Transformers]], [[Expert Routing]], [[log]]
 - Key concepts: [[Expert Routing]], [[Mixture of Experts]]
 - Notes: Added the arXiv source link and made the top-1 Switch output equation explicit in both the source note and routing math note.
+
+## [2026-04-29] ingest | DeepSeek-V3 Technical Report
+
+- Source: data/raw/papers/deepseek_v3_technical_report_deepseek_ai_2024.pdf
+- Pages created: [[2024 DeepSeek-V3 Technical Report]], [[Multi-Head Latent Attention]], [[LLM Training Systems]]
+- Pages updated: [[Mixture of Experts]], [[Expert Routing]], [[KV Cache]], [[Large Language Models]], [[Transformers]], [[Home]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Mixture of Experts]], [[Expert Routing]], [[Multi-Head Latent Attention]], [[KV Cache]], [[LLM Training Systems]]
+- Notes: Map-building ingest only. Covered DeepSeek-V3 as sparse MoE LLM, total versus activated parameters, high-level DeepSeekMoE, high-level MLA as KV-cache compression, auxiliary-loss-free load balancing, multi-token prediction, and FP8/systems co-design as brief context. Excluded benchmark-table detail, full training data, post-training/RL, DualPipe implementation, hardware kernels, full FP8 recipe, full MLA/DeepSeekMoE derivations, long-context methods, DeepSeek-R1 reasoning content, and later DeepSeek versions.
+
+## [2026-04-29] manual | Refine DeepSeek-V3 map ingest
+
+- Source: cross-check against [[2024 DeepSeek-V3 Technical Report]]
+- Pages created:
+- Pages updated: [[Multi-Head Latent Attention]], [[log]]
+- Key concepts: [[Multi-Head Latent Attention]], [[KV Cache]]
+- Notes: Softened the MLA interpretation so it does not imply full equivalence to standard multi-head attention before a focused MLA source pass.

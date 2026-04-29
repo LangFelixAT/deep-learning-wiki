@@ -18,6 +18,8 @@ Large language models often generate text autoregressively, one token at a time.
 - [[Grouped-Query Attention]] uses an intermediate number of key/value groups to trade off quality and KV-cache size.
 - [[FlashAttention]] reduces memory traffic inside the exact attention computation itself.
 - [[Mixture of Experts]] increases parameter capacity through sparse activation, often by routing tokens through expert feed-forward layers.
+- [[Multi-Head Latent Attention]] reduces KV-cache cost by caching compressed latent attention state.
+- [[LLM Training Systems]] covers the parallelism, precision, and communication constraints that make large-scale training feasible.
 
 ## Historical development
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] is an early source connecting Transformer attention architecture to incremental decoding speed through key/value memory bandwidth.
@@ -27,6 +29,8 @@ Large language models often generate text autoregressively, one token at a time.
 [[2022 FlashAttention]] makes exact attention more memory efficient, which is relevant for longer sequences and efficient Transformer training/inference.
 
 [[2021 Switch Transformers]] is an important source for sparse expert scaling in language models, using top-1 routing to activate one expert per token.
+
+[[2024 DeepSeek-V3 Technical Report]] combines sparse MoE, MLA, multi-token prediction, and FP8/systems co-design in a modern large language model.
 
 ## Related concepts
 - [[Transformers]]
@@ -38,6 +42,8 @@ Large language models often generate text autoregressively, one token at a time.
 - [[FlashAttention]]
 - [[Mixture of Experts]]
 - [[Expert Routing]]
+- [[Multi-Head Latent Attention]]
+- [[LLM Training Systems]]
 - [[Scaling Laws]]
 
 ## Related papers
@@ -45,6 +51,7 @@ Large language models often generate text autoregressively, one token at a time.
 - [[2021 Switch Transformers]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
+- [[2024 DeepSeek-V3 Technical Report]]
 
 ## Open questions
 - Which source should anchor decoder-only LLM architecture?

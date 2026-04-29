@@ -40,6 +40,7 @@
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[FlashAttention]]
+- [[Multi-Head Latent Attention]]
 - [[Scaled Dot-Product Attention]]
 - [[Positional Encoding]]
 - [[Rotary Position Embedding]]
@@ -55,6 +56,8 @@
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[FlashAttention]]
+- [[Multi-Head Latent Attention]]
+- [[LLM Training Systems]]
 - [[Mixture of Experts]]
 - [[Expert Routing]]
 

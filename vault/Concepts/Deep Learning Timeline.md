@@ -31,12 +31,14 @@ This page tracks source-grounded milestones already represented in the wiki. It 
 - 2022: [[2022 FlashAttention]] introduces IO-aware exact attention to reduce attention memory traffic.
 - 2022: [[2022 Scalable Diffusion Models with Transformers]] connects transformer backbones to diffusion models through DiT.
 - 2023: [[2023 GQA]] introduces grouped-query attention as a middle point between multi-head and multi-query attention.
+- 2024: [[2024 DeepSeek-V3 Technical Report]] combines sparse MoE scaling, MLA-based KV-cache reduction, and training-system co-design in a modern LLM.
 
 ## Track links
 - Generative modeling: [[Generative Modeling Timeline]], [[Diffusion Models]], [[Diffusion Design Space]]
 - Transformer architecture: [[Transformers]], [[Attention]], [[Rotary Position Embedding]]
-- Efficient inference systems: [[KV Cache]], [[Multi-Query Attention]], [[Grouped-Query Attention]], [[FlashAttention]]
+- Efficient inference systems: [[KV Cache]], [[Multi-Query Attention]], [[Grouped-Query Attention]], [[FlashAttention]], [[Multi-Head Latent Attention]]
 - Sparse model scaling: [[Mixture of Experts]], [[Expert Routing]]
+- LLM systems: [[LLM Training Systems]]
 - Representation learning: [[CLIP]], [[Contrastive Learning]]
 - Optimization and training: [[Normalization]], [[Layer Normalization]]
 
