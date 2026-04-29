@@ -8,7 +8,9 @@
 Generative models that learn to reverse a gradual noising process.
 
 ## Intuition
-In [[2020 Denoising Diffusion Probabilistic Models]], a diffusion model starts with data `x_0`, applies a fixed forward process that gradually adds Gaussian noise, and learns a reverse process that denoises from `x_T` back to a sample resembling data.
+In [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], a diffusion model starts with data, applies a forward process that gradually destroys structure, and learns a reverse process that restores structure from a tractable noise distribution.
+
+In [[2020 Denoising Diffusion Probabilistic Models]], this idea is developed into the DDPM setup: data `x_0` is gradually noised into `x_T`, and a learned reverse process denoises from `x_T` back to a sample resembling data.
 
 ## Mathematical formulation
 - Related math: [[Diffusion Forward Process]], [[Diffusion Reverse Process]], [[Diffusion ELBO]], [[Score Matching]], [[ELBO]]
@@ -33,9 +35,11 @@ In [[2020 Denoising Diffusion Probabilistic Models]], a diffusion model starts w
 - `alpha_bar_t` denotes the cumulative DDPM noise-schedule product.
 
 ## Historical development
-[[2020 Denoising Diffusion Probabilistic Models]] demonstrates high-quality image synthesis with diffusion probabilistic models and highlights a connection to denoising score matching.
+[[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] introduces diffusion probabilistic models as learned reversals of gradual noising Markov chains. It emphasizes the flexibility/tractability tradeoff, probability evaluation, and the idea that small diffusion steps make local reverse transitions easier to model.
 
 [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] develops a score-based framework using multiple Gaussian noise levels and annealed Langevin dynamics. At a high level, DDPM's noise-prediction objective is related to denoising score matching, but the exact correspondence depends on parameterization and weighting. Needs verification.
+
+[[2020 Denoising Diffusion Probabilistic Models]] demonstrates high-quality image synthesis with diffusion probabilistic models and highlights a connection to denoising score matching.
 
 [[2021 Score-Based Generative Modeling through SDEs]] presents SMLD and DDPM as discretizations of different SDEs. In that framing, DDPM is related to a variance-preserving SDE. Needs verification: exact discretization details are not expanded here.
 
@@ -85,6 +89,7 @@ DiT adds an architectural bridge: diffusion supplies the generative objective an
 - [[Reverse-Time SDE]]
 - [[Probability Flow ODE]]
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]]
+- [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]]
 - [[2020 Denoising Diffusion Probabilistic Models]]
 - [[2020 Denoising Diffusion Implicit Models]]
 - [[2021 Score-Based Generative Modeling through SDEs]]

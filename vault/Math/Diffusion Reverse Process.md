@@ -5,13 +5,17 @@
 - Status: partially verified
 
 ## Goal
-Define the learned denoising chain used to sample from a DDPM.
+Define the learned denoising chain used to generate samples by reversing a diffusion process.
 
 ## Definitions
-- Source: [[2020 Denoising Diffusion Probabilistic Models]].
+- Sources: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], [[2020 Denoising Diffusion Probabilistic Models]].
 - The reverse process is the learned joint distribution:
 
 `p_theta(x_0:T) = p(x_T) prod_{t=1}^T p_theta(x_{t-1}|x_t)`.
+
+- In the 2015 paper, the reverse trajectory is written:
+
+`p(x^(0:T)) = p(x^(T)) prod_{t=1}^T p(x^(t-1)|x^(t))`.
 
 - The prior is `p(x_T) = N(0,I)`.
 - Reverse transitions are Gaussian:
@@ -22,6 +26,7 @@ Define the learned denoising chain used to sample from a DDPM.
 
 ## Assumptions
 - Reverse transitions are parameterized as Gaussian conditionals.
+- The 2015 paper argues that when diffusion steps are small, the reversal of a Gaussian or binomial diffusion process has the same functional form as the forward process.
 - In the foundational DDPM setup, the model predicts noise `epsilon_theta(x_t,t)` to parameterize the reverse mean.
 - Variances are treated as fixed time-dependent constants in the core setup covered here.
 - Needs verification: exact variance choices and their effects are implementation details outside this note.
@@ -43,6 +48,7 @@ Define the learned denoising chain used to sample from a DDPM.
 ## Interpretation
 - The reverse process is a denoising chain: each step predicts how to move from a noisier latent to a slightly cleaner one.
 - The learned model does not generate a sample in one step; it iteratively denoises.
+- The 2015 framing explains why many small steps are useful: the global data distribution can be complex while each local reverse transition remains simple.
 - In DDPM, the reverse process is modeled as a Markov chain over adjacent timesteps.
 - In DDIM, sampling can follow a non-Markovian process and can become deterministic when the sampling noise coefficient is zero.
 
@@ -57,5 +63,6 @@ Define the learned denoising chain used to sample from a DDPM.
 - [[Denoising]]
 - [[Score Matching]]
 - [[DDIM Sampling]]
+- [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]]
 - [[2020 Denoising Diffusion Probabilistic Models]]
 - [[2020 Denoising Diffusion Implicit Models]]

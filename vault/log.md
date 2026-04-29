@@ -282,3 +282,19 @@ Format:
 - Pages updated: docs/ingestion_workflow.md, [[log]]
 - Key concepts: paper ingestion, scope control, synthesis checkpoint
 - Notes: Added a reusable prompt so future paper ingests can be requested with only the PDF path, source identity, and paper-specific scope while preserving the existing source-grounded workflow.
+
+## [2026-04-29] ingest | Deep Unsupervised Learning using Nonequilibrium Thermodynamics
+
+- Source: data/raw/papers/nonequilibrium_thermodynamics_sohl_dickstein_2015.pdf.pdf
+- Pages created: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]]
+- Pages updated: [[Diffusion Models]], [[Diffusion Forward Process]], [[Diffusion Reverse Process]], [[Diffusion ELBO]], [[Generative Modeling Timeline]], [[index]], [[log]]
+- Key concepts: [[Diffusion Models]], [[Diffusion Forward Process]], [[Diffusion Reverse Process]], [[Diffusion ELBO]]
+- Notes: Ingested only foundational diffusion-model ideas: forward noising as gradual destruction of data structure, learned reverse generative Markov chains, small-step tractability, high-level variational lower bound, probability-evaluation motivation, nonequilibrium-thermodynamics intuition, and historical relationship to DDPM. Excluded detailed thermodynamic derivations, implementation details, benchmark details beyond short source claims, modern diffusion extensions, and SDE/score reinterpretations beyond brief later connections.
+
+## [2026-04-29] manual | Refine nonequilibrium diffusion ingest
+
+- Source: cross-check against [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]]
+- Pages created:
+- Pages updated: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], [[Diffusion ELBO]], [[Diffusion Forward Process]], [[Diffusion Models]], [[log]]
+- Key concepts: [[Diffusion ELBO]], [[Diffusion Forward Process]], [[Diffusion Models]]
+- Notes: Clarified the sign convention difference between the 2015 lower bound on log likelihood and DDPM's upper bound on negative log likelihood, noted entropy terms in the 2015 bound, distinguished the 2015 diffusion-schedule treatment from fixed DDPM schedules, and reordered the diffusion historical development section chronologically.

@@ -5,12 +5,15 @@
 - Status: partially verified
 
 ## Goal
-Describe the variational training objective used by DDPMs.
+Describe the variational training objectives used to train diffusion probabilistic models.
 
 ## Definitions
-- Source: [[2020 Denoising Diffusion Probabilistic Models]].
+- Sources: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], [[2020 Denoising Diffusion Probabilistic Models]].
 - DDPMs are latent-variable models with latents `x_1:T`.
-- Training optimizes a variational bound on negative log likelihood:
+- Sign convention matters:
+  - the 2015 paper maximizes a lower bound `K` on log likelihood;
+  - DDPM minimizes an upper bound `L` on negative log likelihood.
+- In DDPM notation, training optimizes a variational bound on negative log likelihood:
 
 `L = E_q[-log p_theta(x_0:T) + log q(x_1:T|x_0)]`.
 
@@ -22,6 +25,7 @@ This satisfies:
   - `L_T`: prior matching at the final noised state;
   - `L_{t-1}`: KL terms comparing forward posteriors to learned reverse transitions;
   - `L_0`: decoder/reconstruction term.
+- In the 2015 paper, the lower bound `K` is derived by comparing forward and reverse trajectory probabilities and applying Jensen's inequality. It contains negative KL terms plus analytically computable entropy terms.
 
 ## Assumptions
 - The forward posterior `q(x_{t-1}|x_t,x_0)` is tractable and Gaussian.
@@ -30,7 +34,9 @@ This satisfies:
 - Needs verification: details of `L_0` for discrete image likelihoods are outside this foundational note.
 
 ## Derivation
-- Start from the usual variational bound on negative log likelihood for the latent chain.
+- In the 2015 formulation, write the data likelihood as an integral over latent trajectory states, then multiply and divide by the forward trajectory distribution.
+- Apply Jensen's inequality to obtain a lower bound on log likelihood.
+- In the DDPM formulation, start from the corresponding variational upper bound on negative log likelihood for the latent chain.
 - Rewrite the objective so each intermediate term compares:
 
 `q(x_{t-1}|x_t,x_0)` with `p_theta(x_{t-1}|x_t)`.
@@ -44,10 +50,13 @@ This satisfies:
 - Skipped steps: full algebraic expansion of Eq. (5) and the Gaussian KL calculations.
 
 ## Interpretation
+- The 2015 and DDPM formulations are closely related variational trajectory objectives, but their signs and notation differ.
 - The DDPM objective is variational, but the simplified practical objective is a weighted variant of the variational bound.
 - The simplified objective trains the model to denoise samples at randomly selected noise levels.
+- Historically, [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] frames the objective as learning reverse Markov transitions that make the reverse trajectory match the forward diffusion trajectory.
 
 ## Common mistakes
+- Confusing the 2015 lower bound on log likelihood with DDPM's upper bound on negative log likelihood.
 - Equating the simplified objective exactly with the unweighted variational bound.
 - Ignoring the role of the tractable forward posterior `q(x_{t-1}|x_t,x_0)`.
 - Treating the diffusion ELBO as identical to the VAE ELBO without accounting for the Markov latent chain.
@@ -59,4 +68,5 @@ This satisfies:
 - [[Diffusion Forward Process]]
 - [[Diffusion Reverse Process]]
 - [[Score Matching]]
+- [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]]
 - [[2020 Denoising Diffusion Probabilistic Models]]

@@ -5,15 +5,19 @@
 - Status: partially verified
 
 ## Goal
-Define the fixed noising process used by DDPMs.
+Define the noising process that gradually transforms data into a tractable distribution.
 
 ## Definitions
-- Source: [[2020 Denoising Diffusion Probabilistic Models]].
+- Sources: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], [[2020 Denoising Diffusion Probabilistic Models]].
 - `x_0` is a data sample.
 - `x_1, ..., x_T` are latent variables with the same dimensionality as `x_0`.
-- The forward process is a fixed Markov chain:
+- The forward process is a Markov chain:
 
 `q(x_1:T|x_0) = prod_{t=1}^T q(x_t|x_{t-1})`.
+
+- In the 2015 paper, the forward trajectory is written with superscript time notation:
+
+`q(x^(0:T)) = q(x^(0)) prod_{t=1}^T q(x^(t)|x^(t-1))`.
 
 - Gaussian transition:
 
@@ -23,7 +27,8 @@ Define the fixed noising process used by DDPMs.
 
 ## Assumptions
 - The forward process uses Gaussian noise.
-- The variance schedule `beta_1, ..., beta_T` is fixed in the DDPM implementation described in the paper.
+- The 2015 paper also discusses binomial diffusion, but this note focuses on the Gaussian form that connects most directly to DDPMs.
+- In the 2015 paper, the Gaussian forward diffusion schedule can be learned or selected; in the DDPM setup summarized here, the variance schedule `beta_1, ..., beta_T` is fixed.
 - The process gradually destroys signal so that late `x_T` is close to Gaussian noise.
 - Needs verification: exact conditions under which `x_T` is sufficiently close to `N(0,I)` depend on the variance schedule.
 
@@ -39,8 +44,10 @@ Define the fixed noising process used by DDPMs.
 - Skipped steps: induction over Gaussian transitions.
 
 ## Interpretation
-- The forward process is not learned in the DDPM setup covered here.
+- The forward process is the destructive direction: it slowly removes data structure.
+- In DDPM, the forward process is not learned.
 - It provides supervised-like noisy targets for learning the reverse denoising transitions.
+- In the 2015 framing, slow noising is motivated by nonequilibrium thermodynamics: a gradual path can make the reverse process locally simple.
 
 ## Common mistakes
 - Treating the DDPM forward process as a learned encoder.
@@ -51,4 +58,5 @@ Define the fixed noising process used by DDPMs.
 - [[Diffusion Models]]
 - [[Diffusion Reverse Process]]
 - [[Diffusion ELBO]]
+- [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]]
 - [[2020 Denoising Diffusion Probabilistic Models]]

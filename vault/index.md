@@ -66,11 +66,12 @@
 ## Research history
 
 - [[Deep Learning Timeline]] - timeline for major deep learning developments (type: concept, status: stub)
-- [[Generative Modeling Timeline]] - timeline for generative modeling developments (type: concept, status: stub)
+- [[Generative Modeling Timeline]] - timeline for generative modeling developments (type: concept, status: developing)
 
 ## Source collections
 
 - [[2013 Auto-Encoding Variational Bayes]] - Kingma and Welling paper introducing SGVB, AEVB, and the VAE example (type: paper, status: studied)
+- [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] - Sohl-Dickstein et al. paper introducing diffusion probabilistic models as learned reversals of gradual noising processes (type: paper, status: studied)
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] - Song and Ermon paper introducing NCSNs and annealed Langevin sampling (type: paper, status: studied)
 - [[2020 Denoising Diffusion Probabilistic Models]] - Ho, Jain, and Abbeel paper introducing DDPM training and sampling foundations (type: paper, status: studied)
