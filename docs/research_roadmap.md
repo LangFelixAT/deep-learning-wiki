@@ -35,6 +35,8 @@ Seed pages:
 - [[Multi-Head Attention]]
 - [[Scaled Dot-Product Attention]]
 - [[Transformer Feed-Forward Networks]]
+- [[Layer Normalization]]
+- [[Layer Normalization (Math)]]
 - [[Image Tokenization]]
 - [[Diffusion with Transformers]]
 
@@ -47,7 +49,7 @@ Needed backbone:
 - XSA
 - positional encodings and RoPE
 - residual stream view
-- normalization layers
+- RMSNorm and later normalization variants
 
 ## Efficient attention and inference systems
 

@@ -26,6 +26,7 @@
 - [[Multi-Head Attention]]
 - [[Scaled Dot-Product Attention]]
 - [[Positional Encoding]]
+- [[Layer Normalization]]
 - [[Large Language Models]]
 
 ### Optimization and training

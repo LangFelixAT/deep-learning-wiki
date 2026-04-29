@@ -23,6 +23,7 @@
 - [[Latent Diffusion]] - diffusion formulation where noising and denoising occur in a perceptually meaningful autoencoder latent space (type: math, status: partially verified)
 - [[Contrastive Learning]] - representation learning objective that aligns positive pairs and separates negatives (type: math, status: partially verified)
 - [[Scaled Dot-Product Attention]] - core Transformer attention operation using scaled query-key dot products and value weighting (type: math, status: partially verified)
+- [[Layer Normalization (Math)]] - feature-wise normalization operation computed within one layer and one training case (type: math, status: partially verified)
 - [[Score Matching]] - objectives for learning score functions, including DDPM's denoising-score-matching connection (type: math, status: developing)
 - [[Langevin Dynamics]] - score-based stochastic sampling procedure (type: math, status: partially verified)
 - [[Annealed Langevin Dynamics]] - multi-noise-level Langevin sampler used by NCSNs (type: math, status: partially verified)
@@ -57,7 +58,7 @@
 - [[Positional Encoding]] - position information for sequence models (type: concept, status: developing)
 - [[Transformer Feed-Forward Networks]] - position-wise MLP sublayers inside transformer blocks (type: concept, status: developing)
 - [[Residual Connections]] - sublayer skip connections used in transformer blocks (type: concept, status: stub)
-- [[Layer Normalization]] - normalization component used in transformer sublayer wrappers (type: concept, status: stub)
+- [[Layer Normalization]] - normalization method computed across features within a single training case (type: concept, status: developing)
 - [[Large Language Models]] - large neural language models trained on broad text distributions (type: concept, status: stub)
 
 ## Optimization and training
@@ -77,6 +78,7 @@
 
 - [[2013 Auto-Encoding Variational Bayes]] - Kingma and Welling paper introducing SGVB, AEVB, and the VAE example (type: paper, status: studied)
 - [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] - Sohl-Dickstein et al. paper introducing diffusion probabilistic models as learned reversals of gradual noising processes (type: paper, status: studied)
+- [[2016 Layer Normalization]] - Ba, Kiros, and Hinton paper introducing layer normalization for neural networks and recurrent sequence models (type: paper, status: studied)
 - [[2017 Attention Is All You Need]] - Vaswani et al. paper introducing the Transformer architecture based on self-attention and multi-head attention (type: paper, status: studied)
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] - Song and Ermon paper introducing NCSNs and annealed Langevin sampling (type: paper, status: studied)

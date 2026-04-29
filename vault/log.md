@@ -306,3 +306,11 @@ Format:
 - Pages updated: [[Transformers]], [[Attention]], [[Self-Attention]], [[Positional Encoding]], [[Deep Learning Timeline]], [[Home]], docs/research_roadmap.md, [[index]], [[log]]
 - Key concepts: [[Transformers]], [[Self-Attention]], [[Scaled Dot-Product Attention]], [[Multi-Head Attention]], [[Positional Encoding]]
 - Notes: Ingested only foundational transformer architecture ideas: self-attention, scaled dot-product attention, query/key/value projections, multi-head attention, positional encodings, encoder-decoder structure, feed-forward blocks, residual connections, layer normalization, and parallelism compared with recurrence. Excluded detailed benchmark tables, machine-translation dataset details, optimizer/training hyperparameters beyond brief context, label smoothing, byte-pair encoding, implementation details, later transformer variants, and modern attention optimizations beyond brief future connections.
+
+## [2026-04-29] ingest | Layer Normalization
+
+- Source: data/raw/papers/layer_normalization_ba_2016.pdf
+- Pages created: [[2016 Layer Normalization]], [[Layer Normalization (Math)]]
+- Pages updated: [[Layer Normalization]], [[Normalization]], [[Transformers]], [[Deep Learning Timeline]], [[Home]], docs/research_roadmap.md, [[index]], [[log]]
+- Key concepts: [[Layer Normalization]], [[Layer Normalization (Math)]], [[Normalization]], [[Transformers]]
+- Notes: Ingested only foundational normalization ideas: motivation for normalization, high-level contrast with batch normalization, per-training-case feature statistics, mean/variance over summed inputs, learned gain and bias, suitability for recurrent/sequence models, and relationship to Transformer sublayer normalization. Excluded detailed RNN experiment results, benchmark tables, implementation tricks, pre-norm versus post-norm, RMSNorm and later normalization methods except as future connections, and optimizer-specific discussion.
