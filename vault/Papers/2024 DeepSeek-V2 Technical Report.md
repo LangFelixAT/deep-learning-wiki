@@ -49,6 +49,8 @@ DeepSeek-V2 combines two efficiency mechanisms inside a transformer: MLA compres
 - Device-limited routing and balance losses are introduced to control communication and load imbalance, but full training-system details are out of scope here.
 
 ## Important equations
+See [[Multi-Head Latent Attention (Math)]] for the focused math note.
+
 Standard MHA cache requirement from the source:
 
 `2 n_h d_h l` elements per token.

@@ -466,3 +466,19 @@ Format:
 - Pages updated: [[2024 DeepSeekMoE]], [[DeepSeekMoE]], [[log]]
 - Key concepts: [[DeepSeekMoE]], [[Expert Routing]]
 - Notes: Clarified that shared expert isolation reduces the activated routed expert count to keep compute comparable, and made the Switch comparison question point to the source note.
+
+## [2026-04-29] refactor | DeepSeek-V2 MLA math repass
+
+- Source: [[2024 DeepSeek-V2 Technical Report]]
+- Pages created: [[Multi-Head Latent Attention (Math)]]
+- Pages updated: [[Multi-Head Latent Attention]], [[KV Cache]], [[Scaled Dot-Product Attention]], [[2024 DeepSeek-V2 Technical Report]], [[index]], [[log]]
+- Key concepts: [[Multi-Head Latent Attention]], [[Multi-Head Latent Attention (Math)]], [[KV Cache]], [[Rotary Position Embedding]]
+- Notes: Added a focused math note for MLA covering MHA baseline equations, low-rank key-value compression, query compression, decoupled RoPE, MLA attention computation, and cache-size comparison. Marked projection-absorption algebra and independent MLA/MHA/MQA/GQA comparisons as needing verification.
+
+## [2026-04-29] refactor | DeepSeek-V3 hub refinement
+
+- Source: [[2024 DeepSeek-V3 Technical Report]], [[2024 DeepSeek-V2 Technical Report]], [[2024 DeepSeekMoE]]
+- Pages created:
+- Pages updated: [[2024 DeepSeek-V3 Technical Report]], [[Expert Routing]], [[LLM Training Systems]], [[Large Language Models]], [[index]], [[log]]
+- Key concepts: [[DeepSeekMoE]], [[Multi-Head Latent Attention]], [[Multi-Head Latent Attention (Math)]], [[Expert Routing]], [[LLM Training Systems]]
+- Notes: Refined the V3 paper note into a hub that separates inherited architecture from V3-specific additions. Added concise notes on auxiliary-loss-free balancing, MTP, FP8/systems co-design, and clarified that MLA and DeepSeekMoE are grounded by V2 and the DeepSeekMoE paper.

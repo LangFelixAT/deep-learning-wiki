@@ -69,7 +69,7 @@ The load-balancing loss is needed because a router that sends most tokens to the
 - Switch routing is the top-1 simplification studied in [[2021 Switch Transformers]].
 - [[2024 DeepSeekMoE]] uses fine-grained routed experts plus shared expert isolation: shared experts are always active, while routed experts are selected by top-k affinity scores.
 - [[2024 DeepSeek-V2 Technical Report]] describes DeepSeekMoE with top-k routed experts plus shared experts, device-limited routing, and auxiliary losses for expert/device/communication balance.
-- [[2024 DeepSeek-V3 Technical Report]] uses top-k routed experts plus shared experts, and describes an auxiliary-loss-free load-balancing strategy.
+- [[2024 DeepSeek-V3 Technical Report]] uses top-k routed experts plus shared experts, and describes an auxiliary-loss-free load-balancing strategy where routing uses expert-specific bias terms while gate values remain based on original affinity scores.
 - Needs verification: later MoE variants may use different routing rules, expert-choice routing, or dropless capacity handling.
 
 ## Common mistakes
@@ -77,6 +77,7 @@ The load-balancing loss is needed because a router that sends most tokens to the
 - Confusing number of experts with per-token compute.
 - Treating the router as a separate language model; in this source it is a learned assignment function inside a transformer layer.
 - Ignoring expert capacity and assuming all assignments are always processed.
+- Confusing routing bias with the gate value in DeepSeek-V3; the source says the bias is used for routing decisions, while the gate value is derived from the original affinity score.
 
 ## Related concepts
 - [[Mixture of Experts]]

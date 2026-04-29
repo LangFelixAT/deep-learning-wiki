@@ -46,6 +46,8 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 
 [[2022 FlashAttention]] also computes the same attention function, but changes the memory schedule: it avoids materializing the full `QK^T` and `softmax(QK^T)` matrices in slow memory.
 
+[[Multi-Head Latent Attention]] changes the query/key/value parameterization and cache representation while still using scaled dot-product compatibility inside each attention head.
+
 ## Alternative formulations
 - Additive attention uses a feed-forward network for compatibility scoring.
 - Unscaled dot-product attention omits the `1 / sqrt(d_k)` factor.
@@ -65,6 +67,7 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 - [[Multi-Query Attention]]
 - [[KV Cache]]
 - [[FlashAttention]]
+- [[Multi-Head Latent Attention]]
 - [[Rotary Position Embedding]]
 - [[Transformers]]
 
@@ -73,6 +76,7 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
+- [[2024 DeepSeek-V2 Technical Report]]
 - [[2021 RoFormer]]
 
 ## Source references
@@ -80,6 +84,7 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
+- [[2024 DeepSeek-V2 Technical Report]]
 
 ## Verification status
 - Status: partially verified

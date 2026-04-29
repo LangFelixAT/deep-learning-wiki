@@ -36,6 +36,8 @@ Large language models often generate text autoregressively, one token at a time.
 
 [[2024 DeepSeek-V3 Technical Report]] combines sparse MoE, MLA, multi-token prediction, and FP8/systems co-design in a modern large language model.
 
+After the DeepSeek-V2 and DeepSeekMoE ingests, [[2024 DeepSeek-V3 Technical Report]] is best treated as a hub for combining inherited efficient-attention and MoE mechanisms with V3-specific training and balancing choices.
+
 ## Related concepts
 - [[Transformers]]
 - [[Attention]]
