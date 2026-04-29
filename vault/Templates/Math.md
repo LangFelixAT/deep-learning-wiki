@@ -34,5 +34,5 @@
 ## Source references
 
 ## Verification status
-- Status: unverified / partially verified / verified
+- Status: stub / developing / partially verified / verified
 - Needs verification:

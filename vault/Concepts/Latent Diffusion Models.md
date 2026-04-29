@@ -16,6 +16,9 @@ Images contain many high-frequency details that are expensive to model at every 
 - The generated latent is decoded back to pixels with `D(z)`.
 - The latent space is chosen to reduce dimensionality while preserving enough perceptual detail for synthesis.
 
+## Mathematical formulation
+Latent diffusion replaces pixel-space diffusion over `x_t` with diffusion over latent variables `z_t`. See [[Latent Diffusion]] for the math note.
+
 ## Encoder and decoder role
 - The encoder `E` performs the compression from image space to latent space.
 - The decoder `D` maps latent samples back to image space.
@@ -34,6 +37,9 @@ Images contain many high-frequency details that are expensive to model at every 
 
 ## Relation to pixel diffusion
 Pixel diffusion denoises directly in image space. Latent diffusion keeps the diffusion objective but moves it to a compressed representation, reducing compute and memory costs.
+
+## Historical development
+[[2022 Latent Diffusion Models]] introduced latent diffusion as an efficient way to apply diffusion models to high-resolution image synthesis by moving denoising into an autoencoder latent space.
 
 ## Relation to CFG
 [[Classifier-Free Guidance]] can be applied during latent diffusion sampling by combining conditional and unconditional predictions in latent space. The LDM paper uses classifier-free guidance as a quality-improving conditioning mechanism in some conditional settings.

@@ -22,6 +22,9 @@ If an image and a caption describe the same thing, their embeddings should be cl
 - Training increases similarity for positives and decreases similarity for negatives.
 - Related math: [[Contrastive Learning]].
 
+## Mathematical formulation
+At this level, the core formulation is a contrastive objective over image-text embedding similarities. See [[Contrastive Learning]] for the math note.
+
 ## Semantic meaning of embeddings
 CLIP embeddings are not labels themselves. They are vector representations where visual and linguistic concepts can be compared by similarity.
 
@@ -29,6 +32,9 @@ CLIP embeddings are not labels themselves. They are vector representations where
 Text embeddings from CLIP-like models can act as conditioning inputs for generative models. In diffusion systems, such embeddings can tell the denoising model what semantic content the sample should move toward.
 
 These embeddings are typically provided as additional inputs to the denoising network, for example through cross-attention or conditioning channels.
+
+## Historical development
+[[2021 CLIP]] introduced contrastive image-text pretraining as a way to learn transferable visual representations from natural language supervision.
 
 ## Related papers
 - [[2021 CLIP]]

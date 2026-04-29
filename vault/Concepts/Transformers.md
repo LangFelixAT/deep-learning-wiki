@@ -2,7 +2,7 @@
 
 ## Metadata
 - Type: concept
-- Status: stub
+- Status: developing
 
 ## Short definition
 Neural network architecture built around attention mechanisms.

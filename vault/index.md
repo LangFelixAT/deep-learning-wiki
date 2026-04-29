@@ -49,7 +49,7 @@
 
 ## Transformers and sequence models
 
-- [[Transformers]] - attention-based neural architecture family (type: concept, status: stub)
+- [[Transformers]] - attention-based neural architecture family (type: concept, status: developing)
 - [[Attention]] - relevance-weighted information aggregation (type: concept, status: stub)
 - [[Self-Attention]] - attention among elements of the same sequence or set (type: concept, status: stub)
 - [[Positional Encoding]] - position information for sequence models (type: concept, status: stub)

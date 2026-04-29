@@ -24,6 +24,14 @@ In [[2020 Denoising Diffusion Probabilistic Models]], a diffusion model starts w
 - Conditioning signals in modern diffusion systems often come from learned embedding models such as [[CLIP]], which convert text or other inputs into semantic vectors.
 - [[Diffusion with Transformers]] replaces the usual U-Net denoising backbone with a transformer over image or latent tokens.
 
+## Notation conventions
+- `x_t` denotes a noisy data-space state at timestep `t`.
+- `z_t` denotes a noisy latent-space state in latent diffusion notes.
+- `epsilon_theta(x_t,t)` denotes a learned noise prediction unless a source defines different notation.
+- `s_theta(x,t)` denotes a learned score estimate.
+- `sigma` or `sigma_t` denotes a noise scale; exact meaning is source- and parameterization-dependent.
+- `alpha_bar_t` denotes the cumulative DDPM noise-schedule product.
+
 ## Historical development
 [[2020 Denoising Diffusion Probabilistic Models]] demonstrates high-quality image synthesis with diffusion probabilistic models and highlights a connection to denoising score matching.
 

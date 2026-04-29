@@ -22,5 +22,8 @@ Transformers operate on sequences. Splitting an image or latent into patches tur
 - [[Latent Diffusion Models]]
 - [[Transformers]]
 
+## Related papers
+- [[2022 Scalable Diffusion Models with Transformers]]
+
 ## Open questions
 - Needs verification: when to use raw image patches versus latent patches.

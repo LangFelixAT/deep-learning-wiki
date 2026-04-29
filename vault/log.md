@@ -258,3 +258,11 @@ Format:
 - Pages updated: [[Latent Diffusion]], [[index]], [[log]]
 - Key concepts: [[Latent Diffusion]], [[Latent Diffusion Models]]
 - Notes: Added an explicit assumption that latent compression must be perceptually meaningful. Checked the autoencoder reuse statement against the source and left it unchanged because the paper directly states that the autoencoding stage can be trained once and reused for multiple diffusion trainings or different tasks. Deferred creating a broader modern diffusion systems page until there is a concrete refactor scope.
+
+## [2026-04-29] lint | Wiki structure and notation consistency
+
+- Source: manual lint pass
+- Pages created:
+- Pages updated: Math template, [[CLIP]], [[Diffusion with Transformers]], [[Latent Diffusion Models]], [[Image Tokenization]], [[Transformers]], [[Langevin Dynamics]], [[Diffusion Models]], [[index]], [[log]]
+- Key concepts: structure consistency, notation consistency, Obsidian linking
+- Notes: Normalized the math template status vocabulary, added missing lightweight concept sections, linked image tokenization to the DiT paper, clarified `z_t` versus Gaussian-noise notation, added diffusion notation conventions, and updated the Transformers status to developing.

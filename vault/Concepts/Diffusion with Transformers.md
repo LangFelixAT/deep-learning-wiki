@@ -23,6 +23,9 @@ A diffusion model needs a neural network that maps a noisy state and conditionin
 - Each patch is embedded as a token.
 - The transformer processes the token sequence and predicts diffusion outputs.
 
+## Mathematical formulation
+The diffusion formulation can remain a standard noise-prediction setup over `z_t`, while the representation passed to the denoising network becomes a sequence of latent patch tokens. Detailed diffusion objectives belong in [[Diffusion ELBO]] and [[Latent Diffusion]].
+
 ## Relation to latent diffusion
 DiT fits naturally into [[Latent Diffusion Models]]: the autoencoder creates the latent `z`, and the transformer replaces the U-Net as the denoising model over noisy latents.
 
@@ -31,6 +34,9 @@ DiT is a bridge between [[Diffusion Models]] and [[Transformers]]. The image or 
 
 ## Why scaling matters
 The DiT paper studies scaling through Gflops. Increasing depth/width or increasing the number of latent tokens increases compute, and the source reports that higher Gflops correlate with better sample quality in its experiments.
+
+## Historical development
+[[2022 Scalable Diffusion Models with Transformers]] introduced DiT as a transformer-backbone alternative to U-Net-based latent diffusion models in the studied setting.
 
 ## Common misconceptions
 - DiT does not remove the diffusion process; it changes the denoising backbone.
