@@ -22,6 +22,7 @@
 - [[Classifier-Free Guidance]] - conditioning mechanism combining conditional and unconditional diffusion predictions (type: math, status: partially verified)
 - [[Latent Diffusion]] - diffusion formulation where noising and denoising occur in a perceptually meaningful autoencoder latent space (type: math, status: partially verified)
 - [[Contrastive Learning]] - representation learning objective that aligns positive pairs and separates negatives (type: math, status: partially verified)
+- [[Scaled Dot-Product Attention]] - core Transformer attention operation using scaled query-key dot products and value weighting (type: math, status: partially verified)
 - [[Score Matching]] - objectives for learning score functions, including DDPM's denoising-score-matching connection (type: math, status: developing)
 - [[Langevin Dynamics]] - score-based stochastic sampling procedure (type: math, status: partially verified)
 - [[Annealed Langevin Dynamics]] - multi-noise-level Langevin sampler used by NCSNs (type: math, status: partially verified)
@@ -50,9 +51,13 @@
 ## Transformers and sequence models
 
 - [[Transformers]] - attention-based neural architecture family (type: concept, status: developing)
-- [[Attention]] - relevance-weighted information aggregation (type: concept, status: stub)
-- [[Self-Attention]] - attention among elements of the same sequence or set (type: concept, status: stub)
-- [[Positional Encoding]] - position information for sequence models (type: concept, status: stub)
+- [[Attention]] - query/key/value mechanism for weighting information by relevance (type: concept, status: developing)
+- [[Self-Attention]] - attention among elements of the same sequence or set (type: concept, status: developing)
+- [[Multi-Head Attention]] - parallel attention heads over learned query/key/value projections (type: concept, status: developing)
+- [[Positional Encoding]] - position information for sequence models (type: concept, status: developing)
+- [[Transformer Feed-Forward Networks]] - position-wise MLP sublayers inside transformer blocks (type: concept, status: developing)
+- [[Residual Connections]] - sublayer skip connections used in transformer blocks (type: concept, status: stub)
+- [[Layer Normalization]] - normalization component used in transformer sublayer wrappers (type: concept, status: stub)
 - [[Large Language Models]] - large neural language models trained on broad text distributions (type: concept, status: stub)
 
 ## Optimization and training
@@ -65,13 +70,14 @@
 
 ## Research history
 
-- [[Deep Learning Timeline]] - timeline for major deep learning developments (type: concept, status: stub)
+- [[Deep Learning Timeline]] - timeline for major deep learning developments (type: concept, status: developing)
 - [[Generative Modeling Timeline]] - timeline for generative modeling developments (type: concept, status: developing)
 
 ## Source collections
 
 - [[2013 Auto-Encoding Variational Bayes]] - Kingma and Welling paper introducing SGVB, AEVB, and the VAE example (type: paper, status: studied)
 - [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] - Sohl-Dickstein et al. paper introducing diffusion probabilistic models as learned reversals of gradual noising processes (type: paper, status: studied)
+- [[2017 Attention Is All You Need]] - Vaswani et al. paper introducing the Transformer architecture based on self-attention and multi-head attention (type: paper, status: studied)
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] - Song and Ermon paper introducing NCSNs and annealed Langevin sampling (type: paper, status: studied)
 - [[2020 Denoising Diffusion Probabilistic Models]] - Ho, Jain, and Abbeel paper introducing DDPM training and sampling foundations (type: paper, status: studied)

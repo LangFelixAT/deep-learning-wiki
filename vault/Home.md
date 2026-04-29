@@ -23,6 +23,8 @@
 - [[Transformers]]
 - [[Attention]]
 - [[Self-Attention]]
+- [[Multi-Head Attention]]
+- [[Scaled Dot-Product Attention]]
 - [[Positional Encoding]]
 - [[Large Language Models]]
 

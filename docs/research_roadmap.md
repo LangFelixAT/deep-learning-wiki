@@ -32,11 +32,13 @@ Seed pages:
 - [[Transformers]]
 - [[Attention]]
 - [[Self-Attention]]
+- [[Multi-Head Attention]]
+- [[Scaled Dot-Product Attention]]
+- [[Transformer Feed-Forward Networks]]
 - [[Image Tokenization]]
 - [[Diffusion with Transformers]]
 
 Needed backbone:
-- Multi-Head Attention
 - Multi-Query Attention
 - Grouped-Query Attention
 - Multi-Head Latent Attention

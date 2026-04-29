@@ -298,3 +298,11 @@ Format:
 - Pages updated: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], [[Diffusion ELBO]], [[Diffusion Forward Process]], [[Diffusion Models]], [[log]]
 - Key concepts: [[Diffusion ELBO]], [[Diffusion Forward Process]], [[Diffusion Models]]
 - Notes: Clarified the sign convention difference between the 2015 lower bound on log likelihood and DDPM's upper bound on negative log likelihood, noted entropy terms in the 2015 bound, distinguished the 2015 diffusion-schedule treatment from fixed DDPM schedules, and reordered the diffusion historical development section chronologically.
+
+## [2026-04-29] ingest | Attention Is All You Need
+
+- Source: data/raw/papers/attention_is_all_you_need_vaswani_2017.pdf
+- Pages created: [[2017 Attention Is All You Need]], [[Scaled Dot-Product Attention]], [[Multi-Head Attention]], [[Transformer Feed-Forward Networks]], [[Residual Connections]], [[Layer Normalization]]
+- Pages updated: [[Transformers]], [[Attention]], [[Self-Attention]], [[Positional Encoding]], [[Deep Learning Timeline]], [[Home]], docs/research_roadmap.md, [[index]], [[log]]
+- Key concepts: [[Transformers]], [[Self-Attention]], [[Scaled Dot-Product Attention]], [[Multi-Head Attention]], [[Positional Encoding]]
+- Notes: Ingested only foundational transformer architecture ideas: self-attention, scaled dot-product attention, query/key/value projections, multi-head attention, positional encodings, encoder-decoder structure, feed-forward blocks, residual connections, layer normalization, and parallelism compared with recurrence. Excluded detailed benchmark tables, machine-translation dataset details, optimizer/training hyperparameters beyond brief context, label smoothing, byte-pair encoding, implementation details, later transformer variants, and modern attention optimizations beyond brief future connections.
