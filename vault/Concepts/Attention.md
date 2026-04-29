@@ -20,14 +20,18 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] shows that attention design also affects incremental decoding performance through key/value memory bandwidth.
 
+[[2023 GQA]] adds [[Grouped-Query Attention]] as a middle point between MHA and MQA for key/value sharing.
+
 ## Related papers
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
 
 ## Related concepts
 - [[Transformers]]
 - [[Self-Attention]]
 - [[Multi-Head Attention]]
+- [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[KV Cache]]
 - [[Scaled Dot-Product Attention]]
@@ -38,3 +42,4 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 ## Source notes
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]

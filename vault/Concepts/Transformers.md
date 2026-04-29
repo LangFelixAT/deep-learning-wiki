@@ -24,12 +24,15 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] identifies incremental decoding memory bandwidth as a Transformer inference bottleneck and introduces [[Multi-Query Attention]].
 
+[[2023 GQA]] introduces [[Grouped-Query Attention]] as an intermediate key/value sharing pattern between multi-head and multi-query attention.
+
 [[2022 Scalable Diffusion Models with Transformers]] applies transformer backbones to diffusion models by operating on latent patch tokens.
 
 ## Related papers
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
 - [[2021 RoFormer]]
 - [[2022 Scalable Diffusion Models with Transformers]]
 
@@ -38,6 +41,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - [[Self-Attention]]
 - [[Scaled Dot-Product Attention]]
 - [[Multi-Head Attention]]
+- [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[KV Cache]]
 - [[Positional Encoding]]
@@ -56,5 +60,6 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
 - [[2021 RoFormer]]
 - [[2022 Scalable Diffusion Models with Transformers]]

@@ -28,11 +28,12 @@ This page tracks source-grounded milestones already represented in the wiki. It 
 - 2022: [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] organizes diffusion methods into a modular design space.
 - 2022: [[2022 DPM-Solver]] frames fast diffusion sampling as high-order ODE solving.
 - 2022: [[2022 Scalable Diffusion Models with Transformers]] connects transformer backbones to diffusion models through DiT.
+- 2023: [[2023 GQA]] introduces grouped-query attention as a middle point between multi-head and multi-query attention.
 
 ## Track links
 - Generative modeling: [[Generative Modeling Timeline]], [[Diffusion Models]], [[Diffusion Design Space]]
 - Transformer architecture: [[Transformers]], [[Attention]], [[Rotary Position Embedding]]
-- Efficient inference systems: [[KV Cache]], [[Multi-Query Attention]]
+- Efficient inference systems: [[KV Cache]], [[Multi-Query Attention]], [[Grouped-Query Attention]]
 - Representation learning: [[CLIP]], [[Contrastive Learning]]
 - Optimization and training: [[Normalization]], [[Layer Normalization]]
 

@@ -37,6 +37,7 @@
 - [[Attention]]
 - [[Self-Attention]]
 - [[Multi-Head Attention]]
+- [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[Scaled Dot-Product Attention]]
 - [[Positional Encoding]]
@@ -48,6 +49,7 @@
 
 ### Efficient attention and inference systems
 - [[KV Cache]]
+- [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 
 ### Optimization and training

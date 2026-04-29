@@ -17,10 +17,13 @@ The cache speeds computation but creates a memory problem: every decoding step r
 - Related math: [[Scaled Dot-Product Attention]]
 - In standard multi-head attention, cached keys and values have a head dimension, such as `[batch, heads, sequence, dim]`.
 - In [[Multi-Query Attention]], cached keys and values share across query heads, reducing the cache shape to something like `[batch, sequence, dim]`.
+- In [[Grouped-Query Attention]], cached keys and values keep an intermediate number of key/value groups.
 - Exact tensor layout is implementation-dependent.
 
 ## Historical development
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] frames key/value memory bandwidth as a central bottleneck for incremental Transformer decoding and proposes [[Multi-Query Attention]] to reduce cache size and reads.
+
+[[2023 GQA]] introduces [[Grouped-Query Attention]] as a compromise that keeps more key/value heads than MQA while reducing cache size compared with MHA.
 
 ## Related papers
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
@@ -30,6 +33,7 @@ The cache speeds computation but creates a memory problem: every decoding step r
 - [[Self-Attention]]
 - [[Multi-Head Attention]]
 - [[Multi-Query Attention]]
+- [[Grouped-Query Attention]]
 - [[Transformers]]
 - [[Large Language Models]]
 
@@ -42,5 +46,6 @@ The KV cache is where attention architecture becomes a systems issue. The model 
 
 ## Source notes
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
 
 ## Revision notes

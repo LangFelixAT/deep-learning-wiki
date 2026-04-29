@@ -26,26 +26,30 @@ The "one write-head" phrase in the source is about writing one shared key/value 
 ## Historical development
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] introduces multi-query attention to reduce memory-bandwidth requirements during incremental Transformer decoding.
 
+[[2023 GQA]] frames MQA as the `G = 1` endpoint of [[Grouped-Query Attention]].
+
 ## Related papers
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
 - [[2017 Attention Is All You Need]]
 
 ## Related concepts
 - [[Attention]]
 - [[Self-Attention]]
 - [[Multi-Head Attention]]
+- [[Grouped-Query Attention]]
 - [[KV Cache]]
 - [[Transformers]]
 - [[Large Language Models]]
 
 ## Open questions
-- Needs verification: grouped-query attention should be added from a later source.
-- Needs verification: quality tradeoffs in modern LLMs should be grounded in model-specific papers.
+- Needs verification: quality tradeoffs in modern decoder-only LLMs should be grounded in model-specific papers.
 
 ## My understanding
 Multi-query attention is a deliberate asymmetry: keep many query heads for expressivity, but use fewer key/value heads to reduce the amount of memory that must be stored and reread during decoding.
 
 ## Source notes
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
 
 ## Revision notes

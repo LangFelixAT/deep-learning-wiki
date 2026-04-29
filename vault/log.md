@@ -370,3 +370,19 @@ Format:
 - Pages updated: [[Scaled Dot-Product Attention]], [[Attention]], [[Important Papers]], [[index]], [[log]]
 - Key concepts: [[Attention]], [[Multi-Query Attention]], [[KV Cache]], source catalogs
 - Notes: Added multi-query attention and KV-cache references to the core attention math page, completed the 2019 source backlink on the Attention concept page, and populated the Important Papers catalog with already-ingested anchor papers.
+
+## [2026-04-29] ingest | GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints
+
+- Source: data/raw/papers/grouped_query_attention_ainslie_2023.pdf
+- Pages created: [[2023 GQA]], [[Grouped-Query Attention]]
+- Pages updated: [[Attention]], [[Self-Attention]], [[Scaled Dot-Product Attention]], [[Multi-Head Attention]], [[Multi-Query Attention]], [[KV Cache]], [[Transformers]], [[Large Language Models]], [[Home]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Grouped-Query Attention]], [[Multi-Query Attention]], [[Multi-Head Attention]], [[KV Cache]]
+- Notes: Ingested only GQA as a middle point between MHA and MQA, sharing key/value heads across query-head groups, the query-head/key-value-head relationship, high-level checkpoint uptraining, KV-cache and memory-bandwidth effects, and relevance for efficient LLM inference. Excluded detailed benchmark tables, full T5 setup, implementation details, hyperparameters, tokenizer/data details, and modern MLA/FlashAttention/paged-attention details except as future connections.
+
+## [2026-04-29] manual | Refine GQA ingest
+
+- Source: cross-check against [[2023 GQA]]
+- Pages created:
+- Pages updated: [[2023 GQA]], [[Grouped-Query Attention]], [[log]]
+- Key concepts: [[Grouped-Query Attention]]
+- Notes: Added the paper's `GQA-G` naming convention and clarified that the source applies GQA to decoder attention, not encoder self-attention.

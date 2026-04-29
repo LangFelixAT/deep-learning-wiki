@@ -42,6 +42,8 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] keeps the same dot-product attention operation but changes how keys and values are shared across heads in [[Multi-Query Attention]]. This mainly affects the stored key/value tensors used during decoding, not the basic `softmax(QK^T / sqrt(d_k)) V` operation.
 
+[[2023 GQA]] likewise keeps the same attention operation while choosing an intermediate number of shared key/value groups.
+
 ## Alternative formulations
 - Additive attention uses a feed-forward network for compatibility scoring.
 - Unscaled dot-product attention omits the `1 / sqrt(d_k)` factor.
@@ -55,6 +57,7 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 - [[Attention]]
 - [[Self-Attention]]
 - [[Multi-Head Attention]]
+- [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[KV Cache]]
 - [[Rotary Position Embedding]]
@@ -63,11 +66,13 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 ## Related papers
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
 - [[2021 RoFormer]]
 
 ## Source references
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
 
 ## Verification status
 - Status: partially verified

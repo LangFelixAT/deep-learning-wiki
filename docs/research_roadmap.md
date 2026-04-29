@@ -39,13 +39,13 @@ Seed pages:
 - [[Layer Normalization (Math)]]
 - [[Rotary Position Embedding]]
 - [[Rotary Position Embedding (Math)]]
+- [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[KV Cache]]
 - [[Image Tokenization]]
 - [[Diffusion with Transformers]]
 
 Needed backbone:
-- Grouped-Query Attention
 - Multi-Head Latent Attention
 - sparse attention
 - FlashAttention
@@ -60,6 +60,7 @@ Current status: early foundation.
 
 Seed pages:
 - [[KV Cache]]
+- [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 
 Needed backbone:

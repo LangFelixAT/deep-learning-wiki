@@ -20,14 +20,18 @@ In self-attention, each token forms attention weights over tokens from the same 
 
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] focuses on incremental self-attention during autoregressive decoding, where cached keys and values are repeatedly read.
 
+[[2023 GQA]] introduces grouped key/value sharing for decoder attention as a quality/speed compromise between MHA and MQA.
+
 ## Related papers
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
 
 ## Related concepts
 - [[Attention]]
 - [[Transformers]]
 - [[Multi-Head Attention]]
+- [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[KV Cache]]
 - [[Positional Encoding]]
@@ -38,3 +42,4 @@ In self-attention, each token forms attention weights over tokens from the same 
 ## Source notes
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2023 GQA]]
