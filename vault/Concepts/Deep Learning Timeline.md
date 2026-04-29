@@ -23,6 +23,7 @@ This page tracks source-grounded milestones already represented in the wiki. It 
 - 2021: [[2021 CLIP]] introduces contrastive image-text pretraining for transferable visual representations and conditioning signals.
 - 2021: [[2021 RoFormer]] introduces rotary position embedding for injecting relative position information into self-attention.
 - 2021: [[2021 Score-Based Generative Modeling through SDEs]] unifies score-based and diffusion models through SDEs and probability-flow ODEs.
+- 2021: [[2021 Switch Transformers]] introduces simplified sparse expert routing for scaling transformer language models.
 - 2022: [[2022 Classifier-Free Diffusion Guidance]] introduces classifier-free guidance for conditional diffusion sampling.
 - 2022: [[2022 Latent Diffusion Models]] moves diffusion into learned latent space for efficient high-resolution synthesis.
 - 2022: [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] organizes diffusion methods into a modular design space.
@@ -35,8 +36,9 @@ This page tracks source-grounded milestones already represented in the wiki. It 
 - Generative modeling: [[Generative Modeling Timeline]], [[Diffusion Models]], [[Diffusion Design Space]]
 - Transformer architecture: [[Transformers]], [[Attention]], [[Rotary Position Embedding]]
 - Efficient inference systems: [[KV Cache]], [[Multi-Query Attention]], [[Grouped-Query Attention]], [[FlashAttention]]
+- Sparse model scaling: [[Mixture of Experts]], [[Expert Routing]]
 - Representation learning: [[CLIP]], [[Contrastive Learning]]
 - Optimization and training: [[Normalization]], [[Layer Normalization]]
 
 ## Open questions
-- Needs verification: add core CNN, ResNet, GAN, normalizing-flow, optimizer, decoder-only LLM, MoE, and efficient-attention milestones as their anchor sources are ingested.
+- Needs verification: add core CNN, ResNet, GAN, normalizing-flow, optimizer, decoder-only LLM, and later efficient-attention milestones as their anchor sources are ingested.

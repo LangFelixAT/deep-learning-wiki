@@ -18,6 +18,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - In the original encoder-decoder transformer, encoder layers use self-attention, while decoder layers use masked self-attention plus encoder-decoder attention.
 - [[2017 Attention Is All You Need]] uses `LayerNorm(x + Sublayer(x))`; the normalization method itself is introduced in [[2016 Layer Normalization]].
 - Positional information can be injected through absolute encodings, as in [[2017 Attention Is All You Need]], or through methods such as [[Rotary Position Embedding]] that alter query/key geometry.
+- [[Mixture of Experts]] can replace some dense feed-forward sublayers with routed expert feed-forward layers.
 
 ## Historical development
 [[2017 Attention Is All You Need]] introduces the Transformer for sequence transduction and argues that attention alone can replace recurrence and convolution in the model architecture.
@@ -28,12 +29,15 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 
 [[2022 FlashAttention]] improves Transformer efficiency by making exact attention IO-aware rather than changing the model's attention pattern.
 
+[[2021 Switch Transformers]] introduces a simplified sparse expert feed-forward layer for scaling transformer parameter count with roughly fixed per-token expert compute.
+
 [[2022 Scalable Diffusion Models with Transformers]] applies transformer backbones to diffusion models by operating on latent patch tokens.
 
 ## Related papers
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2021 Switch Transformers]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
 - [[2021 RoFormer]]
@@ -51,6 +55,8 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - [[Positional Encoding]]
 - [[Rotary Position Embedding]]
 - [[Transformer Feed-Forward Networks]]
+- [[Mixture of Experts]]
+- [[Expert Routing]]
 - [[Residual Connections]]
 - [[Layer Normalization]]
 - [[Large Language Models]]
@@ -64,6 +70,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2021 Switch Transformers]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
 - [[2021 RoFormer]]

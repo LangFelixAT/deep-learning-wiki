@@ -402,3 +402,19 @@ Format:
 - Pages updated: [[FlashAttention]], [[Scaled Dot-Product Attention]], [[log]]
 - Key concepts: [[FlashAttention]], [[Scaled Dot-Product Attention]]
 - Notes: Added the standard `S/P/O` attention formulation to the concept page and clarified that FlashAttention changes memory access for exact attention rather than changing the attention function or making exact attention linear-time.
+
+## [2026-04-29] ingest | Switch Transformers
+
+- Source: data/raw/papers/switch_transformers_fedus_2021.pdf
+- Pages created: [[2021 Switch Transformers]], [[Mixture of Experts]], [[Expert Routing]]
+- Pages updated: [[Transformers]], [[Transformer Feed-Forward Networks]], [[Large Language Models]], [[Home]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Mixture of Experts]], [[Expert Routing]], [[Transformer Feed-Forward Networks]], [[Large Language Models]]
+- Notes: Ingested only sparse expert routing, dense versus expert feed-forward layers, top-1 Switch routing, token-to-expert assignment, expert capacity and dropped tokens, load balancing, compute-efficient parameter scaling, relation to transformer feed-forward blocks, and relevance to modern LLM scaling/inference. Excluded detailed benchmark tables, full T5 setup, dataset details, TPU/system implementation details, training hyperparameters beyond brief context, detailed routing-loss derivations, and modern MoE variants except as future connections.
+
+## [2026-04-29] manual | Refine Switch Transformers ingest
+
+- Source: cross-check against [[2021 Switch Transformers]]
+- Pages created:
+- Pages updated: [[2021 Switch Transformers]], [[Expert Routing]], [[log]]
+- Key concepts: [[Expert Routing]], [[Mixture of Experts]]
+- Notes: Added the arXiv source link and made the top-1 Switch output equation explicit in both the source note and routing math note.

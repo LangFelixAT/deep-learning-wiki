@@ -17,6 +17,7 @@ Large language models often generate text autoregressively, one token at a time.
 - [[Multi-Query Attention]] reduces the number of key/value heads that must be stored and read during decoding.
 - [[Grouped-Query Attention]] uses an intermediate number of key/value groups to trade off quality and KV-cache size.
 - [[FlashAttention]] reduces memory traffic inside the exact attention computation itself.
+- [[Mixture of Experts]] increases parameter capacity through sparse activation, often by routing tokens through expert feed-forward layers.
 
 ## Historical development
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] is an early source connecting Transformer attention architecture to incremental decoding speed through key/value memory bandwidth.
@@ -24,6 +25,8 @@ Large language models often generate text autoregressively, one token at a time.
 [[2023 GQA]] introduces grouped-query attention as a practical quality/speed compromise for efficient language model inference.
 
 [[2022 FlashAttention]] makes exact attention more memory efficient, which is relevant for longer sequences and efficient Transformer training/inference.
+
+[[2021 Switch Transformers]] is an important source for sparse expert scaling in language models, using top-1 routing to activate one expert per token.
 
 ## Related concepts
 - [[Transformers]]
@@ -33,10 +36,13 @@ Large language models often generate text autoregressively, one token at a time.
 - [[Multi-Query Attention]]
 - [[KV Cache]]
 - [[FlashAttention]]
+- [[Mixture of Experts]]
+- [[Expert Routing]]
 - [[Scaling Laws]]
 
 ## Related papers
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2021 Switch Transformers]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
 

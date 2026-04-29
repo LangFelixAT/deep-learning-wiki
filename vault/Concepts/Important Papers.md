@@ -20,6 +20,7 @@ Catalog paper notes that should anchor the wiki.
 - [[2021 CLIP]] - contrastive image-text representation learning.
 - [[2021 RoFormer]] - rotary position embedding.
 - [[2021 Score-Based Generative Modeling through SDEs]] - SDE unification of score-based and diffusion models.
+- [[2021 Switch Transformers]] - sparse expert routing for scaling transformer language models.
 - [[2022 Classifier-Free Diffusion Guidance]] - classifier-free guidance.
 - [[2022 Latent Diffusion Models]] - diffusion in learned latent space.
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] - diffusion design-space decomposition.
@@ -34,3 +35,4 @@ Catalog paper notes that should anchor the wiki.
 - [[Transformers]]
 - [[Diffusion Models]]
 - [[Large Language Models]]
+- [[Mixture of Experts]]

@@ -43,6 +43,8 @@ Seed pages:
 - [[Multi-Query Attention]]
 - [[FlashAttention]]
 - [[KV Cache]]
+- [[Mixture of Experts]]
+- [[Expert Routing]]
 - [[Image Tokenization]]
 - [[Diffusion with Transformers]]
 
@@ -95,15 +97,18 @@ Needed backbone:
 
 ## Mixture of experts and scaling
 
-Current status: missing.
+Current status: early foundation.
+
+Seed pages:
+- [[Mixture of Experts]]
+- [[Expert Routing]]
 
 Needed backbone:
-- Mixture of Experts
-- routing
 - expert parallelism
 - load balancing
 - sparse activation
 - scaling laws for dense versus sparse models
+- modern MoE variants grounded in separate sources
 
 ## Mathematical foundations
 

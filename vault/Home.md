@@ -44,6 +44,8 @@
 - [[Positional Encoding]]
 - [[Rotary Position Embedding]]
 - [[Transformer Feed-Forward Networks]]
+- [[Mixture of Experts]]
+- [[Expert Routing]]
 - [[Residual Connections]]
 - [[Layer Normalization]]
 - [[Large Language Models]]
@@ -53,6 +55,8 @@
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[FlashAttention]]
+- [[Mixture of Experts]]
+- [[Expert Routing]]
 
 ### Optimization and training
 - [[Gradient Descent]]
