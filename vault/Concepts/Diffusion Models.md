@@ -20,6 +20,7 @@ In [[2020 Denoising Diffusion Probabilistic Models]], a diffusion model starts w
 - In [[2021 Score-Based Generative Modeling through SDEs]], diffusion models are interpreted in continuous time with a [[Forward SDE]] from data to noise and a [[Reverse-Time SDE]] from noise back to data.
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] frames diffusion models as separable design choices: parameterization, denoiser preconditioning, sampler, schedule, and training objective.
 - Conditional diffusion models can use [[Classifier-Free Guidance]] to steer samples toward conditioning information by combining conditional and unconditional predictions during sampling.
+- [[Latent Diffusion Models]] move the diffusion process from pixel space to a learned latent space, making high-resolution generation more computationally scalable.
 
 ## Historical development
 [[2020 Denoising Diffusion Probabilistic Models]] demonstrates high-quality image synthesis with diffusion probabilistic models and highlights a connection to denoising score matching.
@@ -45,6 +46,8 @@ EDM emphasizes that sampling quality depends strongly on numerical discretizatio
 
 Classifier-free guidance is now a standard conditioning mechanism for diffusion models: a single model is trained with condition dropout, then sampling uses a guidance scale `w` to trade off condition strength, fidelity, and diversity.
 
+Latent diffusion keeps the iterative denoising framework but applies it to latent variables `z` produced by an encoder, then decodes the final latent sample back to pixels.
+
 ## Related concepts
 - [[ELBO]]
 - [[Score Matching]]
@@ -54,8 +57,10 @@ Classifier-free guidance is now a standard conditioning mechanism for diffusion 
 - [[Diffusion ELBO]]
 - [[Diffusion Parameterization]]
 - [[Diffusion Design Space]]
+- [[Latent Diffusion]]
 - [[DDIM Sampling]]
 - [[Classifier-Free Guidance]]
+- [[Latent Diffusion Models]]
 - [[Score-Based Generative Models]]
 - [[Noise Conditional Score Networks]]
 - [[Annealed Langevin Dynamics]]
@@ -68,6 +73,7 @@ Classifier-free guidance is now a standard conditioning mechanism for diffusion 
 - [[2021 Score-Based Generative Modeling through SDEs]]
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
 - [[2022 Classifier-Free Diffusion Guidance]]
+- [[2022 Latent Diffusion Models]]
 
 ## Open questions
 - Needs verification: how later diffusion literature generalizes the DDPM setup.

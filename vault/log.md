@@ -210,3 +210,19 @@ Format:
 - Pages updated: [[Classifier-Free Guidance]], [[log]]
 - Key concepts: [[Classifier-Free Guidance]]
 - Notes: Clarified `w = 0` wording and added the implicit-classifier interpretation of the conditional-minus-unconditional score difference. Deferred a conditioning concept link until that page exists.
+
+## [2026-04-28] ingest | High-Resolution Image Synthesis with Latent Diffusion Models
+
+- Source: data/raw/papers/ldm_rombachetal_2022.pdf
+- Pages created: [[Latent Diffusion Models]], [[Latent Diffusion]]
+- Pages updated: [[2022 Latent Diffusion Models]], [[Diffusion Models]], [[index]], [[log]]
+- Key concepts: [[Latent Diffusion Models]], [[Latent Diffusion]], [[Diffusion Models]], [[Classifier-Free Guidance]]
+- Notes: Ingested only core conceptual ideas: latent-space diffusion, encoder/decoder roles, efficiency motivation, high-level cross-attention conditioning, and the overall generation pipeline. Did not ingest UNet architecture details, attention block internals, training tricks, dataset specifics, or implementation details.
+
+## [2026-04-29] manual | Review latent diffusion ingest caveats
+
+- Source: user review; data/raw/papers/ldm_rombachetal_2022.pdf
+- Pages created:
+- Pages updated: [[Latent Diffusion]], [[index]], [[log]]
+- Key concepts: [[Latent Diffusion]], [[Latent Diffusion Models]]
+- Notes: Added an explicit assumption that latent compression must be perceptually meaningful. Checked the autoencoder reuse statement against the source and left it unchanged because the paper directly states that the autoencoding stage can be trained once and reused for multiple diffusion trainings or different tasks. Deferred creating a broader modern diffusion systems page until there is a concrete refactor scope.
