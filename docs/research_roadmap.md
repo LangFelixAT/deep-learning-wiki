@@ -37,6 +37,8 @@ Seed pages:
 - [[Transformer Feed-Forward Networks]]
 - [[Layer Normalization]]
 - [[Layer Normalization (Math)]]
+- [[Rotary Position Embedding]]
+- [[Rotary Position Embedding (Math)]]
 - [[Image Tokenization]]
 - [[Diffusion with Transformers]]
 
@@ -47,7 +49,7 @@ Needed backbone:
 - sparse attention
 - FlashAttention
 - XSA
-- positional encodings and RoPE
+- later positional encoding and RoPE scaling variants
 - residual stream view
 - RMSNorm and later normalization variants
 

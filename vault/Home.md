@@ -26,6 +26,7 @@
 - [[Multi-Head Attention]]
 - [[Scaled Dot-Product Attention]]
 - [[Positional Encoding]]
+- [[Rotary Position Embedding]]
 - [[Layer Normalization]]
 - [[Large Language Models]]
 

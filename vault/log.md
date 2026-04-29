@@ -314,3 +314,19 @@ Format:
 - Pages updated: [[Layer Normalization]], [[Normalization]], [[Transformers]], [[Deep Learning Timeline]], [[Home]], docs/research_roadmap.md, [[index]], [[log]]
 - Key concepts: [[Layer Normalization]], [[Layer Normalization (Math)]], [[Normalization]], [[Transformers]]
 - Notes: Ingested only foundational normalization ideas: motivation for normalization, high-level contrast with batch normalization, per-training-case feature statistics, mean/variance over summed inputs, learned gain and bias, suitability for recurrent/sequence models, and relationship to Transformer sublayer normalization. Excluded detailed RNN experiment results, benchmark tables, implementation tricks, pre-norm versus post-norm, RMSNorm and later normalization methods except as future connections, and optimizer-specific discussion.
+
+## [2026-04-29] ingest | RoFormer
+
+- Source: data/raw/papers/roformer_rotary_position_embedding_su_2021.pdf
+- Pages created: [[2021 RoFormer]], [[Rotary Position Embedding]], [[Rotary Position Embedding (Math)]]
+- Pages updated: [[Positional Encoding]], [[Transformers]], [[Scaled Dot-Product Attention]], [[Deep Learning Timeline]], [[Home]], docs/research_roadmap.md, [[index]], [[log]]
+- Key concepts: [[Rotary Position Embedding]], [[Rotary Position Embedding (Math)]], [[Positional Encoding]], [[Scaled Dot-Product Attention]]
+- Notes: Ingested only foundational RoPE ideas: limits of absolute positional encoding, rotary query/key rotations, relative position through dot-product attention, high-level extrapolation and long-range dependency claims, connection to Transformer positional encodings, and importance for later LLM architecture. Excluded detailed benchmark tables, full RoFormer architecture details, implementation tricks, downstream task specifics, later RoPE variants, and modern long-context methods beyond future connections.
+
+## [2026-04-29] manual | Refine RoFormer ingest
+
+- Source: cross-check against [[2021 RoFormer]]
+- Pages created:
+- Pages updated: [[2021 RoFormer]], [[Rotary Position Embedding]], [[Rotary Position Embedding (Math)]], [[log]]
+- Key concepts: [[Rotary Position Embedding]], [[Rotary Position Embedding (Math)]]
+- Notes: Recorded the arXiv version read, added the paper's RoPE frequency choice, and clarified that absolute positions determine rotations while attention scores expose relative position.

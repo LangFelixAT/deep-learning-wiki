@@ -38,6 +38,8 @@ Define the attention operation used as the core computation in the original Tran
 ## Interpretation
 The query-key dot product measures compatibility. The softmax turns compatibilities into weights over values. The scaling factor reduces the magnitude of dot products when `d_k` is large.
 
+[[2021 RoFormer]] modifies query and key representations with rotary position embeddings before this dot product, so the compatibility score can depend on relative position.
+
 ## Alternative formulations
 - Additive attention uses a feed-forward network for compatibility scoring.
 - Unscaled dot-product attention omits the `1 / sqrt(d_k)` factor.
@@ -51,10 +53,12 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 - [[Attention]]
 - [[Self-Attention]]
 - [[Multi-Head Attention]]
+- [[Rotary Position Embedding]]
 - [[Transformers]]
 
 ## Related papers
 - [[2017 Attention Is All You Need]]
+- [[2021 RoFormer]]
 
 ## Source references
 - [[2017 Attention Is All You Need]]

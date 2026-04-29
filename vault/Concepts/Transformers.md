@@ -17,6 +17,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - A transformer layer is built from attention sublayers, [[Transformer Feed-Forward Networks]], residual connections, and normalization.
 - In the original encoder-decoder transformer, encoder layers use self-attention, while decoder layers use masked self-attention plus encoder-decoder attention.
 - [[2017 Attention Is All You Need]] uses `LayerNorm(x + Sublayer(x))`; the normalization method itself is introduced in [[2016 Layer Normalization]].
+- Positional information can be injected through absolute encodings, as in [[2017 Attention Is All You Need]], or through methods such as [[Rotary Position Embedding]] that alter query/key geometry.
 
 ## Historical development
 [[2017 Attention Is All You Need]] introduces the Transformer for sequence transduction and argues that attention alone can replace recurrence and convolution in the model architecture.
@@ -26,6 +27,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 ## Related papers
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
+- [[2021 RoFormer]]
 - [[2022 Scalable Diffusion Models with Transformers]]
 
 ## Related concepts
@@ -34,6 +36,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - [[Scaled Dot-Product Attention]]
 - [[Multi-Head Attention]]
 - [[Positional Encoding]]
+- [[Rotary Position Embedding]]
 - [[Transformer Feed-Forward Networks]]
 - [[Residual Connections]]
 - [[Layer Normalization]]
@@ -47,4 +50,5 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 ## Source notes
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
+- [[2021 RoFormer]]
 - [[2022 Scalable Diffusion Models with Transformers]]
