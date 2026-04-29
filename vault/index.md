@@ -97,7 +97,7 @@
 - [[2022 Classifier-Free Diffusion Guidance]] - Ho and Salimans paper introducing classifier-free guidance for conditional diffusion sampling (type: paper, status: studied)
 - [[2022 Latent Diffusion Models]] - Rombach et al. paper introducing diffusion in autoencoder latent space for efficient high-resolution synthesis (type: paper, status: studied)
 - [[2022 Scalable Diffusion Models with Transformers]] - Peebles and Xie paper introducing transformer denoising backbones for latent diffusion (type: paper, status: studied)
-- [[Important Papers]] - catalog of anchor papers for the wiki (type: index, status: stub)
+- [[Important Papers]] - catalog of anchor papers for the wiki (type: index, status: developing)
 - [[Important Videos]] - catalog of anchor lectures, talks, and videos (type: index, status: stub)
 - [[Open Questions]] - unresolved questions guiding future ingestion (type: concept, status: stub)
 

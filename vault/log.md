@@ -362,3 +362,11 @@ Format:
 - Pages updated: [[2019 Fast Transformer Decoding One Write-Head is All You Need]], [[Multi-Query Attention]], [[log]]
 - Key concepts: [[Multi-Query Attention]], [[KV Cache]]
 - Notes: Added the source's memory-access ratio comparison and clarified that "one write-head" refers to one shared key/value set rather than one query head.
+
+## [2026-04-29] lint | Cross-layer reference maintenance
+
+- Source: current vault concepts, math notes, paper notes, and index
+- Pages created:
+- Pages updated: [[Scaled Dot-Product Attention]], [[Attention]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Attention]], [[Multi-Query Attention]], [[KV Cache]], source catalogs
+- Notes: Added multi-query attention and KV-cache references to the core attention math page, completed the 2019 source backlink on the Attention concept page, and populated the Important Papers catalog with already-ingested anchor papers.
