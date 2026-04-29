@@ -39,6 +39,7 @@
 - [[Multi-Head Attention]]
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
+- [[FlashAttention]]
 - [[Scaled Dot-Product Attention]]
 - [[Positional Encoding]]
 - [[Rotary Position Embedding]]
@@ -51,6 +52,7 @@
 - [[KV Cache]]
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
+- [[FlashAttention]]
 
 ### Optimization and training
 - [[Gradient Descent]]

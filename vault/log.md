@@ -386,3 +386,19 @@ Format:
 - Pages updated: [[2023 GQA]], [[Grouped-Query Attention]], [[log]]
 - Key concepts: [[Grouped-Query Attention]]
 - Notes: Added the paper's `GQA-G` naming convention and clarified that the source applies GQA to decoder attention, not encoder self-attention.
+
+## [2026-04-29] ingest | FlashAttention
+
+- Source: data/raw/papers/flashattention_dao_2022.pdf
+- Pages created: [[2022 FlashAttention]], [[FlashAttention]]
+- Pages updated: [[Scaled Dot-Product Attention]], [[Attention]], [[Multi-Head Attention]], [[KV Cache]], [[Transformers]], [[Large Language Models]], [[Home]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[FlashAttention]], [[Scaled Dot-Product Attention]], [[Attention]], [[KV Cache]]
+- Notes: Ingested only the IO-aware exact-attention core: standard attention as memory/IO limited, attention matrix materialization, tiling/blocking, online softmax at a conceptual level, exact versus approximate attention, long-sequence relevance, and relation to existing attention/KV-cache notes. Excluded CUDA kernel details, detailed backward derivation, benchmark tables, FlashAttention-2 and later variants, paged attention, MLA/GQA details beyond future connections, and hardware-specific tuning.
+
+## [2026-04-29] manual | Refine FlashAttention ingest
+
+- Source: cross-check against [[2022 FlashAttention]]
+- Pages created:
+- Pages updated: [[FlashAttention]], [[Scaled Dot-Product Attention]], [[log]]
+- Key concepts: [[FlashAttention]], [[Scaled Dot-Product Attention]]
+- Notes: Added the standard `S/P/O` attention formulation to the concept page and clarified that FlashAttention changes memory access for exact attention rather than changing the attention function or making exact attention linear-time.

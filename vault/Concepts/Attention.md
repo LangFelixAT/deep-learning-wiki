@@ -22,9 +22,12 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 
 [[2023 GQA]] adds [[Grouped-Query Attention]] as a middle point between MHA and MQA for key/value sharing.
 
+[[2022 FlashAttention]] keeps attention mathematically exact but changes the computation schedule to reduce memory IO.
+
 ## Related papers
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2022 FlashAttention]]
 - [[2023 GQA]]
 
 ## Related concepts
@@ -34,6 +37,7 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[KV Cache]]
+- [[FlashAttention]]
 - [[Scaled Dot-Product Attention]]
 
 ## Open questions
@@ -42,4 +46,5 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 ## Source notes
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2022 FlashAttention]]
 - [[2023 GQA]]

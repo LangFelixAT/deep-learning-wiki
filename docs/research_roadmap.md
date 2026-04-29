@@ -41,6 +41,7 @@ Seed pages:
 - [[Rotary Position Embedding (Math)]]
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
+- [[FlashAttention]]
 - [[KV Cache]]
 - [[Image Tokenization]]
 - [[Diffusion with Transformers]]
@@ -48,7 +49,6 @@ Seed pages:
 Needed backbone:
 - Multi-Head Latent Attention
 - sparse attention
-- FlashAttention
 - XSA
 - later positional encoding and RoPE scaling variants
 - residual stream view
@@ -62,6 +62,7 @@ Seed pages:
 - [[KV Cache]]
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
+- [[FlashAttention]]
 
 Needed backbone:
 - prefill and decode

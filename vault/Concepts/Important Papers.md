@@ -24,6 +24,7 @@ Catalog paper notes that should anchor the wiki.
 - [[2022 Latent Diffusion Models]] - diffusion in learned latent space.
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] - diffusion design-space decomposition.
 - [[2022 DPM-Solver]] - ODE solvers for fast diffusion sampling.
+- [[2022 FlashAttention]] - IO-aware exact attention without materializing the full attention matrix.
 - [[2022 Scalable Diffusion Models with Transformers]] - transformer backbones for diffusion.
 - [[2023 GQA]] - grouped-query attention for efficient Transformer decoding.
 

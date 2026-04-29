@@ -31,6 +31,7 @@ A single attention head produces one weighted combination of values. Multiple he
 ## Related papers
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2022 FlashAttention]]
 - [[2023 GQA]]
 
 ## Related concepts
@@ -40,6 +41,7 @@ A single attention head produces one weighted combination of values. Multiple he
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[KV Cache]]
+- [[FlashAttention]]
 - [[Transformers]]
 
 ## Open questions

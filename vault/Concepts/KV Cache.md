@@ -25,8 +25,12 @@ The cache speeds computation but creates a memory problem: every decoding step r
 
 [[2023 GQA]] introduces [[Grouped-Query Attention]] as a compromise that keeps more key/value heads than MQA while reducing cache size compared with MHA.
 
+[[2022 FlashAttention]] targets a related but distinct memory problem: avoiding materialization of the full attention matrix during attention computation.
+
 ## Related papers
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2022 FlashAttention]]
+- [[2023 GQA]]
 
 ## Related concepts
 - [[Attention]]
@@ -34,6 +38,7 @@ The cache speeds computation but creates a memory problem: every decoding step r
 - [[Multi-Head Attention]]
 - [[Multi-Query Attention]]
 - [[Grouped-Query Attention]]
+- [[FlashAttention]]
 - [[Transformers]]
 - [[Large Language Models]]
 
@@ -46,6 +51,7 @@ The KV cache is where attention architecture becomes a systems issue. The model 
 
 ## Source notes
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2022 FlashAttention]]
 - [[2023 GQA]]
 
 ## Revision notes

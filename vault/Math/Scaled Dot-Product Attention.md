@@ -44,14 +44,18 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 
 [[2023 GQA]] likewise keeps the same attention operation while choosing an intermediate number of shared key/value groups.
 
+[[2022 FlashAttention]] also computes the same attention function, but changes the memory schedule: it avoids materializing the full `QK^T` and `softmax(QK^T)` matrices in slow memory.
+
 ## Alternative formulations
 - Additive attention uses a feed-forward network for compatibility scoring.
 - Unscaled dot-product attention omits the `1 / sqrt(d_k)` factor.
+- [[FlashAttention]] is not an approximation to scaled dot-product attention; it is an exact IO-aware implementation strategy.
 
 ## Common mistakes
 - Forgetting that `Q`, `K`, and `V` are learned projections, not necessarily raw token embeddings.
 - Treating attention weights as explanations without checking the model and task context.
 - Omitting the scaling factor when describing the original Transformer.
+- Assuming [[FlashAttention]] changes the attention function or turns exact attention into a linear-time attention method.
 
 ## Related concepts
 - [[Attention]]
@@ -60,18 +64,21 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
 - [[KV Cache]]
+- [[FlashAttention]]
 - [[Rotary Position Embedding]]
 - [[Transformers]]
 
 ## Related papers
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2022 FlashAttention]]
 - [[2023 GQA]]
 - [[2021 RoFormer]]
 
 ## Source references
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2022 FlashAttention]]
 - [[2023 GQA]]
 
 ## Verification status
