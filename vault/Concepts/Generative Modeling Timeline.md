@@ -7,6 +7,9 @@
 ## Short definition
 Timeline of important generative modeling ideas covered by the wiki.
 
+## Intuition
+This page tracks how the current generative-modeling path moves from latent-variable likelihood models toward score-based and diffusion-based generation.
+
 ## Timeline
 - 2013: [[2013 Auto-Encoding Variational Bayes]] introduces the VAE example using stochastic variational inference and the reparameterization trick.
 - 2015: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] introduces diffusion probabilistic models as learned reversals of gradual noising processes.
@@ -18,3 +21,10 @@ Timeline of important generative modeling ideas covered by the wiki.
 
 ## Open questions
 - Needs verification: add GANs, normalizing flows, and energy-based models once their anchor sources are ingested.
+
+## Related concepts
+- [[Diffusion Models]]
+- [[Diffusion Design Space]]
+- [[Variational Autoencoders]]
+- [[Score-Based Generative Models]]
+- [[Deep Learning Timeline]]

@@ -13,7 +13,7 @@ In [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], a di
 In [[2020 Denoising Diffusion Probabilistic Models]], this idea is developed into the DDPM setup: data `x_0` is gradually noised into `x_T`, and a learned reverse process denoises from `x_T` back to a sample resembling data.
 
 ## Mathematical formulation
-- Related math: [[Diffusion Forward Process]], [[Diffusion Reverse Process]], [[Diffusion ELBO]], [[Score Matching]], [[ELBO]]
+- Related math: [[Diffusion Forward Process]], [[Diffusion Reverse Process]], [[Diffusion ELBO]], [[Diffusion Parameterization]], [[Score Matching]], [[ELBO]], [[Notation Conventions]]
 - Forward process: `q(x_t|x_{t-1})` adds Gaussian noise according to a variance schedule.
 - Reverse process: `p_theta(x_{t-1}|x_t)` is a learned Gaussian transition.
 - Training uses a variational bound and, in DDPM, a simplified noise-prediction objective.
@@ -88,6 +88,8 @@ DiT adds an architectural bridge: diffusion supplies the generative objective an
 - [[Forward SDE]]
 - [[Reverse-Time SDE]]
 - [[Probability Flow ODE]]
+
+## Related papers
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]]
 - [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]]
 - [[2020 Denoising Diffusion Probabilistic Models]]

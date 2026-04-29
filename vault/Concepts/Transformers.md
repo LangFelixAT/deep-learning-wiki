@@ -20,6 +20,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - Positional information can be injected through absolute encodings, as in [[2017 Attention Is All You Need]], or through methods such as [[Rotary Position Embedding]] that alter query/key geometry.
 - [[Mixture of Experts]] can replace some dense feed-forward sublayers with routed expert feed-forward layers.
 - [[Multi-Head Latent Attention]] changes how attention state is represented and cached for efficient inference.
+- [[Efficient LLM Architecture]] organizes these attention, cache, MoE, and systems choices as separate but interacting design axes.
 
 ## Historical development
 [[2017 Attention Is All You Need]] introduces the Transformer for sequence transduction and argues that attention alone can replace recurrence and convolution in the model architecture.
@@ -55,6 +56,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 
 ## Related concepts
 - [[Attention]]
+- [[Efficient LLM Architecture]]
 - [[Self-Attention]]
 - [[Scaled Dot-Product Attention]]
 - [[Multi-Head Attention]]

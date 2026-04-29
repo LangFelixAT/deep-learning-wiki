@@ -140,6 +140,23 @@ They should include:
 
 Concept notes may evolve over time.
 
+## Rules for synthesis pages
+
+After several related ingests in one research track, create or update a synthesis page that organizes the accumulated knowledge.
+
+Synthesis pages should:
+- explain the design space or historical progression
+- connect source notes, math notes, and concept notes
+- identify open gaps and weak areas
+- avoid introducing unsupported new claims
+- mark uncertain connections as `Needs verification`
+
+Examples include:
+- `[[Diffusion Design Space]]`
+- `[[Efficient LLM Architecture]]`
+- `[[Transformer Architecture]]`
+- `[[Optimization and Training Stability]]`
+
 ## Linking convention
 
 Use Obsidian links:
@@ -183,6 +200,8 @@ When editing the vault:
 12. If the user limits an ingest to specific sections or topics, only ingest that scope and record the scope in the source note or log.
 13. Do not let one research track dominate the wiki structure. Keep overview pages connected across generative modeling, transformers, optimization, systems, and representation learning.
 14. Prefer source-grounded math and concepts. If a needed foundation is thin, create a stub or mark it as `Needs verification`, then strengthen it through later source ingests.
+15. Prefer conceptual grounding before deep specialization. Do not expand into full derivations, variants, implementation details, or benchmark minutiae unless the user asks or the detail is necessary for the current mental model.
+16. After several related ingests, update the relevant synthesis page or explicitly note why no synthesis update was needed.
 
 ## Current phase
 

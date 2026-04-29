@@ -28,6 +28,8 @@ A single attention head produces one weighted combination of values. Multiple he
 
 [[2023 GQA]] introduces [[Grouped-Query Attention]] as an intermediate point between full multi-head attention and multi-query attention.
 
+[[2024 DeepSeek-V2 Technical Report]] introduces [[Multi-Head Latent Attention]] as another efficient-attention variant, using latent key/value compression rather than only key/value head sharing.
+
 ## Related papers
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
@@ -38,14 +40,17 @@ A single attention head produces one weighted combination of values. Multiple he
 - [[Attention]]
 - [[Self-Attention]]
 - [[Scaled Dot-Product Attention]]
+- [[Notation Conventions]]
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
+- [[Multi-Head Latent Attention]]
 - [[KV Cache]]
 - [[FlashAttention]]
 - [[Transformers]]
+- [[Efficient LLM Architecture]]
 
 ## Open questions
-- Needs verification: later variants such as multi-head latent attention should be grounded in separate source notes.
+- Needs verification: compare MHA, MQA, GQA, and MLA across independent sources rather than only their introducing papers.
 
 ## My understanding
 Multi-head attention is not just repetition. Each head gets its own learned projections, so heads can specialize in different interaction patterns.

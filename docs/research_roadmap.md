@@ -9,6 +9,7 @@ The goal is to build a connected mental model of modern deep learning research, 
 Current status: developing.
 
 Covered foundations:
+- [[Generative Modeling]]
 - [[Variational Autoencoders]]
 - [[ELBO]]
 - [[Score Matching]]
@@ -29,6 +30,8 @@ Open backbone gaps:
 Current status: early foundation.
 
 Seed pages:
+- [[Transformer Architecture]]
+- [[Efficient LLM Architecture]]
 - [[Transformers]]
 - [[Attention]]
 - [[Self-Attention]]
@@ -62,6 +65,8 @@ Needed backbone:
 Current status: early foundation.
 
 Seed pages:
+- [[LLM Inference Systems]]
+- [[Efficient LLM Architecture]]
 - [[KV Cache]]
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
@@ -82,6 +87,7 @@ Needed backbone:
 Current status: mostly stubbed.
 
 Seed pages:
+- [[Optimization and Training Stability]]
 - [[Gradient Descent]]
 - [[Adam]]
 - [[Weight Decay]]
@@ -121,6 +127,7 @@ Needed backbone:
 Current status: uneven.
 
 Developing areas:
+- [[Notation Conventions]]
 - [[Probability Theory]]
 - [[Bayesian Inference]]
 - [[KL Divergence]]
@@ -141,6 +148,7 @@ Needed backbone:
 - Ingest papers one at a time unless there is a deliberate batch plan.
 - Keep paper notes faithful to the source.
 - Use concept pages for synthesis.
+- After several related ingests, update the relevant synthesis hub.
 - Use math pages for definitions, assumptions, derivations, and notation.
 - Mark weak or uncertain material as `Needs verification`.
 - Prefer source-grounded growth over invented completeness.

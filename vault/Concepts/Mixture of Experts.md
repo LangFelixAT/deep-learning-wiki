@@ -41,6 +41,7 @@ Earlier MoE work predates transformers. [[2021 Switch Transformers]] makes a sim
 - [[DeepSeekMoE]]
 - [[Transformers]]
 - [[Transformer Feed-Forward Networks]]
+- [[Efficient LLM Architecture]]
 - [[Large Language Models]]
 - [[LLM Training Systems]]
 - [[Scaling Laws]]

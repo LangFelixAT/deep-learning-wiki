@@ -7,6 +7,8 @@
 ## Goal
 Understand the evidence lower bound as a general variational inference objective, including its use in VAEs and diffusion models.
 
+See [[Notation Conventions]] for wiki-level notation for `p_theta(x,z)`, `p_theta(z|x)`, and `q_phi(z|x)`.
+
 ## Definitions
 - In general variational inference, the ELBO is an objective optimized over an approximate posterior family.
 - In [[2013 Auto-Encoding Variational Bayes]], the lower bound for one datapoint is written as `L(theta, phi; x^(i))`.

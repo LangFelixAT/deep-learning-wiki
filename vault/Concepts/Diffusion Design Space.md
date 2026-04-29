@@ -13,7 +13,7 @@ EDM argues that diffusion methods are often presented as monolithic systems, eve
 Many diffusion formulations differ only by reparameterization of variables, not by fundamentally different objectives.
 
 ## Mathematical formulation
-- Related math: [[Diffusion Parameterization]], [[Probability Flow ODE]], [[Score Matching]].
+- Related math: [[Diffusion Parameterization]], [[Probability Flow ODE]], [[Score Matching]], [[Notation Conventions]].
 - Model choice: what denoiser or score network is trained.
 - Backbone choice: whether the denoiser is implemented with a U-Net, transformer, or another architecture.
 - Parameterization choice: whether the network predicts clean data, noise, score, or a preconditioned output.
@@ -48,6 +48,7 @@ Many diffusion formulations differ only by reparameterization of variables, not 
 - [[Score Matching]]
 - [[DDIM Sampling]]
 - [[Diffusion with Transformers]]
+- [[Notation Conventions]]
 
 ## Open questions
 - Needs verification: exact equivalences among VP, VE, iDDPM, DDIM, and EDM require careful notation mapping.

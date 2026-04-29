@@ -106,8 +106,10 @@ Check:
 - Does it contradict or refine an earlier source?
 - Does it reveal a missing prerequisite concept or math note?
 - Should a timeline, roadmap, or synthesis page be updated?
+- If the source belongs to an active track, should the relevant track hub be updated?
 
 For isolated sources, keep this short. After several related ingests, perform a larger synthesis pass that connects the sources and identifies gaps.
+If no synthesis page is updated, briefly note why in the log when useful.
 
 ## Step 10: Track context
 

@@ -1,0 +1,83 @@
+# Notation Conventions
+
+## Metadata
+- Type: math
+- Status: developing
+- Last reviewed: 2026-04-29
+
+## Goal
+Collect canonical notation used across the wiki so related math and concept notes remain consistent.
+
+## Definitions
+
+### Variational inference
+- `x`: observed data.
+- `z`: latent variable.
+- `p_theta(x,z)`: generative joint distribution.
+- `p_theta(z|x)`: true posterior under the generative model.
+- `q_phi(z|x)`: approximate posterior or inference model.
+- `ELBO`: lower bound on `log p_theta(x)`.
+
+### Diffusion models
+- `x_0`: clean data sample in data space.
+- `x_t`: noisy data-space state at timestep `t`.
+- `x_T`: high-noise terminal state.
+- `z_t`: noisy latent-space state in latent diffusion notes.
+- `epsilon`: Gaussian noise sample, usually `epsilon ~ N(0,I)`.
+- `epsilon_theta(x_t,t)`: learned DDPM-style noise predictor unless a source defines different notation.
+- `s_theta(x,t)`: learned score estimate, usually approximating `grad_x log p_t(x)`.
+- `sigma` or `sigma_t`: noise scale; exact meaning depends on parameterization.
+- `alpha_bar_t`: cumulative DDPM noise-schedule product.
+
+### Transformer attention
+- `Q`: query matrix.
+- `K`: key matrix.
+- `V`: value matrix.
+- `d_k`: query/key dimension used in scaled dot-product attention.
+- `d_v`: value dimension.
+- `h` or `n_h`: number of attention heads.
+- `d_h`: per-head dimension in several efficient-attention notes.
+
+### Efficient LLM architecture
+- `KV cache`: stored keys and values reused during autoregressive decoding.
+- `n_h`: number of query heads in efficient-attention notes unless the source uses a different symbol.
+- `d_c`: compressed key/value latent dimension in [[Multi-Head Latent Attention (Math)]].
+- `d_h^R`: decoupled RoPE key/query dimension in [[Multi-Head Latent Attention (Math)]].
+- `N`: number of experts in MoE routing notes.
+- `E_i`: expert `i`.
+
+## Assumptions
+- This page records wiki-level conventions, not a universal standard.
+- Source-specific notation takes priority inside a source note.
+- When mapping between papers, coefficients and dimensions must be checked before transferring equations.
+
+## Interpretation
+The same symbols are reused differently across deep learning subfields. A central convention page helps keep concept pages readable while preserving source-specific notation in paper and math notes.
+
+## Common mistakes
+- Treating `z_t` in latent diffusion as the same object as VAE latent variable `z` without checking context.
+- Treating `sigma` in EDM-style notes and `alpha_bar_t` in DDPM-style notes as directly interchangeable without a schedule mapping.
+- Assuming `epsilon_theta` and `s_theta` have the same sign and scaling across parameterizations.
+- Confusing number of query heads with number of key/value heads in MQA, GQA, and MLA notes.
+
+## Related concepts
+- [[Variational Inference]]
+- [[ELBO]]
+- [[Diffusion Models]]
+- [[Diffusion Parameterization]]
+- [[Scaled Dot-Product Attention]]
+- [[Multi-Head Latent Attention (Math)]]
+- [[Expert Routing]]
+
+## Source references
+- [[2013 Auto-Encoding Variational Bayes]]
+- [[2019 Introduction to Variational Autoencoders]]
+- [[2020 Denoising Diffusion Probabilistic Models]]
+- [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
+- [[2017 Attention Is All You Need]]
+- [[2024 DeepSeek-V2 Technical Report]]
+- [[2021 Switch Transformers]]
+
+## Verification status
+- Status: developing
+- Needs verification: source-specific notation mappings should be checked before adding exact conversion formulas.

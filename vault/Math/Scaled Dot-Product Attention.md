@@ -13,6 +13,7 @@ Define the attention operation used as the core computation in the original Tran
 - `K`: key matrix
 - `V`: value matrix
 - `d_k`: key/query dimensionality
+- See [[Notation Conventions]] for cross-page attention notation.
 
 ## Definitions
 - Source: [[2017 Attention Is All You Need]].

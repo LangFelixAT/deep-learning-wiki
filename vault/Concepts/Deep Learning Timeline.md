@@ -10,6 +10,9 @@ Timeline of important deep learning developments covered by the wiki.
 ## Scope
 This page tracks source-grounded milestones already represented in the wiki. It is not a complete history of deep learning.
 
+## Intuition
+The timeline is a navigation aid: it shows when the wiki's current anchor ideas appeared and how the research tracks connect historically.
+
 ## Timeline
 - 2013: [[2013 Auto-Encoding Variational Bayes]] introduces the VAE example and reparameterized stochastic variational training.
 - 2015: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] introduces diffusion probabilistic models as learned reversals of gradual noising processes.
@@ -43,6 +46,11 @@ This page tracks source-grounded milestones already represented in the wiki. It 
 - LLM systems: [[LLM Training Systems]]
 - Representation learning: [[CLIP]], [[Contrastive Learning]]
 - Optimization and training: [[Normalization]], [[Layer Normalization]]
+
+## Related concepts
+- [[Important Papers]]
+- [[Efficient LLM Architecture]]
+- [[Open Questions]]
 
 ## Open questions
 - Needs verification: add core CNN, ResNet, GAN, normalizing-flow, optimizer, decoder-only LLM, and later efficient-attention milestones as their anchor sources are ingested.

@@ -11,7 +11,7 @@ Large neural language models trained on broad text distributions.
 Large language models often generate text autoregressively, one token at a time. This makes decoding behavior and memory movement important parts of practical model performance.
 
 ## Mathematical formulation
-- Related math: [[Transformers]]
+- Related math: [[Scaled Dot-Product Attention]], [[Expert Routing]], [[Notation Conventions]]
 - Autoregressive decoding repeatedly applies Transformer layers to a growing context.
 - Cached keys and values from previous positions are reused through the [[KV Cache]].
 - [[Multi-Query Attention]] reduces the number of key/value heads that must be stored and read during decoding.
@@ -40,6 +40,7 @@ After the DeepSeek-V2 and DeepSeekMoE ingests, [[2024 DeepSeek-V3 Technical Repo
 
 ## Related concepts
 - [[Transformers]]
+- [[Efficient LLM Architecture]]
 - [[Attention]]
 - [[Multi-Head Attention]]
 - [[Grouped-Query Attention]]

@@ -11,6 +11,7 @@
 - [[Maximum Likelihood Estimation]] - likelihood-based parameter estimation (type: math, status: stub)
 - [[KL Divergence]] - divergence used to express posterior approximation error and ELBO tightness (type: math, status: partially verified)
 - [[ELBO]] - general variational inference objective used as a lower bound on marginal log likelihood (type: math, status: partially verified)
+- [[Notation Conventions]] - central convention page for notation shared across variational inference, diffusion, attention, and MoE notes (type: math, status: developing)
 - [[Variational Inference]] - approximate posterior inference as optimization over a tractable distribution family (type: math, status: partially verified)
 - [[Reparameterization Trick]] - change-of-variables method for differentiating stochastic ELBO estimators in VAEs (type: math, status: partially verified)
 - [[Diffusion Forward Process]] - fixed Gaussian noising Markov chain used by DDPMs (type: math, status: partially verified)
@@ -37,6 +38,7 @@
 
 ## Generative models
 
+- [[Generative Modeling]] - synthesis stub for the broader generative-modeling track beyond diffusion (type: concept, status: stub)
 - [[Variational Autoencoders]] - latent-variable generative models with probabilistic encoders and decoders trained using the ELBO (type: concept, status: developing)
 - [[Amortized Variational Inference]] - concept page for shared inference models that avoid per-datapoint variational optimization (type: concept, status: developing)
 - [[Diffusion Models]] - generative models that learn to reverse a gradual noising process (type: concept, status: developing)
@@ -54,6 +56,8 @@
 
 ## Transformers and sequence models
 
+- [[Efficient LLM Architecture]] - synthesis hub for attention efficiency, KV-cache reduction, sparse MoE capacity, and LLM systems constraints (type: concept, status: developing)
+- [[Transformer Architecture]] - synthesis stub for transformer internals and architecture variants (type: concept, status: stub)
 - [[Transformers]] - attention-based neural architecture family (type: concept, status: developing)
 - [[Attention]] - query/key/value mechanism for weighting information by relevance (type: concept, status: developing)
 - [[Self-Attention]] - attention among elements of the same sequence or set (type: concept, status: developing)
@@ -69,12 +73,14 @@
 - [[Mixture of Experts]] - sparse expert layers that route inputs through selected subnetworks to scale capacity (type: concept, status: developing)
 - [[DeepSeekMoE]] - MoE feed-forward design with shared experts and fine-grained routed experts (type: concept, status: developing)
 - [[LLM Training Systems]] - infrastructure, precision, and parallelism constraints for training large language models (type: concept, status: developing)
+- [[LLM Inference Systems]] - synthesis stub for serving and inference constraints in large language models (type: concept, status: stub)
 - [[Residual Connections]] - sublayer skip connections used in transformer blocks (type: concept, status: stub)
 - [[Layer Normalization]] - normalization method computed across features within a single training case (type: concept, status: developing)
 - [[Large Language Models]] - large neural language models trained on broad text distributions (type: concept, status: developing)
 
 ## Optimization and training
 
+- [[Optimization and Training Stability]] - synthesis stub for optimization and training-stability mechanisms (type: concept, status: stub)
 - [[Gradient Descent]] - gradient-based iterative optimization (type: math, status: stub)
 - [[Adam]] - adaptive gradient optimizer (type: math, status: stub)
 - [[Weight Decay]] - parameter decay and related regularization (type: math, status: stub)

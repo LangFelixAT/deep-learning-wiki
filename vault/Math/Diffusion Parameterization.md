@@ -9,6 +9,7 @@ Track how diffusion models can be expressed through different but related parame
 
 ## Definitions
 - Source: [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]].
+- See [[Notation Conventions]] for the wiki-level distinction between DDPM-style `epsilon_theta`, score-style `s_theta`, `sigma`, and `alpha_bar_t`.
 - EDM describes noisy data distributions as `p(x; sigma)`, where `sigma` is the standard deviation of added Gaussian noise.
 - A noisy sample is represented as:
 
@@ -73,3 +74,4 @@ Parameterization choices change the coordinates used to train and sample a diffu
 - [[Score Matching]]
 - [[DDIM Sampling]]
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
+- [[Notation Conventions]]

@@ -482,3 +482,19 @@ Format:
 - Pages updated: [[2024 DeepSeek-V3 Technical Report]], [[Expert Routing]], [[LLM Training Systems]], [[Large Language Models]], [[index]], [[log]]
 - Key concepts: [[DeepSeekMoE]], [[Multi-Head Latent Attention]], [[Multi-Head Latent Attention (Math)]], [[Expert Routing]], [[LLM Training Systems]]
 - Notes: Refined the V3 paper note into a hub that separates inherited architecture from V3-specific additions. Added concise notes on auxiliary-loss-free balancing, MTP, FP8/systems co-design, and clarified that MLA and DeepSeekMoE are grounded by V2 and the DeepSeekMoE paper.
+
+## [2026-04-29] manual | Add synthesis workflow and efficient LLM hub
+
+- Source: project guidance and accumulated wiki notes
+- Pages created: [[Efficient LLM Architecture]], docs/synthesis_workflow.md
+- Pages updated: [[Home]], docs/research_roadmap.md, docs/ingestion_workflow.md, AGENTS.md, [[index]], [[log]]
+- Key concepts: [[Efficient LLM Architecture]], [[KV Cache]], [[FlashAttention]], [[Multi-Head Latent Attention]], [[DeepSeekMoE]], [[Expert Routing]]
+- Notes: Added durable guidance for synthesis pages and created the first efficient-architecture hub to connect attention efficiency, KV-cache reduction, sparse MoE capacity, and LLM systems constraints without adding new source material.
+
+## [2026-04-29] lint | Structure, connections, and notation pass
+
+- Source: current vault
+- Pages created: [[Notation Conventions]], [[Transformer Architecture]], [[Optimization and Training Stability]], [[Generative Modeling]], [[LLM Inference Systems]]
+- Pages updated: [[Attention]], [[Multi-Head Attention]], [[KV Cache]], [[Mixture of Experts]], [[Large Language Models]], [[Transformers]], [[Diffusion Models]], [[Diffusion Design Space]], [[Deep Learning Timeline]], [[Generative Modeling Timeline]], [[Important Papers]], [[Important Videos]], [[Open Questions]], [[Scaled Dot-Product Attention]], [[Diffusion Parameterization]], [[ELBO]], [[Expert Routing]], [[Efficient LLM Architecture]], [[Home]], docs/research_roadmap.md, docs/synthesis_workflow.md, AGENTS.md, [[index]], [[log]]
+- Key concepts: [[Notation Conventions]], [[Efficient LLM Architecture]], [[Transformer Architecture]], [[Optimization and Training Stability]], [[Generative Modeling]], [[LLM Inference Systems]], [[Diffusion Design Space]], [[KV Cache]], [[Multi-Head Latent Attention]], [[Expert Routing]]
+- Notes: Added a central notation convention page, separated diffusion paper links from concept links, strengthened backlinks between efficient-LLM synthesis, attention variants, KV cache, MoE, and systems pages, added small orientation sections to timeline/index pages, and created short stubs for planned synthesis hubs so guidance links remain Obsidian-consistent.

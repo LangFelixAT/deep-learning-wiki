@@ -11,7 +11,7 @@ Mechanism for weighting information by relevance.
 Attention maps a query and a set of key-value pairs to an output. The output is a weighted sum of values, where weights come from how compatible the query is with each key.
 
 ## Mathematical formulation
-- Related math: [[Scaled Dot-Product Attention]], [[Self-Attention]]
+- Related math: [[Scaled Dot-Product Attention]], [[Notation Conventions]]
 - In [[2017 Attention Is All You Need]], attention uses queries `Q`, keys `K`, and values `V`.
 - The attention weights are produced by applying softmax to query-key compatibility scores.
 
@@ -32,6 +32,7 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 
 ## Related concepts
 - [[Transformers]]
+- [[Efficient LLM Architecture]]
 - [[Self-Attention]]
 - [[Multi-Head Attention]]
 - [[Grouped-Query Attention]]
@@ -39,6 +40,7 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 - [[KV Cache]]
 - [[FlashAttention]]
 - [[Scaled Dot-Product Attention]]
+- [[Notation Conventions]]
 
 ## Open questions
 - Needs verification: add earlier attention sources to distinguish pre-transformer attention from transformer self-attention.

@@ -7,6 +7,12 @@
 ## Purpose
 Catalog paper notes that should anchor the wiki.
 
+## Short definition
+Index of source papers that currently ground the wiki.
+
+## Intuition
+This page answers which papers are acting as anchors for the current concept and math notes.
+
 ## Papers
 - [[2013 Auto-Encoding Variational Bayes]] - VAE and reparameterized stochastic variational training.
 - [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] - early diffusion probabilistic modeling.

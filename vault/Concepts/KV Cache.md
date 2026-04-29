@@ -48,6 +48,7 @@ The cache speeds computation but creates a memory problem: every decoding step r
 - [[Grouped-Query Attention]]
 - [[FlashAttention]]
 - [[Multi-Head Latent Attention]]
+- [[Efficient LLM Architecture]]
 - [[Transformers]]
 - [[Large Language Models]]
 

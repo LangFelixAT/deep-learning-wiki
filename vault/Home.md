@@ -5,10 +5,13 @@
 ### Active maps
 - [[Deep Learning Timeline]]
 - [[Generative Modeling Timeline]]
+- [[Generative Modeling]]
 - [[Diffusion Design Space]]
+- [[Efficient LLM Architecture]]
 - [[Open Questions]]
 
 ### Mathematical foundations
+- [[Notation Conventions]]
 - [[Probability Theory]]
 - [[Bayesian Inference]]
 - [[Maximum Likelihood Estimation]]
@@ -33,6 +36,7 @@
 - [[Classifier-Free Guidance]]
 
 ### Transformers and sequence models
+- [[Transformer Architecture]]
 - [[Transformers]]
 - [[Attention]]
 - [[Self-Attention]]
@@ -53,6 +57,8 @@
 - [[Large Language Models]]
 
 ### Efficient attention and inference systems
+- [[Efficient LLM Architecture]]
+- [[LLM Inference Systems]]
 - [[KV Cache]]
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
@@ -64,6 +70,7 @@
 - [[Expert Routing]]
 
 ### Optimization and training
+- [[Optimization and Training Stability]]
 - [[Gradient Descent]]
 - [[Adam]]
 - [[Weight Decay]]

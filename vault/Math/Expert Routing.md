@@ -19,6 +19,7 @@ Define the routing mechanism used to assign token representations to experts in 
 - `f_i`: fraction of tokens dispatched to expert `i`
 - `P_i`: fraction of router probability allocated to expert `i`
 - `alpha`: load-balancing loss coefficient
+- See [[Notation Conventions]] for shared MoE notation across concept and math notes.
 
 ## Definitions
 - Source: [[2021 Switch Transformers]]
