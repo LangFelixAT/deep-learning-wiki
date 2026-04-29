@@ -219,6 +219,22 @@ Format:
 - Key concepts: [[Latent Diffusion Models]], [[Latent Diffusion]], [[Diffusion Models]], [[Classifier-Free Guidance]]
 - Notes: Ingested only core conceptual ideas: latent-space diffusion, encoder/decoder roles, efficiency motivation, high-level cross-attention conditioning, and the overall generation pipeline. Did not ingest UNet architecture details, attention block internals, training tricks, dataset specifics, or implementation details.
 
+## [2026-04-29] ingest | Learning Transferable Visual Models From Natural Language Supervision
+
+- Source: data/raw/papers/clip_radford_2021.pdf
+- Pages created: [[CLIP]], [[Contrastive Learning]]
+- Pages updated: [[2021 CLIP]], [[Latent Diffusion Models]], [[Diffusion Models]], [[index]], [[log]]
+- Key concepts: [[CLIP]], [[Contrastive Learning]], [[Latent Diffusion Models]], [[Diffusion Models]]
+- Notes: Ingested only core CLIP ideas: joint image-text embedding space, contrastive matching of correct pairs against incorrect pairs, cosine/dot-product alignment, semantic embeddings, and why embeddings can be used as conditioning inputs in generative models. Did not ingest architecture details, implementation tricks, dataset scale details, or training infrastructure.
+
+## [2026-04-29] manual | Refine CLIP conditioning note
+
+- Source: user review
+- Pages created:
+- Pages updated: [[CLIP]], [[log]]
+- Key concepts: [[CLIP]], conditioning
+- Notes: Clarified that CLIP-like embeddings enter diffusion models as additional inputs to the denoising network while keeping the description architecture-level only.
+
 ## [2026-04-29] manual | Review latent diffusion ingest caveats
 
 - Source: user review; data/raw/papers/ldm_rombachetal_2022.pdf

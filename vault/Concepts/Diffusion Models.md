@@ -21,6 +21,7 @@ In [[2020 Denoising Diffusion Probabilistic Models]], a diffusion model starts w
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] frames diffusion models as separable design choices: parameterization, denoiser preconditioning, sampler, schedule, and training objective.
 - Conditional diffusion models can use [[Classifier-Free Guidance]] to steer samples toward conditioning information by combining conditional and unconditional predictions during sampling.
 - [[Latent Diffusion Models]] move the diffusion process from pixel space to a learned latent space, making high-resolution generation more computationally scalable.
+- Conditioning signals in modern diffusion systems often come from learned embedding models such as [[CLIP]], which convert text or other inputs into semantic vectors.
 
 ## Historical development
 [[2020 Denoising Diffusion Probabilistic Models]] demonstrates high-quality image synthesis with diffusion probabilistic models and highlights a connection to denoising score matching.
@@ -48,6 +49,8 @@ Classifier-free guidance is now a standard conditioning mechanism for diffusion 
 
 Latent diffusion keeps the iterative denoising framework but applies it to latent variables `z` produced by an encoder, then decodes the final latent sample back to pixels.
 
+Embedding models can provide the conditioning representation used by conditional diffusion models; the diffusion model then learns how denoising should depend on that representation.
+
 ## Related concepts
 - [[ELBO]]
 - [[Score Matching]]
@@ -61,6 +64,7 @@ Latent diffusion keeps the iterative denoising framework but applies it to laten
 - [[DDIM Sampling]]
 - [[Classifier-Free Guidance]]
 - [[Latent Diffusion Models]]
+- [[CLIP]]
 - [[Score-Based Generative Models]]
 - [[Noise Conditional Score Networks]]
 - [[Annealed Langevin Dynamics]]
@@ -74,6 +78,7 @@ Latent diffusion keeps the iterative denoising framework but applies it to laten
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
 - [[2022 Classifier-Free Diffusion Guidance]]
 - [[2022 Latent Diffusion Models]]
+- [[2021 CLIP]]
 
 ## Open questions
 - Needs verification: how later diffusion literature generalizes the DDPM setup.

@@ -35,15 +35,20 @@ Pixel diffusion denoises directly in image space. Latent diffusion keeps the dif
 ## Relation to CFG
 [[Classifier-Free Guidance]] can be applied during latent diffusion sampling by combining conditional and unconditional predictions in latent space. The LDM paper uses classifier-free guidance as a quality-improving conditioning mechanism in some conditional settings.
 
+## Relation to CLIP and text embeddings
+Text conditioning in latent diffusion uses learned text representations as conditioning inputs. CLIP-like embeddings are one way to represent semantic text information for generative conditioning, although the original LDM paper's exact conditioning encoders vary by setting. Needs verification: track which later systems use CLIP directly versus other text encoders.
+
 ## Related papers
 - [[2022 Latent Diffusion Models]]
 - [[2020 Denoising Diffusion Probabilistic Models]]
 - [[2022 Classifier-Free Diffusion Guidance]]
+- [[2021 CLIP]]
 
 ## Related concepts
 - [[Diffusion Models]]
 - [[Latent Diffusion]]
 - [[Classifier-Free Guidance]]
+- [[CLIP]]
 - [[Diffusion Parameterization]]
 
 ## Open questions
