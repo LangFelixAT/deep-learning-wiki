@@ -22,6 +22,7 @@ In [[2020 Denoising Diffusion Probabilistic Models]], a diffusion model starts w
 - Conditional diffusion models can use [[Classifier-Free Guidance]] to steer samples toward conditioning information by combining conditional and unconditional predictions during sampling.
 - [[Latent Diffusion Models]] move the diffusion process from pixel space to a learned latent space, making high-resolution generation more computationally scalable.
 - Conditioning signals in modern diffusion systems often come from learned embedding models such as [[CLIP]], which convert text or other inputs into semantic vectors.
+- [[Diffusion with Transformers]] replaces the usual U-Net denoising backbone with a transformer over image or latent tokens.
 
 ## Historical development
 [[2020 Denoising Diffusion Probabilistic Models]] demonstrates high-quality image synthesis with diffusion probabilistic models and highlights a connection to denoising score matching.
@@ -51,6 +52,8 @@ Latent diffusion keeps the iterative denoising framework but applies it to laten
 
 Embedding models can provide the conditioning representation used by conditional diffusion models; the diffusion model then learns how denoising should depend on that representation.
 
+DiT adds an architectural bridge: diffusion supplies the generative objective and denoising process, while transformers supply the scalable backbone over tokenized visual representations.
+
 ## Related concepts
 - [[ELBO]]
 - [[Score Matching]]
@@ -61,6 +64,8 @@ Embedding models can provide the conditioning representation used by conditional
 - [[Diffusion Parameterization]]
 - [[Diffusion Design Space]]
 - [[Latent Diffusion]]
+- [[Diffusion with Transformers]]
+- [[Image Tokenization]]
 - [[DDIM Sampling]]
 - [[Classifier-Free Guidance]]
 - [[Latent Diffusion Models]]
@@ -79,6 +84,7 @@ Embedding models can provide the conditioning representation used by conditional
 - [[2022 Classifier-Free Diffusion Guidance]]
 - [[2022 Latent Diffusion Models]]
 - [[2021 CLIP]]
+- [[2022 Scalable Diffusion Models with Transformers]]
 
 ## Open questions
 - Needs verification: how later diffusion literature generalizes the DDPM setup.

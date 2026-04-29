@@ -235,6 +235,22 @@ Format:
 - Key concepts: [[CLIP]], conditioning
 - Notes: Clarified that CLIP-like embeddings enter diffusion models as additional inputs to the denoising network while keeping the description architecture-level only.
 
+## [2026-04-29] ingest | Scalable Diffusion Models with Transformers
+
+- Source: data/raw/papers/dit_peebles_xie_2022.pdf
+- Pages created: [[2022 Scalable Diffusion Models with Transformers]], [[Diffusion with Transformers]], [[Image Tokenization]]
+- Pages updated: [[Diffusion Models]], [[Latent Diffusion Models]], [[Diffusion Design Space]], [[Transformers]], [[index]], [[log]]
+- Key concepts: [[Diffusion with Transformers]], [[Image Tokenization]], [[Latent Diffusion Models]], [[Transformers]]
+- Notes: Ingested only DiT as an architectural bridge: replacing U-Net backbones with transformers, latent patch tokens, high-level conditioning, relation to latent diffusion, and scaling behavior with depth/width, token count, and Gflops. Did not ingest benchmark tables, dataset details, implementation details, training hyperparameters, detailed transformer internals, attention explanations, or later DiT variants.
+
+## [2026-04-29] manual | Refine DiT notes
+
+- Source: user review
+- Pages created:
+- Pages updated: [[Diffusion with Transformers]], [[Image Tokenization]], [[2022 Scalable Diffusion Models with Transformers]], [[log]]
+- Key concepts: [[Diffusion with Transformers]], [[Image Tokenization]]
+- Notes: Clarified backbone choice as a design-space axis, added a caveat that tokenization changes representation rather than the diffusion process itself, and scoped the U-Net inductive-bias claim to the studied setting.
+
 ## [2026-04-29] manual | Review latent diffusion ingest caveats
 
 - Source: user review; data/raw/papers/ldm_rombachetal_2022.pdf

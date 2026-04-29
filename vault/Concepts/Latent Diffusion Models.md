@@ -29,6 +29,9 @@ Images contain many high-frequency details that are expensive to model at every 
 4. At sampling time, start from latent noise and run the reverse diffusion process in latent space.
 5. Decode the final latent sample into an image with `D`.
 
+## Relation to DiT
+[[Diffusion with Transformers]] uses the latent diffusion setup but replaces the usual U-Net denoising backbone with a transformer. In DiT, the noised latent is split into patches, and those patches become transformer tokens.
+
 ## Relation to pixel diffusion
 Pixel diffusion denoises directly in image space. Latent diffusion keeps the diffusion objective but moves it to a compressed representation, reducing compute and memory costs.
 
@@ -43,12 +46,15 @@ Text conditioning in latent diffusion uses learned text representations as condi
 - [[2020 Denoising Diffusion Probabilistic Models]]
 - [[2022 Classifier-Free Diffusion Guidance]]
 - [[2021 CLIP]]
+- [[2022 Scalable Diffusion Models with Transformers]]
 
 ## Related concepts
 - [[Diffusion Models]]
 - [[Latent Diffusion]]
 - [[Classifier-Free Guidance]]
 - [[CLIP]]
+- [[Diffusion with Transformers]]
+- [[Image Tokenization]]
 - [[Diffusion Parameterization]]
 
 ## Open questions

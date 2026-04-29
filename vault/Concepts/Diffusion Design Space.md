@@ -15,6 +15,7 @@ Many diffusion formulations differ only by reparameterization of variables, not 
 ## Mathematical formulation
 - Related math: [[Diffusion Parameterization]], [[Probability Flow ODE]], [[Score Matching]].
 - Model choice: what denoiser or score network is trained.
+- Backbone choice: whether the denoiser is implemented with a U-Net, transformer, or another architecture.
 - Parameterization choice: whether the network predicts clean data, noise, score, or a preconditioned output.
 - Sampler choice: how the denoiser is used to move from high noise to low noise.
 - Solver choice: which numerical method integrates the ODE or reverse process.
@@ -29,12 +30,15 @@ Many diffusion formulations differ only by reparameterization of variables, not 
 
 [[2022 DPM-Solver]] sharpens the sampler axis by treating the choice of ODE solver as an independent design choice that can improve sampling without retraining the denoiser.
 
+[[2022 Scalable Diffusion Models with Transformers]] sharpens the backbone axis by showing that a transformer can replace the common U-Net denoising backbone in latent diffusion.
+
 ## Related papers
 - [[2020 Denoising Diffusion Probabilistic Models]]
 - [[2020 Denoising Diffusion Implicit Models]]
 - [[2021 Score-Based Generative Modeling through SDEs]]
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
 - [[2022 DPM-Solver]]
+- [[2022 Scalable Diffusion Models with Transformers]]
 
 ## Related concepts
 - [[Diffusion Models]]
@@ -43,6 +47,7 @@ Many diffusion formulations differ only by reparameterization of variables, not 
 - [[Probability Flow ODE]]
 - [[Score Matching]]
 - [[DDIM Sampling]]
+- [[Diffusion with Transformers]]
 
 ## Open questions
 - Needs verification: exact equivalences among VP, VE, iDDPM, DDIM, and EDM require careful notation mapping.
