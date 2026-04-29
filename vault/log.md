@@ -346,3 +346,19 @@ Format:
 - Pages updated: [[Deep Learning Timeline]], [[Home]], [[log]]
 - Key concepts: research timeline, wiki navigation
 - Notes: Updated the deep learning timeline to reflect already-ingested source notes across VAEs, diffusion, CLIP, transformers, RoPE, normalization, and DiT. Added active map and representation-learning links to Home.
+
+## [2026-04-29] ingest | Fast Transformer Decoding: One Write-Head is All You Need
+
+- Source: data/raw/papers/fast_transformer_decoding_one_write_head_shazeer_2019.pdf
+- Pages created: [[2019 Fast Transformer Decoding One Write-Head is All You Need]], [[Multi-Query Attention]], [[KV Cache]]
+- Pages updated: [[Multi-Head Attention]], [[Attention]], [[Self-Attention]], [[Transformers]], [[Large Language Models]], [[Home]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[index]], [[log]]
+- Key concepts: [[Multi-Query Attention]], [[KV Cache]], [[Multi-Head Attention]], [[Large Language Models]]
+- Notes: Ingested only decoding-time bottlenecks, key/value memory bandwidth, multi-query attention, shared key/value heads, KV-cache effects, high-level speed/quality tradeoff, and relation to later efficient LLM inference. Excluded detailed benchmark tables, TPU/kernel details, full machine-translation setup, training hyperparameters, unrelated architecture changes, and modern GQA/MLA/FlashAttention details except as future connections.
+
+## [2026-04-29] manual | Refine multi-query attention ingest
+
+- Source: cross-check against [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- Pages created:
+- Pages updated: [[2019 Fast Transformer Decoding One Write-Head is All You Need]], [[Multi-Query Attention]], [[log]]
+- Key concepts: [[Multi-Query Attention]], [[KV Cache]]
+- Notes: Added the source's memory-access ratio comparison and clarified that "one write-head" refers to one shared key/value set rather than one query head.

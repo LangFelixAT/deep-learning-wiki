@@ -22,11 +22,14 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 ## Historical development
 [[2017 Attention Is All You Need]] introduces the Transformer for sequence transduction and argues that attention alone can replace recurrence and convolution in the model architecture.
 
+[[2019 Fast Transformer Decoding One Write-Head is All You Need]] identifies incremental decoding memory bandwidth as a Transformer inference bottleneck and introduces [[Multi-Query Attention]].
+
 [[2022 Scalable Diffusion Models with Transformers]] applies transformer backbones to diffusion models by operating on latent patch tokens.
 
 ## Related papers
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
+- [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2021 RoFormer]]
 - [[2022 Scalable Diffusion Models with Transformers]]
 
@@ -35,6 +38,8 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - [[Self-Attention]]
 - [[Scaled Dot-Product Attention]]
 - [[Multi-Head Attention]]
+- [[Multi-Query Attention]]
+- [[KV Cache]]
 - [[Positional Encoding]]
 - [[Rotary Position Embedding]]
 - [[Transformer Feed-Forward Networks]]
@@ -50,5 +55,6 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 ## Source notes
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
+- [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2021 RoFormer]]
 - [[2022 Scalable Diffusion Models with Transformers]]

@@ -24,22 +24,28 @@ A single attention head produces one weighted combination of values. Multiple he
 ## Historical development
 [[2017 Attention Is All You Need]] introduces multi-head attention as a central Transformer component.
 
+[[2019 Fast Transformer Decoding One Write-Head is All You Need]] proposes [[Multi-Query Attention]] as an inference-oriented variant that keeps multiple query heads while sharing keys and values across heads.
+
 ## Related papers
 - [[2017 Attention Is All You Need]]
+- [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 
 ## Related concepts
 - [[Attention]]
 - [[Self-Attention]]
 - [[Scaled Dot-Product Attention]]
+- [[Multi-Query Attention]]
+- [[KV Cache]]
 - [[Transformers]]
 
 ## Open questions
-- Needs verification: later variants such as multi-query attention, grouped-query attention, and multi-head latent attention should be grounded in separate source notes.
+- Needs verification: later variants such as grouped-query attention and multi-head latent attention should be grounded in separate source notes.
 
 ## My understanding
 Multi-head attention is not just repetition. Each head gets its own learned projections, so heads can specialize in different interaction patterns.
 
 ## Source notes
 - [[2017 Attention Is All You Need]]
+- [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 
 ## Revision notes

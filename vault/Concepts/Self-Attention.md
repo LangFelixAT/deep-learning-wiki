@@ -18,13 +18,18 @@ In self-attention, each token forms attention weights over tokens from the same 
 ## Historical development
 [[2017 Attention Is All You Need]] uses stacked self-attention layers as the main replacement for recurrent sequence computation.
 
+[[2019 Fast Transformer Decoding One Write-Head is All You Need]] focuses on incremental self-attention during autoregressive decoding, where cached keys and values are repeatedly read.
+
 ## Related papers
 - [[2017 Attention Is All You Need]]
+- [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 
 ## Related concepts
 - [[Attention]]
 - [[Transformers]]
 - [[Multi-Head Attention]]
+- [[Multi-Query Attention]]
+- [[KV Cache]]
 - [[Positional Encoding]]
 
 ## Open questions
@@ -32,3 +37,4 @@ In self-attention, each token forms attention weights over tokens from the same 
 
 ## Source notes
 - [[2017 Attention Is All You Need]]
+- [[2019 Fast Transformer Decoding One Write-Head is All You Need]]

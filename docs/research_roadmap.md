@@ -39,11 +39,12 @@ Seed pages:
 - [[Layer Normalization (Math)]]
 - [[Rotary Position Embedding]]
 - [[Rotary Position Embedding (Math)]]
+- [[Multi-Query Attention]]
+- [[KV Cache]]
 - [[Image Tokenization]]
 - [[Diffusion with Transformers]]
 
 Needed backbone:
-- Multi-Query Attention
 - Grouped-Query Attention
 - Multi-Head Latent Attention
 - sparse attention
@@ -55,10 +56,13 @@ Needed backbone:
 
 ## Efficient attention and inference systems
 
-Current status: mostly missing.
+Current status: early foundation.
+
+Seed pages:
+- [[KV Cache]]
+- [[Multi-Query Attention]]
 
 Needed backbone:
-- KV cache
 - prefill and decode
 - memory bandwidth versus compute
 - attention complexity

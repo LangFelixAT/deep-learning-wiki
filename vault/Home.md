@@ -37,6 +37,7 @@
 - [[Attention]]
 - [[Self-Attention]]
 - [[Multi-Head Attention]]
+- [[Multi-Query Attention]]
 - [[Scaled Dot-Product Attention]]
 - [[Positional Encoding]]
 - [[Rotary Position Embedding]]
@@ -44,6 +45,10 @@
 - [[Residual Connections]]
 - [[Layer Normalization]]
 - [[Large Language Models]]
+
+### Efficient attention and inference systems
+- [[KV Cache]]
+- [[Multi-Query Attention]]
 
 ### Optimization and training
 - [[Gradient Descent]]

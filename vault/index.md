@@ -56,12 +56,14 @@
 - [[Attention]] - query/key/value mechanism for weighting information by relevance (type: concept, status: developing)
 - [[Self-Attention]] - attention among elements of the same sequence or set (type: concept, status: developing)
 - [[Multi-Head Attention]] - parallel attention heads over learned query/key/value projections (type: concept, status: developing)
+- [[Multi-Query Attention]] - attention variant with multiple query heads but shared key/value heads for faster incremental decoding (type: concept, status: developing)
+- [[KV Cache]] - cached attention keys and values reused during autoregressive decoding (type: concept, status: developing)
 - [[Positional Encoding]] - position information for sequence models (type: concept, status: developing)
 - [[Rotary Position Embedding]] - positional encoding method that rotates query and key vectors by position-dependent angles (type: concept, status: developing)
 - [[Transformer Feed-Forward Networks]] - position-wise MLP sublayers inside transformer blocks (type: concept, status: developing)
 - [[Residual Connections]] - sublayer skip connections used in transformer blocks (type: concept, status: stub)
 - [[Layer Normalization]] - normalization method computed across features within a single training case (type: concept, status: developing)
-- [[Large Language Models]] - large neural language models trained on broad text distributions (type: concept, status: stub)
+- [[Large Language Models]] - large neural language models trained on broad text distributions (type: concept, status: developing)
 
 ## Optimization and training
 
@@ -83,6 +85,7 @@
 - [[2016 Layer Normalization]] - Ba, Kiros, and Hinton paper introducing layer normalization for neural networks and recurrent sequence models (type: paper, status: studied)
 - [[2017 Attention Is All You Need]] - Vaswani et al. paper introducing the Transformer architecture based on self-attention and multi-head attention (type: paper, status: studied)
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
+- [[2019 Fast Transformer Decoding One Write-Head is All You Need]] - Shazeer paper introducing multi-query attention to reduce key/value memory bandwidth during incremental Transformer decoding (type: paper, status: studied)
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] - Song and Ermon paper introducing NCSNs and annealed Langevin sampling (type: paper, status: studied)
 - [[2020 Denoising Diffusion Probabilistic Models]] - Ho, Jain, and Abbeel paper introducing DDPM training and sampling foundations (type: paper, status: studied)
 - [[2020 Denoising Diffusion Implicit Models]] - Song, Meng, and Ermon paper introducing DDIM sampling with the DDPM training objective (type: paper, status: studied)

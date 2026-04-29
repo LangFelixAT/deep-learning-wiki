@@ -18,13 +18,18 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 ## Historical development
 [[2017 Attention Is All You Need]] uses attention as the central sequence operation inside the Transformer architecture.
 
+[[2019 Fast Transformer Decoding One Write-Head is All You Need]] shows that attention design also affects incremental decoding performance through key/value memory bandwidth.
+
 ## Related papers
 - [[2017 Attention Is All You Need]]
+- [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 
 ## Related concepts
 - [[Transformers]]
 - [[Self-Attention]]
 - [[Multi-Head Attention]]
+- [[Multi-Query Attention]]
+- [[KV Cache]]
 - [[Scaled Dot-Product Attention]]
 
 ## Open questions
