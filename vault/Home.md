@@ -2,6 +2,12 @@
 
 ## Main areas
 
+### Active maps
+- [[Deep Learning Timeline]]
+- [[Generative Modeling Timeline]]
+- [[Diffusion Design Space]]
+- [[Open Questions]]
+
 ### Mathematical foundations
 - [[Probability Theory]]
 - [[Bayesian Inference]]
@@ -15,9 +21,16 @@
 ### Generative models
 - [[Variational Autoencoders]]
 - [[Diffusion Models]]
+- [[Latent Diffusion Models]]
+- [[Score-Based Generative Models]]
 - [[Energy-Based Models]]
 - [[Normalizing Flows]]
 - [[GANs]]
+
+### Representation learning and conditioning
+- [[CLIP]]
+- [[Contrastive Learning]]
+- [[Classifier-Free Guidance]]
 
 ### Transformers and sequence models
 - [[Transformers]]
@@ -27,6 +40,8 @@
 - [[Scaled Dot-Product Attention]]
 - [[Positional Encoding]]
 - [[Rotary Position Embedding]]
+- [[Transformer Feed-Forward Networks]]
+- [[Residual Connections]]
 - [[Layer Normalization]]
 - [[Large Language Models]]
 

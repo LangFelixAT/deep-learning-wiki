@@ -330,3 +330,19 @@ Format:
 - Pages updated: [[2021 RoFormer]], [[Rotary Position Embedding]], [[Rotary Position Embedding (Math)]], [[log]]
 - Key concepts: [[Rotary Position Embedding]], [[Rotary Position Embedding (Math)]]
 - Notes: Recorded the arXiv version read, added the paper's RoPE frequency choice, and clarified that absolute positions determine rotations while attention scores expose relative position.
+
+## [2026-04-29] lint | Wiki consistency pass
+
+- Source: AGENTS.md; docs/ingestion_workflow.md; current vault
+- Pages created:
+- Pages updated: docs/ingestion_workflow.md, [[Classifier-Free Guidance]], [[DDIM Sampling]], [[Diffusion ODE Solvers]], [[Diffusion Parameterization]], [[Energy-Based Models]], [[Image Tokenization]], [[index]], [[log]]
+- Key concepts: Obsidian links, status vocabulary, math-note structure, notation consistency
+- Notes: Confirmed no unresolved wikilinks, no folder-qualified wikilinks, and no duplicate note basenames. Added missing math-note scaffold sections, aligned the Normalization index status with the page, clarified EBM score notation, normalized the Image Tokenization concept structure, and kept catalog/timeline pages as intentional template exceptions.
+
+## [2026-04-29] manual | Refresh home and deep learning timeline
+
+- Source: current vault index and ingested paper notes
+- Pages created:
+- Pages updated: [[Deep Learning Timeline]], [[Home]], [[log]]
+- Key concepts: research timeline, wiki navigation
+- Notes: Updated the deep learning timeline to reflect already-ingested source notes across VAEs, diffusion, CLIP, transformers, RoPE, normalization, and DiT. Added active map and representation-learning links to Home.

@@ -12,7 +12,7 @@ Energy-based models assign unnormalized scores or energies to data configuration
 
 ## Mathematical formulation
 - Related math: [[Score Matching]]
-- For an energy-based model `p(x) proportional exp(-E(x))`, the score is `grad_x log p(x) = -grad_x E(x)`.
+- For an energy-based model `p(x) = exp(-E(x)) / Z`, the score is `grad_x log p(x) = -grad_x E(x)` because the normalization constant `Z` does not depend on `x`.
 
 ## Score-based connection
 [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] notes that score matching was originally proposed for learning energy-based models and that their approach can train EBMs by using the gradient of an energy-based model as the score model.
@@ -26,6 +26,8 @@ Needs verification from source notes.
 - [[Diffusion Models]]
 - [[Score Matching]]
 - [[Score-Based Generative Models]]
+
+## Related papers
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]]
 
 ## Open questions

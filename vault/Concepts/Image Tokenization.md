@@ -10,12 +10,15 @@ Image tokenization represents an image or image-like latent as a sequence of sma
 ## Intuition
 Transformers operate on sequences. Splitting an image or latent into patches turns spatial visual data into tokens.
 
-## Core idea
+## Mathematical formulation
 - Images or latents can be split into patches.
 - Each patch becomes a token.
 - Tokenization makes vision data compatible with transformer blocks.
 - In DiT, the tokens are latent patches rather than raw image patches.
 - Tokenization changes the representation given to the model, not the underlying diffusion process by itself.
+
+## Historical development
+[[2022 Scalable Diffusion Models with Transformers]] uses latent patch tokens to connect diffusion denoising backbones with transformer architectures.
 
 ## Related concepts
 - [[Diffusion with Transformers]]

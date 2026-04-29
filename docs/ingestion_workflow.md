@@ -72,7 +72,7 @@ This section may contain:
 
 ## Step 7: Mark status
 
-Every note should have a status:
+Every source note should have a status:
 
 - unread
 - skimmed
@@ -80,6 +80,13 @@ Every note should have a status:
 - verified
 
 Only use "verified" after manually checking important claims.
+
+Concept and math notes may also use the vault status vocabulary:
+
+- stub
+- developing
+- partially verified
+- verified
 
 ## Step 8: Update index and log
 

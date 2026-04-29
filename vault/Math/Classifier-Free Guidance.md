@@ -13,6 +13,11 @@ Define classifier-free guidance as a way to condition diffusion sampling without
 - Unconditional prediction: a model prediction without conditioning, written as `s_theta(x_t,t)` or by passing a null condition.
 - `w` is the guidance strength used at sampling time.
 
+## Assumptions
+- The same model can produce conditional and unconditional predictions.
+- The unconditional behavior is learned by dropping or nulling the condition during training.
+- The formula must match the model parameterization used by the sampler.
+
 ## Conditional vs unconditional
 - Conditional diffusion models learn a reverse process for samples associated with condition `c`.
 - Unconditional diffusion models learn the marginal reverse process without condition information.
@@ -34,6 +39,12 @@ In noise-prediction form:
 `epsilon_guided(x_t,t,c) = (1 + w) epsilon_theta(x_t,t,c) - w epsilon_theta(x_t,t)`.
 
 Needs verification: signs and coefficients must be checked against the model parameterization used by a specific sampler.
+
+## Derivation
+- Train the model with condition `c` present for some examples and replaced by a null condition for others.
+- At sampling time, evaluate both the conditional and unconditional predictions.
+- Form a linear combination that amplifies the difference between the conditional and unconditional directions.
+- Skipped steps: derivation from classifier guidance and exact parameterization-specific conversions.
 
 ## Role of w
 - `w = 0` gives the model's learned conditional prediction without additional guidance amplification.

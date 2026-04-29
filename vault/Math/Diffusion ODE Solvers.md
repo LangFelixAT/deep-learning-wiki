@@ -40,6 +40,13 @@ Describe how diffusion sampling can be viewed as numerical integration of an ODE
 - After a change of variable to half-log-SNR, the remaining term is an exponentially weighted integral of the network output.
 - This motivates an exponential-integrator view without requiring a full black-box ODE solve.
 
+## Derivation
+- Start from the probability-flow ODE or the equivalent diffusion ODE under the chosen parameterization.
+- Separate the analytically tractable linear term from the neural-network-dependent term.
+- Change variables to a schedule coordinate such as half-log-SNR.
+- Approximate the remaining integral with a first- or higher-order numerical rule.
+- Skipped steps: full DPM-Solver order conditions and coefficient derivations.
+
 ## Why step count can be reduced
 - If each step has lower numerical error, fewer steps may be needed for acceptable sample quality.
 - Higher-order methods can improve the error-vs-network-evaluation tradeoff compared with simple first-order updates.

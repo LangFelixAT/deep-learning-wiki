@@ -19,6 +19,11 @@ Track how diffusion models can be expressed through different but related parame
 
 `grad_x log p(x; sigma) = (D(x; sigma) - x) / sigma^2`.
 
+## Assumptions
+- The denoiser relation above assumes Gaussian corruption with noise scale `sigma`.
+- The mappings between `epsilon` prediction, score prediction, and denoiser prediction require a known noise schedule.
+- Source-specific notation must be checked before transferring coefficients between papers.
+
 ## Sigma parameterization
 - `sigma` directly measures corruption strength as a noise standard deviation.
 - Sampling moves from high `sigma` toward `sigma = 0`.

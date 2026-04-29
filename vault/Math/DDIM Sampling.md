@@ -44,6 +44,13 @@ For accelerated sampling, the same form is applied over a subsequence of timeste
 ## Deterministic eta = 0 case
 When `eta = 0`, the sampling update becomes deterministic and no new noise is injected. The trajectory is fixed by the initial latent `x_T`, the predicted `x0_hat`, and the chosen timestep schedule.
 
+## Derivation
+- Start from DDPM marginals `q(x_t|x_0)` and a trained noise predictor `epsilon_theta(x_t,t)`.
+- Estimate `x_0` from `x_t` and the predicted noise.
+- Choose a reverse transition that preserves the same forward marginals while allowing a non-Markovian sampling process.
+- Set `sigma_t` through `eta`; when `eta = 0`, remove newly sampled noise from the update.
+- Skipped steps: full derivation of the DDIM non-Markovian family and exact `sigma_t` formula.
+
 ## Relation to DDPM sampling
 - DDPM sampling uses a learned Markov reverse chain with stochastic Gaussian transitions.
 - DDIM uses the same trained noise-prediction model but can sample through a non-Markovian generative process.

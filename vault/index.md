@@ -68,7 +68,7 @@
 - [[Gradient Descent]] - gradient-based iterative optimization (type: math, status: stub)
 - [[Adam]] - adaptive gradient optimizer (type: math, status: stub)
 - [[Weight Decay]] - parameter decay and related regularization (type: math, status: stub)
-- [[Normalization]] - rescaling and standardization techniques used in neural networks (type: concept, status: stub)
+- [[Normalization]] - rescaling and standardization techniques used in neural networks (type: concept, status: developing)
 - [[Scaling Laws]] - relationships between performance and scale (type: concept, status: stub)
 
 ## Research history
