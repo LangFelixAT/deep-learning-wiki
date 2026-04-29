@@ -168,7 +168,7 @@ Use Obsidian links:
 Prefer meaningful links over excessive linking.
 
 Prefer simple note-title links such as `[[Variational Inference]]`.
-Avoid folder-qualified links such as `[[Math/Variational Inference|Variational Inference]]` unless there is a deliberate reason.
+Avoid folder-qualified link targets such as `Math/Variational Inference|Variational Inference` unless there is a deliberate reason.
 
 Filenames should generally be unique across the vault so links stay unambiguous.
 If a concept note and math note would otherwise have the same title, choose a more specific title for one of them, for example:
@@ -217,6 +217,22 @@ Focus on:
 - retroactive ingestion of already-known resources
 
 ## Special files
+
+### `docs/design_principles.md`
+
+Project-level principles and the map of operational workflow documents.
+
+### `docs/ingestion_workflow.md`
+
+How new sources enter the wiki.
+
+### `docs/synthesis_workflow.md`
+
+How accumulated notes become higher-level maps.
+
+### `docs/lint_workflow.md`
+
+How lint passes should check structure, links, notation, duplication, abstraction levels, and Obsidian compatibility.
 
 ### `vault/index.md`
 

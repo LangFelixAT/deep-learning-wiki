@@ -498,3 +498,11 @@ Format:
 - Pages updated: [[Attention]], [[Multi-Head Attention]], [[KV Cache]], [[Mixture of Experts]], [[Large Language Models]], [[Transformers]], [[Diffusion Models]], [[Diffusion Design Space]], [[Deep Learning Timeline]], [[Generative Modeling Timeline]], [[Important Papers]], [[Important Videos]], [[Open Questions]], [[Scaled Dot-Product Attention]], [[Diffusion Parameterization]], [[ELBO]], [[Expert Routing]], [[Efficient LLM Architecture]], [[Home]], docs/research_roadmap.md, docs/synthesis_workflow.md, AGENTS.md, [[index]], [[log]]
 - Key concepts: [[Notation Conventions]], [[Efficient LLM Architecture]], [[Transformer Architecture]], [[Optimization and Training Stability]], [[Generative Modeling]], [[LLM Inference Systems]], [[Diffusion Design Space]], [[KV Cache]], [[Multi-Head Latent Attention]], [[Expert Routing]]
 - Notes: Added a central notation convention page, separated diffusion paper links from concept links, strengthened backlinks between efficient-LLM synthesis, attention variants, KV cache, MoE, and systems pages, added small orientation sections to timeline/index pages, and created short stubs for planned synthesis hubs so guidance links remain Obsidian-consistent.
+
+## [2026-04-29] manual | Add lint workflow guidance
+
+- Source: project guidance and Karpathy LLM Wiki pattern
+- Pages created: docs/lint_workflow.md
+- Pages updated: docs/design_principles.md, AGENTS.md, [[log]]
+- Key concepts: [[Notation Conventions]], [[Efficient LLM Architecture]]
+- Notes: Anchored the operational workflow document structure and added a dedicated lint workflow covering Obsidian compliance, structure, links, notation, duplication, abstraction levels, safe fixes, and expected lint output.
