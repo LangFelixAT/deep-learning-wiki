@@ -50,3 +50,6 @@ This page answers which papers are acting as anchors for the current concept and
 - [[Mixture of Experts]]
 - [[DeepSeekMoE]]
 - [[LLM Training Systems]]
+
+## Related non-paper sources
+- [[2024 Muon Optimizer]] - blog/repository source for the emerging Muon optimizer.

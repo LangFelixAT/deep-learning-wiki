@@ -538,3 +538,19 @@ Format:
 - Pages updated: [[AdamW]], [[Adam]], [[Weight Decay]], [[Regularization]], [[Optimization and Training Stability]], [[Notation Conventions]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
 - Key concepts: [[AdamW]], [[Adam]], [[Weight Decay]], [[Regularization]], [[Gradient Descent]], [[Optimization and Training Stability]]
 - Notes: Ingested AdamW with focus on the difference between L2 regularization and weight decay, why they are equivalent for vanilla SGD after coefficient rescaling, why the equivalence fails for adaptive optimizers, how Adam with L2 regularization couples the penalty to adaptive learning rates, and the high-level AdamW decoupled update. Excluded benchmark tables, SGDW details beyond brief comparison, schedule tuning, extensive experimental setup, later optimizer variants, and modern claims not grounded in the paper.
+
+## [2026-04-30] manual | Capture Muon source trail
+
+- Source: Keller Jordan Muon writeup, KellerJordan/Muon repository, original X-thread reference, Shampoo, Bernstein-Newhouse, and later Muon scaling sources
+- Pages created:
+- Pages updated: [[log]]
+- Key concepts: Muon optimizer, matrix-aware optimization, Shampoo, AdamW
+- Notes: Created local source-capture Markdown files under data/raw/blogs, data/raw/repos, and data/raw/reports for future Muon ingestion. These captures store provenance, links, short compliant excerpts, detailed paraphrases, and ingestion cautions rather than verbatim mirrors.
+
+## [2026-04-30] ingest | Muon Optimizer
+
+- Source: data/raw/blogs/muon_keller_jordan_2024.md; data/raw/repos/muon_keller_jordan_readme_2024.md; data/raw/repos/muon_keller_jordan_muon_py_2024.md; data/raw/reports/muon_source_trail_2026-04-30.md
+- Pages created: [[2024 Muon Optimizer]], [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[Newton-Schulz Iteration]], [[Matrix-Aware Optimizers]], [[Shampoo]]
+- Pages updated: [[AdamW]], [[Optimization and Training Stability]], [[Notation Conventions]], docs/research_roadmap.md, [[Home]], [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[Newton-Schulz Iteration]], [[Matrix-Aware Optimizers]], [[Shampoo]], [[AdamW]]
+- Notes: Ingested the Muon source bundle as a blog/repository source, not as a peer-reviewed paper. Focused on Muon as an optimizer for hidden-layer 2D parameters, momentum followed by approximate orthogonalization, Newton-Schulz iteration as the practical method, AdamW as the companion optimizer for incompatible parameter classes, and the Shampoo relationship as a future bridge. Kept empirical speedrun and scaling claims labeled as source claims or future connections.

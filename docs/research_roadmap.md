@@ -91,6 +91,9 @@ Seed pages:
 - [[Gradient Descent]]
 - [[Adam]]
 - [[AdamW]]
+- [[Muon Optimizer]]
+- [[Muon Optimizer (Math)]]
+- [[Matrix-Aware Optimizers]]
 - [[Weight Decay]]
 - [[Normalization]]
 - [[RMSNorm]]
@@ -98,8 +101,9 @@ Seed pages:
 
 Needed backbone:
 - optimization geometry for adaptive methods
-- Muon optimizer
-- Shampoo-style matrix-aware optimizers
+- [[Shampoo]]
+- Old Optimizer, New Norm
+- Muon scaling and independent comparison sources
 - learning-rate schedules
 - gradient clipping
 - residual scaling

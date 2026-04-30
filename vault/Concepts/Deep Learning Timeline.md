@@ -40,6 +40,7 @@ The timeline is a navigation aid: it shows when the wiki's current anchor ideas 
 - 2024: [[2024 DeepSeekMoE]] introduces fine-grained expert segmentation and shared expert isolation for MoE specialization.
 - 2024: [[2024 DeepSeek-V2 Technical Report]] introduces MLA and DeepSeekMoE in an efficient sparse MoE language model.
 - 2024: [[2024 DeepSeek-V3 Technical Report]] combines sparse MoE scaling, MLA-based KV-cache reduction, and training-system co-design in a modern LLM.
+- 2024: [[2024 Muon Optimizer]] introduces Muon as an emerging optimizer for hidden-layer matrix parameters.
 
 ## Track links
 - Generative modeling: [[Generative Modeling Timeline]], [[Diffusion Models]], [[Diffusion Design Space]]
@@ -48,7 +49,7 @@ The timeline is a navigation aid: it shows when the wiki's current anchor ideas 
 - Sparse model scaling: [[Mixture of Experts]], [[DeepSeekMoE]], [[Expert Routing]]
 - LLM systems: [[LLM Training Systems]]
 - Representation learning: [[CLIP]], [[Contrastive Learning]]
-- Optimization and training: [[Gradient Descent]], [[Adam]], [[AdamW]], [[Weight Decay]], [[Normalization]], [[Layer Normalization]]
+- Optimization and training: [[Gradient Descent]], [[Adam]], [[AdamW]], [[Muon Optimizer]], [[Matrix-Aware Optimizers]], [[Weight Decay]], [[Normalization]], [[Layer Normalization]]
 
 ## Related concepts
 - [[Important Papers]]

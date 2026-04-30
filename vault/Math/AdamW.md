@@ -93,6 +93,8 @@ In Adam with L2 regularization, the regularization gradient enters Adam's adapti
 
 This separation makes the meaning of the weight decay coefficient cleaner: it controls shrinkage rather than a penalty gradient that is filtered through Adam's coordinatewise scaling.
 
+[[Muon Optimizer]] uses AdamW as a companion optimizer for parameter classes that are not suitable for Muon, such as embeddings, output heads, scalar/vector parameters, gains, and biases.
+
 ## Alternative formulations
 - SGDW applies the same decoupling idea to SGD with momentum. This note only keeps it as a brief comparison because the current focus is AdamW.
 - The source includes schedule multipliers and normalized weight decay, but those details are outside this ingest scope.
@@ -106,15 +108,17 @@ This separation makes the meaning of the weight decay coefficient cleaner: it co
 - [[Adam]]
 - [[Weight Decay]]
 - [[Gradient Descent]]
+- [[Muon Optimizer]]
 - [[Optimization and Training Stability]]
 
 ## Related papers
 - [[2014 Adam]]
 - [[2017 Decoupled Weight Decay Regularization]]
+- [[2024 Muon Optimizer]]
 
 ## Source references
 - [[2017 Decoupled Weight Decay Regularization]]
 
 ## Verification status
 - Status: partially verified
-- Needs verification: schedule-dependent normalized weight decay and later large-model usage are outside this note.
+- Needs verification: schedule-dependent normalized weight decay and later large-model usage are outside this note. Muon usage should be checked against Muon-specific sources.

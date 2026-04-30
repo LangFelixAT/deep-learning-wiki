@@ -75,6 +75,8 @@
 - [[Gradient Descent]]
 - [[Adam]]
 - [[AdamW]]
+- [[Muon Optimizer]]
+- [[Matrix-Aware Optimizers]]
 - [[Weight Decay]]
 - [[Normalization]]
 - [[RMSNorm]]
