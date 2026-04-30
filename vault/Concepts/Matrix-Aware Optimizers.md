@@ -24,10 +24,13 @@ Coordinatewise optimizers such as [[AdamW]] adapt each parameter coordinate sepa
 
 [[2024 Old Optimizer New Norm]] adds a norm-geometry view: Adam-like, Shampoo-like, and related optimizers can be compared by asking which norm defines their steepest descent direction.
 
+[[2025 Muon is Scalable for LLM Training]] adds a practical scaling lesson: matrix-aware updates may need parameter-shape-dependent scaling and a hybrid optimizer setup for non-matrix parameters.
+
 ## Related papers
 - [[2018 Shampoo]]
 - [[2024 Old Optimizer New Norm]]
 - [[2024 Muon Optimizer]]
+- [[2025 Muon is Scalable for LLM Training]]
 
 ## Related concepts
 - [[Muon Optimizer]]
@@ -37,12 +40,14 @@ Coordinatewise optimizers such as [[AdamW]] adapt each parameter coordinate sepa
 - [[Shampoo]]
 - [[Newton-Schulz Iteration]]
 - [[AdamW]]
+- [[Weight Decay]]
 - [[Optimization and Training Stability]]
 
 ## Open questions
-- Needs verification: how to organize Shampoo, Muon, SOAP, and other matrix-aware optimizers into a clean design space after more sources are ingested.
+- Needs verification: how to organize Shampoo, Muon, SOAP, update RMS scaling, and other matrix-aware optimizers into a clean design space after more sources are ingested.
 
 ## Source notes
 - [[2018 Shampoo]]
 - [[2024 Old Optimizer New Norm]]
 - [[2024 Muon Optimizer]]
+- [[2025 Muon is Scalable for LLM Training]]

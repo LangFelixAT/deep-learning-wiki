@@ -136,6 +136,7 @@
 - [[2024 DeepSeek-V3 Technical Report]] - DeepSeek-AI report mapping sparse MoE, MLA, multi-token prediction, and systems co-design in a modern LLM (type: paper, status: studied)
 - [[2024 Old Optimizer New Norm]] - Bernstein and Newhouse paper reframing Adam, Shampoo, and related optimizers as steepest descent under different norms (type: paper, status: studied)
 - [[2024 Muon Optimizer]] - Keller Jordan blog/repository source introducing Muon for hidden-layer matrix parameters (type: source, status: studied)
+- [[2025 Muon is Scalable for LLM Training]] - Moonshot AI technical report on scaling Muon to LLM pretraining with weight decay and update RMS adjustment (type: paper, status: studied)
 - [[Important Papers]] - catalog of anchor papers for the wiki (type: index, status: developing)
 - [[Important Videos]] - catalog of anchor lectures, talks, and videos (type: index, status: stub)
 - [[Open Questions]] - unresolved questions guiding future ingestion (type: concept, status: stub)

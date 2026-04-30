@@ -43,6 +43,7 @@ The timeline is a navigation aid: it shows when the wiki's current anchor ideas 
 - 2024: [[2024 DeepSeek-V3 Technical Report]] combines sparse MoE scaling, MLA-based KV-cache reduction, and training-system co-design in a modern LLM.
 - 2024: [[2024 Muon Optimizer]] introduces Muon as an emerging optimizer for hidden-layer matrix parameters.
 - 2024: [[2024 Old Optimizer New Norm]] reframes Adam, Shampoo, and related methods through steepest descent under different norms.
+- 2025: [[2025 Muon is Scalable for LLM Training]] reports large-scale LLM training experiments with a modified Muon optimizer.
 
 ## Track links
 - Generative modeling: [[Generative Modeling Timeline]], [[Diffusion Models]], [[Diffusion Design Space]]

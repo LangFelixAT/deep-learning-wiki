@@ -570,3 +570,11 @@ Format:
 - Pages updated: [[Preconditioning]], [[Shampoo]], [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[2024 Muon Optimizer]], [[Matrix-Aware Optimizers]], [[Optimization and Training Stability]], [[Notation Conventions]], docs/research_roadmap.md, [[Home]], [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
 - Key concepts: [[Steepest Descent]], [[Preconditioning]], [[Shampoo]], [[Muon Optimizer]], [[Matrix-Aware Optimizers]], [[Adam]], [[AdamW]]
 - Notes: Ingested Old Optimizer, New Norm with focus on optimizer update geometry, steepest descent under different norms, matrix-valued versus coordinatewise parameter views, Shampoo-like spectral update geometry, and conceptual bridges to Muon-like semi-orthogonal updates. Excluded proof details, long derivations, implementation details, benchmarks, unsupported LLM-scale claims, and any treatment of Muon as settled consensus.
+
+## [2026-04-30] ingest | Muon is Scalable for LLM Training
+
+- Source: data/raw/papers/muon_is_scalable_for_llm_training_moonshot_ai_2025.pdf
+- Pages created: [[2025 Muon is Scalable for LLM Training]]
+- Pages updated: [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[Matrix-Aware Optimizers]], [[Optimization and Training Stability]], [[LLM Training Systems]], [[Notation Conventions]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[AdamW]], [[Weight Decay]], [[Matrix-Aware Optimizers]], [[LLM Training Systems]]
+- Notes: Ingested the Moonshot AI Muon scaling report with focus on large-scale LLM training, Muon versus AdamW parameter groups, weight decay, update RMS scaling, scaling-law evidence, training-stability observations, and how the source strengthens or limits claims from [[2024 Muon Optimizer]]. Excluded full benchmark tables, implementation details, infrastructure details beyond optimizer-scaling constraints, unrelated architecture details, deep Newton-Schulz derivation, unsupported general superiority claims, and marketing/economic claims.

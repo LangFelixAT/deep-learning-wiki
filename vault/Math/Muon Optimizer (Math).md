@@ -15,6 +15,7 @@ Describe the high-level mathematical structure of Muon: momentum followed by app
 - `beta`: momentum coefficient.
 - `eta`: learning rate for the Muon update.
 - `lambda`: decoupled weight decay factor.
+- `A, B`: matrix dimensions for a parameter of shape `[A, B]`.
 - `Ortho(G)`: idealized semi-orthogonalized version of update matrix `G`.
 - `U S V^T`: singular value decomposition of `G`.
 
@@ -27,6 +28,7 @@ Describe the high-level mathematical structure of Muon: momentum followed by app
 ## Assumptions
 - Muon is applied to hidden matrix parameters, not all model parameters.
 - Embeddings, output heads, scalar/vector parameters, gains, and biases remain on an Adam-style optimizer according to the source guidance.
+- The Moonshot AI scaling report keeps non-matrix parameters on AdamW and adds weight decay plus update-scale adjustment for Muon.
 - Newton-Schulz details are treated at a high level here.
 - Empirical performance claims are source claims, not proof of general superiority.
 
@@ -76,7 +78,22 @@ U_t = Ortho(M_t)
 W_{t+1} = (1 - eta lambda) W_t - eta U_t
 ```
 
+- [[2025 Muon is Scalable for LLM Training]] uses a practical scaled update:
+
+```text
+W_t = W_{t-1} - eta_t (0.2 * O_t * sqrt(max(A, B)) + lambda W_{t-1})
+```
+
+The source motivates this with a theoretical update RMS of approximately:
+
+```text
+sqrt(1 / max(A, B))
+```
+
+for a full-rank matrix of shape `[A, B]`.
+
 - Skipped steps: the exact Newton-Schulz polynomial iteration, coefficient tuning, and convergence behavior are not fully derived here.
+- Skipped steps: the proof of the update RMS lemma from the Moonshot AI report is not expanded here.
 - Skipped steps: the relationship to Shampoo-style preconditioning is kept high-level; [[2018 Shampoo]] grounds Shampoo itself, but this note does not derive a formal equivalence between Shampoo and Muon.
 
 ## Interpretation
@@ -86,15 +103,19 @@ Muon replaces the raw or momentum-smoothed matrix update with a matrix whose sin
 
 In source terms, Muon is not a universal replacement for AdamW. It is a matrix-parameter optimizer that is paired with AdamW for parameter classes that are not suitable for Muon.
 
+The 2025 scaling report reinforces that practical Muon is a hybrid optimizer recipe, not just the bare orthogonalized update: weight decay and update RMS matching are treated as necessary scaling adjustments in that source.
+
 ## Alternative formulations
 - The source describes Nesterov-style momentum as the practical default.
 - The implementation supports convolution filters by flattening them into a matrix-like form.
+- The Moonshot AI report scales updates by matrix shape and matches update RMS to AdamW-like magnitudes.
 - The source relates Muon to [[Shampoo]] and orthogonalized-gradient methods, but exact relationships should be checked against each source before making stronger claims.
 
 ## Common mistakes
 - Treating Muon as an optimizer for all parameters.
 - Treating Muon as simply AdamW with different hyperparameters.
 - Treating empirical speedrun claims as settled broad optimizer superiority.
+- Treating the 2025 scaling report as evidence for unmodified Muon; the source modifies Muon with weight decay and update scaling.
 - Confusing approximate Newton-Schulz orthogonalization with exact SVD-based orthogonalization.
 
 ## Related concepts
@@ -112,11 +133,13 @@ In source terms, Muon is not a universal replacement for AdamW. It is a matrix-p
 - [[2018 Shampoo]]
 - [[2024 Old Optimizer New Norm]]
 - [[2024 Muon Optimizer]]
+- [[2025 Muon is Scalable for LLM Training]]
 
 ## Source references
 - [[2024 Muon Optimizer]]
 - [[2024 Old Optimizer New Norm]]
+- [[2025 Muon is Scalable for LLM Training]]
 
 ## Verification status
 - Status: partially verified
-- Needs verification: full Newton-Schulz derivation, exact Shampoo/Muon relationship, norm-geometry mapping, and large-scale empirical claims.
+- Needs verification: full Newton-Schulz derivation, exact Shampoo/Muon relationship, norm-geometry mapping, update RMS proof details, and independent large-scale empirical validation.

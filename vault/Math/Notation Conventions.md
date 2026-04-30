@@ -56,7 +56,7 @@ Collect canonical notation used across the wiki so related math and concept note
 - `beta_1`: Adam first moment exponential decay rate.
 - `beta_2`: Adam second raw moment exponential decay rate.
 - `epsilon`: small numerical constant used in optimizer denominators.
-- `lambda`: weight decay factor in [[AdamW]] and [[Weight Decay]] notes.
+- `lambda`: weight decay factor in [[AdamW]] and [[Weight Decay]] notes; sharpness parameter in [[Steepest Descent]] contexts.
 - `lambda'`: L2 regularization coefficient when distinguishing L2 penalties from decoupled weight decay.
 - `eta_t`: schedule multiplier used in [[2017 Decoupled Weight Decay Regularization]].
 - `W_t`: matrix-valued weight parameter in matrix-aware optimizer notes.
@@ -67,11 +67,12 @@ Collect canonical notation used across the wiki so related math and concept note
 - `M_t`: momentum buffer or generic adaptive preconditioner depending on optimizer context.
 - `Ortho(G)`: idealized orthogonalized update matrix in [[Muon Optimizer (Math)]].
 - `U S V^T`: singular value decomposition notation used in matrix-aware optimizer notes.
+- `A, B`: matrix dimensions used in [[Muon Optimizer (Math)]] update-scaling notes.
+- `update RMS`: root mean square magnitude of an optimizer update.
 - `delta`: vector update in [[Steepest Descent]] notes.
 - `Delta W`: matrix update in optimizer-geometry notes.
 - `||.||`: chosen update norm; source-specific.
 - `||.||_*`: dual norm.
-- `lambda`: sharpness parameter in [[Steepest Descent]] contexts; weight decay factor in [[AdamW]] contexts.
 
 ### Efficient LLM architecture
 - `KV cache`: stored keys and values reused during autoregressive decoding.
@@ -129,6 +130,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[2018 Shampoo]]
 - [[2024 Old Optimizer New Norm]]
 - [[2024 Muon Optimizer]]
+- [[2025 Muon is Scalable for LLM Training]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2021 Switch Transformers]]
 

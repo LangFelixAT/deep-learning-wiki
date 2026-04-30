@@ -104,7 +104,7 @@ Seed pages:
 
 Needed backbone:
 - optimization geometry for adaptive methods beyond the first steepest-descent anchor
-- Muon scaling and independent comparison sources
+- independent Muon comparison and replication sources
 - learning-rate schedules
 - gradient clipping
 - residual scaling

@@ -15,7 +15,7 @@ Optimization and stability determine whether large neural networks can be traine
 - Related math: [[Gradient Descent]], [[Steepest Descent]], [[Preconditioning]], [[Adam]], [[AdamW]], [[Weight Decay]], [[Shampoo]], [[Muon Optimizer (Math)]], [[Newton-Schulz Iteration]], [[Layer Normalization (Math)]], [[RMSNorm (Math)]], [[Notation Conventions]]
 
 ## Historical development
-Current grounded anchors include [[2014 Adam]], [[2017 Decoupled Weight Decay Regularization]], [[2018 Shampoo]], [[2024 Old Optimizer New Norm]], [[2016 Layer Normalization]], and [[2019 Root Mean Square Layer Normalization]].
+Current grounded anchors include [[2014 Adam]], [[2017 Decoupled Weight Decay Regularization]], [[2018 Shampoo]], [[2024 Old Optimizer New Norm]], [[2025 Muon is Scalable for LLM Training]], [[2016 Layer Normalization]], and [[2019 Root Mean Square Layer Normalization]].
 
 Adam grounds the adaptive-optimizer branch: it starts from stochastic gradient optimization, adds moving averages of first and second raw gradient moments, and uses bias correction for early timesteps.
 
@@ -27,12 +27,15 @@ Old Optimizer, New Norm grounds the optimizer-geometry branch: it frames optimiz
 
 Muon adds a later emerging matrix-aware branch: it applies momentum to hidden-layer matrix updates and then approximately orthogonalizes those updates with [[Newton-Schulz Iteration]]. This branch is less settled than AdamW and should remain marked as emerging until more sources are ingested.
 
+The Moonshot AI scaling report strengthens the empirical branch for Muon while also narrowing the practical claim: large-scale Muon in that source depends on weight decay, update RMS scaling, and AdamW for non-matrix parameters.
+
 ## Related papers
 - [[2014 Adam]]
 - [[2017 Decoupled Weight Decay Regularization]]
 - [[2018 Shampoo]]
 - [[2024 Old Optimizer New Norm]]
 - [[2024 Muon Optimizer]]
+- [[2025 Muon is Scalable for LLM Training]]
 - [[2016 Layer Normalization]]
 - [[2019 Root Mean Square Layer Normalization]]
 
@@ -47,9 +50,10 @@ Muon adds a later emerging matrix-aware branch: it applies momentum to hidden-la
 - [[Matrix-Aware Optimizers]]
 - [[Preconditioning]]
 - [[Steepest Descent]]
+- [[Weight Decay]]
 
 ## Open questions
-- Needs verification: large-scale Muon validation, matrix-aware optimizer comparisons, residual scaling, and initialization need source-grounded ingests.
+- Needs verification: independent large-scale Muon validation, matrix-aware optimizer comparisons, residual scaling, and initialization need source-grounded ingests.
 
 ## My understanding
 This page should become the map for why optimization choices and architecture scaffolding make deep networks trainable.
@@ -60,6 +64,7 @@ This page should become the map for why optimization choices and architecture sc
 - [[2018 Shampoo]]
 - [[2024 Old Optimizer New Norm]]
 - [[2024 Muon Optimizer]]
+- [[2025 Muon is Scalable for LLM Training]]
 - [[2016 Layer Normalization]]
 - [[2019 Root Mean Square Layer Normalization]]
 
@@ -70,3 +75,4 @@ This page should become the map for why optimization choices and architecture sc
 - 2026-04-30: Added Muon as an emerging matrix-aware optimizer anchor from blog/repository sources.
 - 2026-04-30: Added Shampoo as a source-grounded preconditioning and matrix-aware optimizer anchor.
 - 2026-04-30: Added Old Optimizer, New Norm as a source-grounded optimizer-geometry and steepest-descent anchor.
+- 2026-04-30: Added Muon scaling report as an empirical large-scale LLM training anchor.

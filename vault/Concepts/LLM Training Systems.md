@@ -21,8 +21,11 @@ Large-model capability is not only a model-architecture question. Training depen
 
 The same source reports that some components remain in higher precision for stability while compute-heavy linear operations use FP8.
 
+[[2025 Muon is Scalable for LLM Training]] adds optimizer choice as a training-system constraint: matrix-aware optimizers may require distributed update computation and parameter-group handling, even when the architecture is otherwise fixed.
+
 ## Related papers
 - [[2024 DeepSeek-V3 Technical Report]]
+- [[2025 Muon is Scalable for LLM Training]]
 
 ## Related concepts
 - [[Large Language Models]]
@@ -30,9 +33,11 @@ The same source reports that some components remain in higher precision for stab
 - [[Mixture of Experts]]
 - [[Expert Routing]]
 - [[KV Cache]]
+- [[Muon Optimizer]]
+- [[Optimization and Training Stability]]
 
 ## Open questions
-- Needs verification: separate notes are needed for FP8 training, pipeline parallelism, expert parallelism, and communication overlap.
+- Needs verification: separate notes are needed for FP8 training, pipeline parallelism, expert parallelism, communication overlap, and distributed optimizer state.
 - Needs verification: multi-token prediction should be separated from systems topics if it becomes a training-objective note.
 
 ## My understanding
@@ -40,5 +45,6 @@ Training systems are where model design choices become resource constraints. Spa
 
 ## Source notes
 - [[2024 DeepSeek-V3 Technical Report]]
+- [[2025 Muon is Scalable for LLM Training]]
 
 ## Revision notes
