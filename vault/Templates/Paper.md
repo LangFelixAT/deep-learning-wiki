@@ -28,7 +28,7 @@
 ## Method
 
 ## Important equations
-Use `$...$` for inline math and `$$...$$` for display equations. Use braces for grouped expressions and multi-character subscripts, e.g. `$x^{(t)}$`, `$\sqrt{d_k}$`, and `$c_{skip}$`. Prefer LaTeX forms such as `$\tilde{x}_t$`, `$\bar{a}_i$`, `$\frac{\alpha_i}{2}$`, `$\mathbb{E}$`, `$\operatorname{einsum}$`, `$\arg\max_i$`, and `$\|\delta\|^2$` over ASCII pseudo-LaTeX. Prefer `\frac{...}{...}` for mathematical fractions in equations. Use backticks only for literal code or pseudocode.
+Use `$...$` for inline math and `$$...$$` for display equations. Use braces for grouped expressions and multi-character subscripts, e.g. `$x^{(t)}$`, `$\sqrt{d_k}$`, and `$c_{skip}$`. Prefer LaTeX forms such as `$\tilde{x}_t$`, `$\bar{a}_i$`, `$\frac{\alpha_i}{2}$`, `$\mathbb{E}_{q}[\cdot]$`, `$\epsilon \sim \mathcal{N}(0,I)$`, `$D_{KL}(q \| p)$`, `$\operatorname{einsum}$`, `$\arg\max_i$`, and `$\|\delta\|^2$` over ASCII pseudo-LaTeX. Prefer `\frac{...}{...}` for mathematical fractions in equations. Avoid raw `*`, `||`, `<=`, `>=`, and `~` in equations. Use backticks only for literal code or pseudocode.
 
 ## Results
 

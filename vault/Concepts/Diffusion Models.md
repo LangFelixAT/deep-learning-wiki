@@ -50,7 +50,7 @@ DDIM can be interpreted as selecting a deterministic trajectory consistent with 
 [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] argues that many diffusion formulations are equivalent or closely related after reparameterization. This separates modeling choices, such as what denoiser is learned, from parameterization and sampler choices, such as how noise levels are traversed.
 
 ## Basic sampling idea
-Sampling starts from $x_T ~ \mathcal{N}(0, I)$ and repeatedly applies the learned reverse transition until reaching $x_0$.
+Sampling starts from $x_T \sim \mathcal{N}(0, I)$ and repeatedly applies the learned reverse transition until reaching $x_0$.
 
 DDIM changes this basic sampling story by allowing a shorter timestep trajectory and, when $\eta = 0$, a deterministic map from the initial $x_T$ to the final sample.
 

@@ -22,7 +22,7 @@ $$
 - The reverse generative process depends on the score of these forward marginals, $\nabla_x \log p_t(x)$.
 
 ## Assumptions
-- The process starts at $x(0) ~ p_0$, the data distribution.
+- The process starts at $x(0) \sim p_0$, the data distribution.
 - The final distribution $p_T$ is chosen to be tractable for sampling.
 - The paper assumes conditions under which the SDE has a unique strong solution. Needs verification: formal Lipschitz and regularity conditions are not expanded here.
 

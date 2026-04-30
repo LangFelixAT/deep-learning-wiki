@@ -84,7 +84,7 @@ $$
 
 
 $$
-W_t = W_{t-1} - \eta_t (0.2 * O_t * \sqrt{\max(A, B)} + \lambda W_{t-1})
+W_t = W_{t-1} - \eta_t \left(0.2\, O_t \sqrt{\max(A, B)} + \lambda W_{t-1}\right)
 $$
 
 The source motivates this with a theoretical update RMS of approximately:

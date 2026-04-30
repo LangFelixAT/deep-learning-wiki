@@ -44,7 +44,7 @@ $$
 pRMSNorm:
 
 $$
-RMS_p(a) = \sqrt{\frac{1}{k} \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
+\operatorname{RMS}_p(a) = \sqrt{\frac{1}{k} \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
 $$
 ## Derivation
 - Start with a vector of summed inputs $a = (a_1, ..., a_n)$.

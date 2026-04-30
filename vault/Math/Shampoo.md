@@ -76,7 +76,7 @@ $$
 
 
 $$
-W_{t+1} = W_t - \eta * \tilde{G}_t
+W_{t+1} = W_t - \eta \tilde{G}_t
 $$
 
 - Skipped steps: proof of the `1/4` exponent, convergence guarantees, and matrix trace inequalities from the source.

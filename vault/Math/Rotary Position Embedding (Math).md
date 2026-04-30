@@ -20,7 +20,7 @@ Define the rotary position embedding operation used in [[2021 RoFormer]].
 - RoPE applies position-dependent rotations to query and key vectors.
 - For even dimension $d$, coordinates are grouped into 2D pairs.
 - Each coordinate pair is rotated by an angle depending on position and frequency.
-- The paper uses frequencies $\theta_i = 10000^{-2(i-1)/d}$ for coordinate pair $i$.
+- The paper uses frequencies $\theta_i = 10000^{-\frac{2(i-1)}{d}}$ for coordinate pair $i$.
 
 ## Assumptions
 - The hidden dimension used for RoPE is even.

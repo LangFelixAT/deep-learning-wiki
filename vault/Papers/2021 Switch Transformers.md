@@ -70,7 +70,7 @@ i^* = \arg\max_i p_i(x)
 $$
 
 $$
-y = p_{i^*}(x) E_{i^*}(x)
+y = p_{i^*}(x) \operatorname{Expert}_{i^*}(x)
 $$
 
 Expert capacity:
@@ -82,7 +82,7 @@ $$
 Auxiliary load-balancing loss:
 
 $$
-loss = \alpha * N * \sum_i f_i * P_i
+\mathcal{L}_{aux} = \alpha N \sum_i f_i P_i
 $$
 
 where $f_i$ is the fraction of tokens dispatched to expert $i$, and $P_i$ is the fraction of router probability assigned to expert $i$ across the batch.

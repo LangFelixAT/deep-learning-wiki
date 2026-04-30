@@ -65,6 +65,9 @@ If the source contains an important derivation:
 - use braces for grouped superscripts and function arguments, for example `$x^{(t)}$` and `$\sqrt{d_k}$`
 - use braces for multi-character subscripts, for example `$c_{skip}$`, `$L_{LDM}$`, and `$D_{KL}$`
 - use proper LaTeX operators and delimiters, for example `$\arg\max_i$`, `$\arg\min_{\delta}$`, and `$\|\delta\|^2$`
+- use `$\mathbb{E}_{q}[\cdot]$` for expectations, `$\sim$` for distribution notation, and `$D_{KL}(q \| p)$` for KL arguments
+- prefer `\frac{...}{...}` for mathematical fractions in equations
+- avoid raw ASCII math operators in equations, such as `*`, `||`, `<=`, `>=`, and `~`; use MathJax equivalents
 - reserve backticks for literal code, filenames, commands, or pseudocode, not mathematical variables or formulas
 
 ## Step 5: Update concept notes

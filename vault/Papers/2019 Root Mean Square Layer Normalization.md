@@ -79,7 +79,7 @@ $$
 pRMSNorm estimates RMS from the first $p\%$ of summed inputs. If $p$ is written as a fraction, then:
 
 $$
-RMS_p(a) = \sqrt{\frac{1}{k} \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
+\operatorname{RMS}_p(a) = \sqrt{\frac{1}{k} \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
 $$
 ## Results
 - Claim from source: RMSNorm achieves comparable performance to LayerNorm across the paper's evaluated tasks while reducing running time.

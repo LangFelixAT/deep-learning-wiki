@@ -41,7 +41,7 @@ $$
 $$
 \mu_{\theta}(x_t,t) = \frac{1}{\sqrt{\alpha_t}}\left(x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha}_t}} \epsilon_{\theta}(x_t,t)\right)
 $$
-- Sampling starts with $x_T ~ \mathcal{N}(0,I)$.
+- Sampling starts with $x_T \sim \mathcal{N}(0,I)$.
 - For $t = T, ..., 1$, sample Gaussian noise $z$ and compute:
 
 $$

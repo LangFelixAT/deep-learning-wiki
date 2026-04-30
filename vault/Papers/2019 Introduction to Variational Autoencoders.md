@@ -77,17 +77,17 @@ $$
 ELBO decomposition:
 
 $$
-\log p_{\theta}(x) = L_{\theta,\phi}(x) + D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))
+\log p_{\theta}(x) = L_{\theta,\phi}(x) + D_{KL}(q_{\phi}(z|x) \| p_{\theta}(z|x))
 $$
 ELBO:
 
 $$
-L_{\theta,\phi}(x) = E_{q_{\phi}(z|x)}[\log p_{\theta}(x,z) - \log q_{\phi}(z|x)]
+L_{\theta,\phi}(x) = \mathbb{E}_{q_{\phi}(z|x)}[\log p_{\theta}(x,z) - \log q_{\phi}(z|x)]
 $$
 Lower-bound relation:
 
 $$
-L_{\theta,\phi}(x) <= \log p_{\theta}(x)
+L_{\theta,\phi}(x) \le \log p_{\theta}(x)
 $$
 Dataset ELBO:
 
@@ -98,7 +98,7 @@ $$
 - Claim from source: VAEs provide a computationally efficient way to optimize deep latent-variable models jointly with corresponding inference models using SGD.
 - Claim from source: the inference model $q_{\phi}(z|x)$ approximates the intractable posterior $p_{\theta}(z|x)$.
 - Claim from source: amortized inference avoids a per-datapoint optimization loop by sharing variational parameters across datapoints.
-- Claim from source: the KL divergence $D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))$ is the gap between the ELBO and the marginal log likelihood.
+- Claim from source: the KL divergence $D_{KL}(q_{\phi}(z|x) \| p_{\theta}(z|x))$ is the gap between the ELBO and the marginal log likelihood.
 - Claim from source: maximizing the ELBO approximately maximizes the marginal likelihood and minimizes the KL divergence from the approximate posterior to the true posterior.
 - Claim from source: in deep latent-variable models, the marginal likelihood and posterior are typically intractable.
 

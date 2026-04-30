@@ -11,7 +11,7 @@ Explain how VAEs estimate gradients of ELBO expectations when the expectation is
 - Source: [[2019 Introduction to Variational Autoencoders]], Sections 2.3-2.5.
 - The VAE ELBO contains an expectation over the inference model $q_{\phi}(z|x)$.
 - The stochastic gradient problem is harder for $\phi$ because $q_{\phi}(z|x)$ itself depends on $\phi$.
-- Reparameterization writes a random sample $z ~ q_{\phi}(z|x)$ as a deterministic differentiable function of parameter-free noise:
+- Reparameterization writes a random sample $z \sim q_{\phi}(z|x)$ as a deterministic differentiable function of parameter-free noise:
 
 $$
 z = g_\phi(\epsilon, x), \quad \epsilon \sim p(\epsilon)
@@ -19,7 +19,7 @@ $$
 - Factorized Gaussian example:
 
 $$
-\epsilon ~ \mathcal{N}(0, I)
+\epsilon \sim \mathcal{N}(0, I)
 $$
 
 $$
@@ -27,7 +27,7 @@ $$
 $$
 
 $$
-z = \mu + \sigma * \epsilon
+z = \mu + \sigma \epsilon
 $$
 
 ## Assumptions
@@ -42,20 +42,20 @@ $$
 - Start with the single-datapoint ELBO:
 
 $$
-L_{\theta,\phi}(x) = E_{q_{\phi}(z|x)}[\log p_{\theta}(x,z) - \log q_{\phi}(z|x)]
+L_{\theta,\phi}(x) = \mathbb{E}_{q_{\phi}(z|x)}[\log p_{\theta}(x,z) - \log q_{\phi}(z|x)]
 $$
 - Gradients with respect to $\theta$ are comparatively direct because $\theta$ appears inside the integrand.
 - Gradients with respect to $\phi$ are harder because the sampling distribution $q_{\phi}(z|x)$ depends on $\phi$.
-- Reparameterize samples from $q_{\phi}(z|x)$ as $z = g_\phi(\epsilon, x)$ with $\epsilon ~ p(\epsilon)$.
+- Reparameterize samples from $q_{\phi}(z|x)$ as $z = g_\phi(\epsilon, x)$ with $\epsilon \sim p(\epsilon)$.
 - Rewrite the expectation over $q_{\phi}(z|x)$ as an expectation over $p(\epsilon)$.
 
 $$
-E_{q_{\phi}(z|x)}[f(z)] = E_{p(\epsilon)}[f(g_\phi(\epsilon, x))]
+\mathbb{E}_{q_{\phi}(z|x)}[f(z)] = \mathbb{E}_{p(\epsilon)}[f(g_\phi(\epsilon, x))]
 $$
 - Form a Monte Carlo estimator:
 
 $$
-\epsilon ~ p(\epsilon)
+\epsilon \sim p(\epsilon)
 $$
 
 $$

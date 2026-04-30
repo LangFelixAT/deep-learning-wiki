@@ -29,7 +29,7 @@ $$
 - Start from the forward SDE that maps data to a prior.
 - Use the reverse-time SDE formula, which modifies the drift by a score-dependent term.
 - Replace the unknown score $\nabla_x \log p_t(x)$ with the learned score network $s_{\theta}(x,t)$.
-- Simulate the reverse-time SDE from $x(T) ~ p_T$ to produce $x(0)$.
+- Simulate the reverse-time SDE from $x(T) \sim p_T$ to produce $x(0)$.
 - Skipped steps: proof of the reverse-time SDE formula.
 
 ## Interpretation

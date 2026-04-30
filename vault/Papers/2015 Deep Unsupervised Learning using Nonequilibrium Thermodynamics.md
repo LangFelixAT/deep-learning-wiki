@@ -74,12 +74,12 @@ The paper evaluates this through the ratio of reverse and forward trajectory pro
 Training maximizes model log likelihood `L`, with a lower bound `K` derived using Jensen's inequality:
 
 $$
-L >= K
+L \ge K
 $$
 At a high level, the bound contains KL terms comparing the true forward-process posterior to the learned reverse transition:
 
 $$
-D_{KL}(q(x^{(t-1)}|x^{(t)},x^{(0)}) || p(x^{(t-1)}|x^{(t)}))
+D_{KL}(q(x^{(t-1)}|x^{(t)},x^{(0)}) \| p(x^{(t-1)}|x^{(t)}))
 $$
 In the paper's expanded form, this lower bound is a negative sum of such KL terms plus entropy terms from the forward process and terminal distribution. The exact expansion is not reproduced here.
 

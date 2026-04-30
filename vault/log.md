@@ -698,3 +698,35 @@ Format:
 - Pages updated: AGENTS.md, docs/lint_workflow.md, vault/Templates/Math.md, vault/Templates/Paper.md, [[Adam]], [[2014 Adam]], [[AdamW]], [[2017 Decoupled Weight Decay Regularization]], [[Layer Normalization (Math)]], [[2016 Layer Normalization]], [[RMSNorm]], [[RMSNorm (Math)]], [[2019 Root Mean Square Layer Normalization]], [[Scaled Dot-Product Attention]], [[2017 Attention Is All You Need]], [[Transformer Architecture]], [[Multi-Head Attention]], [[Multi-Head Latent Attention (Math)]], [[Diffusion Reverse Process]], [[2020 Denoising Diffusion Probabilistic Models]], [[DDIM Sampling]], [[2020 Denoising Diffusion Implicit Models]], [[Diffusion Parameterization]], [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]], [[Score Matching]], [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]], [[Bayesian Inference]], [[2019 Introduction to Variational Autoencoders]], [[Energy-Based Models]], [[Expert Routing]], [[2021 Switch Transformers]], [[Contrastive Learning]], [[2021 CLIP]], [[Diffusion ODE Solvers]], [[2022 DPM-Solver]], [[Probability Flow ODE]], [[2021 Score-Based Generative Modeling through SDEs]], [[2022 Scalable Diffusion Models with Transformers]], [[Muon Optimizer (Math)]], [[2025 Muon is Scalable for LLM Training]], [[Regularization]], [[Weight Decay]], [[Steepest Descent]], [[log]]
 - Key concepts: [[Notation Conventions]], [[Scaled Dot-Product Attention]], [[Adam]], [[Diffusion Models]], [[RMSNorm]]
 - Notes: Replaced obvious ASCII division in equations with MathJax-friendly `\frac{...}{...}` forms while leaving prose ratios and code-like notation unchanged. Added a fraction-formatting rule to guidance and templates.
+
+## [2026-05-01] lint | Math vault rendering check
+
+- Source: Math note rendering review
+- Pages created:
+- Pages updated: [[Adam]], [[DDIM Sampling]], [[Diffusion ELBO]], [[Diffusion Parameterization]], [[Diffusion Reverse Process]], [[ELBO]], [[Expert Routing]], [[Forward SDE]], [[Gradient Descent]], [[KL Divergence]], [[Muon Optimizer (Math)]], [[Notation Conventions]], [[RMSNorm (Math)]], [[Reparameterization Trick]], [[Reverse-Time SDE]], [[Rotary Position Embedding (Math)]], [[Shampoo]], [[Steepest Descent]], [[Variational Inference]], [[log]]
+- Key concepts: [[Notation Conventions]], [[ELBO]], [[KL Divergence]], [[Expert Routing]], [[Gradient Descent]]
+- Notes: Checked all notes in `vault/Math` for balanced MathJax delimiters/braces and common rendering hazards. Normalized remaining KL separators to `\|`, expectation notation to `\mathbb{E}`, distribution notation to `\sim`, diffusion bound notation to grouped time-index notation, raw multiplication `*` to proper juxtaposition or spacing, and expert-routing symbols to avoid ambiguous raw `E_i`/ASCII operator forms. The stricter scanner reports zero issues across all 39 math notes.
+
+## [2026-05-01] lint | Concept math rendering check
+
+- Source: Concept note rendering review
+- Pages created:
+- Pages updated: [[Amortized Variational Inference]], [[Diffusion Models]], [[Variational Autoencoders]], [[log]]
+- Key concepts: [[ELBO]], [[KL Divergence]], [[Diffusion Models]], [[Variational Autoencoders]]
+- Notes: Checked all notes in `vault/Concepts` for the same MathJax rendering hazards used on math notes. Normalized remaining KL separators to `\|`, expectation notation to `\mathbb{E}`, and diffusion sampling notation to `\sim`. The stricter scanner reports zero issues across all 47 concept notes.
+
+## [2026-05-01] lint | Paper math rendering check
+
+- Source: Paper note rendering review
+- Pages created:
+- Pages updated: [[2013 Auto-Encoding Variational Bayes]], [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], [[2019 Introduction to Variational Autoencoders]], [[2019 Root Mean Square Layer Normalization]], [[2020 Denoising Diffusion Probabilistic Models]], [[2021 Score-Based Generative Modeling through SDEs]], [[2021 Switch Transformers]], [[2025 Muon is Scalable for LLM Training]], [[log]]
+- Key concepts: [[ELBO]], [[KL Divergence]], [[Diffusion Models]], [[Score Matching]], [[Expert Routing]], [[Muon Optimizer]]
+- Notes: Checked all notes in `vault/Papers` for the same MathJax rendering hazards used on math and concept notes. Normalized remaining KL separators, expectation notation, distribution notation, raw inequalities, raw multiplication, RMS operator notation, DDPM norm notation, and expert-routing symbols. The stricter scanner reports zero issues across all 30 paper notes.
+
+## [2026-05-01] lint | Math notation guidance update
+
+- Source: Obsidian math rendering cleanup
+- Pages created:
+- Pages updated: AGENTS.md, docs/ingestion_workflow.md, docs/lint_workflow.md, prompts/ingest_paper.md, prompts/math_derivation_prompt.md, vault/Templates/Math.md, vault/Templates/Paper.md, [[log]]
+- Key concepts: [[Notation Conventions]]
+- Notes: Anchored the math-formatting rules discovered during the Obsidian cleanup in the main agent instructions, ingestion/lint workflows, reusable prompts, and templates. Future ingests should use MathJax notation for expectations, distributions, KL separators, inequalities, fractions, norms, grouped subscripts/superscripts, and avoid raw ASCII operators such as `*`, `||`, `<=`, `>=`, and `~` in equations.

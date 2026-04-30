@@ -14,8 +14,8 @@ Define steepest descent as an optimization step whose direction depends on the n
 - `delta`: proposed update vector.
 - `Delta W`: proposed matrix update.
 - $\lambda$: sharpness or quadratic-penalty scale in the local model.
-- $||.||$: chosen update norm.
-- $||.||_*$: dual norm.
+- $\|\cdot\|$: chosen update norm.
+- $\|\cdot\|_*$: dual norm.
 
 ## Definitions
 - Steepest descent: choose the update that minimizes a linearized loss plus a quadratic penalty on the update norm.

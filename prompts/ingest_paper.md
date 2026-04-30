@@ -77,6 +77,10 @@ For math notes:
 - mark skipped algebra explicitly
 - mark uncertain steps as `Needs verification`
 - use Obsidian/MathJax formatting: `$...$` for inline math and `$$...$$` for display equations
+- use braces for grouped superscripts and multi-character subscripts, for example `$x^{(t)}$`, `$\sqrt{d_k}$`, and `$c_{skip}$`
+- use `\frac{...}{...}` for mathematical fractions in equations
+- use `$\mathbb{E}_{q}[\cdot]$` for expectations, `$\sim$` for distribution notation, and `$D_{KL}(q \| p)$` for KL arguments
+- avoid raw ASCII math operators in equations, such as `*`, `||`, `<=`, `>=`, and `~`; use MathJax equivalents
 - avoid backticks around mathematical variables or formulas; reserve them for literal code, paths, commands, or pseudocode
 
 For concept notes:

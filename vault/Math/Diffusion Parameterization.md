@@ -17,7 +17,7 @@ $$
 x = y + n, \quad y \sim p_{\mathrm{data}}, \quad n \sim \mathcal{N}(0, \sigma^2 I)
 $$
 - A denoiser $D(x; \sigma)$ predicts the clean signal from a noisy input at noise level $\sigma$.
-- For Gaussian corruption $x = y + n$ with $n ~ \mathcal{N}(0, \sigma^2 I)$, the score and denoiser are related by:
+- For Gaussian corruption $x = y + n$ with $n \sim \mathcal{N}(0, \sigma^2 I)$, the score and denoiser are related by:
 
 $$
 \nabla_x \log p(x; \sigma) = \frac{D(x; \sigma) - x}{\sigma^2}

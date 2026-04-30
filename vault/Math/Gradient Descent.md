@@ -19,7 +19,7 @@ Describe iterative optimization using gradients.
 
 
 $$
-\theta_t = \theta_{t-1} - \alpha * g_t
+\theta_t = \theta_{t-1} - \alpha g_t
 $$
 
 ## Assumptions

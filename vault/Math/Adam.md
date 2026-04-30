@@ -51,7 +51,7 @@ $$
 
 
 $$
-\theta_t = \theta_{t-1} - \alpha * g_t
+\theta_t = \theta_{t-1} - \alpha g_t
 $$
 
 - Replace the raw gradient direction with a smoothed first moment estimate:

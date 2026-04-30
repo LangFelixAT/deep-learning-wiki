@@ -11,7 +11,7 @@ Approximate difficult posterior inference with an optimized distribution family.
 - Variational inference approximates an intractable posterior distribution with a tractable distribution family.
 - In [[2019 Introduction to Variational Autoencoders]], the true posterior is $p_{\theta}(z|x)$ and the approximate posterior, or inference model, is $q_{\phi}(z|x)$.
 - The variational parameters are $\phi$.
-- Central identity: $\log p_{\theta}(x) = ELBO(q_{\phi}) + D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))$.
+- Central identity: $\log p_{\theta}(x) = ELBO(q_{\phi}) + D_{KL}(q_{\phi}(z|x) \| p_{\theta}(z|x))$.
 - In VAEs, the inference model is amortized: one parameterized function $q_{\phi}(z|x)$ is shared across datapoints.
 
 ## Assumptions
@@ -23,7 +23,7 @@ Approximate difficult posterior inference with an optimized distribution family.
 
 ## Derivation
 - Introduce $q_{\phi}(z|x)$ to approximate $p_{\theta}(z|x)$.
-- Rewrite $\log p_{\theta}(x)$ as the sum of an ELBO and $D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))$.
+- Rewrite $\log p_{\theta}(x)$ as the sum of an ELBO and $D_{KL}(q_{\phi}(z|x) \| p_{\theta}(z|x))$.
 - Since KL divergence is non-negative, maximizing the ELBO maximizes a lower bound on $\log p_{\theta}(x)$.
 - In the VAE framing, optimize $\theta$ and $\phi$ jointly so the generative model and inference model improve together.
 - Skipped steps: full algebraic derivation of the ELBO identity; see [[ELBO]].

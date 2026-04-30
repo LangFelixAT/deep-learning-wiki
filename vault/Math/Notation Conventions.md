@@ -31,7 +31,7 @@ Collect canonical notation used across the wiki so related math and concept note
 - $x_t$: noisy data-space state at timestep $t$.
 - $x_T$: high-noise terminal state.
 - $z_t$: noisy latent-space state in latent diffusion notes.
-- $\epsilon$: Gaussian noise sample, usually $\epsilon ~ \mathcal{N}(0,I)$.
+- $\epsilon$: Gaussian noise sample, usually $\epsilon \sim \mathcal{N}(0,I)$.
 - $\epsilon_{\theta}(x_t,t)$: learned DDPM-style noise predictor unless a source defines different notation.
 - $s_{\theta}(x,t)$: learned score estimate, usually approximating $\nabla_x \log p_t(x)$.
 - $\sigma$ or $\sigma_t$: noise scale; exact meaning depends on parameterization.

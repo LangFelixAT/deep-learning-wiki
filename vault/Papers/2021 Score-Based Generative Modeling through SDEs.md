@@ -45,7 +45,7 @@ $$
 Continuous score matching objective:
 
 $$
-E_{t}[\lambda(t) E_{x(0)} E_{x(t)|x(0)} ||s_{\theta}(x(t),t) - \nabla_{x(t)} \log p_{0t}(x(t)|x(0))||_2^2]
+\mathbb{E}_{t}\left[\lambda(t)\mathbb{E}_{x(0)}\mathbb{E}_{x(t)|x(0)}\left\|s_{\theta}(x(t),t) - \nabla_{x(t)} \log p_{0t}(x(t)|x(0))\right\|_2^2\right]
 $$
 Probability flow ODE:
 

@@ -27,12 +27,12 @@ Describe the variational training objectives used to train diffusion probabilist
 - In DDPM notation, training optimizes a variational bound on negative log likelihood:
 
 $$
-L = E_{q}[-\log p_{\theta}(x_0:T) + \log q(x_1:T|x_0)]
+L = \mathbb{E}_{q}\left[-\log p_{\theta}(x_{0:T}) + \log q(x_{1:T}|x_0)\right]
 $$
 This satisfies:
 
 $$
-E[-\log p_{\theta}(x_0)] <= L
+\mathbb{E}[-\log p_{\theta}(x_0)] \le L
 $$
 - The bound can be rewritten into terms involving:
   - $L_T$: prior matching at the final noised state;
@@ -60,7 +60,7 @@ $$
 - DDPM then uses a simplified objective:
 
 $$
-L_{simple}(\theta) = E_{t,x_0,\epsilon}[||\epsilon - \epsilon_{\theta}(\sqrt{\bar{\alpha}_t}x_0 + \sqrt{1 - \bar{\alpha}_t}\epsilon,t)||^2]
+L_{simple}(\theta) = \mathbb{E}_{t,x_0,\epsilon}\left[\left\|\epsilon - \epsilon_{\theta}(\sqrt{\bar{\alpha}_t}x_0 + \sqrt{1 - \bar{\alpha}_t}\epsilon,t)\right\|^2\right]
 $$
 - Skipped steps: full algebraic expansion of Eq. (5) and the Gaussian KL calculations.
 

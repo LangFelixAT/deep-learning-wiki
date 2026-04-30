@@ -34,7 +34,7 @@ For a step from $t$ to $t-1$, DDIM sampling can be written as:
 $$
 x_{t-1} = \sqrt{\bar{\alpha}_{t-1}} \hat{x}_0 + \sqrt{1 - \bar{\alpha}_{t-1} - \sigma_t^2} \epsilon_{\theta}(x_t,t) + \sigma_t \epsilon
 $$
-where $\epsilon ~ \mathcal{N}(0,I)$ when stochastic noise is used.
+where $\epsilon \sim \mathcal{N}(0,I)$ when stochastic noise is used.
 
 For accelerated sampling, the same form is applied over a subsequence of timesteps rather than every $t = T, ..., 1$.
 

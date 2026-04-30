@@ -27,7 +27,7 @@ The central problem is that the model must learn reverse transitions that undo a
 - Use tractable Gaussian posteriors from the forward process to rewrite the bound into KL terms.
 - Parameterize the reverse-process mean by predicting the injected noise $\epsilon$.
 - This noise-prediction objective resembles denoising score matching over multiple noise levels.
-- Sampling starts from $x_T ~ \mathcal{N}(0, I)$ and repeatedly applies learned reverse transitions.
+- Sampling starts from $x_T \sim \mathcal{N}(0, I)$ and repeatedly applies learned reverse transitions.
 
 ## Important equations
 Reverse-process latent-variable model:
@@ -58,7 +58,7 @@ $$
 Variational bound on negative log likelihood:
 
 $$
-L = E_{q}[-\log p_{\theta}(x_{0:T}) + \log q(x_{1:T}|x_0)], \quad E[-\log p_{\theta}(x_0)] \le L
+L = \mathbb{E}_{q}\left[-\log p_{\theta}(x_{0:T}) + \log q(x_{1:T}|x_0)\right], \quad \mathbb{E}[-\log p_{\theta}(x_0)] \le L
 $$
 Forward-process posterior used in the rewritten bound:
 
@@ -73,7 +73,7 @@ $$
 Simplified training objective:
 
 $$
-L_{simple}(\theta) = E_{t,x_0,\epsilon}[||\epsilon - \epsilon_{\theta}(\sqrt{\bar{\alpha}_t}x_0 + \sqrt{1 - \bar{\alpha}_t}\epsilon, t)||^2]
+L_{simple}(\theta) = \mathbb{E}_{t,x_0,\epsilon}\left[\left\|\epsilon - \epsilon_{\theta}(\sqrt{\bar{\alpha}_t}x_0 + \sqrt{1 - \bar{\alpha}_t}\epsilon, t)\right\|^2\right]
 $$
 Basic sampling step:
 

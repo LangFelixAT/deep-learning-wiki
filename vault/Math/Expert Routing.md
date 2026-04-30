@@ -11,7 +11,7 @@ Define the routing mechanism used to assign token representations to experts in 
 ## Canonical notation
 - $x$: token representation
 - $N$: number of experts
-- $E_i(x)$: output of expert $i$ on token $x$
+- $\operatorname{Expert}_i(x)$: output of expert $i$ on token $x$
 - $W_r$: router weight matrix
 - $h(x)$: router logits
 - $p_i(x)$: router probability for expert $i$
@@ -46,7 +46,7 @@ Switch routing is top-1 MoE routing: each token activates one expert, enabling p
 For selected expert $i^* = \arg\max_i p_i(x)$, the Switch layer output for the token is:
 
 $$
-y = p_{i^*}(x) E_{i^*}(x)
+y = p_{i^*}(x) \operatorname{Expert}_{i^*}(x)
 $$
 
 ## Derivation
@@ -59,7 +59,7 @@ $$
 - Add a load-balancing loss during training:
 
 $$
-loss = \alpha * N * \sum_i f_i * P_i
+\mathcal{L}_{aux} = \alpha N \sum_i f_i P_i
 $$
 
 where $f_i$ is based on hard assignments and $P_i$ is based on router probability mass.

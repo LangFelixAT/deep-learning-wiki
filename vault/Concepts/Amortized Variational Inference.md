@@ -14,7 +14,7 @@ Variational inference introduces an approximate posterior $q_{\phi}(z|x)$ and ch
 
 ## Mathematical formulation
 - Related math: [[Variational Inference]], [[ELBO]], [[KL Divergence]]
-- Tutorial formulation: optimize $q_{\phi}(z|x)$ through the ELBO, using the identity $\log p_{\theta}(x) = L_{\theta,\phi}(x) + D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))$.
+- Tutorial formulation: optimize $q_{\phi}(z|x)$ through the ELBO, using the identity $\log p_{\theta}(x) = L_{\theta,\phi}(x) + D_{KL}(q_{\phi}(z|x) \| p_{\theta}(z|x))$.
 
 ## Generative model and inference model
 The generative model $p_{\theta}(x,z)$ describes how latent variables and observations are jointly distributed. The inference model $q_{\phi}(z|x)$ approximates the reverse inference direction from observation to latent variables.

@@ -34,6 +34,8 @@ Check:
 - Avoid ASCII pseudo-LaTeX inside equations. Prefer `$\tilde{x}_t$`, `$\frac{\alpha_i}{2}$`, `$\mathbb{E}$`, and `$\ell(\theta)$` over `tilde_x_t`, `alpha_i/2`, `E`, or `ell`.
 - Check operator names and norm delimiters: use `$\arg\max_i p_i(x)$`, `$\arg\min_{\delta}$`, and `$\|\delta\|^2$`, not `$\argmax_i$`, `arg min_delta`, or `||delta||^2`.
 - Check named accents and text-like operators: use `$\bar{a}_i$`, `$\operatorname{einsum}$`, `$\Theta(\cdot)$`, and `$\odot$`, not `bar_a_i`, plain `einsum`, `Th\eta`, or `odot`.
+- Check expectation, distribution, KL, and inequality notation: use `$\mathbb{E}_{q}[\cdot]$`, `$\epsilon \sim \mathcal{N}(0,I)$`, `$D_{KL}(q \| p)$`, `$\le$`, and `$\ge$`, not `E_q[...]`, `~`, `||`, `<=`, or `>=`.
+- Check multiplication notation in equations: avoid raw `*`; use juxtaposition, `\,`, `\cdot`, or an explicitly named operator when needed.
 - Keep filenames unique across the vault so links stay unambiguous.
 - If a planned concept is important enough to link, create a short stub rather than leaving a dangling link.
 - Do not create excessive links; link relationships that are meaningful for navigation or synthesis.

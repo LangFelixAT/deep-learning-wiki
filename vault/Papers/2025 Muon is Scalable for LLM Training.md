@@ -60,7 +60,7 @@ The scaled version adds weight decay and update RMS adjustment:
 
 
 $$
-W_t = W_{t-1} - \eta_t (0.2 * O_t * \sqrt{\max(A, B)} + \lambda W_{t-1})
+W_t = W_{t-1} - \eta_t \left(0.2\, O_t \sqrt{\max(A, B)} + \lambda W_{t-1}\right)
 $$
 
 where $[A, B]$ is the matrix shape.

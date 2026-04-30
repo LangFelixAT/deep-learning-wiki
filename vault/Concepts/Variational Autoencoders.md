@@ -16,9 +16,9 @@ The auto-encoder analogy comes from sampling a latent code from the encoder and 
 
 ## Mathematical formulation
 - Related math: [[ELBO]], [[KL Divergence]]
-- Source formulation: maximize an ELBO of the form $-D_{KL}(q_{\phi}(z|x) || p_{\theta}(z)) + E_{q}[\log p_{\theta}(x|z)]$.
+- Source formulation: maximize an ELBO of the form $-D_{KL}(q_{\phi}(z|x) \| p_{\theta}(z)) + \mathbb{E}_{q}[\log p_{\theta}(x|z)]$.
 - This objective is a lower bound on the marginal log likelihood $\log p_{\theta}(x)$.
-- General tutorial formulation: $L_{\theta,\phi}(x) = E_{q_{\phi}(z|x)}[\log p_{\theta}(x,z) - \log q_{\phi}(z|x)]$.
+- General tutorial formulation: $L_{\theta,\phi}(x) = \mathbb{E}_{q_{\phi}(z|x)}[\log p_{\theta}(x,z) - \log q_{\phi}(z|x)]$.
 
 ## Role of latent variables
 The latent variable `z` is unobserved and is interpreted in the paper as a code or latent representation. The learned encoder approximates the intractable posterior over this code for a given datapoint.
@@ -28,7 +28,7 @@ In the 2019 tutorial, latent variables make the marginal model $p_{\theta}(x)$ f
 ## Relation to ELBO
 VAEs in this paper are trained by optimizing the [[ELBO]] using the reparameterization trick. The ELBO supplies both the reconstruction-like likelihood term and the KL regularization term.
 
-The tutorial emphasizes the identity $\log p_{\theta}(x) = ELBO + D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))$: improving the ELBO both tightens the bound and improves the approximate posterior, within the chosen inference family.
+The tutorial emphasizes the identity $\log p_{\theta}(x) = ELBO + D_{KL}(q_{\phi}(z|x) \| p_{\theta}(z|x))$: improving the ELBO both tightens the bound and improves the approximate posterior, within the chosen inference family.
 
 ## Training with reparameterization
 In the 2019 tutorial, VAE training uses stochastic gradient optimization of the ELBO. The difficulty is that the ELBO expectation is over $q_{\phi}(z|x)$, which depends on the encoder parameters $\phi$.
