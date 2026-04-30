@@ -55,10 +55,10 @@ Use:
 
 - [[Diffusion Design Space]]
 - [[Efficient LLM Architecture]]
+- [[Transformer Architecture]]
 
 ## Candidate synthesis pages
 
-- [[Transformer Architecture]]
 - [[Optimization and Training Stability]]
 - [[Generative Modeling]]
 - [[LLM Inference Systems]]

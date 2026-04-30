@@ -506,3 +506,11 @@ Format:
 - Pages updated: docs/design_principles.md, AGENTS.md, [[log]]
 - Key concepts: [[Notation Conventions]], [[Efficient LLM Architecture]]
 - Notes: Anchored the operational workflow document structure and added a dedicated lint workflow covering Obsidian compliance, structure, links, notation, duplication, abstraction levels, safe fixes, and expected lint output.
+
+## [2026-04-30] manual | Expand Transformer Architecture synthesis
+
+- Source: accumulated transformer architecture notes
+- Pages created:
+- Pages updated: [[Transformer Architecture]], docs/synthesis_workflow.md, [[index]], [[log]]
+- Key concepts: [[Transformers]], [[Attention]], [[Multi-Head Attention]], [[Transformer Feed-Forward Networks]], [[Layer Normalization]], [[Residual Connections]], [[Rotary Position Embedding]], [[Efficient LLM Architecture]]
+- Notes: Expanded the transformer synthesis hub to connect attention, feed-forward layers, positional encodings, normalization, residual scaffolding, MoE, KV-cache-related variants, and systems-aware architecture choices without adding new source material.

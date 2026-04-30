@@ -57,7 +57,7 @@
 ## Transformers and sequence models
 
 - [[Efficient LLM Architecture]] - synthesis hub for attention efficiency, KV-cache reduction, sparse MoE capacity, and LLM systems constraints (type: concept, status: developing)
-- [[Transformer Architecture]] - synthesis stub for transformer internals and architecture variants (type: concept, status: stub)
+- [[Transformer Architecture]] - synthesis hub for transformer internals, including attention, feed-forward blocks, positional encodings, normalization, residuals, and efficient variants (type: concept, status: developing)
 - [[Transformers]] - attention-based neural architecture family (type: concept, status: developing)
 - [[Attention]] - query/key/value mechanism for weighting information by relevance (type: concept, status: developing)
 - [[Self-Attention]] - attention among elements of the same sequence or set (type: concept, status: developing)
