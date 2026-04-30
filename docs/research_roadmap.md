@@ -84,19 +84,19 @@ Needed backbone:
 
 ## Optimization and training
 
-Current status: mostly stubbed.
+Current status: early foundation.
 
 Seed pages:
 - [[Optimization and Training Stability]]
 - [[Gradient Descent]]
 - [[Adam]]
+- [[AdamW]]
 - [[Weight Decay]]
 - [[Normalization]]
 - [[RMSNorm]]
 - [[Scaling Laws]]
 
 Needed backbone:
-- AdamW
 - Muon optimizer
 - Shampoo-style matrix-aware optimizers
 - learning-rate schedules

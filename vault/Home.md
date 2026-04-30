@@ -74,6 +74,7 @@
 - [[Optimization and Training Stability]]
 - [[Gradient Descent]]
 - [[Adam]]
+- [[AdamW]]
 - [[Weight Decay]]
 - [[Normalization]]
 - [[RMSNorm]]

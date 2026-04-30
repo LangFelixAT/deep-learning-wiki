@@ -522,3 +522,11 @@ Format:
 - Pages updated: [[Normalization]], [[Layer Normalization]], [[Optimization and Training Stability]], [[Transformer Architecture]], [[Large Language Models]], [[Transformers]], [[Layer Normalization (Math)]], [[Notation Conventions]], [[Deep Learning Timeline]], [[Important Papers]], docs/research_roadmap.md, [[Home]], [[index]], [[log]]
 - Key concepts: [[RMSNorm]], [[RMSNorm (Math)]], [[Layer Normalization]], [[Normalization]], [[Optimization and Training Stability]]
 - Notes: Ingested RMSNorm with focus on simplifying LayerNorm, root-mean-square normalization without mean-centering, learned gain, relationship to LayerNorm, computational simplicity, sequence/transformer relevance, and later LLM relevance as a connection. Excluded detailed benchmarks, full RNN experiment details, modern LLM claims not in the paper, and optimizer discussion beyond training-stability context.
+
+## [2026-04-30] ingest | Adam
+
+- Source: data/raw/papers/adam_kingma_ba_2014.pdf
+- Pages created: [[2014 Adam]], [[AdamW]]
+- Pages updated: [[Adam]], [[Gradient Descent]], [[Weight Decay]], [[Optimization and Training Stability]], [[Notation Conventions]], docs/research_roadmap.md, [[Home]], [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Adam]], [[Gradient Descent]], [[Weight Decay]], [[AdamW]], [[Optimization and Training Stability]]
+- Notes: Ingested Adam with focus on stochastic gradient descent context, first and second moment estimates, bias correction, elementwise adaptive learning rates, the Adam update rule, and hyperparameter roles for `alpha`, `beta_1`, `beta_2`, and `epsilon`. Excluded convergence proof details, regret-bound derivation, extensive benchmark tables, AdaMax derivation, AdamW details, and modern optimizer claims not in the paper.

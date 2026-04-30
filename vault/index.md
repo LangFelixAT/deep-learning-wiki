@@ -82,9 +82,10 @@
 
 ## Optimization and training
 
-- [[Optimization and Training Stability]] - synthesis stub for optimization and training-stability mechanisms (type: concept, status: stub)
-- [[Gradient Descent]] - gradient-based iterative optimization (type: math, status: stub)
-- [[Adam]] - adaptive gradient optimizer (type: math, status: stub)
+- [[Optimization and Training Stability]] - synthesis page for optimization methods and training-stability mechanisms (type: concept, status: developing)
+- [[Gradient Descent]] - gradient-based iterative optimization and SGD baseline for Adam-style methods (type: math, status: developing)
+- [[Adam]] - adaptive stochastic optimizer using moment estimates and bias correction (type: math, status: partially verified)
+- [[AdamW]] - planned math note for decoupled weight decay in Adam-style optimization (type: math, status: stub)
 - [[Weight Decay]] - parameter decay and related regularization (type: math, status: stub)
 - [[Normalization]] - rescaling and standardization techniques used in neural networks (type: concept, status: developing)
 - [[Scaling Laws]] - relationships between performance and scale (type: concept, status: stub)
@@ -97,6 +98,7 @@
 ## Source collections
 
 - [[2013 Auto-Encoding Variational Bayes]] - Kingma and Welling paper introducing SGVB, AEVB, and the VAE example (type: paper, status: studied)
+- [[2014 Adam]] - Kingma and Ba paper introducing Adam for stochastic optimization with adaptive moment estimates (type: paper, status: studied)
 - [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] - Sohl-Dickstein et al. paper introducing diffusion probabilistic models as learned reversals of gradual noising processes (type: paper, status: studied)
 - [[2016 Layer Normalization]] - Ba, Kiros, and Hinton paper introducing layer normalization for neural networks and recurrent sequence models (type: paper, status: studied)
 - [[2017 Attention Is All You Need]] - Vaswani et al. paper introducing the Transformer architecture based on self-attention and multi-head attention (type: paper, status: studied)

@@ -15,6 +15,7 @@ The timeline is a navigation aid: it shows when the wiki's current anchor ideas 
 
 ## Timeline
 - 2013: [[2013 Auto-Encoding Variational Bayes]] introduces the VAE example and reparameterized stochastic variational training.
+- 2014: [[2014 Adam]] introduces Adam as an adaptive stochastic optimizer using first and second moment estimates with bias correction.
 - 2015: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] introduces diffusion probabilistic models as learned reversals of gradual noising processes.
 - 2016: [[2016 Layer Normalization]] introduces layer normalization as a normalization method suited to recurrent and sequence models.
 - 2017: [[2017 Attention Is All You Need]] introduces the Transformer architecture based on self-attention and multi-head attention.
@@ -46,7 +47,7 @@ The timeline is a navigation aid: it shows when the wiki's current anchor ideas 
 - Sparse model scaling: [[Mixture of Experts]], [[DeepSeekMoE]], [[Expert Routing]]
 - LLM systems: [[LLM Training Systems]]
 - Representation learning: [[CLIP]], [[Contrastive Learning]]
-- Optimization and training: [[Normalization]], [[Layer Normalization]]
+- Optimization and training: [[Gradient Descent]], [[Adam]], [[Normalization]], [[Layer Normalization]]
 
 ## Related concepts
 - [[Important Papers]]
@@ -54,4 +55,4 @@ The timeline is a navigation aid: it shows when the wiki's current anchor ideas 
 - [[Open Questions]]
 
 ## Open questions
-- Needs verification: add core CNN, ResNet, GAN, normalizing-flow, optimizer, decoder-only LLM, and later efficient-attention milestones as their anchor sources are ingested.
+- Needs verification: add core CNN, ResNet, GAN, normalizing-flow, AdamW, decoder-only LLM, and later efficient-attention milestones as their anchor sources are ingested.

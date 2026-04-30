@@ -15,6 +15,7 @@ This page answers which papers are acting as anchors for the current concept and
 
 ## Papers
 - [[2013 Auto-Encoding Variational Bayes]] - VAE and reparameterized stochastic variational training.
+- [[2014 Adam]] - adaptive moment estimation for stochastic optimization.
 - [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] - early diffusion probabilistic modeling.
 - [[2016 Layer Normalization]] - layer normalization for neural sequence models.
 - [[2017 Attention Is All You Need]] - Transformer architecture, self-attention, and multi-head attention.

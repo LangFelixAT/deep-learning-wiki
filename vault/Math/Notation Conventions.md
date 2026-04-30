@@ -45,6 +45,18 @@ Collect canonical notation used across the wiki so related math and concept note
 - `RMS(a)`: root mean square used by RMSNorm.
 - `g_i`: learned gain parameter.
 
+### Optimization
+- `theta_t`: parameter vector after timestep `t`.
+- `g_t`: stochastic gradient at timestep `t`.
+- `alpha`: learning rate or stepsize.
+- `m_t`: Adam first moment estimate.
+- `v_t`: Adam second raw moment estimate.
+- `hat_m_t`: bias-corrected Adam first moment estimate.
+- `hat_v_t`: bias-corrected Adam second raw moment estimate.
+- `beta_1`: Adam first moment exponential decay rate.
+- `beta_2`: Adam second raw moment exponential decay rate.
+- `epsilon`: small numerical constant used in optimizer denominators.
+
 ### Efficient LLM architecture
 - `KV cache`: stored keys and values reused during autoregressive decoding.
 - `n_h`: number of query heads in efficient-attention notes unless the source uses a different symbol.
@@ -66,6 +78,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - Treating `sigma` in EDM-style notes and `alpha_bar_t` in DDPM-style notes as directly interchangeable without a schedule mapping.
 - Assuming `epsilon_theta` and `s_theta` have the same sign and scaling across parameterizations.
 - Confusing number of query heads with number of key/value heads in MQA, GQA, and MLA notes.
+- Treating `v_t` in [[Adam]] as a centered variance rather than a second raw moment estimate.
 
 ## Related concepts
 - [[Variational Inference]]
@@ -74,6 +87,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[Diffusion Parameterization]]
 - [[Scaled Dot-Product Attention]]
 - [[RMSNorm (Math)]]
+- [[Adam]]
 - [[Multi-Head Latent Attention (Math)]]
 - [[Expert Routing]]
 
@@ -83,6 +97,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[2020 Denoising Diffusion Probabilistic Models]]
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
 - [[2017 Attention Is All You Need]]
+- [[2014 Adam]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2021 Switch Transformers]]
 
