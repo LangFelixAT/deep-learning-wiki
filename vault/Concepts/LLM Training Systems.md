@@ -12,7 +12,7 @@ LLM training systems are the infrastructure and numerical methods used to train 
 Large-model capability is not only a model-architecture question. Training depends on memory, communication, parallelism, numerical precision, and hardware utilization.
 
 ## Mathematical formulation
-- Related math:
+- Related math: [[Expert Routing]], [[AdamW]], [[Muon Optimizer (Math)]], [[Weight Decay]]
 - Needs verification: add formal notes for parallelism, precision, and communication cost after source-grounded ingests.
 - [[2024 DeepSeek-V3 Technical Report]] treats FP8 mixed precision, communication overlap, and MoE training constraints as part of the same efficiency problem.
 

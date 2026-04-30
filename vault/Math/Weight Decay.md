@@ -8,6 +8,13 @@
 ## Goal
 Define weight decay and distinguish it from related regularization ideas.
 
+## Canonical notation
+- `theta_t`: parameter vector at timestep `t`.
+- `alpha`: learning rate.
+- `lambda`: decoupled weight decay factor.
+- `lambda'`: L2 regularization coefficient.
+- `grad f_t(theta_t)`: stochastic loss gradient.
+
 ## Definitions
 - Weight decay is a training mechanism that penalizes or shrinks parameter magnitudes.
 - L2 regularization adds a penalty term to the loss, often written `(lambda' / 2) ||theta||_2^2`.

@@ -8,7 +8,7 @@
 Generative models trained through an adversarial objective.
 
 ## Intuition
-Needs development from source notes.
+Needs source-grounded development from a GAN anchor source.
 
 ## Mathematical formulation
 - Related math: [[Probability Theory]]
@@ -21,4 +21,4 @@ Needs verification from source notes.
 - [[Diffusion Models]]
 
 ## Open questions
-- Which source should anchor this page?
+- Needs verification: which GAN source should anchor this page?

@@ -7,6 +7,15 @@
 ## Goal
 Define objectives that learn score functions for probability models.
 
+## Canonical notation
+- `p(x)`: probability density over data or perturbed data.
+- `grad_x log p(x)`: score function.
+- `s_theta(x)`: learned score estimate.
+- `s_theta(x,t)`: time-dependent score estimate in diffusion/SDE notes.
+- `sigma`: Gaussian perturbation noise level.
+- `q_sigma(tilde_x|x)`: corruption distribution at noise level `sigma`.
+- `epsilon_theta(x_t,t)`: DDPM noise predictor; related to score estimation through parameterization-dependent scaling.
+
 ## Definitions
 - Source: [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]].
 - The score of a probability density `p(x)` is `grad_x log p(x)`.
@@ -85,3 +94,7 @@ Define objectives that learn score functions for probability models.
 - [[2020 Denoising Diffusion Probabilistic Models]]
 - [[2021 Score-Based Generative Modeling through SDEs]]
 - [[2022 Classifier-Free Diffusion Guidance]]
+
+## Verification status
+- Status: developing
+- Needs verification: DDPM score-equivalence weightings and SDE objective details should be checked before exact conversion formulas are added.

@@ -4,6 +4,8 @@ This document defines what a wiki lint pass means for this project.
 
 The lint pass keeps the wiki aligned with the LLM Wiki pattern: persistent, interlinked, Obsidian-compatible Markdown that accumulates structure instead of forcing the LLM to rediscover knowledge from raw sources each time.
 
+Lint passes should also check alignment with `docs/research_direction.md`, especially when recent frontier topics have been added.
+
 ## Purpose
 
 A lint pass should improve:
@@ -53,6 +55,7 @@ Synthesis pages should:
 - connect source notes, math notes, and concept notes
 - identify open gaps
 - avoid unsupported claims
+- connect recent frontier topics back to source-grounded foundations where possible
 
 Index and timeline pages may be lighter than normal concept pages, but they should still have metadata, purpose or short definition, orientation, and related links.
 
@@ -67,6 +70,7 @@ Check:
 - important concept/math notes not listed in `vault/index.md`
 - missing links from `vault/Home.md` for major hubs
 - missing roadmap entries for new research tracks
+- missing cross-track links where a topic connects architecture, math, systems, optimization, representation learning, or generative modeling
 
 Low-backlink pages are not automatically wrong. Stubs, templates, and future placeholders may be acceptable if they are intentional.
 

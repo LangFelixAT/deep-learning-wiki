@@ -9,6 +9,15 @@ Understand the evidence lower bound as a general variational inference objective
 
 See [[Notation Conventions]] for wiki-level notation for `p_theta(x,z)`, `p_theta(z|x)`, and `q_phi(z|x)`.
 
+## Canonical notation
+- `x`: observed datapoint.
+- `z`: latent variable.
+- `p_theta(x,z)`: generative joint distribution.
+- `p_theta(z|x)`: true posterior under the generative model.
+- `q_phi(z|x)`: approximate posterior or inference model.
+- `ELBO`: lower bound on `log p_theta(x)`.
+- `D_KL(q_phi(z|x) || p_theta(z|x))`: posterior-approximation gap between the ELBO and marginal log likelihood.
+
 ## Definitions
 - In general variational inference, the ELBO is an objective optimized over an approximate posterior family.
 - In [[2013 Auto-Encoding Variational Bayes]], the lower bound for one datapoint is written as `L(theta, phi; x^(i))`.
@@ -55,7 +64,9 @@ See [[Notation Conventions]] for wiki-level notation for `p_theta(x,z)`, `p_thet
 - In DDPMs, the variational bound is applied to a Markov chain of latent variables and can be rewritten into Gaussian KL terms; see [[Diffusion ELBO]].
 
 ## Common mistakes
-- Needs development.
+- Treating the ELBO as VAE-specific rather than a general variational objective.
+- Forgetting that ELBO tightness depends on the posterior KL term.
+- Mixing the VAE latent-variable ELBO with the diffusion Markov-chain ELBO without checking which latent variables are being bounded.
 
 ## Related concepts
 - [[KL Divergence]]
@@ -69,3 +80,4 @@ See [[Notation Conventions]] for wiki-level notation for `p_theta(x,z)`, `p_thet
 
 ## Verification status
 - Status: partially verified
+- Needs verification: full Gaussian closed-form KL and support conditions should be expanded in a focused derivation pass.

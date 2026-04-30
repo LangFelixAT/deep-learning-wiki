@@ -2,6 +2,8 @@
 
 This document describes how new knowledge enters the wiki.
 
+Before ingesting, check `docs/research_direction.md` and `docs/research_roadmap.md` so the source is placed into the right research track.
+
 ## Step 1: Identify the source
 
 Classify the source as one of:
@@ -15,6 +17,16 @@ Classify the source as one of:
 - personal note
 
 For paper ingestion, use `prompts/ingest_paper.md` as the reusable prompt pattern. The user can then provide only the PDF path, source title, and source-specific scope.
+
+For frontier or recent sources, identify the foundation they are meant to strengthen:
+- representation
+- objective
+- architecture
+- inference, decoding, or sampling
+- optimization and training stability
+- systems bottleneck
+
+Do not ingest a frontier source as an isolated trend note. Connect it to existing source notes, math notes, concept notes, and synthesis pages where grounded.
 
 ## Step 2: Create a source note
 
@@ -120,6 +132,9 @@ Record the relevant research track when useful:
 - LLM training and inference systems
 - optimization
 - representation learning
+- multimodality
+- energy-based modeling
+- world models and predictive representations
 - mathematical foundations
 
 The goal is to prevent the wiki from becoming a sequence of paper summaries. Each ingest should strengthen the persistent map of the field.

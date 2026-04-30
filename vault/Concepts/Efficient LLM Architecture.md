@@ -18,6 +18,7 @@ This page is a synthesis hub for the efficient-architecture track. It organizes 
 - KV-cache representation: [[KV Cache]], [[Multi-Query Attention]], [[Grouped-Query Attention]], [[Multi-Head Latent Attention]], [[Multi-Head Latent Attention (Math)]]
 - Sparse feed-forward capacity: [[Mixture of Experts]], [[DeepSeekMoE]], [[Expert Routing]]
 - Training and systems constraints: [[LLM Training Systems]], [[Large Language Models]]
+- Optimizer and training efficiency: [[Optimization and Training Stability]], [[Muon Optimizer]]
 - Transformer scaffolding: [[Transformers]], [[Transformer Feed-Forward Networks]], [[Layer Normalization]], [[Residual Connections]], [[Rotary Position Embedding]]
 
 ## Historical development
@@ -29,6 +30,7 @@ This page is a synthesis hub for the efficient-architecture track. It organizes 
 - [[2024 DeepSeekMoE]] refines MoE structure through fine-grained routed experts and shared expert isolation.
 - [[2024 DeepSeek-V2 Technical Report]] grounds [[Multi-Head Latent Attention]] as a KV-cache reduction mechanism.
 - [[2024 DeepSeek-V3 Technical Report]] combines MLA, DeepSeekMoE, load balancing, multi-token prediction, and systems co-design at large scale.
+- [[2025 Muon is Scalable for LLM Training]] shows that optimizer choice can become part of the large-model efficiency stack, especially for matrix-heavy transformer training.
 
 ## Current mental model
 Efficient LLM architecture is not one trick. It is a stack of design choices:
@@ -38,6 +40,7 @@ Efficient LLM architecture is not one trick. It is a stack of design choices:
 - [[Mixture of Experts]] and [[DeepSeekMoE]] increase parameter capacity while keeping activated parameters smaller than total parameters.
 - [[Expert Routing]] introduces a new optimization problem: experts must be selected, balanced, and kept useful.
 - [[LLM Training Systems]] connects these architectural choices to precision, communication, and distributed training constraints.
+- [[Muon Optimizer]] connects optimizer choice to the efficiency stack when matrix-heavy transformer training becomes the bottleneck.
 
 ## Related math
 - [[Scaled Dot-Product Attention]]
@@ -56,6 +59,7 @@ Efficient LLM architecture is not one trick. It is a stack of design choices:
 - [[2024 DeepSeekMoE]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
+- [[2025 Muon is Scalable for LLM Training]]
 
 ## Related concepts
 - [[Attention]]
@@ -68,6 +72,8 @@ Efficient LLM architecture is not one trick. It is a stack of design choices:
 - [[Mixture of Experts]]
 - [[DeepSeekMoE]]
 - [[Large Language Models]]
+- [[Optimization and Training Stability]]
+- [[Muon Optimizer]]
 
 ## Open questions
 - Needs verification: how [[Multi-Head Latent Attention]] compares empirically and mathematically to MQA and GQA outside the DeepSeek-V2 source.
@@ -87,6 +93,7 @@ The efficient-LLM track should be treated as a design-space map. Attention varia
 - [[2024 DeepSeekMoE]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
+- [[2025 Muon is Scalable for LLM Training]]
 
 ## Revision notes
 - 2026-04-29: Created as the first efficient-architecture synthesis hub.

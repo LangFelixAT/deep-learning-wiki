@@ -1,5 +1,12 @@
 # Index
 
+## Metadata
+- Type: index
+- Status: developing
+
+## Purpose
+Content-oriented catalog of important wiki pages, grouped by abstraction level and research track.
+
 ## Core pages
 
 - [[Home]] - entry point to the wiki (type: index)

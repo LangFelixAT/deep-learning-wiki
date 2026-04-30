@@ -29,6 +29,7 @@ Focus on forward diffusion, learned reverse process, tractability motivation, li
 Before editing, read:
 - `AGENTS.md`
 - `docs/ingestion_workflow.md`
+- `docs/research_direction.md`
 - `docs/research_roadmap.md`
 - the relevant templates in `vault/Templates/`
 - the existing related wiki pages found through `vault/index.md` and search
@@ -86,6 +87,17 @@ For concept notes:
 
 Respect the user's requested scope.
 
+For frontier or recent sources, first identify what foundation the paper strengthens:
+- representation
+- objective
+- architecture
+- inference, decoding, or sampling
+- optimization and training stability
+- systems bottleneck
+- multimodal or energy-based modeling connection
+
+Do not ingest recent topics as isolated trend notes. Connect them back to existing source notes, math notes, concept notes, and synthesis pages where the source supports the connection.
+
 If the paper contains advanced sections outside scope:
 - do not ingest them
 - optionally list them under follow-up reading or questions
@@ -104,6 +116,7 @@ Ask:
 - Does it clarify a mathematical foundation?
 - Does it reveal a missing prerequisite page?
 - Does it affect `docs/research_roadmap.md`?
+- Does it affect an active synthesis page such as `[[Transformer Architecture]]`, `[[Efficient LLM Architecture]]`, `[[Optimization and Training Stability]]`, or `[[Diffusion Design Space]]`?
 
 Apply only small synthesis edits unless the user requested a larger refactor.
 
@@ -142,4 +155,3 @@ List:
 - files modified
 - what changed in each
 - any claims or derivations marked `Needs verification`
-

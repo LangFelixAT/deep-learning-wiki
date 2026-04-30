@@ -4,6 +4,8 @@ This is a living map for the deep learning wiki. It is not a fixed syllabus.
 
 The goal is to build a connected mental model of modern deep learning research, grounded in source notes and strengthened through concept and math pages.
 
+See `docs/research_direction.md` for the durable direction behind this roadmap: foundations plus recent frontier developments, connected through source notes, math notes, and synthesis pages.
+
 ## Generative modeling
 
 Current status: developing.
@@ -56,6 +58,8 @@ Seed pages:
 Needed backbone:
 - sparse attention
 - XSA
+- attention residuals
+- gating residuals
 - later positional encoding and RoPE scaling variants
 - residual stream view
 - later normalization variants beyond [[RMSNorm]]
@@ -81,6 +85,7 @@ Needed backbone:
 - paged attention
 - long-context attention
 - inference-time batching
+- modern sparse or exclusive attention variants
 
 ## Optimization and training
 
@@ -129,6 +134,24 @@ Needed backbone:
 - modern MoE variants grounded in separate sources
 - expert specialization synthesis after more MoE sources
 
+## Representation learning and multimodality
+
+Current status: thin foundation.
+
+Seed pages:
+- [[CLIP]]
+- [[Contrastive Learning]]
+- [[Latent Diffusion Models]]
+- [[Classifier-Free Guidance]]
+
+Needed backbone:
+- multimodal representation learning
+- text-image conditioning mechanisms
+- modern multimodal generative systems
+- JEPA-style predictive representation learning
+- world models and latent dynamics
+- connection between representation learning, generative modeling, and energy-based thinking
+
 ## Mathematical foundations
 
 Current status: uneven.
@@ -149,6 +172,8 @@ Needed backbone:
 - information theory basics
 - optimization geometry
 - numerical stability
+- energy functions and unnormalized models
+- latent-variable and representation-learning objectives
 
 ## Operating principles
 

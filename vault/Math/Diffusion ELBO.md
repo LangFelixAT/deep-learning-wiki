@@ -7,6 +7,17 @@
 ## Goal
 Describe the variational training objectives used to train diffusion probabilistic models.
 
+## Canonical notation
+- `x_0`: clean data sample.
+- `x_t`: noisy sample at timestep `t`.
+- `x_T`: high-noise terminal state.
+- `q(x_t|x_{t-1})`: fixed forward noising transition.
+- `q(x_{t-1}|x_t,x_0)`: tractable forward posterior used in DDPM derivations.
+- `p_theta(x_{t-1}|x_t)`: learned reverse transition.
+- `epsilon`: Gaussian noise sample.
+- `epsilon_theta(x_t,t)`: learned DDPM-style noise predictor.
+- `alpha_bar_t`: cumulative DDPM noise-schedule product.
+
 ## Definitions
 - Sources: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], [[2020 Denoising Diffusion Probabilistic Models]].
 - DDPMs are latent-variable models with latents `x_1:T`.

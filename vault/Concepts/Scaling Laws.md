@@ -8,7 +8,7 @@
 Empirical or theoretical relationships between model performance and scale.
 
 ## Intuition
-Needs development from source notes.
+Needs source-grounded development from a scaling-law anchor source.
 
 ## Mathematical formulation
 - Needs source-backed formulation.
@@ -21,4 +21,4 @@ Needs verification from source notes.
 - [[Transformers]]
 
 ## Open questions
-- Which source should anchor this page?
+- Needs verification: which scaling-law source should anchor this page?

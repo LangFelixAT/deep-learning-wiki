@@ -33,6 +33,8 @@ Text embeddings from CLIP-like models can act as conditioning inputs for generat
 
 These embeddings are typically provided as additional inputs to the denoising network, for example through cross-attention or conditioning channels.
 
+This makes CLIP part of the bridge between representation learning and multimodal generation, but later systems may use different text encoders or multimodal embedding models.
+
 ## Historical development
 [[2021 CLIP]] introduced contrastive image-text pretraining as a way to learn transferable visual representations from natural language supervision.
 
@@ -45,7 +47,9 @@ These embeddings are typically provided as additional inputs to the denoising ne
 - [[Latent Diffusion Models]]
 - [[Diffusion Models]]
 - [[Classifier-Free Guidance]]
+- [[Generative Modeling]]
 
 ## Open questions
 - Needs verification: how CLIP-style embeddings differ from other text embeddings when used for diffusion conditioning.
 - Needs verification: which later generative systems use CLIP directly versus CLIP-like or transformer text embeddings.
+- Needs verification: broader multimodal representation learning should be grounded by sources beyond CLIP.

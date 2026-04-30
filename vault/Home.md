@@ -1,5 +1,12 @@
 # Deep Learning Wiki
 
+## Metadata
+- Type: index
+- Status: developing
+
+## Purpose
+Entry point for navigating the main research tracks, synthesis hubs, and source collections in the wiki.
+
 ## Main areas
 
 ### Active maps
@@ -7,7 +14,9 @@
 - [[Generative Modeling Timeline]]
 - [[Generative Modeling]]
 - [[Diffusion Design Space]]
+- [[Transformer Architecture]]
 - [[Efficient LLM Architecture]]
+- [[Optimization and Training Stability]]
 - [[Open Questions]]
 
 ### Mathematical foundations

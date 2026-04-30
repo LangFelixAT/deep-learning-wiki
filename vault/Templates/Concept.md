@@ -20,11 +20,11 @@
 ## Related concepts
 - [[]]
 
+## Source notes
+- [[]]
+
 ## Open questions
 
 ## My understanding
-
-## Source notes
-- [[]]
 
 ## Revision notes

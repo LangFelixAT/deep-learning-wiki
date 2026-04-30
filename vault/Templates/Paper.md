@@ -13,6 +13,10 @@
 
 ## One-sentence summary
 
+## Scope of this note
+
+## Excluded topics
+
 ## Why this paper matters
 
 ## Problem
@@ -38,8 +42,13 @@
 ## Connections to concepts
 - [[]]
 
+## Connections to math
+- [[]]
+
 ## Connections to papers
 - [[]]
+
+## Synthesis / roadmap effects
 
 ## Questions
 

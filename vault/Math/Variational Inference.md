@@ -36,7 +36,10 @@ Approximate difficult posterior inference with an optimized distribution family.
 - Amortized variational inference uses a learned inference model to avoid separate per-datapoint optimization.
 
 ## Common mistakes
-- Needs development.
+- Treating the approximate posterior `q_phi(z|x)` as the true posterior.
+- Forgetting that the variational family limits how close the approximation can get.
+- Confusing inference optimization over `q_phi` with learning only the generative parameters `theta`.
+- Ignoring support assumptions when using the KL identity.
 
 ## Related concepts
 - [[ELBO]]

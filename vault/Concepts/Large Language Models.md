@@ -21,6 +21,7 @@ Large language models often generate text autoregressively, one token at a time.
 - [[Multi-Head Latent Attention]] reduces KV-cache cost by caching compressed latent attention state.
 - [[RMSNorm]] is relevant as a later normalization choice in modern LLM architectures, but specific adoption claims should be grounded in model papers.
 - [[LLM Training Systems]] covers the parallelism, precision, and communication constraints that make large-scale training feasible.
+- [[Optimization and Training Stability]] covers the optimizer, normalization, residual, and training-stability mechanisms that shape how large models are trained.
 
 ## Historical development
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] is an early source connecting Transformer attention architecture to incremental decoding speed through key/value memory bandwidth.
@@ -41,6 +42,8 @@ Large language models often generate text autoregressively, one token at a time.
 
 After the DeepSeek-V2 and DeepSeekMoE ingests, [[2024 DeepSeek-V3 Technical Report]] is best treated as a hub for combining inherited efficient-attention and MoE mechanisms with V3-specific training and balancing choices.
 
+[[2025 Muon is Scalable for LLM Training]] connects optimizer choice to large-scale LLM training by studying Muon for matrix parameters alongside AdamW for other parameter groups.
+
 ## Related concepts
 - [[Transformers]]
 - [[Efficient LLM Architecture]]
@@ -56,6 +59,8 @@ After the DeepSeek-V2 and DeepSeekMoE ingests, [[2024 DeepSeek-V3 Technical Repo
 - [[Multi-Head Latent Attention]]
 - [[RMSNorm]]
 - [[LLM Training Systems]]
+- [[Optimization and Training Stability]]
+- [[Matrix-Aware Optimizers]]
 - [[Scaling Laws]]
 
 ## Related papers
@@ -67,7 +72,9 @@ After the DeepSeek-V2 and DeepSeekMoE ingests, [[2024 DeepSeek-V3 Technical Repo
 - [[2024 DeepSeekMoE]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2024 DeepSeek-V3 Technical Report]]
+- [[2025 Muon is Scalable for LLM Training]]
 
 ## Open questions
 - Which source should anchor decoder-only LLM architecture?
 - Which source should anchor prefill/decode behavior in modern LLM serving?
+- Needs verification: how optimizer choice interacts with model architecture at scale should be grounded in more independent sources.

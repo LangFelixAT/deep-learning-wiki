@@ -24,11 +24,14 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 
 [[2022 FlashAttention]] keeps attention mathematically exact but changes the computation schedule to reduce memory IO.
 
+[[2024 DeepSeek-V2 Technical Report]] introduces [[Multi-Head Latent Attention]] as a later KV-cache compression approach that changes the representation of cached attention state.
+
 ## Related papers
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
+- [[2024 DeepSeek-V2 Technical Report]]
 
 ## Related concepts
 - [[Transformers]]
@@ -37,6 +40,7 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 - [[Multi-Head Attention]]
 - [[Grouped-Query Attention]]
 - [[Multi-Query Attention]]
+- [[Multi-Head Latent Attention]]
 - [[KV Cache]]
 - [[FlashAttention]]
 - [[Scaled Dot-Product Attention]]
@@ -44,9 +48,11 @@ Attention maps a query and a set of key-value pairs to an output. The output is 
 
 ## Open questions
 - Needs verification: add earlier attention sources to distinguish pre-transformer attention from transformer self-attention.
+- Needs verification: add source-grounded notes for XSA, sparse attention, attention residuals, and other recent attention variants before expanding this page.
 
 ## Source notes
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
+- [[2024 DeepSeek-V2 Technical Report]]

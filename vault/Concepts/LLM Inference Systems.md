@@ -41,6 +41,10 @@ This page should stay separate from [[Efficient LLM Architecture]] if serving sy
 
 ## Source notes
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
+- [[2022 FlashAttention]]
+- [[2023 GQA]]
+- [[2024 DeepSeek-V2 Technical Report]]
+- [[2024 DeepSeek-V3 Technical Report]]
 
 ## Revision notes
 - 2026-04-29: Created as a stub synthesis page.

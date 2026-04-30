@@ -10,7 +10,9 @@ The goal is not to create isolated summaries. The goal is to compile knowledge i
 - `docs/ingestion_workflow.md`: how new sources enter the wiki.
 - `docs/synthesis_workflow.md`: how accumulated notes become higher-level maps.
 - `docs/lint_workflow.md`: how the wiki is checked for structure, links, notation, duplication, and abstraction-level drift.
+- `docs/research_direction.md`: durable direction of the user's research interests and how frontier topics connect back to foundations.
 - `docs/research_roadmap.md`: current research tracks and future study direction.
+- `docs/project_plan.md`: near-term execution priorities and operating reminders.
 
 ## Core principles
 
@@ -21,3 +23,4 @@ The goal is not to create isolated summaries. The goal is to compile knowledge i
 - Concepts, math notes, source notes, and synthesis pages have different jobs.
 - Weak or uncertain claims should be marked `Needs verification`.
 - Lint passes should improve structure and connectivity without inventing new source material.
+- Recent frontier topics are in scope, but they should be connected back to source-grounded foundations, math notes, and synthesis pages.

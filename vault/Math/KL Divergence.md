@@ -7,6 +7,14 @@
 ## Goal
 Measure difference between probability distributions.
 
+## Canonical notation
+- `D_KL(q || p)`: KL divergence from distribution `q` to distribution `p`.
+- `q(z)`: reference distribution inside the expectation.
+- `p(z)`: comparison distribution.
+- `q_phi(z|x)`: approximate posterior in variational inference notes.
+- `p_theta(z|x)`: true posterior in variational inference notes.
+- `p_theta(z)`: latent prior in VAE notes.
+
 ## Definitions
 - In [[2013 Auto-Encoding Variational Bayes]], `D_KL(q_phi(z|x) || p_theta(z|x))` measures the divergence between the approximate posterior and the true posterior.
 - The ELBO decomposition relies on KL non-negativity.
@@ -34,7 +42,10 @@ Measure difference between probability distributions.
 - In the ELBO identity, a smaller posterior KL means a tighter lower bound on the marginal log likelihood.
 
 ## Common mistakes
-- Needs development.
+- Treating KL divergence as symmetric.
+- Forgetting that `D_KL(q || p)` takes expectation under `q`.
+- Ignoring support mismatch; if `q` puts mass where `p` has zero density, the KL may be infinite.
+- Confusing the posterior KL `D_KL(q_phi(z|x) || p_theta(z|x))` with the VAE prior KL `D_KL(q_phi(z|x) || p_theta(z))`.
 
 ## Related concepts
 - [[ELBO]]
@@ -45,3 +56,4 @@ Measure difference between probability distributions.
 
 ## Verification status
 - Status: partially verified
+- Needs verification: full Gaussian KL derivation and support assumptions should be expanded later.

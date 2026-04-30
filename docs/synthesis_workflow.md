@@ -13,6 +13,8 @@ They organize already-ingested knowledge into a mental model:
 - which papers grounded the current understanding
 - which gaps still need source-grounded work
 
+Synthesis pages should also keep the wiki aligned with `docs/research_direction.md`: recent frontier topics are useful only when they are connected back to foundations, math, source notes, and historical development.
+
 ## When to create or update a synthesis page
 
 Create or update a synthesis page after:
@@ -32,6 +34,8 @@ Create or update a synthesis page after:
 - anchor papers
 - open gaps
 - current mental model
+- how recent variants connect to older foundations
+- what should not be generalized yet
 
 ## What synthesis pages should avoid
 
@@ -56,9 +60,14 @@ Use:
 - [[Diffusion Design Space]]
 - [[Efficient LLM Architecture]]
 - [[Transformer Architecture]]
+- [[Optimization and Training Stability]]
 
 ## Candidate synthesis pages
 
-- [[Optimization and Training Stability]]
 - [[Generative Modeling]]
 - [[LLM Inference Systems]]
+- Representation Learning and World Models
+- Multimodal Generative Models
+- Attention and KV Cache Design Space
+- Optimizer Geometry
+- Energy-Based Modeling

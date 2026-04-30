@@ -12,7 +12,7 @@ Residual connections add a sublayer's input back to its output.
 Residual connections provide a direct path for information and gradients across layers.
 
 ## Mathematical formulation
-- Related math:
+- Related math: [[Layer Normalization (Math)]], [[RMSNorm (Math)]]
 - In [[2017 Attention Is All You Need]], each sublayer is wrapped as:
 
 `LayerNorm(x + Sublayer(x))`.
@@ -25,10 +25,14 @@ The Transformer paper uses residual connections around attention and feed-forwar
 
 ## Related concepts
 - [[Transformers]]
+- [[Transformer Architecture]]
 - [[Layer Normalization]]
+- [[RMSNorm]]
+- [[Optimization and Training Stability]]
 
 ## Open questions
 - Needs verification: residual connections should be grounded later in the original ResNet paper or a transformer-specific residual-stream source.
+- Needs verification: attention residuals, gating residuals, and residual-stream views should be added only after source-grounded ingests.
 
 ## My understanding
 For now, this page only records the role residual connections play in the Transformer block.

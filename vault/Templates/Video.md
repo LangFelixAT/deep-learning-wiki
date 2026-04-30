@@ -12,12 +12,19 @@
 
 ## Summary
 
+## Scope of this note
+
+## Excluded topics
+
 ## Key ideas
 
 ## Concepts mentioned
 - [[]]
 
 ## Equations / derivations mentioned
+
+## Connections to math
+- [[]]
 
 ## Claim from source
 
@@ -26,5 +33,7 @@
 ## Unclear / Needs verification
 
 ## My understanding
+
+## Synthesis / roadmap effects
 
 ## Follow-up reading

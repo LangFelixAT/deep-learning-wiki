@@ -578,3 +578,67 @@ Format:
 - Pages updated: [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[Matrix-Aware Optimizers]], [[Optimization and Training Stability]], [[LLM Training Systems]], [[Notation Conventions]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
 - Key concepts: [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[AdamW]], [[Weight Decay]], [[Matrix-Aware Optimizers]], [[LLM Training Systems]]
 - Notes: Ingested the Moonshot AI Muon scaling report with focus on large-scale LLM training, Muon versus AdamW parameter groups, weight decay, update RMS scaling, scaling-law evidence, training-stability observations, and how the source strengthens or limits claims from [[2024 Muon Optimizer]]. Excluded full benchmark tables, implementation details, infrastructure details beyond optimizer-scaling constraints, unrelated architecture details, deep Newton-Schulz derivation, unsupported general superiority claims, and marketing/economic claims.
+
+## [2026-04-30] lint | Comprehensive wiki structure check
+
+- Source: current vault and docs
+- Pages created:
+- Pages updated: [[Home]], [[index]], docs/synthesis_workflow.md, [[Efficient LLM Architecture]], [[Generative Modeling]], [[log]]
+- Key concepts: [[Transformer Architecture]], [[Optimization and Training Stability]], [[Efficient LLM Architecture]], [[Generative Modeling]], [[Muon Optimizer]]
+- Notes: Ran a comprehensive lint/refinement pass for Obsidian links, unresolved links, duplicate note names, statuses, section consistency, navigation, synthesis hubs, and the active math spine. Applied small safe fixes: added metadata/purpose to Home and index, promoted active synthesis hubs in navigation/workflow docs, linked Muon scaling into the efficient-LLM map, completed source-note backlinks on the generative-modeling synthesis page, and added canonical notation/common-mistake clarifications to high-traffic math pages. Deferred full math-template normalization for all older notes because that should remain a separate focused pass.
+
+## [2026-04-30] manual | Research direction documentation
+
+- Source: user research direction discussion
+- Pages created: docs/research_direction.md
+- Pages updated: [[log]], AGENTS.md, docs/design_principles.md, docs/research_roadmap.md, docs/synthesis_workflow.md, docs/lint_workflow.md
+- Key concepts: [[Transformer Architecture]], [[Efficient LLM Architecture]], [[Optimization and Training Stability]], [[Generative Modeling]], [[CLIP]], [[Energy-Based Models]]
+- Notes: Added a durable research-direction document to keep future work aligned with the user's broad deep learning research journey: foundations plus recent frontier developments in transformer architecture, efficient attention, residual and gating mechanisms, multimodal generation, energy-based models, JEPA/world-model directions, and optimizer geometry. Updated workflow docs lightly so future ingests, lint passes, and synthesis pages connect frontier topics back to source-grounded math and concepts.
+
+## [2026-04-30] manual | Operating docs refinement
+
+- Source: scoped documentation review
+- Pages created:
+- Pages updated: AGENTS.md, docs/design_principles.md, docs/ingestion_workflow.md, docs/project_plan.md, [[log]]
+- Key concepts: [[Transformer Architecture]], [[Efficient LLM Architecture]], [[Optimization and Training Stability]], [[Energy-Based Models]], [[CLIP]]
+- Notes: Refined guidance documents after reviewing the current project direction. Added a concrete project plan for near-term priorities and updated ingestion guidance so recent frontier topics are always tied back to foundations, math, architecture, optimization, representation learning, or systems bottlenecks rather than becoming isolated trend summaries.
+
+## [2026-04-30] manual | Prompt guidance refinement
+
+- Source: scoped prompt review
+- Pages created:
+- Pages updated: prompts/ingest_paper.md, prompts/arxiv_triage_prompt.md, prompts/paper_summary_prompt.md, prompts/math_derivation_prompt.md, [[log]]
+- Key concepts: [[Transformer Architecture]], [[Efficient LLM Architecture]], [[Optimization and Training Stability]], [[Notation Conventions]]
+- Notes: Updated reusable prompts to reflect the current operating model. Added frontier-topic grounding guidance to the paper-ingest prompt and populated the previously empty triage, paper-summary, and math-derivation prompts with conservative source-grounded templates. The arXiv triage prompt remains manual and does not introduce automated scanning.
+
+## [2026-04-30] lint | Concept graph refinement
+
+- Source: scoped concept-page review
+- Pages created:
+- Pages updated: [[Attention]], [[Residual Connections]], [[Transformer Feed-Forward Networks]], [[LLM Training Systems]], [[Large Language Models]], [[Generative Modeling]], [[Energy-Based Models]], [[CLIP]], [[LLM Inference Systems]], [[log]]
+- Key concepts: [[Transformer Architecture]], [[Efficient LLM Architecture]], [[Optimization and Training Stability]], [[Generative Modeling]], [[Energy-Based Models]], [[CLIP]], [[Multi-Head Latent Attention]]
+- Notes: Ran a scoped pass over concept pages for structure, connectivity, and alignment with the research direction. Applied small safe fixes: filled empty related-math placeholders, linked LLM concepts to optimizer/training-stability concepts, added MLA to the attention overview, strengthened generative-modeling links to CLIP/latent diffusion/CFG, clarified the EBM stub without adding unsupported detail, and completed source-note links for the LLM inference-systems stub.
+
+## [2026-04-30] lint | Math spine refinement
+
+- Source: scoped math-page review
+- Pages created:
+- Pages updated: [[Probability Theory]], [[Bayesian Inference]], [[Maximum Likelihood Estimation]], [[Variational Inference]], [[Notation Conventions]], [[log]]
+- Key concepts: [[Probability Theory]], [[Bayesian Inference]], [[Maximum Likelihood Estimation]], [[Variational Inference]], [[ELBO]], [[KL Divergence]]
+- Notes: Reviewed math pages for template consistency, notation consistency, derivation usefulness, and connectivity. The later diffusion, attention, and optimizer math notes are structurally healthy, but foundational probability/Bayesian/MLE pages were still placeholders. Added conservative definitions, assumptions, high-level derivation structure, common mistakes, and canonical notation to strengthen the math spine without treating the pages as fully verified.
+
+## [2026-04-30] manual | Template refinement
+
+- Source: scoped template review
+- Pages created:
+- Pages updated: vault/Templates/Concept.md, vault/Templates/Paper.md, vault/Templates/Video.md, [[log]]
+- Key concepts: [[Notation Conventions]]
+- Notes: Reviewed templates against the current ingestion, synthesis, and lint workflows. The math template already matched current practice. Updated concept/source templates lightly: moved source notes earlier in concept pages, added scope and excluded-topic sections to paper/video notes, added math-connection sections, and added synthesis/roadmap-effect prompts so future notes remain aligned with the current workflow.
+
+## [2026-04-30] lint | Final pre-commit health check
+
+- Source: current vault, docs, prompts, and templates
+- Pages created:
+- Pages updated: [[GANs]], [[Normalizing Flows]], [[Scaling Laws]], [[log]]
+- Key concepts: [[Generative Modeling]], [[Large Language Models]]
+- Notes: Ran final checks before committing the maintenance/refinement pass. Confirmed no folder-qualified wiki links, unresolved wiki links, duplicate note basenames, or verified-status overclaims. Reworded three old concept stubs from vague placeholder language to source-grounded `Needs verification` open questions.

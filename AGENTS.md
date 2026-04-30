@@ -33,8 +33,11 @@ Current research tracks include:
 - large model systems: KV cache, prefill/decode behavior, inference efficiency, memory bandwidth, mixture of experts, routing, and scaling constraints
 - optimization: gradient descent, Adam, Muon, second-order or matrix-aware optimizers, normalization, residual pathways, and training stability
 - representation learning: embeddings, contrastive learning, CLIP-like models, conditioning signals, and semantic representation spaces
+- frontier topics: exclusive self-attention, attention residuals, gating residuals, multimodal generative systems, energy-based transformers, JEPA-style models, world models, and other recent developments when grounded in sources
 
 When moving into a new track, build the backbone first: seed the core concept and math pages, then ingest source papers that ground the details.
+
+Use `docs/research_direction.md` as the durable north star for the user's research interests and for connecting recent frontier topics back to foundations.
 
 ## Core rule
 
@@ -222,6 +225,10 @@ Focus on:
 
 Project-level principles and the map of operational workflow documents.
 
+### `docs/research_direction.md`
+
+Durable direction of the user's research interests, including how recent frontier topics should connect back to source-grounded foundations.
+
 ### `docs/ingestion_workflow.md`
 
 How new sources enter the wiki.
@@ -233,6 +240,14 @@ How accumulated notes become higher-level maps.
 ### `docs/lint_workflow.md`
 
 How lint passes should check structure, links, notation, duplication, abstraction levels, and Obsidian compatibility.
+
+### `docs/research_roadmap.md`
+
+Living map of current research tracks, covered foundations, and open backbone gaps.
+
+### `docs/project_plan.md`
+
+Near-term execution priorities and operating reminders.
 
 ### `vault/index.md`
 

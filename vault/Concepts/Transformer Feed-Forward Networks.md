@@ -12,7 +12,7 @@ Transformer feed-forward networks are position-wise MLP sublayers applied indepe
 Attention mixes information across positions. The feed-forward block then transforms each position's representation independently with the same learned function.
 
 ## Mathematical formulation
-- Related math:
+- Related math: [[Expert Routing]]
 - In [[2017 Attention Is All You Need]], each encoder and decoder layer contains:
 
 `FFN(x) = max(0, xW_1 + b_1) W_2 + b_2`.

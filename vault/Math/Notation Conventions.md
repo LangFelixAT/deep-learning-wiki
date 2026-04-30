@@ -10,6 +10,14 @@ Collect canonical notation used across the wiki so related math and concept note
 
 ## Definitions
 
+### Probability and likelihood
+- `p(x)`: probability mass or density of observed variable `x`.
+- `p(x,z)`: joint distribution over observed and latent variables.
+- `p(z|x)`: posterior or conditional distribution of latent variable `z` given observation `x`.
+- `p(x|z)`: likelihood of observation `x` given latent variable `z`.
+- `E_p[f(x)]`: expectation of `f(x)` under distribution `p`.
+- `theta`: model parameters.
+
 ### Variational inference
 - `x`: observed data.
 - `z`: latent variable.
