@@ -25,6 +25,8 @@ In the original Transformer, layer normalization is part of the sublayer wrapper
 
 [[2017 Attention Is All You Need]] uses layer normalization as architectural scaffolding in Transformer sublayer wrappers.
 
+[[2019 Root Mean Square Layer Normalization]] proposes [[RMSNorm]] as a simplification that removes the mean-centering step while retaining scale normalization.
+
 ## Related papers
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
@@ -34,10 +36,12 @@ In the original Transformer, layer normalization is part of the sublayer wrapper
 - [[Residual Connections]]
 - [[Normalization]]
 - [[Layer Normalization (Math)]]
+- [[RMSNorm]]
+- [[RMSNorm (Math)]]
 
 ## Open questions
 - Needs verification: pre-norm versus post-norm Transformer variants should be grounded in later sources.
-- Needs verification: RMSNorm should be grounded in its own source note.
+- Needs verification: modern LLM usage of RMSNorm should be grounded in model-specific sources.
 
 ## My understanding
 Layer normalization is especially natural for sequence models because the normalization statistics are local to one example and one layer/timestep.
@@ -45,5 +49,6 @@ Layer normalization is especially natural for sequence models because the normal
 ## Source notes
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
+- [[2019 Root Mean Square Layer Normalization]]
 
 ## Revision notes

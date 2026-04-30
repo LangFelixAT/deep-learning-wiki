@@ -57,6 +57,7 @@ Layer normalization standardizes a layer's feature vector for each example indep
 - [[Normalization]] covers the broader family.
 - Batch normalization computes statistics over training cases in a mini-batch for a given unit.
 - Weight normalization normalizes using the norm of incoming weights rather than activation statistics.
+- [[RMSNorm (Math)]] removes mean-centering and divides by root mean square.
 
 ## Common mistakes
 - Confusing layer normalization with batch normalization.
@@ -66,11 +67,14 @@ Layer normalization standardizes a layer's feature vector for each example indep
 ## Related concepts
 - [[Layer Normalization]]
 - [[Normalization]]
+- [[RMSNorm]]
+- [[RMSNorm (Math)]]
 - [[Transformers]]
 - [[Residual Connections]]
 
 ## Related papers
 - [[2016 Layer Normalization]]
+- [[2019 Root Mean Square Layer Normalization]]
 - [[2017 Attention Is All You Need]]
 
 ## Source references

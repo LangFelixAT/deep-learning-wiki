@@ -19,6 +19,7 @@ The timeline is a navigation aid: it shows when the wiki's current anchor ideas 
 - 2016: [[2016 Layer Normalization]] introduces layer normalization as a normalization method suited to recurrent and sequence models.
 - 2017: [[2017 Attention Is All You Need]] introduces the Transformer architecture based on self-attention and multi-head attention.
 - 2019: [[2019 Introduction to Variational Autoencoders]] consolidates VAE foundations, latent-variable modeling, variational approximation, and ELBO interpretation.
+- 2019: [[2019 Root Mean Square Layer Normalization]] introduces RMSNorm as a simpler normalization method that removes LayerNorm mean-centering.
 - 2019: [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] develops score-based generative modeling with noise-conditional score networks and annealed Langevin dynamics.
 - 2019: [[2019 Fast Transformer Decoding One Write-Head is All You Need]] introduces multi-query attention for faster incremental Transformer decoding.
 - 2020: [[2020 Denoising Diffusion Probabilistic Models]] develops DDPM training and sampling foundations.

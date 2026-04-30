@@ -19,6 +19,7 @@ Large language models often generate text autoregressively, one token at a time.
 - [[FlashAttention]] reduces memory traffic inside the exact attention computation itself.
 - [[Mixture of Experts]] increases parameter capacity through sparse activation, often by routing tokens through expert feed-forward layers.
 - [[Multi-Head Latent Attention]] reduces KV-cache cost by caching compressed latent attention state.
+- [[RMSNorm]] is relevant as a later normalization choice in modern LLM architectures, but specific adoption claims should be grounded in model papers.
 - [[LLM Training Systems]] covers the parallelism, precision, and communication constraints that make large-scale training feasible.
 
 ## Historical development
@@ -29,6 +30,8 @@ Large language models often generate text autoregressively, one token at a time.
 [[2022 FlashAttention]] makes exact attention more memory efficient, which is relevant for longer sequences and efficient Transformer training/inference.
 
 [[2021 Switch Transformers]] is an important source for sparse expert scaling in language models, using top-1 routing to activate one expert per token.
+
+[[2019 Root Mean Square Layer Normalization]] is not an LLM paper, but it grounds a normalization method that becomes important in later LLM architecture notes.
 
 [[2024 DeepSeekMoE]] introduces fine-grained expert segmentation and shared expert isolation for stronger expert specialization.
 
@@ -51,12 +54,14 @@ After the DeepSeek-V2 and DeepSeekMoE ingests, [[2024 DeepSeek-V3 Technical Repo
 - [[DeepSeekMoE]]
 - [[Expert Routing]]
 - [[Multi-Head Latent Attention]]
+- [[RMSNorm]]
 - [[LLM Training Systems]]
 - [[Scaling Laws]]
 
 ## Related papers
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2021 Switch Transformers]]
+- [[2019 Root Mean Square Layer Normalization]]
 - [[2022 FlashAttention]]
 - [[2023 GQA]]
 - [[2024 DeepSeekMoE]]

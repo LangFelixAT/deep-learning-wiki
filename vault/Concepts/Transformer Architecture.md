@@ -26,13 +26,13 @@ This page is a synthesis hub for transformer internals. It is broader than [[Tra
 - Attention operation: [[Attention]], [[Self-Attention]], [[Scaled Dot-Product Attention]], [[Multi-Head Attention]]
 - Positional information: [[Positional Encoding]], [[Rotary Position Embedding]], [[Rotary Position Embedding (Math)]]
 - Per-token transformation: [[Transformer Feed-Forward Networks]]
-- Stability scaffolding: [[Residual Connections]], [[Layer Normalization]], [[Normalization]]
+- Stability scaffolding: [[Residual Connections]], [[Layer Normalization]], [[RMSNorm]], [[Normalization]]
 - Sparse capacity: [[Mixture of Experts]], [[DeepSeekMoE]], [[Expert Routing]]
 - Efficient attention and inference: [[KV Cache]], [[Multi-Query Attention]], [[Grouped-Query Attention]], [[Multi-Head Latent Attention]], [[FlashAttention]]
 - Systems and scaling context: [[Large Language Models]], [[LLM Training Systems]], [[Efficient LLM Architecture]]
 
 ## Mathematical formulation
-- Related math: [[Scaled Dot-Product Attention]], [[Layer Normalization (Math)]], [[Rotary Position Embedding (Math)]], [[Expert Routing]], [[Notation Conventions]]
+- Related math: [[Scaled Dot-Product Attention]], [[Layer Normalization (Math)]], [[RMSNorm (Math)]], [[Rotary Position Embedding (Math)]], [[Expert Routing]], [[Notation Conventions]]
 - Core attention operation:
 
 `Attention(Q,K,V) = softmax(QK^T / sqrt(d_k)) V`.
@@ -45,6 +45,8 @@ This page is a synthesis hub for transformer internals. It is broader than [[Tra
 [[2017 Attention Is All You Need]] establishes the transformer layer pattern: attention sublayers, position-wise feed-forward sublayers, residual connections, normalization, and positional encodings.
 
 [[2016 Layer Normalization]] grounds the normalization method later used as transformer scaffolding.
+
+[[2019 Root Mean Square Layer Normalization]] grounds RMSNorm as a simpler normalization variant that later becomes relevant to transformer language-model architecture.
 
 [[2021 RoFormer]] introduces [[Rotary Position Embedding]], changing how position enters the query/key geometry.
 
@@ -69,10 +71,12 @@ For modern LLMs, the same block structure remains recognizable, but important pr
 - replacing dense feed-forward capacity with [[Mixture of Experts]]
 - choosing positional encodings that work for long contexts
 - stabilizing very deep stacks with normalization and residual design
+- choosing between normalization variants such as [[Layer Normalization]] and [[RMSNorm]]
 
 ## Related papers
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
+- [[2019 Root Mean Square Layer Normalization]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2021 RoFormer]]
 - [[2021 Switch Transformers]]
@@ -92,6 +96,7 @@ For modern LLMs, the same block structure remains recognizable, but important pr
 - [[Transformer Feed-Forward Networks]]
 - [[Residual Connections]]
 - [[Layer Normalization]]
+- [[RMSNorm]]
 - [[Positional Encoding]]
 - [[Rotary Position Embedding]]
 - [[Mixture of Experts]]
@@ -104,6 +109,7 @@ For modern LLMs, the same block structure remains recognizable, but important pr
 ## Open questions
 - Needs verification: decoder-only LLM architecture should be grounded in a dedicated source rather than inferred from the original encoder-decoder Transformer.
 - Needs verification: pre-norm versus post-norm, RMSNorm, gated MLPs, SwiGLU, and residual-stream views need source-grounded notes.
+- Needs verification: modern transformer usage of RMSNorm should be grounded in model-specific architecture papers.
 - Needs verification: sparse attention and XSA should be added only after source ingests.
 - Open question: whether `[[Transformer Architecture]]` should eventually absorb part of `[[Transformers]]` or stay as the synthesis layer above it.
 
@@ -113,6 +119,7 @@ The transformer architecture track should be learned as a stack of design axes. 
 ## Source notes
 - [[2016 Layer Normalization]]
 - [[2017 Attention Is All You Need]]
+- [[2019 Root Mean Square Layer Normalization]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2021 RoFormer]]
 - [[2021 Switch Transformers]]

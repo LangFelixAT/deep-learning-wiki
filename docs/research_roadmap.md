@@ -58,7 +58,7 @@ Needed backbone:
 - XSA
 - later positional encoding and RoPE scaling variants
 - residual stream view
-- RMSNorm and later normalization variants
+- later normalization variants beyond [[RMSNorm]]
 
 ## Efficient attention and inference systems
 
@@ -92,6 +92,7 @@ Seed pages:
 - [[Adam]]
 - [[Weight Decay]]
 - [[Normalization]]
+- [[RMSNorm]]
 - [[Scaling Laws]]
 
 Needed backbone:

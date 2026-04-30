@@ -54,6 +54,7 @@
 - [[Expert Routing]]
 - [[Residual Connections]]
 - [[Layer Normalization]]
+- [[RMSNorm]]
 - [[Large Language Models]]
 
 ### Efficient attention and inference systems
@@ -75,6 +76,7 @@
 - [[Adam]]
 - [[Weight Decay]]
 - [[Normalization]]
+- [[RMSNorm]]
 - [[Scaling Laws]]
 
 ### Research history

@@ -514,3 +514,11 @@ Format:
 - Pages updated: [[Transformer Architecture]], docs/synthesis_workflow.md, [[index]], [[log]]
 - Key concepts: [[Transformers]], [[Attention]], [[Multi-Head Attention]], [[Transformer Feed-Forward Networks]], [[Layer Normalization]], [[Residual Connections]], [[Rotary Position Embedding]], [[Efficient LLM Architecture]]
 - Notes: Expanded the transformer synthesis hub to connect attention, feed-forward layers, positional encodings, normalization, residual scaffolding, MoE, KV-cache-related variants, and systems-aware architecture choices without adding new source material.
+
+## [2026-04-30] ingest | Root Mean Square Layer Normalization
+
+- Source: data/raw/papers/rmsnorm_zhang_sennrich_2019.pdf
+- Pages created: [[2019 Root Mean Square Layer Normalization]], [[RMSNorm]], [[RMSNorm (Math)]]
+- Pages updated: [[Normalization]], [[Layer Normalization]], [[Optimization and Training Stability]], [[Transformer Architecture]], [[Large Language Models]], [[Transformers]], [[Layer Normalization (Math)]], [[Notation Conventions]], [[Deep Learning Timeline]], [[Important Papers]], docs/research_roadmap.md, [[Home]], [[index]], [[log]]
+- Key concepts: [[RMSNorm]], [[RMSNorm (Math)]], [[Layer Normalization]], [[Normalization]], [[Optimization and Training Stability]]
+- Notes: Ingested RMSNorm with focus on simplifying LayerNorm, root-mean-square normalization without mean-centering, learned gain, relationship to LayerNorm, computational simplicity, sequence/transformer relevance, and later LLM relevance as a connection. Excluded detailed benchmarks, full RNN experiment details, modern LLM claims not in the paper, and optimizer discussion beyond training-stability context.

@@ -17,6 +17,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - A transformer layer is built from attention sublayers, [[Transformer Feed-Forward Networks]], residual connections, and normalization.
 - In the original encoder-decoder transformer, encoder layers use self-attention, while decoder layers use masked self-attention plus encoder-decoder attention.
 - [[2017 Attention Is All You Need]] uses `LayerNorm(x + Sublayer(x))`; the normalization method itself is introduced in [[2016 Layer Normalization]].
+- [[RMSNorm]] is a later normalization simplification that should be tracked separately from the original Transformer's LayerNorm setup.
 - Positional information can be injected through absolute encodings, as in [[2017 Attention Is All You Need]], or through methods such as [[Rotary Position Embedding]] that alter query/key geometry.
 - [[Mixture of Experts]] can replace some dense feed-forward sublayers with routed expert feed-forward layers.
 - [[Multi-Head Latent Attention]] changes how attention state is represented and cached for efficient inference.
@@ -41,8 +42,11 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 
 [[2022 Scalable Diffusion Models with Transformers]] applies transformer backbones to diffusion models by operating on latent patch tokens.
 
+[[2019 Root Mean Square Layer Normalization]] grounds RMSNorm as a normalization variant relevant to later transformer architecture notes.
+
 ## Related papers
 - [[2016 Layer Normalization]]
+- [[2019 Root Mean Square Layer Normalization]]
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2021 Switch Transformers]]
@@ -73,6 +77,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - [[Expert Routing]]
 - [[Residual Connections]]
 - [[Layer Normalization]]
+- [[RMSNorm]]
 - [[Large Language Models]]
 - [[LLM Training Systems]]
 - [[Image Tokenization]]
@@ -83,6 +88,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 
 ## Source notes
 - [[2016 Layer Normalization]]
+- [[2019 Root Mean Square Layer Normalization]]
 - [[2017 Attention Is All You Need]]
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
 - [[2021 Switch Transformers]]

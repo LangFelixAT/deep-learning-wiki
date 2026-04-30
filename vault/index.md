@@ -25,6 +25,7 @@
 - [[Contrastive Learning]] - representation learning objective that aligns positive pairs and separates negatives (type: math, status: partially verified)
 - [[Scaled Dot-Product Attention]] - core Transformer attention operation using scaled query-key dot products and value weighting (type: math, status: partially verified)
 - [[Layer Normalization (Math)]] - feature-wise normalization operation computed within one layer and one training case (type: math, status: partially verified)
+- [[RMSNorm (Math)]] - root-mean-square normalization operation that removes LayerNorm mean-centering (type: math, status: partially verified)
 - [[Rotary Position Embedding (Math)]] - rotary query/key positional encoding that makes attention scores depend on relative position (type: math, status: partially verified)
 - [[Multi-Head Latent Attention (Math)]] - MLA equations and cache-size comparison for latent key/value compression (type: math, status: partially verified)
 - [[Expert Routing]] - router probabilities, top-1 assignment, expert capacity, and load balancing for Switch-style MoE layers (type: math, status: partially verified)
@@ -76,6 +77,7 @@
 - [[LLM Inference Systems]] - synthesis stub for serving and inference constraints in large language models (type: concept, status: stub)
 - [[Residual Connections]] - sublayer skip connections used in transformer blocks (type: concept, status: stub)
 - [[Layer Normalization]] - normalization method computed across features within a single training case (type: concept, status: developing)
+- [[RMSNorm]] - normalization method that rescales by root mean square without mean-centering (type: concept, status: developing)
 - [[Large Language Models]] - large neural language models trained on broad text distributions (type: concept, status: developing)
 
 ## Optimization and training
@@ -99,6 +101,7 @@
 - [[2016 Layer Normalization]] - Ba, Kiros, and Hinton paper introducing layer normalization for neural networks and recurrent sequence models (type: paper, status: studied)
 - [[2017 Attention Is All You Need]] - Vaswani et al. paper introducing the Transformer architecture based on self-attention and multi-head attention (type: paper, status: studied)
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
+- [[2019 Root Mean Square Layer Normalization]] - Zhang and Sennrich paper introducing RMSNorm as a simpler alternative to LayerNorm (type: paper, status: studied)
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]] - Shazeer paper introducing multi-query attention to reduce key/value memory bandwidth during incremental Transformer decoding (type: paper, status: studied)
 - [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] - Song and Ermon paper introducing NCSNs and annealed Langevin sampling (type: paper, status: studied)
 - [[2020 Denoising Diffusion Probabilistic Models]] - Ho, Jain, and Abbeel paper introducing DDPM training and sampling foundations (type: paper, status: studied)

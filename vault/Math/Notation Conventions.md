@@ -38,6 +38,13 @@ Collect canonical notation used across the wiki so related math and concept note
 - `h` or `n_h`: number of attention heads.
 - `d_h`: per-head dimension in several efficient-attention notes.
 
+### Normalization
+- `a_i`: activation or summed input component for feature `i`.
+- `mu`: feature mean used by LayerNorm.
+- `sigma`: feature standard deviation used by LayerNorm.
+- `RMS(a)`: root mean square used by RMSNorm.
+- `g_i`: learned gain parameter.
+
 ### Efficient LLM architecture
 - `KV cache`: stored keys and values reused during autoregressive decoding.
 - `n_h`: number of query heads in efficient-attention notes unless the source uses a different symbol.
@@ -66,6 +73,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[Diffusion Models]]
 - [[Diffusion Parameterization]]
 - [[Scaled Dot-Product Attention]]
+- [[RMSNorm (Math)]]
 - [[Multi-Head Latent Attention (Math)]]
 - [[Expert Routing]]
 
