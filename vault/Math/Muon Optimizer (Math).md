@@ -82,6 +82,8 @@ W_{t+1} = (1 - eta lambda) W_t - eta U_t
 ## Interpretation
 Muon replaces the raw or momentum-smoothed matrix update with a matrix whose singular values are more balanced. This is different from [[AdamW]], which rescales coordinates using first and second moment estimates.
 
+[[2024 Old Optimizer New Norm]] does not settle Muon, but it helps explain why semi-orthogonal matrix updates are interesting: they correspond to a particular matrix update geometry rather than coordinatewise scaling.
+
 In source terms, Muon is not a universal replacement for AdamW. It is a matrix-parameter optimizer that is paired with AdamW for parameter classes that are not suitable for Muon.
 
 ## Alternative formulations
@@ -101,17 +103,20 @@ In source terms, Muon is not a universal replacement for AdamW. It is a matrix-p
 - [[Matrix-Aware Optimizers]]
 - [[Shampoo]]
 - [[Preconditioning]]
+- [[Steepest Descent]]
 - [[AdamW]]
 - [[Gradient Descent]]
 - [[Weight Decay]]
 
 ## Related papers
 - [[2018 Shampoo]]
+- [[2024 Old Optimizer New Norm]]
 - [[2024 Muon Optimizer]]
 
 ## Source references
 - [[2024 Muon Optimizer]]
+- [[2024 Old Optimizer New Norm]]
 
 ## Verification status
 - Status: partially verified
-- Needs verification: full Newton-Schulz derivation, exact Shampoo/Muon relationship, and large-scale empirical claims.
+- Needs verification: full Newton-Schulz derivation, exact Shampoo/Muon relationship, norm-geometry mapping, and large-scale empirical claims.

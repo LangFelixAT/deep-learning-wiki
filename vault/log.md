@@ -562,3 +562,11 @@ Format:
 - Pages updated: [[Shampoo]], [[Matrix-Aware Optimizers]], [[Optimization and Training Stability]], [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[2024 Muon Optimizer]], [[Notation Conventions]], docs/research_roadmap.md, [[Home]], [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
 - Key concepts: [[Shampoo]], [[Preconditioning]], [[Matrix-Aware Optimizers]], [[Adam]], [[AdamW]], [[Muon Optimizer]]
 - Notes: Ingested Shampoo with focus on why preconditioning helps, why full-matrix preconditioning is expensive, matrix/tensor-aware per-dimension preconditioners, the high-level matrix update, and the bridge from coordinatewise adaptive optimizers toward matrix-aware methods. Excluded convergence proof, trace inequality derivations, benchmark tables, implementation details, distributed Shampoo variants, SOAP, Muon derivation, and large-scale LLM claims.
+
+## [2026-04-30] ingest | Old Optimizer, New Norm
+
+- Source: data/raw/papers/old_optimizer_new_norm_bernstein_newhouse_2024.pdf
+- Pages created: [[2024 Old Optimizer New Norm]], [[Steepest Descent]]
+- Pages updated: [[Preconditioning]], [[Shampoo]], [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[2024 Muon Optimizer]], [[Matrix-Aware Optimizers]], [[Optimization and Training Stability]], [[Notation Conventions]], docs/research_roadmap.md, [[Home]], [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Steepest Descent]], [[Preconditioning]], [[Shampoo]], [[Muon Optimizer]], [[Matrix-Aware Optimizers]], [[Adam]], [[AdamW]]
+- Notes: Ingested Old Optimizer, New Norm with focus on optimizer update geometry, steepest descent under different norms, matrix-valued versus coordinatewise parameter views, Shampoo-like spectral update geometry, and conceptual bridges to Muon-like semi-orthogonal updates. Excluded proof details, long derivations, implementation details, benchmarks, unsupported LLM-scale claims, and any treatment of Muon as settled consensus.

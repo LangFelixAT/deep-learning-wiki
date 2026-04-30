@@ -13,12 +13,14 @@ Define preconditioning as the transformation of gradients before an optimization
 - `g_t`: gradient at timestep `t`.
 - `P_t`: preconditioner.
 - `alpha`: learning rate.
+- `||.||`: update norm in steepest-descent views.
 
 ## Definitions
 - Preconditioner: a matrix or operator that transforms the gradient direction before the update.
 - Coordinatewise preconditioner: a diagonal or elementwise scaling of the gradient.
 - Full-matrix preconditioner: a dense matrix that can mix coordinates in the update.
 - Structured preconditioner: a cheaper approximation that uses known parameter structure, such as matrix or tensor dimensions.
+- Update geometry: the implicit shape of allowed or preferred updates, often described by a norm.
 
 ## Assumptions
 - The objective is differentiable with respect to parameters.
@@ -33,6 +35,8 @@ theta_{t+1} = theta_t - alpha P_t g_t
 ```
 
 For coordinatewise methods, `P_t` is effectively diagonal. For matrix-aware methods, `P_t` may use matrix or tensor structure.
+
+From the steepest-descent perspective in [[2024 Old Optimizer New Norm]], choosing an update norm is another way to specify optimizer geometry.
 
 ## Derivation
 - Start from gradient descent:
@@ -56,9 +60,12 @@ Preconditioning changes the geometry of the update. Instead of asking only "how 
 
 In this wiki, [[Adam]] and [[AdamW]] provide coordinatewise adaptive scaling, while [[Shampoo]] is a source-grounded example of structure-aware preconditioning.
 
+[[Steepest Descent]] reframes this: different optimizers can be viewed as choosing different norms for measuring updates. This makes the difference between coordinatewise and matrix-aware methods more explicit.
+
 ## Alternative formulations
 - Preconditioning can be written as left-multiplying a flattened gradient.
 - For matrix parameters, structured methods may apply separate transformations along rows and columns instead of forming one full matrix.
+- A norm-based view can describe similar geometry without explicitly presenting the method as a preconditioner.
 
 ## Common mistakes
 - Treating all adaptive optimizers as the same kind of preconditioning.
@@ -67,6 +74,7 @@ In this wiki, [[Adam]] and [[AdamW]] provide coordinatewise adaptive scaling, wh
 
 ## Related concepts
 - [[Gradient Descent]]
+- [[Steepest Descent]]
 - [[Adam]]
 - [[AdamW]]
 - [[Shampoo]]
@@ -75,9 +83,11 @@ In this wiki, [[Adam]] and [[AdamW]] provide coordinatewise adaptive scaling, wh
 
 ## Related papers
 - [[2018 Shampoo]]
+- [[2024 Old Optimizer New Norm]]
 
 ## Source references
 - [[2018 Shampoo]]
+- [[2024 Old Optimizer New Norm]]
 
 ## Verification status
 - Status: developing

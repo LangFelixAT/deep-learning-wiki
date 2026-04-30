@@ -142,5 +142,5 @@ This makes Muon a natural next step in the wiki after [[Adam]] and [[AdamW]], bu
 
 ## Follow-up reading
 - Shampoo: Preconditioned Stochastic Tensor Optimization.
-- Old Optimizer, New Norm: An Anthology.
+- [[2024 Old Optimizer New Norm]]
 - Muon is Scalable for LLM Training.

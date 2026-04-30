@@ -36,6 +36,7 @@
 - [[Reverse-Time SDE]] - score-dependent reverse stochastic process for generation (type: math, status: partially verified)
 - [[Probability Flow ODE]] - deterministic process sharing SDE marginal distributions (type: math, status: partially verified)
 - [[Regularization]] - constraints and penalties for generalization, including L2 regularization and weight decay distinctions (type: math, status: developing)
+- [[Steepest Descent]] - norm-dependent optimization step that explains how update geometry changes optimizer behavior (type: math, status: partially verified)
 - [[Preconditioning]] - transforming gradients before updates, from coordinatewise adaptive scaling to structured matrix/tensor methods (type: math, status: developing)
 - [[Shampoo]] - tensor-aware preconditioned optimizer using per-dimension matrix preconditioners (type: math, status: partially verified)
 - [[Muon Optimizer (Math)]] - high-level mathematical structure of Muon as momentum plus approximate update orthogonalization (type: math, status: partially verified)
@@ -88,6 +89,7 @@
 
 - [[Optimization and Training Stability]] - synthesis page for optimization methods and training-stability mechanisms (type: concept, status: developing)
 - [[Gradient Descent]] - gradient-based iterative optimization and SGD baseline for Adam-style methods (type: math, status: developing)
+- [[Steepest Descent]] - optimizer-geometry view where the update direction depends on the chosen norm (type: math, status: partially verified)
 - [[Adam]] - adaptive stochastic optimizer using moment estimates and bias correction (type: math, status: partially verified)
 - [[AdamW]] - Adam with weight decay decoupled from adaptive gradient scaling (type: math, status: partially verified)
 - [[Preconditioning]] - optimization update transformation used by adaptive and matrix-aware methods (type: math, status: developing)
@@ -132,6 +134,7 @@
 - [[2024 DeepSeekMoE]] - Dai et al. paper introducing fine-grained expert segmentation and shared expert isolation for MoE specialization (type: paper, status: studied)
 - [[2024 DeepSeek-V2 Technical Report]] - DeepSeek-AI report introducing MLA and DeepSeekMoE in an efficient sparse MoE language model (type: paper, status: studied)
 - [[2024 DeepSeek-V3 Technical Report]] - DeepSeek-AI report mapping sparse MoE, MLA, multi-token prediction, and systems co-design in a modern LLM (type: paper, status: studied)
+- [[2024 Old Optimizer New Norm]] - Bernstein and Newhouse paper reframing Adam, Shampoo, and related optimizers as steepest descent under different norms (type: paper, status: studied)
 - [[2024 Muon Optimizer]] - Keller Jordan blog/repository source introducing Muon for hidden-layer matrix parameters (type: source, status: studied)
 - [[Important Papers]] - catalog of anchor papers for the wiki (type: index, status: developing)
 - [[Important Videos]] - catalog of anchor lectures, talks, and videos (type: index, status: stub)

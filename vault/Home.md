@@ -73,6 +73,7 @@
 ### Optimization and training
 - [[Optimization and Training Stability]]
 - [[Gradient Descent]]
+- [[Steepest Descent]]
 - [[Preconditioning]]
 - [[Adam]]
 - [[AdamW]]

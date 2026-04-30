@@ -81,11 +81,14 @@ Shampoo is matrix-aware because it treats a weight matrix as a matrix, not as an
 
 Compared with coordinatewise methods such as [[Adam]] or [[AdamW]], Shampoo can represent richer update geometry. Compared with a full preconditioner over the flattened parameter, Shampoo is cheaper because it stores and applies smaller per-dimension matrices.
 
+[[2024 Old Optimizer New Norm]] adds a complementary interpretation: Shampoo without accumulation produces a semi-orthogonal update direction and can be viewed as steepest descent under a spectral-norm geometry.
+
 This makes Shampoo an important bridge toward [[Matrix-Aware Optimizers]] and a historical comparison point for [[Muon Optimizer]].
 
 ## Alternative formulations
 - For higher-order tensors, Shampoo maintains one preconditioner for each tensor dimension.
 - The source relates Shampoo to full-matrix AdaGrad and diagonal AdaGrad. The matrix/tensor form can be read as a structured compromise between full preconditioning and diagonal preconditioning.
+- The norm-geometry view treats Shampoo without accumulation as related to spectral steepest descent.
 - Needs verification: practical implementations may use approximations, update-frequency tricks, or distributed variants that are outside the 2018 source scope.
 
 ## Common mistakes
@@ -97,6 +100,7 @@ This makes Shampoo an important bridge toward [[Matrix-Aware Optimizers]] and a 
 ## Related concepts
 - [[Matrix-Aware Optimizers]]
 - [[Preconditioning]]
+- [[Steepest Descent]]
 - [[Muon Optimizer]]
 - [[Muon Optimizer (Math)]]
 - [[Adam]]
@@ -105,11 +109,13 @@ This makes Shampoo an important bridge toward [[Matrix-Aware Optimizers]] and a 
 
 ## Related papers
 - [[2018 Shampoo]]
+- [[2024 Old Optimizer New Norm]]
 - [[2024 Muon Optimizer]]
 
 ## Source references
 - [[2018 Shampoo]]
+- [[2024 Old Optimizer New Norm]]
 
 ## Verification status
 - Status: partially verified
-- Needs verification: full tensor derivation, convergence proof, and modern large-scale optimizer comparisons.
+- Needs verification: full tensor derivation, convergence proof, practical no-accumulation relationship, and modern large-scale optimizer comparisons.

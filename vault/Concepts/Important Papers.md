@@ -41,6 +41,7 @@ This page answers which papers are acting as anchors for the current concept and
 - [[2024 DeepSeekMoE]] - fine-grained expert segmentation and shared expert isolation for MoE specialization.
 - [[2024 DeepSeek-V2 Technical Report]] - MLA and DeepSeekMoE in an efficient sparse MoE language model.
 - [[2024 DeepSeek-V3 Technical Report]] - architecture and systems map for sparse MoE LLM scaling.
+- [[2024 Old Optimizer New Norm]] - optimizer geometry through steepest descent under different norms.
 
 ## Related concepts
 - [[Deep Learning Timeline]]

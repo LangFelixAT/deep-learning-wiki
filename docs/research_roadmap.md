@@ -89,6 +89,7 @@ Current status: early foundation.
 Seed pages:
 - [[Optimization and Training Stability]]
 - [[Gradient Descent]]
+- [[Steepest Descent]]
 - [[Preconditioning]]
 - [[Adam]]
 - [[AdamW]]
@@ -102,8 +103,7 @@ Seed pages:
 - [[Scaling Laws]]
 
 Needed backbone:
-- optimization geometry for adaptive methods
-- Old Optimizer, New Norm
+- optimization geometry for adaptive methods beyond the first steepest-descent anchor
 - Muon scaling and independent comparison sources
 - learning-rate schedules
 - gradient clipping

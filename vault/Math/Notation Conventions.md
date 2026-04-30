@@ -67,6 +67,11 @@ Collect canonical notation used across the wiki so related math and concept note
 - `M_t`: momentum buffer or generic adaptive preconditioner depending on optimizer context.
 - `Ortho(G)`: idealized orthogonalized update matrix in [[Muon Optimizer (Math)]].
 - `U S V^T`: singular value decomposition notation used in matrix-aware optimizer notes.
+- `delta`: vector update in [[Steepest Descent]] notes.
+- `Delta W`: matrix update in optimizer-geometry notes.
+- `||.||`: chosen update norm; source-specific.
+- `||.||_*`: dual norm.
+- `lambda`: sharpness parameter in [[Steepest Descent]] contexts; weight decay factor in [[AdamW]] contexts.
 
 ### Efficient LLM architecture
 - `KV cache`: stored keys and values reused during autoregressive decoding.
@@ -91,6 +96,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - Confusing number of query heads with number of key/value heads in MQA, GQA, and MLA notes.
 - Treating `v_t` in [[Adam]] as a centered variance rather than a second raw moment estimate.
 - Treating `lambda` and `lambda'` as interchangeable without checking whether a note is using weight decay or L2 regularization.
+- Treating `lambda` in steepest-descent notes as the same object as weight decay without checking context.
 - Reusing `M_t` without checking context: in AdamW notes it may denote a generic preconditioner, while in Muon notes it may denote a momentum buffer.
 - Reusing `epsilon` without checking context: it can be an optimizer denominator constant, a preconditioner stabilizer, or Gaussian noise in diffusion notes.
 
@@ -104,6 +110,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[Adam]]
 - [[AdamW]]
 - [[Weight Decay]]
+- [[Steepest Descent]]
 - [[Preconditioning]]
 - [[Shampoo]]
 - [[Muon Optimizer (Math)]]
@@ -120,6 +127,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[2014 Adam]]
 - [[2017 Decoupled Weight Decay Regularization]]
 - [[2018 Shampoo]]
+- [[2024 Old Optimizer New Norm]]
 - [[2024 Muon Optimizer]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2021 Switch Transformers]]
