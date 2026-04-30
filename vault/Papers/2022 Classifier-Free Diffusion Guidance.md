@@ -27,16 +27,18 @@ Classifier guidance can improve conditional diffusion sample fidelity, but it re
 ## Important equations
 Condition dropout training:
 
-`c <- empty` with probability `p_uncond`.
+`c <- empty` with probability $p_{\mathrm{uncond}}$.
 
 Classifier-free guided score:
 
-`s_guided(x_t,t,c) = (1 + w) s_theta(x_t,t,c) - w s_theta(x_t,t)`.
-
+$$
+s_guided(x_t,t,c) = (1 + w) s_{\theta}(x_t,t,c) - w s_{\theta}(x_t,t)
+$$
 Equivalent noise-prediction form:
 
-`epsilon_guided(x_t,t,c) = (1 + w) epsilon_theta(x_t,t,c) - w epsilon_theta(x_t,t)`.
-
+$$
+\epsilon_guided(x_t,t,c) = (1 + w) \epsilon_{\theta}(x_t,t,c) - w \epsilon_{\theta}(x_t,t)
+$$
 Needs verification: exact signs and scaling depend on whether the model is written in score, noise, or denoised-data parameterization.
 
 ## Claims from source

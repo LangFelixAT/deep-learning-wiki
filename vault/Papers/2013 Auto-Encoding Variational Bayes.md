@@ -14,71 +14,81 @@ Kingma and Welling introduce SGVB and AEVB: a stochastic variational inference m
 ## Problem
 The paper asks how to perform efficient approximate inference and learning in directed probabilistic models when:
 - latent variables are continuous and unobserved;
-- the marginal likelihood `p_theta(x) = integral p_theta(z)p_theta(x|z) dz` is intractable;
-- the posterior `p_theta(z|x)` is intractable;
+- the marginal likelihood $p_{\theta}(x) = \int p_{\theta}(z)p_{\theta}(x|z) dz$ is intractable;
+- the posterior $p_{\theta}(z|x)$ is intractable;
 - mean-field VB expectations may also be intractable;
 - the dataset is large enough that batch optimization or expensive per-datapoint sampling is impractical.
 
 The target tasks are approximate ML or MAP estimation of model parameters, approximate posterior inference for latent variables, and approximate marginal inference for observed variables.
 
 ## Core idea
-Introduce an approximate posterior, or recognition model, `q_phi(z|x)`, and optimize it jointly with the generative model `p_theta(x,z)`.
+Introduce an approximate posterior, or recognition model, $q_{\phi}(z|x)$, and optimize it jointly with the generative model $p_{\theta}(x,z)$.
 
-The key technical idea is to rewrite samples from `q_phi(z|x)` as deterministic transformations of parameter-free noise:
+The key technical idea is to rewrite samples from $q_{\phi}(z|x)$ as deterministic transformations of parameter-free noise:
 
-`z = g_phi(epsilon, x)`, with `epsilon ~ p(epsilon)`.
-
-This reparameterization gives a differentiable Monte Carlo estimator of the variational lower bound, allowing optimization of both `theta` and `phi` using stochastic gradient methods.
+$$
+z = g_\phi(\epsilon, x), \quad \epsilon \sim p(\epsilon)
+$$
+This reparameterization gives a differentiable Monte Carlo estimator of the variational lower bound, allowing optimization of both $\theta$ and $\phi$ using stochastic gradient methods.
 
 ## Method
 The method starts from the variational lower bound for each datapoint:
 
-`log p_theta(x^(i)) = D_KL(q_phi(z|x^(i)) || p_theta(z|x^(i))) + L(theta, phi; x^(i))`.
-
-Because the KL term is non-negative, `L(theta, phi; x^(i))` is a lower bound on the marginal log likelihood.
+$$
+\log p_{\theta}(x^(i)) = D_{KL}(q_{\phi}(z|x^(i)) || p_{\theta}(z|x^(i))) + L(\theta, \phi; x^(i))
+$$
+Because the KL term is non-negative, $L(\theta, \phi; x^(i))$ is a lower bound on the marginal log likelihood.
 
 The paper then:
-- defines a recognition model `q_phi(z|x)` as an approximation to the true posterior;
-- reparameterizes samples from `q_phi(z|x)` using auxiliary noise;
+- defines a recognition model $q_{\phi}(z|x)$ as an approximation to the true posterior;
+- reparameterizes samples from $q_{\phi}(z|x)$ using auxiliary noise;
 - builds Monte Carlo estimators of the lower bound and its gradients;
 - scales the estimator to minibatches;
 - applies the framework to a neural-network encoder and decoder, producing the variational auto-encoder example.
 
-In the VAE example, the prior is `p_theta(z) = N(0, I)`, the approximate posterior is diagonal Gaussian, and the encoder outputs the mean and standard deviation used in `z = mu + sigma * epsilon`.
+In the VAE example, the prior is $p_{\theta}(z) = \mathcal{N}(0, I)$, the approximate posterior is diagonal Gaussian, and the encoder outputs the mean and standard deviation used in $z = \mu + \sigma * \epsilon$.
 
 ## Important equations
 Variational decomposition:
 
-`log p_theta(x^(i)) = D_KL(q_phi(z|x^(i)) || p_theta(z|x^(i))) + L(theta, phi; x^(i))`.
-
+$$
+\log p_{\theta}(x^(i)) = D_{KL}(q_{\phi}(z|x^(i)) || p_{\theta}(z|x^(i))) + L(\theta, \phi; x^(i))
+$$
 Lower bound:
 
-`L(theta, phi; x^(i)) = E_q_phi(z|x) [-log q_phi(z|x) + log p_theta(x,z)]`.
-
+$$
+L(\theta, \phi; x^(i)) = E_q_{\phi}(z|x) [-\log q_{\phi}(z|x) + \log p_{\theta}(x,z)]
+$$
 Alternative lower bound form:
 
-`L(theta, phi; x^(i)) = -D_KL(q_phi(z|x^(i)) || p_theta(z)) + E_q_phi(z|x^(i))[log p_theta(x^(i)|z)]`.
-
+$$
+L(\theta, \phi; x^(i)) = -D_{KL}(q_{\phi}(z|x^(i)) || p_{\theta}(z)) + E_q_{\phi}(z|x^(i))[\log p_{\theta}(x^(i)|z)]
+$$
 Reparameterization:
 
-`z = g_phi(epsilon, x)`, with `epsilon ~ p(epsilon)`.
-
+$$
+z = g_\phi(\epsilon, x), \quad \epsilon \sim p(\epsilon)
+$$
 Generic SGVB estimator:
 
-`L_A ~= (1/L) sum_l [log p_theta(x^(i), z^(i,l)) - log q_phi(z^(i,l)|x^(i))]`.
-
+$$
+L_A \approx (1/L) \sum_l [\log p_{\theta}(x^(i), z^(i,l)) - \log q_{\phi}(z^(i,l)|x^(i))]
+$$
 Lower-variance estimator when the KL term is analytic:
 
-`L_B ~= -D_KL(q_phi(z|x^(i)) || p_theta(z)) + (1/L) sum_l log p_theta(x^(i)|z^(i,l))`.
-
+$$
+L_B \approx -D_{KL}(q_{\phi}(z|x^(i)) || p_{\theta}(z)) + (1/L) \sum_l \log p_{\theta}(x^(i)|z^(i,l))
+$$
 Minibatch estimator:
 
-`L(theta, phi; X) ~= (N/M) sum_i L(theta, phi; x^(i))`.
-
+$$
+L(\theta, \phi; X) \approx (N/M) \sum_i L(\theta, \phi; x^(i))
+$$
 Gaussian VAE reparameterization:
 
-`z^(i,l) = mu^(i) + sigma^(i) * epsilon^(l)`, with `epsilon^(l) ~ N(0, I)`.
-
+$$
+z^{(i,l)} = \mu^{(i)} + \sigma^{(i)} \epsilon^{(l)}, \quad \epsilon^{(l)} \sim \mathcal{N}(0, I)
+$$
 ## Claims from source
 - The paper claims the SGVB estimator can be optimized straightforwardly with standard stochastic gradient methods.
 - The paper claims AEVB is efficient for i.i.d. datasets with continuous latent variables per datapoint because it learns an approximate inference model instead of running an expensive iterative inference procedure per datapoint.

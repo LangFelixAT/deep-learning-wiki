@@ -15,7 +15,7 @@ This increases model capacity without requiring every token to use every paramet
 
 ## Mathematical formulation
 - Related math: [[Expert Routing]]
-- In Switch-style MoE, a token representation `x` is routed to one expert `E_i`.
+- In Switch-style MoE, a token representation $x$ is routed to one expert $E_i$.
 - The router computes probabilities over experts and selects the top expert.
 - Only the selected expert processes that token.
 - The expert layer typically replaces a transformer feed-forward sublayer, not the attention mechanism.

@@ -9,18 +9,18 @@
 Define the rotary position embedding operation used in [[2021 RoFormer]].
 
 ## Canonical notation
-- `x_m`: token representation at position `m`
-- `W_q`, `W_k`: query and key projection matrices
-- `R^d_{Theta,m}`: block-diagonal rotary matrix for position `m`
-- `theta_i`: frequency for coordinate pair `i`
-- `q_m`, `k_n`: position-encoded query and key vectors
+- $x_m$: token representation at position $m$
+- $W_q$, $W_k$: query and key projection matrices
+- $R^d_{\theta,m}$: block-diagonal rotary matrix for position $m$
+- $\theta_i$: frequency for coordinate pair $i$
+- $q_m$, $k_n$: position-encoded query and key vectors
 
 ## Definitions
 - Source: [[2021 RoFormer]].
 - RoPE applies position-dependent rotations to query and key vectors.
-- For even dimension `d`, coordinates are grouped into 2D pairs.
+- For even dimension $d$, coordinates are grouped into 2D pairs.
 - Each coordinate pair is rotated by an angle depending on position and frequency.
-- The paper uses frequencies `theta_i = 10000^{-2(i-1)/d}` for coordinate pair `i`.
+- The paper uses frequencies $\theta_i = 10000^{-2(i-1)/d}$ for coordinate pair $i$.
 
 ## Assumptions
 - The hidden dimension used for RoPE is even.
@@ -30,26 +30,30 @@ Define the rotary position embedding operation used in [[2021 RoFormer]].
 ## Main result
 RoPE applies:
 
-`q_m = R^d_{Theta,m} W_q x_m`.
-
-`k_n = R^d_{Theta,n} W_k x_n`.
-
+$$
+q_m = R^d_{\theta,m} W_q x_m
+$$
+$$
+k_n = R^d_{\theta,n} W_k x_n
+$$
 The attention score is:
 
-`q_m^T k_n = (R^d_{Theta,m} W_q x_m)^T (R^d_{Theta,n} W_k x_n)`.
-
+$$
+q_m^T k_n = (R^d_{\theta,m} W_q x_m)^T (R^d_{\theta,n} W_k x_n)
+$$
 Because:
 
-`(R^d_{Theta,m})^T R^d_{Theta,n} = R^d_{Theta,n-m}`,
-
+$$
+(R^d_{\theta,m})^T R^d_{\theta,n} = R^d_{\theta,n-m}
+$$
 the dot product depends on relative position through `n - m`.
 
 The sign of the offset depends on whether the relation is written from query-to-key or key-to-query order; the important property is dependence on relative position rather than absolute positions separately.
 
 ## Derivation
 - In 2D, represent a query/key vector as a complex number.
-- Multiply the projected query at position `m` by `e^{i m theta}`.
-- Multiply the projected key at position `n` by `e^{i n theta}`.
+- Multiply the projected query at position $m$ by $e^{i m \theta}$.
+- Multiply the projected key at position $n$ by $e^{i n \theta}$.
 - The query-key interaction contains a phase depending on the position difference, so relative position appears in the score.
 - For higher even dimension, split the vector into 2D coordinate pairs and apply independent rotations.
 - Skipped steps: full complex-number derivation and long-term decay proof from the paper.

@@ -61,6 +61,8 @@ If the source contains an important derivation:
 - include assumptions
 - preserve notation
 - mention source-specific notation if needed
+- format equations for Obsidian/MathJax: inline math as `$...$`, display equations as `$$...$$`
+- reserve backticks for literal code, filenames, commands, or pseudocode, not mathematical variables or formulas
 
 ## Step 5: Update concept notes
 

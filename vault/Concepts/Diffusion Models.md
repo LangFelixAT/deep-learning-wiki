@@ -10,14 +10,14 @@ Generative models that learn to reverse a gradual noising process.
 ## Intuition
 In [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], a diffusion model starts with data, applies a forward process that gradually destroys structure, and learns a reverse process that restores structure from a tractable noise distribution.
 
-In [[2020 Denoising Diffusion Probabilistic Models]], this idea is developed into the DDPM setup: data `x_0` is gradually noised into `x_T`, and a learned reverse process denoises from `x_T` back to a sample resembling data.
+In [[2020 Denoising Diffusion Probabilistic Models]], this idea is developed into the DDPM setup: data $x_0$ is gradually noised into $x_T$, and a learned reverse process denoises from $x_T$ back to a sample resembling data.
 
 ## Mathematical formulation
 - Related math: [[Diffusion Forward Process]], [[Diffusion Reverse Process]], [[Diffusion ELBO]], [[Diffusion Parameterization]], [[Score Matching]], [[ELBO]], [[Notation Conventions]]
-- Forward process: `q(x_t|x_{t-1})` adds Gaussian noise according to a variance schedule.
-- Reverse process: `p_theta(x_{t-1}|x_t)` is a learned Gaussian transition.
+- Forward process: $q(x_t|x_{t-1})$ adds Gaussian noise according to a variance schedule.
+- Reverse process: $p_{\theta}(x_{t-1}|x_t)$ is a learned Gaussian transition.
 - Training uses a variational bound and, in DDPM, a simplified noise-prediction objective.
-- In DDPM, predicting the added noise `epsilon` is closely related to estimating the score of a Gaussian-perturbed distribution. Needs verification: exact scaling and weighting depend on parameterization.
+- In DDPM, predicting the added noise $\epsilon$ is closely related to estimating the score of a Gaussian-perturbed distribution. Needs verification: exact scaling and weighting depend on parameterization.
 - [[2020 Denoising Diffusion Implicit Models]] uses the same trained noise-prediction objective as DDPM but changes the sampling process.
 - In [[2021 Score-Based Generative Modeling through SDEs]], diffusion models are interpreted in continuous time with a [[Forward SDE]] from data to noise and a [[Reverse-Time SDE]] from noise back to data.
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] frames diffusion models as separable design choices: parameterization, denoiser preconditioning, sampler, schedule, and training objective.
@@ -27,12 +27,12 @@ In [[2020 Denoising Diffusion Probabilistic Models]], this idea is developed int
 - [[Diffusion with Transformers]] replaces the usual U-Net denoising backbone with a transformer over image or latent tokens.
 
 ## Notation conventions
-- `x_t` denotes a noisy data-space state at timestep `t`.
-- `z_t` denotes a noisy latent-space state in latent diffusion notes.
-- `epsilon_theta(x_t,t)` denotes a learned noise prediction unless a source defines different notation.
-- `s_theta(x,t)` denotes a learned score estimate.
-- `sigma` or `sigma_t` denotes a noise scale; exact meaning is source- and parameterization-dependent.
-- `alpha_bar_t` denotes the cumulative DDPM noise-schedule product.
+- $x_t$ denotes a noisy data-space state at timestep $t$.
+- $z_t$ denotes a noisy latent-space state in latent diffusion notes.
+- $\epsilon_{\theta}(x_t,t)$ denotes a learned noise prediction unless a source defines different notation.
+- $s_{\theta}(x,t)$ denotes a learned score estimate.
+- $\sigma$ or $\sigma_t$ denotes a noise scale; exact meaning is source- and parameterization-dependent.
+- $\bar{\alpha}_t$ denotes the cumulative DDPM noise-schedule product.
 
 ## Historical development
 [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] introduces diffusion probabilistic models as learned reversals of gradual noising Markov chains. It emphasizes the flexibility/tractability tradeoff, probability evaluation, and the idea that small diffusion steps make local reverse transitions easier to model.
@@ -43,16 +43,16 @@ In [[2020 Denoising Diffusion Probabilistic Models]], this idea is developed int
 
 [[2021 Score-Based Generative Modeling through SDEs]] presents SMLD and DDPM as discretizations of different SDEs. In that framing, DDPM is related to a variance-preserving SDE. Needs verification: exact discretization details are not expanded here.
 
-[[2020 Denoising Diffusion Implicit Models]] introduces DDIM sampling, which reuses a DDPM-trained `epsilon_theta(x_t,t)` model with a non-Markovian generative process. It can sample deterministically when `eta = 0` and can use fewer denoising steps for faster generation.
+[[2020 Denoising Diffusion Implicit Models]] introduces DDIM sampling, which reuses a DDPM-trained $\epsilon_{\theta}(x_t,t)$ model with a non-Markovian generative process. It can sample deterministically when $\eta = 0$ and can use fewer denoising steps for faster generation.
 
 DDIM can be interpreted as selecting a deterministic trajectory consistent with the diffusion marginals. Needs verification: the precise ODE connection depends on the continuous-time formulation and timestep schedule.
 
 [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] argues that many diffusion formulations are equivalent or closely related after reparameterization. This separates modeling choices, such as what denoiser is learned, from parameterization and sampler choices, such as how noise levels are traversed.
 
 ## Basic sampling idea
-Sampling starts from `x_T ~ N(0, I)` and repeatedly applies the learned reverse transition until reaching `x_0`.
+Sampling starts from $x_T ~ \mathcal{N}(0, I)$ and repeatedly applies the learned reverse transition until reaching $x_0$.
 
-DDIM changes this basic sampling story by allowing a shorter timestep trajectory and, when `eta = 0`, a deterministic map from the initial `x_T` to the final sample.
+DDIM changes this basic sampling story by allowing a shorter timestep trajectory and, when $\eta = 0$, a deterministic map from the initial $x_T$ to the final sample.
 
 The EDM design-space view treats deterministic sampling as numerical integration of an ODE driven by a denoiser or score model.
 

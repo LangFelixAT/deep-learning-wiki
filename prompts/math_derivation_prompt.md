@@ -59,3 +59,5 @@ Needs verification:
 - Do not skip algebra unless the skipped step is explicitly named.
 - Keep source-specific derivations in paper notes when they are not generally useful.
 - Put reusable definitions, assumptions, and derivation structure in math notes.
+- Format math for Obsidian/MathJax: `$...$` for inline math and `$$...$$` for display equations.
+- Use backticks only for literal code, paths, commands, or pseudocode, not for mathematical formulas.

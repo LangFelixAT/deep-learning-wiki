@@ -45,23 +45,29 @@ DeepSeekMoE restructures the MoE feed-forward layer so that routed experts are s
 - Start from a conventional transformer MoE layer that replaces an FFN with routed expert FFNs.
 - Split each conventional expert into `m` smaller experts by reducing the FFN intermediate hidden dimension.
 - Increase the number of activated experts from `K` to `mK` to keep the computational cost comparable.
-- Isolate `K_s` experts as shared experts that are always active.
-- Reduce the number of activated routed experts by `K_s` so shared expert isolation keeps the computational cost comparable.
+- Isolate $K_s$ experts as shared experts that are always active.
+- Reduce the number of activated routed experts by $K_s$ so shared expert isolation keeps the computational cost comparable.
 - Route each token among the remaining routed experts using top-k token-to-expert affinity scores.
 - Use load-balancing losses to reduce routing collapse and computation imbalance.
 
 ## Important equations
 Generic top-k MoE layer:
 
-`h_t^l = sum_i g_{i,t} FFN_i(u_t^l) + u_t^l`
+$$
+h_t^l = \sum_i g_{i,t} FFN_i(u_t^l) + u_t^l
+$$
 
 Fine-grained expert segmentation:
 
-`h_t^l = sum_{i=1}^{mN} g_{i,t} FFN_i(u_t^l) + u_t^l`
+$$
+h_t^l = \sum_{i=1}^{mN} g_{i,t} FFN_i(u_t^l) + u_t^l
+$$
 
 DeepSeekMoE with shared expert isolation:
 
-`h_t^l = sum_{i=1}^{K_s} FFN_i(u_t^l) + sum_{i=K_s+1}^{mN} g_{i,t} FFN_i(u_t^l) + u_t^l`
+$$
+h_t^l = \sum_{i=1}^{K_s} FFN_i(u_t^l) + \sum_{i=K_s+1}^{mN} g_{i,t} FFN_i(u_t^l) + u_t^l
+$$
 
 At a high level, routed expert gates are nonzero only for experts selected by top-k affinity scores.
 

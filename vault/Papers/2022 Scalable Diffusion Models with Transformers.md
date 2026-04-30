@@ -28,16 +28,19 @@ Diffusion image models commonly use convolutional U-Net backbones, while transfo
 ## Important equations or structural notation
 Latent input:
 
-`z = E(x)`.
-
+$$
+z = E(x)
+$$
 Patch/token count for a square latent of spatial size `I x I` with patch size `p`:
 
-`T = (I / p)^2`.
-
+$$
+T = (I / p)^2
+$$
 Patch-token view:
 
-`z_t -> patchify(z_t) -> token sequence -> transformer -> diffusion prediction`.
-
+$$
+z_t -> patchify(z_t) -> token sequence -> transformer -> diffusion prediction
+$$
 Needs verification: exact output heads and conditioning block variants are architecture-specific and not expanded in this note.
 
 ## Claims from source

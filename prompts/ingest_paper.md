@@ -76,6 +76,8 @@ For math notes:
 - include derivation structure
 - mark skipped algebra explicitly
 - mark uncertain steps as `Needs verification`
+- use Obsidian/MathJax formatting: `$...$` for inline math and `$$...$$` for display equations
+- avoid backticks around mathematical variables or formulas; reserve them for literal code, paths, commands, or pseudocode
 
 For concept notes:
 - keep intuition separate from source claims

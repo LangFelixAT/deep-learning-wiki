@@ -642,3 +642,11 @@ Format:
 - Pages updated: [[GANs]], [[Normalizing Flows]], [[Scaling Laws]], [[log]]
 - Key concepts: [[Generative Modeling]], [[Large Language Models]]
 - Notes: Ran final checks before committing the maintenance/refinement pass. Confirmed no folder-qualified wiki links, unresolved wiki links, duplicate note basenames, or verified-status overclaims. Reworded three old concept stubs from vague placeholder language to source-grounded `Needs verification` open questions.
+
+## [2026-04-30] lint | Obsidian math formatting pass
+
+- Source: Obsidian rendering review
+- Pages created:
+- Pages updated: AGENTS.md, docs/ingestion_workflow.md, docs/lint_workflow.md, prompts/ingest_paper.md, prompts/math_derivation_prompt.md, vault/Templates/Math.md, vault/Templates/Paper.md, math-heavy notes across `vault/Math`, `vault/Concepts`, and `vault/Papers`, [[log]]
+- Key concepts: [[Notation Conventions]]
+- Notes: Confirmed that Obsidian renders formulas through MathJax delimiters: inline math uses `$...$` and display equations use `$$...$$`. Converted formula-like backtick spans and text-fenced equation blocks to Obsidian-compatible math delimiters, fixed conversion artifacts in diffusion notation, and anchored the rule in operating docs, prompts, and templates. Backticks remain reserved for literal code, paths, commands, and pseudocode.

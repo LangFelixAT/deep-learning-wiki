@@ -19,7 +19,7 @@ Many diffusion formulations differ only by reparameterization of variables, not 
 - Parameterization choice: whether the network predicts clean data, noise, score, or a preconditioned output.
 - Sampler choice: how the denoiser is used to move from high noise to low noise.
 - Solver choice: which numerical method integrates the ODE or reverse process.
-- Schedule choice: how noise levels such as `sigma` are traversed.
+- Schedule choice: how noise levels such as $\sigma$ are traversed.
 
 ## Historical development
 [[2020 Denoising Diffusion Probabilistic Models]] and [[2020 Denoising Diffusion Implicit Models]] introduced influential discrete-time training and sampling views.

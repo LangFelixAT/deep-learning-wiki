@@ -9,13 +9,13 @@
 Define steepest descent as an optimization step whose direction depends on the norm used to measure updates.
 
 ## Canonical notation
-- `g`: gradient vector or flattened gradient.
-- `G`: matrix gradient.
+- $g$: gradient vector or flattened gradient.
+- $G$: matrix gradient.
 - `delta`: proposed update vector.
 - `Delta W`: proposed matrix update.
-- `lambda`: sharpness or quadratic-penalty scale in the local model.
-- `||.||`: chosen update norm.
-- `||.||_*`: dual norm.
+- $\lambda$: sharpness or quadratic-penalty scale in the local model.
+- $||.||$: chosen update norm.
+- $||.||_*$: dual norm.
 
 ## Definitions
 - Steepest descent: choose the update that minimizes a linearized loss plus a quadratic penalty on the update norm.
@@ -25,39 +25,43 @@ Define steepest descent as an optimization step whose direction depends on the n
 
 ## Assumptions
 - The loss is locally approximated by a first-order linear term.
-- The norm and `lambda` are chosen before the update.
+- The norm and $\lambda$ are chosen before the update.
 - This page follows the high-level structure from [[2024 Old Optimizer New Norm]] and skips proof details.
 
 ## Main result
 The generic steepest descent step solves:
 
-```text
-arg min_delta [ g^T delta + (lambda / 2) ||delta||^2 ]
-```
+
+$$
+arg min_delta [ g^T delta + (\lambda / 2) ||delta||^2 ]
+$$
 
 The choice of norm affects the update direction. The solution can be viewed as:
 
-```text
-step size: proportional to ||g||_* / lambda
+
+$$
+step size: proportional to ||g||_* / \lambda
 step direction: the unit-norm direction most aligned with g
-```
+$$
 
 ## Derivation
 - Start from a first-order local model of the loss:
 
-```text
-L(theta + delta) ~= L(theta) + g^T delta
-```
+
+$$
+L(\theta + delta) \approx L(\theta) + g^T delta
+$$
 
 - Penalize update size using a chosen norm:
 
-```text
-g^T delta + (lambda / 2) ||delta||^2
-```
+
+$$
+g^T delta + (\lambda / 2) ||delta||^2
+$$
 
 - Write `delta` as a magnitude times a unit-norm direction.
 - The best direction is the unit-norm vector that maximizes alignment with the gradient.
-- The best magnitude is controlled by the dual norm of the gradient and by `lambda`.
+- The best magnitude is controlled by the dual norm of the gradient and by $\lambda$.
 - Skipped steps: proof of the dual-norm formula and modular norm propositions.
 
 ## Interpretation

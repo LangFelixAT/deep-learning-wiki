@@ -12,8 +12,8 @@ NCSNs estimate score fields for several smoothed versions of the data distributi
 
 ## Mathematical formulation
 - Related math: [[Score Matching]], [[Annealed Langevin Dynamics]]
-- Perturbed distribution: `q_sigma(x) = integral p_data(t) N(x; t, sigma^2 I) dt`.
-- NCSN target: `s_theta(x, sigma_i) approx grad_x log q_{sigma_i}(x)`.
+- Perturbed distribution: $q_\sigma(x) = \int p_data(t) \mathcal{N}(x; t, \sigma^2 I) dt$.
+- NCSN target: $s_{\theta}(x, \sigma_i) \approx \nabla_x \log q_{\sigma_i}(x)$.
 - Combined objective: a weighted sum of denoising score matching losses over noise levels.
 
 ## Historical development

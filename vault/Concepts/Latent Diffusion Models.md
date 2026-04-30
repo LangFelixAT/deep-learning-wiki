@@ -11,13 +11,13 @@ Latent diffusion models are diffusion models that perform the noising and denois
 Images contain many high-frequency details that are expensive to model at every diffusion step. LDMs first compress images into a perceptually useful latent representation, then spend the diffusion model's capacity on that lower-dimensional space.
 
 ## Latent space idea
-- An encoder maps images into latents: `z = E(x)`.
-- Diffusion is trained and sampled over latent variables `z_t`.
-- The generated latent is decoded back to pixels with `D(z)`.
+- An encoder maps images into latents: $z = E(x)$.
+- Diffusion is trained and sampled over latent variables $z_t$.
+- The generated latent is decoded back to pixels with $D(z)$.
 - The latent space is chosen to reduce dimensionality while preserving enough perceptual detail for synthesis.
 
 ## Mathematical formulation
-Latent diffusion replaces pixel-space diffusion over `x_t` with diffusion over latent variables `z_t`. See [[Latent Diffusion]] for the math note.
+Latent diffusion replaces pixel-space diffusion over $x_t$ with diffusion over latent variables $z_t$. See [[Latent Diffusion]] for the math note.
 
 ## Encoder and decoder role
 - The encoder `E` performs the compression from image space to latent space.
@@ -27,8 +27,8 @@ Latent diffusion replaces pixel-space diffusion over `x_t` with diffusion over l
 
 ## Pipeline
 1. Train or use an autoencoder with encoder `E` and decoder `D`.
-2. Encode training images into latents `z = E(x)`.
-3. Train a diffusion model to denoise noisy latents `z_t`.
+2. Encode training images into latents $z = E(x)$.
+3. Train a diffusion model to denoise noisy latents $z_t$.
 4. At sampling time, start from latent noise and run the reverse diffusion process in latent space.
 5. Decode the final latent sample into an image with `D`.
 

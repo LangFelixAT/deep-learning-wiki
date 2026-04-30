@@ -12,11 +12,12 @@ Describe how diffusion sampling can be viewed as numerical integration of an ODE
 - Diffusion ODE solvers integrate the [[Probability Flow ODE]] from high noise to low noise.
 - A noise-prediction diffusion ODE can be written structurally as:
 
-`dx_t / dt = f(t) x_t + g(t)^2 / (2 sigma_t) epsilon_theta(x_t,t)`.
-
+$$
+dx_t / dt = f(t) x_t + g(t)^2 / (2 \sigma_t) \epsilon_{\theta}(x_t,t)
+$$
 - Needs verification: exact signs and scalings depend on whether the model is parameterized as noise prediction, score prediction, or denoiser prediction, and on the chosen noise schedule.
-- `epsilon_theta(x_t,t)` is the learned noise-prediction network.
-- The noise schedule determines `alpha_t`, `sigma_t`, and the time/noise parameterization used by the solver.
+- $\epsilon_{\theta}(x_t,t)$ is the learned noise-prediction network.
+- The noise schedule determines $\alpha_t$, $\sigma_t$, and the time/noise parameterization used by the solver.
 
 ## Assumptions
 - The learned model is fixed; solver changes do not retrain the network.

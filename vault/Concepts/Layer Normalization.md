@@ -18,8 +18,9 @@ In the original Transformer, layer normalization is part of the sublayer wrapper
 - In [[2016 Layer Normalization]], the mean and variance are computed over the summed inputs to all hidden units in a layer for one training case.
 - [[2017 Attention Is All You Need]] uses:
 
-`LayerNorm(x + Sublayer(x))`.
-
+$$
+LayerNorm(x + Sublayer(x))
+$$
 ## Historical development
 [[2016 Layer Normalization]] introduces the method as an alternative to batch normalization that is easier to apply to recurrent and sequence models.
 

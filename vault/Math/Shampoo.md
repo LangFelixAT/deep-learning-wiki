@@ -9,72 +9,78 @@
 Define the high-level Shampoo optimizer update as tensor-aware preconditioning for matrix and tensor parameters.
 
 ## Canonical notation
-- `W_t`: matrix-valued parameter at timestep `t`.
-- `G_t`: gradient matrix for `W_t`.
-- `eta`: learning rate or stepsize.
-- `L_t`: left Shampoo preconditioner for matrix rows.
-- `R_t`: right Shampoo preconditioner for matrix columns.
-- `epsilon`: small positive initialization constant for preconditioners.
-- `k`: order of a tensor parameter.
+- $W_t$: matrix-valued parameter at timestep $t$.
+- $G_t$: gradient matrix for $W_t$.
+- $\eta$: learning rate or stepsize.
+- $L_t$: left Shampoo preconditioner for matrix rows.
+- $R_t$: right Shampoo preconditioner for matrix columns.
+- $\epsilon$: small positive initialization constant for preconditioners.
+- $k$: order of a tensor parameter.
 
 ## Definitions
 - Preconditioning: transforming the gradient before the parameter update, usually to account for geometry or gradient scale.
 - Full-matrix preconditioner: a preconditioner over a flattened parameter vector; expressive but expensive for large tensors.
 - Coordinatewise adaptive method: an optimizer such as diagonal AdaGrad, [[Adam]], or [[AdamW]] that rescales each coordinate separately.
 - Tensor-aware preconditioning: using the matrix or tensor shape of a parameter when constructing the update.
-- Matrix inverse power: a matrix function such as `L_t^(-1/4)` computed from a positive definite preconditioner.
+- Matrix inverse power: a matrix function such as $L_t^(-1/4)$ computed from a positive definite preconditioner.
 
 ## Assumptions
 - The parameter has matrix or tensor structure.
-- Preconditioners are positive definite or stabilized with `epsilon I`.
+- Preconditioners are positive definite or stabilized with $\epsilon I$.
 - The matrix update below follows the source's matrix case; tensor notation is kept high-level here.
 - Full convergence analysis and trace inequality proof details are outside this note.
 
 ## Main result
 For a matrix parameter, Shampoo maintains separate left and right gradient accumulators:
 
-```text
+
+$$
 L_t = L_{t-1} + G_t G_t^T
 R_t = R_{t-1} + G_t^T G_t
-```
+$$
 
 and updates:
 
-```text
-W_{t+1} = W_t - eta L_t^(-1/4) G_t R_t^(-1/4)
-```
 
-This approximates a richer preconditioned update while avoiding the full preconditioner over `vec(W_t)`.
+$$
+W_{t+1} = W_t - \eta L_t^(-1/4) G_t R_t^(-1/4)
+$$
+
+This approximates a richer preconditioned update while avoiding the full preconditioner over $vec(W_t)$.
 
 ## Derivation
 - Start from a gradient update for a matrix parameter:
 
-```text
-W_{t+1} = W_t - eta G_t
-```
 
-- Full-matrix preconditioning would flatten `W_t` and apply a preconditioner over all `mn` coordinates. For `W_t in R^{m x n}`, this would require a matrix of size `mn x mn`.
+$$
+W_{t+1} = W_t - \eta G_t
+$$
+
+- Full-matrix preconditioning would flatten $W_t$ and apply a preconditioner over all $mn$ coordinates. For $W_t \in \mathbb{R}^{m \times n}$, this would require a matrix of size $mn \times mn$.
 - Shampoo instead accumulates row-side and column-side gradient statistics:
 
-```text
+
+$$
 L_t = L_{t-1} + G_t G_t^T
 R_t = R_{t-1} + G_t^T G_t
-```
+$$
 
 - Apply inverse matrix powers on both sides of the gradient:
 
-```text
+
+$$
 preconditioned_gradient = L_t^(-1/4) G_t R_t^(-1/4)
-```
+$$
 
 - Use this transformed gradient in the update:
 
-```text
-W_{t+1} = W_t - eta * preconditioned_gradient
-```
+
+$$
+W_{t+1} = W_t - \eta * preconditioned_gradient
+$$
 
 - Skipped steps: proof of the `1/4` exponent, convergence guarantees, and matrix trace inequalities from the source.
-- Skipped steps: the full tensor-order-`k` derivation. The source generalizes by maintaining one preconditioner per tensor dimension and applying inverse factors along those dimensions.
+- Skipped steps: the full tensor-order-$k$ derivation. The source generalizes by maintaining one preconditioner per tensor dimension and applying inverse factors along those dimensions.
 
 ## Interpretation
 Shampoo is matrix-aware because it treats a weight matrix as a matrix, not as an unrelated list of coordinates. The left preconditioner captures row-side structure, and the right preconditioner captures column-side structure.

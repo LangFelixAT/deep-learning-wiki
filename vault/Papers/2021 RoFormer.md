@@ -45,26 +45,32 @@ Encode absolute position by rotating query and key vectors by position-dependent
 ## Important equations
 Relative-position condition:
 
-`<f_q(x_m,m), f_k(x_n,n)> = g(x_m,x_n,m-n)`.
-
+$$
+<f_q(x_m,m), f_k(x_n,n)> = g(x_m,x_n,m-n)
+$$
 2D complex form:
 
-`f_q(x_m,m) = (W_q x_m) e^{i m theta}`.
-
-`f_k(x_n,n) = (W_k x_n) e^{i n theta}`.
-
+$$
+f_q(x_m,m) = (W_q x_m) e^{i m \theta}
+$$
+$$
+f_k(x_n,n) = (W_k x_n) e^{i n \theta}
+$$
 General rotary form:
 
-`f_{q,k}(x_m,m) = R^d_{Theta,m} W_{q,k} x_m`.
-
+$$
+f_{q,k}(x_m,m) = R^d_{\theta,m} W_{q,k} x_m
+$$
 Attention score with RoPE:
 
-`q_m^T k_n = (R^d_{Theta,m} W_q x_m)^T (R^d_{Theta,n} W_k x_n)`.
-
+$$
+q_m^T k_n = (R^d_{\theta,m} W_q x_m)^T (R^d_{\theta,n} W_k x_n)
+$$
 Using the rotation relation:
 
-`(R^d_{Theta,m})^T R^d_{Theta,n} = R^d_{Theta,n-m}`.
-
+$$
+(R^d_{\theta,m})^T R^d_{\theta,n} = R^d_{\theta,n-m}
+$$
 Thus, the query-key score depends on relative position through the difference between positions. In the rotation relation above this appears as `n - m`; the sign convention depends on the query/key ordering.
 
 ## Results

@@ -16,8 +16,8 @@ Instead of writing the full `N x N` attention matrix to memory, it processes att
 ## Mathematical formulation
 - Related math: [[Scaled Dot-Product Attention]]
 - Source: [[2022 FlashAttention]]
-- Standard attention computes `S = QK^T`, `P = softmax(S)`, and `O = PV`.
-- FlashAttention computes the same `O = softmax(QK^T)V`.
+- Standard attention computes $S = QK^T$, $P = \operatorname{softmax}(S)$, and $O = PV$.
+- FlashAttention computes the same $O = \operatorname{softmax}(QK^T)V$.
 - The difference is that `Q`, `K`, and `V` are processed in tiles, and the softmax normalization is accumulated online.
 - The attention matrix is not materialized as a full `N x N` object in high-bandwidth memory.
 - The source keeps the exact quadratic attention computation; the linear-memory claim is about additional memory beyond inputs and outputs, not a linear-time attention model.

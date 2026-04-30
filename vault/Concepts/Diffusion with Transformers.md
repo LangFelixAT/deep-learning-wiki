@@ -19,12 +19,12 @@ A diffusion model needs a neural network that maps a noisy state and conditionin
 
 ## Latent patches as tokens
 - In DiT, diffusion operates in latent space.
-- The noised latent `z_t` is split into patches.
+- The noised latent $z_t$ is split into patches.
 - Each patch is embedded as a token.
 - The transformer processes the token sequence and predicts diffusion outputs.
 
 ## Mathematical formulation
-The diffusion formulation can remain a standard noise-prediction setup over `z_t`, while the representation passed to the denoising network becomes a sequence of latent patch tokens. Detailed diffusion objectives belong in [[Diffusion ELBO]] and [[Latent Diffusion]].
+The diffusion formulation can remain a standard noise-prediction setup over $z_t$, while the representation passed to the denoising network becomes a sequence of latent patch tokens. Detailed diffusion objectives belong in [[Diffusion ELBO]] and [[Latent Diffusion]].
 
 ## Relation to latent diffusion
 DiT fits naturally into [[Latent Diffusion Models]]: the autoencoder creates the latent `z`, and the transformer replaces the U-Net as the denoising model over noisy latents.

@@ -9,13 +9,14 @@ Describe the sampling procedure that uses a score function to generate samples.
 
 ## Definitions
 - Source: [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]].
-- Langevin dynamics can sample from a density `p(x)` using the score `grad_x log p(x)`.
-- Langevin dynamics targets samples from a distribution `p(x)` whose score `grad_x log p(x)` is known or estimated.
+- Langevin dynamics can sample from a density $p(x)$ using the score $\nabla_x \log p(x)$.
+- Langevin dynamics targets samples from a distribution $p(x)$ whose score $\nabla_x \log p(x)$ is known or estimated.
 - Update:
 
-`tilde_x_t = tilde_x_{t-1} + epsilon/2 * grad_x log p(tilde_x_{t-1}) + sqrt(epsilon) xi_t`.
-
-- `xi_t ~ N(0,I)` denotes the Gaussian noise term. This avoids overloading `z_t`, which is used elsewhere for latent diffusion states.
+$$
+tilde_x_t = tilde_x_{t-1} + \epsilon/2 * \nabla_x \log p(tilde_x_{t-1}) + \sqrt(\epsilon) xi_t
+$$
+- $xi_t ~ \mathcal{N}(0,I)$ denotes the Gaussian noise term. This avoids overloading $z_t$, which is used elsewhere for latent diffusion states.
 
 ## Assumptions
 - The score function is available or estimated.

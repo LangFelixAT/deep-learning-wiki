@@ -15,8 +15,9 @@ Residual connections provide a direct path for information and gradients across 
 - Related math: [[Layer Normalization (Math)]], [[RMSNorm (Math)]]
 - In [[2017 Attention Is All You Need]], each sublayer is wrapped as:
 
-`LayerNorm(x + Sublayer(x))`.
-
+$$
+LayerNorm(x + Sublayer(x))
+$$
 ## Historical development
 The Transformer paper uses residual connections around attention and feed-forward sublayers, citing earlier residual network work.
 

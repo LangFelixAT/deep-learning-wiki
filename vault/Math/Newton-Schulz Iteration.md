@@ -9,9 +9,9 @@
 Track Newton-Schulz iteration as the matrix method used by [[Muon Optimizer]] for approximate update orthogonalization.
 
 ## Canonical notation
-- `G`: matrix to be orthogonalized.
-- `X`: iterated matrix estimate.
-- `U S V^T`: singular value decomposition of `G`.
+- $G$: matrix to be orthogonalized.
+- $X$: iterated matrix estimate.
+- $U S V^T$: singular value decomposition of $G$.
 
 ## Definitions
 - Newton-Schulz iteration is an iterative matrix method.
@@ -36,7 +36,7 @@ For Muon, Newton-Schulz iteration is a practical approximation tool: it makes ma
 
 ## Common mistakes
 - Treating the Muon implementation's fixed coefficients as a universal Newton-Schulz method.
-- Assuming the approximation exactly equals `U V^T`.
+- Assuming the approximation exactly equals $U V^T$.
 
 ## Related concepts
 - [[Muon Optimizer]]

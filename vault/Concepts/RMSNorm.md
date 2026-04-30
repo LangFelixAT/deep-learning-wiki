@@ -13,15 +13,19 @@ LayerNorm centers and rescales activations. RMSNorm asks whether the centering s
 
 ## Mathematical formulation
 - Related math: [[RMSNorm (Math)]]
-- RMSNorm normalizes summed inputs `a_i` using:
+- RMSNorm normalizes summed inputs $a_i$ using:
 
-`RMS(a) = sqrt((1/n) sum_i a_i^2)`
+$$
+\operatorname{RMS}(a) = \sqrt((1/n) \sum_i a_i^2)
+$$
 
 - The normalized activation before the next nonlinearity is:
 
-`bar_a_i = a_i / RMS(a) * g_i`
+$$
+bar_a_i = a_i / \operatorname{RMS}(a) * g_i
+$$
 
-- The source uses learned gain parameters `g_i`.
+- The source uses learned gain parameters $g_i$.
 
 ## Historical development
 [[2019 Root Mean Square Layer Normalization]] introduces RMSNorm as a simplification of [[Layer Normalization]].

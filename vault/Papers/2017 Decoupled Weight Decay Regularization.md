@@ -41,40 +41,46 @@ The paper proposes decoupling weight decay from the gradient-based update. For A
 ## Important equations
 Standard SGD with decoupled weight decay:
 
-```text
-theta_{t+1} = (1 - lambda) theta_t - alpha grad f_t(theta_t)
-```
+
+$$
+\theta_{t+1} = (1 - \lambda) \theta_t - \alpha \nabla f_t(\theta_t)
+$$
 
 SGD with L2-regularized loss:
 
-```text
-f_t^reg(theta) = f_t(theta) + (lambda' / 2) ||theta||_2^2
-theta_{t+1} = theta_t - alpha grad f_t(theta_t) - alpha lambda' theta_t
-```
+
+$$
+f_t^reg(\theta) = f_t(\theta) + (\lambda' / 2) ||\theta||_2^2
+\theta_{t+1} = \theta_t - \alpha \nabla f_t(\theta_t) - \alpha \lambda' \theta_t
+$$
 
 These are equivalent for standard SGD when:
 
-```text
-lambda' = lambda / alpha
-```
 
-Adaptive optimizer with preconditioner `M_t` and L2 regularization:
+$$
+\lambda' = \lambda / \alpha
+$$
 
-```text
-theta_{t+1} = theta_t - alpha M_t (grad f_t(theta_t) + lambda' theta_t)
-```
+Adaptive optimizer with preconditioner $M_t$ and L2 regularization:
+
+
+$$
+\theta_{t+1} = \theta_t - \alpha M_t (\nabla f_t(\theta_t) + \lambda' \theta_t)
+$$
 
 Decoupled weight decay with adaptive optimizer:
 
-```text
-theta_{t+1} = (1 - lambda) theta_t - alpha M_t grad f_t(theta_t)
-```
+
+$$
+\theta_{t+1} = (1 - \lambda) \theta_t - \alpha M_t \nabla f_t(\theta_t)
+$$
 
 High-level AdamW update:
 
-```text
-theta_t = theta_{t-1} - eta_t * (alpha * hat_m_t / (sqrt(hat_v_t) + epsilon) + lambda theta_{t-1})
-```
+
+$$
+\theta_t = \theta_{t-1} - \eta_t * (\alpha * \hat{m}_t / (\sqrt(\hat{v}_t) + \epsilon) + \lambda \theta_{t-1})
+$$
 
 where the Adam moment estimates are computed from the loss gradient, not from the L2-augmented gradient.
 

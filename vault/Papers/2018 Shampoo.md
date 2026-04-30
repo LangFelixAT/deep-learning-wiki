@@ -36,29 +36,32 @@ Full-matrix preconditioning can capture relationships between parameters, but fo
 Many neural network parameters are naturally matrices or tensors. Shampoo uses this structure by maintaining separate preconditioning matrices for each dimension, rather than flattening the whole tensor and building one enormous preconditioner.
 
 ## Method
-For a matrix parameter `W_t` and gradient `G_t`, Shampoo maintains a left preconditioner and a right preconditioner:
+For a matrix parameter $W_t$ and gradient $G_t$, Shampoo maintains a left preconditioner and a right preconditioner:
 
-```text
+
+$$
 L_t = L_{t-1} + G_t G_t^T
 R_t = R_{t-1} + G_t^T G_t
-```
+$$
 
 The update uses matrix inverse powers on both sides of the gradient:
 
-```text
-W_{t+1} = W_t - eta L_t^(-1/4) G_t R_t^(-1/4)
-```
+
+$$
+W_{t+1} = W_t - \eta L_t^(-1/4) G_t R_t^(-1/4)
+$$
 
 For higher-order tensors, the source generalizes this idea by maintaining one preconditioner per tensor dimension and applying the inverse factors along those dimensions.
 
 ## Important equations
 Matrix Shampoo update:
 
-```text
+
+$$
 L_t = L_{t-1} + G_t G_t^T
 R_t = R_{t-1} + G_t^T G_t
-W_{t+1} = W_t - eta L_t^(-1/4) G_t R_t^(-1/4)
-```
+W_{t+1} = W_t - \eta L_t^(-1/4) G_t R_t^(-1/4)
+$$
 
 The source initializes preconditioners with a small positive multiple of the identity for numerical stability.
 

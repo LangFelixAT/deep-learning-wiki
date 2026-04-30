@@ -41,40 +41,46 @@ Define a forward diffusion process that gradually transforms the data distributi
 The nonequilibrium-thermodynamics intuition is that a slow process between distributions can be easier to reverse and evaluate than a single large transformation.
 
 ## Method
-- Start with data distribution `q(x^(0))`.
+- Start with data distribution $q(x^(0))$.
 - Apply a fixed forward Markov diffusion process for `T` steps.
 - Choose the terminal distribution to be analytically tractable, such as a standard Gaussian for continuous data.
-- Learn the reverse Markov transitions `p(x^(t-1)|x^(t))`.
+- Learn the reverse Markov transitions $p(x^(t-1)|x^(t))$.
 - Train by maximizing a lower bound on model log likelihood.
 - Use small diffusion steps so the reverse transition can have the same simple functional form as the forward transition.
 
 ## Important equations
 Forward trajectory:
 
-`q(x^(0:T)) = q(x^(0)) prod_{t=1}^T q(x^(t)|x^(t-1))`.
-
+$$
+q(x^(0:T)) = q(x^(0)) \prod_{t=1}^T q(x^(t)|x^(t-1))
+$$
 Reverse trajectory:
 
-`p(x^(0:T)) = p(x^(T)) prod_{t=1}^T p(x^(t-1)|x^(t))`.
-
+$$
+p(x^(0:T)) = p(x^(T)) \prod_{t=1}^T p(x^(t-1)|x^(t))
+$$
 For Gaussian diffusion, the forward transition has the form:
 
-`q(x^(t)|x^(t-1)) = N(x^(t); sqrt(1 - beta_t) x^(t-1), beta_t I)`.
-
+$$
+q(x^(t)|x^(t-1)) = \mathcal{N}(x^(t); \sqrt(1 - \beta_t) x^(t-1), \beta_t I)
+$$
 The data likelihood under the model is:
 
-`p(x^(0)) = integral p(x^(0:T)) dx^(1:T)`.
-
+$$
+p(x^(0)) = \int p(x^(0:T)) dx^(1:T)
+$$
 The paper evaluates this through the ratio of reverse and forward trajectory probabilities averaged over forward trajectories.
 
 Training maximizes model log likelihood `L`, with a lower bound `K` derived using Jensen's inequality:
 
-`L >= K`.
-
+$$
+L >= K
+$$
 At a high level, the bound contains KL terms comparing the true forward-process posterior to the learned reverse transition:
 
-`D_KL(q(x^(t-1)|x^(t),x^(0)) || p(x^(t-1)|x^(t)))`.
-
+$$
+D_{KL}(q(x^(t-1)|x^(t),x^(0)) || p(x^(t-1)|x^(t)))
+$$
 In the paper's expanded form, this lower bound is a negative sum of such KL terms plus entropy terms from the forward process and terminal distribution. The exact expansion is not reproduced here.
 
 ## Results
@@ -104,7 +110,7 @@ This paper gives the pre-DDPM probabilistic backbone of diffusion modeling: rath
 The small-step argument is the key intuition: each local reverse step can be simple even if the global data distribution is complex.
 
 ## Unclear / Needs verification
-- Needs verification: exact mapping between the paper's notation `x^(t)` and later DDPM notation `x_t` when comparing objectives term-by-term.
+- Needs verification: exact mapping between the paper's notation $x^(t)$ and later DDPM notation $x_t$ when comparing objectives term-by-term.
 - Needs verification: how much of the paper's probability-evaluation claim carries over unchanged to later simplified DDPM training setups.
 - Needs verification: full algebraic comparison between the paper's lower bound on log likelihood and DDPM's upper bound on negative log likelihood.
 

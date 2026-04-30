@@ -11,38 +11,43 @@ Define the learned denoising chain used to generate samples by reversing a diffu
 - Sources: [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]], [[2020 Denoising Diffusion Probabilistic Models]].
 - The reverse process is the learned joint distribution:
 
-`p_theta(x_0:T) = p(x_T) prod_{t=1}^T p_theta(x_{t-1}|x_t)`.
-
+$$
+p_{\theta}(x_0:T) = p(x_T) \prod_{t=1}^T p_{\theta}(x_{t-1}|x_t)
+$$
 - In the 2015 paper, the reverse trajectory is written:
 
-`p(x^(0:T)) = p(x^(T)) prod_{t=1}^T p(x^(t-1)|x^(t))`.
-
-- The prior is `p(x_T) = N(0,I)`.
+$$
+p(x^(0:T)) = p(x^(T)) \prod_{t=1}^T p(x^(t-1)|x^(t))
+$$
+- The prior is $p(x_T) = \mathcal{N}(0,I)$.
 - Reverse transitions are Gaussian:
 
-`p_theta(x_{t-1}|x_t) = N(x_{t-1}; mu_theta(x_t,t), Sigma_theta(x_t,t))`.
-
+$$
+p_{\theta}(x_{t-1}|x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t,t), \sigma_\theta(x_t,t))
+$$
 - [[2020 Denoising Diffusion Implicit Models]] keeps the DDPM-trained noise predictor but defines a non-Markovian generative process for sampling.
 
 ## Assumptions
 - Reverse transitions are parameterized as Gaussian conditionals.
 - The 2015 paper argues that when diffusion steps are small, the reversal of a Gaussian or binomial diffusion process has the same functional form as the forward process.
-- In the foundational DDPM setup, the model predicts noise `epsilon_theta(x_t,t)` to parameterize the reverse mean.
+- In the foundational DDPM setup, the model predicts noise $\epsilon_{\theta}(x_t,t)$ to parameterize the reverse mean.
 - Variances are treated as fixed time-dependent constants in the core setup covered here.
 - Needs verification: exact variance choices and their effects are implementation details outside this note.
 
 ## Derivation
 - The reverse model learns to approximate the reverse of the fixed noising chain.
-- DDPM parameterizes the mean using a network that predicts the noise added at timestep `t`:
+- DDPM parameterizes the mean using a network that predicts the noise added at timestep $t$:
 
-`mu_theta(x_t,t) = 1/sqrt(alpha_t) * (x_t - beta_t/sqrt(1 - alpha_bar_t) * epsilon_theta(x_t,t))`.
+$$
+\mu_{\theta}(x_t,t) = 1/\sqrt(\alpha_t) * (x_t - \beta_t/\sqrt(1 - \bar{\alpha}_t) * \epsilon_{\theta}(x_t,t))
+$$
+- Sampling starts with $x_T ~ \mathcal{N}(0,I)$.
+- For $t = T, ..., 1$, sample Gaussian noise $z$ and compute:
 
-- Sampling starts with `x_T ~ N(0,I)`.
-- For `t = T, ..., 1`, sample Gaussian noise `z` and compute:
-
-`x_{t-1} = 1/sqrt(alpha_t) * (x_t - (1 - alpha_t)/sqrt(1 - alpha_bar_t) * epsilon_theta(x_t,t)) + sigma_t z`.
-
-- At the final step the paper's algorithm sets `z = 0`.
+$$
+x_{t-1} = 1/\sqrt(\alpha_t) * (x_t - (1 - \alpha_t)/\sqrt(1 - \bar{\alpha}_t) * \epsilon_{\theta}(x_t,t)) + \sigma_t z
+$$
+- At the final step the paper's algorithm sets $z = 0$.
 - Skipped steps: derivation from the Gaussian posterior mean and variance formulas.
 
 ## Interpretation
@@ -53,9 +58,9 @@ Define the learned denoising chain used to generate samples by reversing a diffu
 - In DDIM, sampling can follow a non-Markovian process and can become deterministic when the sampling noise coefficient is zero.
 
 ## Common mistakes
-- Confusing the fixed forward transition `q(x_t|x_{t-1})` with the learned reverse transition `p_theta(x_{t-1}|x_t)`.
+- Confusing the fixed forward transition $q(x_t|x_{t-1})$ with the learned reverse transition $p_{\theta}(x_{t-1}|x_t)$.
 - Assuming the reverse process exactly inverts the forward process without learning.
-- Treating `epsilon_theta` as added noise rather than predicted noise.
+- Treating $\epsilon_{\theta}$ as added noise rather than predicted noise.
 
 ## Related concepts
 - [[Diffusion Models]]

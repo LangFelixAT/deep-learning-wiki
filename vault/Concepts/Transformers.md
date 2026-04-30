@@ -16,7 +16,7 @@ The key shift in [[2017 Attention Is All You Need]] is that sequence positions c
 - Related math: [[Scaled Dot-Product Attention]], [[Self-Attention]]
 - A transformer layer is built from attention sublayers, [[Transformer Feed-Forward Networks]], residual connections, and normalization.
 - In the original encoder-decoder transformer, encoder layers use self-attention, while decoder layers use masked self-attention plus encoder-decoder attention.
-- [[2017 Attention Is All You Need]] uses `LayerNorm(x + Sublayer(x))`; the normalization method itself is introduced in [[2016 Layer Normalization]].
+- [[2017 Attention Is All You Need]] uses $LayerNorm(x + Sublayer(x))$; the normalization method itself is introduced in [[2016 Layer Normalization]].
 - [[RMSNorm]] is a later normalization simplification that should be tracked separately from the original Transformer's LayerNorm setup.
 - Positional information can be injected through absolute encodings, as in [[2017 Attention Is All You Need]], or through methods such as [[Rotary Position Embedding]] that alter query/key geometry.
 - [[Mixture of Experts]] can replace some dense feed-forward sublayers with routed expert feed-forward layers.

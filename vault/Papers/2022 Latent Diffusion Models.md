@@ -20,28 +20,31 @@ Pixel-space diffusion models can produce strong image samples but are expensive 
 
 ## Core ideas
 - Separate image synthesis into a perceptual compression stage and a generative diffusion stage.
-- Train or use an encoder `E` that maps an image `x` to a latent `z = E(x)`.
-- Train a decoder `D` that reconstructs an image from the latent, `x_hat = D(z)`.
-- Run the diffusion process in latent space over `z_t` rather than directly over pixels `x_t`.
+- Train or use an encoder $E$ that maps an image $x$ to a latent $z = E(x)$.
+- Train a decoder $D$ that reconstructs an image from the latent, $\hat{x} = D(z)$.
+- Run the diffusion process in latent space over $z_t$ rather than directly over pixels $x_t$.
 - Decode the final generated latent with a single decoder pass.
 - Conditioning inputs such as text can be injected through a high-level cross-attention conditioning mechanism.
 
 ## Important equations
 Encoder / decoder relation:
 
-`z = E(x)`, `x_hat = D(z) = D(E(x))`.
-
+$$
+z = E(x), \quad \hat{x} = D(z) = D(E(x))
+$$
 Pixel diffusion objective, structurally:
 
-`L_DM = E_{x, epsilon, t}[||epsilon - epsilon_theta(x_t,t)||_2^2]`.
-
+$$
+L_DM = E_{x, \epsilon, t}[||\epsilon - \epsilon_{\theta}(x_t,t)||_2^2]
+$$
 Latent diffusion objective:
 
-`L_LDM = E_{E(x), epsilon, t}[||epsilon - epsilon_theta(z_t,t)||_2^2]`.
-
+$$
+L_LDM = E_{E(x), \epsilon, t}[||\epsilon - \epsilon_{\theta}(z_t,t)||_2^2]
+$$
 Conditional latent diffusion:
 
-`epsilon_theta(z_t,t,y)` where `y` is conditioning information.
+$\epsilon_{\theta}(z_t,t,y)$ where $y$ is conditioning information.
 
 ## Claims from source
 - Claim from source: applying diffusion models in the latent space of pretrained autoencoders reduces computational requirements compared with pixel-space diffusion.

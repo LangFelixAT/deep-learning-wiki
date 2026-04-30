@@ -9,21 +9,22 @@
 Define AdamW as [[Adam]] with decoupled [[Weight Decay]], and clarify why this differs from applying L2 regularization inside Adam's gradient.
 
 ## Canonical notation
-- `theta_t`: parameter vector at timestep `t`.
-- `g_t`: stochastic loss gradient at timestep `t`.
-- `alpha`: base learning rate.
-- `eta_t`: schedule multiplier used in the source paper.
-- `lambda`: weight decay factor.
-- `lambda'`: L2 regularization coefficient.
-- `m_t`, `v_t`, `hat_m_t`, `hat_v_t`: Adam moment estimates as in [[Adam]].
-- `M_t`: generic adaptive preconditioner used to reason about adaptive gradient methods.
+- $\theta_t$: parameter vector at timestep $t$.
+- $g_t$: stochastic loss gradient at timestep $t$.
+- $\alpha$: base learning rate.
+- $\eta_t$: schedule multiplier used in the source paper.
+- $\lambda$: weight decay factor.
+- $\lambda'$: L2 regularization coefficient.
+- $m_t$, $v_t$, $\hat{m}_t$, $\hat{v}_t$: Adam moment estimates as in [[Adam]].
+- $M_t$: generic adaptive preconditioner used to reason about adaptive gradient methods.
 
 ## Definitions
 - L2 regularization adds a penalty term to the optimized loss:
 
-```text
-f_t^reg(theta) = f_t(theta) + (lambda' / 2) ||theta||_2^2
-```
+
+$$
+f_t^reg(\theta) = f_t(\theta) + (\lambda' / 2) ||\theta||_2^2
+$$
 
 - Weight decay directly shrinks parameters during the optimizer step.
 - Decoupled weight decay applies the shrinkage term separately from the loss-gradient update.
@@ -38,52 +39,59 @@ f_t^reg(theta) = f_t(theta) + (lambda' / 2) ||theta||_2^2
 ## Main result
 For standard SGD, L2 regularization and weight decay can be equivalent after rescaling:
 
-```text
-lambda' = lambda / alpha
-```
+
+$$
+\lambda' = \lambda / \alpha
+$$
 
 For adaptive gradient methods, the equivalence generally fails because the L2 penalty gradient is also scaled by the adaptive preconditioner.
 
 AdamW keeps weight decay outside the adaptive gradient step:
 
-```text
-theta_t = theta_{t-1} - eta_t * (alpha * hat_m_t / (sqrt(hat_v_t) + epsilon) + lambda theta_{t-1})
-```
 
-In this high-level AdamW form, `hat_m_t` and `hat_v_t` are computed from the loss gradient rather than from an L2-augmented gradient.
+$$
+\theta_t = \theta_{t-1} - \eta_t * (\alpha * \hat{m}_t / (\sqrt(\hat{v}_t) + \epsilon) + \lambda \theta_{t-1})
+$$
+
+In this high-level AdamW form, $\hat{m}_t$ and $\hat{v}_t$ are computed from the loss gradient rather than from an L2-augmented gradient.
 
 ## Derivation
 - Standard SGD with L2-regularized loss:
 
-```text
-theta_{t+1}
-  = theta_t - alpha grad(f_t(theta_t) + (lambda' / 2) ||theta_t||_2^2)
-  = theta_t - alpha grad f_t(theta_t) - alpha lambda' theta_t
-```
+
+$$
+\theta_{t+1}
+  = \theta_t - \alpha \nabla(f_t(\theta_t) + (\lambda' / 2) ||\theta_t||_2^2)
+  = \theta_t - \alpha \nabla f_t(\theta_t) - \alpha \lambda' \theta_t
+$$
 
 - Standard SGD with weight decay:
 
-```text
-theta_{t+1} = (1 - lambda) theta_t - alpha grad f_t(theta_t)
-```
+
+$$
+\theta_{t+1} = (1 - \lambda) \theta_t - \alpha \nabla f_t(\theta_t)
+$$
 
 - These match when:
 
-```text
-alpha lambda' = lambda
-```
 
-- For an adaptive optimizer with preconditioner `M_t`, L2 regularization gives:
+$$
+\alpha \lambda' = \lambda
+$$
 
-```text
-theta_{t+1} = theta_t - alpha M_t (grad f_t(theta_t) + lambda' theta_t)
-```
+- For an adaptive optimizer with preconditioner $M_t$, L2 regularization gives:
+
+
+$$
+\theta_{t+1} = \theta_t - \alpha M_t (\nabla f_t(\theta_t) + \lambda' \theta_t)
+$$
 
 - Decoupled weight decay gives:
 
-```text
-theta_{t+1} = (1 - lambda) theta_t - alpha M_t grad f_t(theta_t)
-```
+
+$$
+\theta_{t+1} = (1 - \lambda) \theta_t - \alpha M_t \nabla f_t(\theta_t)
+$$
 
 - These are not generally equivalent unless the preconditioner behaves like a scalar multiple of the identity.
 - Skipped steps: the source paper's proposition proofs and experimental analysis are not expanded here.

@@ -19,8 +19,8 @@ Grouped-query attention chooses a middle point: query heads are split into group
 - Let `H` be the number of query heads.
 - Let `G` be the number of key/value groups.
 - The paper writes `GQA-G` for grouped-query attention with `G` groups.
-- `G = 1` gives MQA.
-- `G = H` gives MHA.
+- $G = 1$ gives MQA.
+- $G = H$ gives MHA.
 - Intermediate `G` values share each key/value head across a group of query heads.
 
 Relative to MHA, GQA stores `G` key/value heads instead of `H`, reducing the key/value cache head dimension by roughly `H / G`.

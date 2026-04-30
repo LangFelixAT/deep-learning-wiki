@@ -12,7 +12,7 @@ In [[2020 Denoising Diffusion Probabilistic Models]], denoising appears as the l
 
 ## Mathematical formulation
 - Related math: [[Diffusion Reverse Process]], [[Score Matching]]
-- In DDPM, the model is trained to predict the noise `epsilon` added to a clean datapoint at a randomly chosen timestep.
+- In DDPM, the model is trained to predict the noise $\epsilon$ added to a clean datapoint at a randomly chosen timestep.
 
 ## Historical development
 Needs verification from source notes beyond DDPM.

@@ -17,7 +17,7 @@ The central intuition is that hidden-layer matrix updates may be dominated by a 
 - Detailed math lives in [[Muon Optimizer (Math)]].
 - The high-level operation is:
   - compute a momentum-style update matrix
-  - approximately apply `Ortho(G)`
+  - approximately apply $Ortho(G)$
   - update the weight matrix using the orthogonalized update
 - In the Moonshot AI scaling report, practical large-scale Muon also uses weight decay and shape-dependent update RMS scaling, while leaving non-matrix parameters on AdamW.
 

@@ -9,12 +9,12 @@
 Define the layer normalization operation introduced in [[2016 Layer Normalization]].
 
 ## Canonical notation
-- `a_i`: summed input to hidden unit `i` in a layer
-- `H`: number of hidden units/features in the layer
-- `mu`: mean of summed inputs within the layer for one training case
-- `sigma`: standard deviation of summed inputs within the layer for one training case
-- `g_i`: learned gain for unit `i`
-- `b_i`: learned bias for unit `i`
+- $a_i$: summed input to hidden unit $i$ in a layer
+- $H$: number of hidden units/features in the layer
+- $\mu$: mean of summed inputs within the layer for one training case
+- $\sigma$: standard deviation of summed inputs within the layer for one training case
+- $g_i$: learned gain for unit $i$
+- $b_i$: learned bias for unit $i$
 
 ## Definitions
 - Source: [[2016 Layer Normalization]].
@@ -23,31 +23,35 @@ Define the layer normalization operation introduced in [[2016 Layer Normalizatio
 - Learned gain and bias are applied after normalization and before the nonlinearity.
 
 ## Assumptions
-- The layer has `H` hidden units or features.
+- The layer has $H$ hidden units or features.
 - The normalization statistics are computed from summed inputs in a single example, not from a mini-batch.
 - This note uses the paper's feed-forward notation and does not cover modern Transformer pre-norm/post-norm variants.
 
 ## Main result
 Layer mean:
 
-`mu = (1/H) sum_{i=1}^H a_i`.
-
+$$
+\mu = (1/H) \sum_{i=1}^H a_i
+$$
 Layer standard deviation:
 
-`sigma^2 = (1/H) sum_{i=1}^H (a_i - mu)^2`.
-
-`sigma = sqrt((1/H) sum_{i=1}^H (a_i - mu)^2)`.
-
+$$
+\sigma^2 = (1/H) \sum_{i=1}^H (a_i - \mu)^2
+$$
+$$
+\sigma = \sqrt((1/H) \sum_{i=1}^H (a_i - \mu)^2)
+$$
 Layer-normalized activation:
 
-`h_i = f((g_i / sigma)(a_i - mu) + b_i)`.
-
+$$
+h_i = f((g_i / \sigma)(a_i - \mu) + b_i)
+$$
 ## Derivation
-- Start from a vector of summed inputs `a = (a_1, ..., a_H)` for one layer and one training case.
+- Start from a vector of summed inputs $a = (a_1, ..., a_H)$ for one layer and one training case.
 - Compute the mean over features in that layer.
 - Compute the standard deviation over features in that layer.
-- Center and rescale each `a_i` using the shared `mu` and `sigma`.
-- Apply learned unit-specific gain `g_i` and bias `b_i`.
+- Center and rescale each $a_i$ using the shared $\mu$ and $\sigma$.
+- Apply learned unit-specific gain $g_i$ and bias $b_i$.
 - Skipped steps: the paper's invariance and Fisher-geometry analysis.
 
 ## Interpretation

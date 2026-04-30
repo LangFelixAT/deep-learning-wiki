@@ -18,15 +18,15 @@ The "one write-head" phrase in the source is about writing one shared key/value 
 ## Mathematical formulation
 - Related math: [[Scaled Dot-Product Attention]]
 - Source: [[2019 Fast Transformer Decoding One Write-Head is All You Need]]
-- Standard multi-head attention stores keys and values with a head dimension, such as `[batch, heads, sequence, dim]`.
-- Multi-query attention removes the head dimension from keys and values, using shapes like `[batch, sequence, dim]`.
+- Standard multi-head attention stores keys and values with a head dimension, such as $[batch, heads, sequence, dim]$.
+- Multi-query attention removes the head dimension from keys and values, using shapes like $[batch, sequence, dim]$.
 - Query projections remain head-specific.
 - In the source's incremental decoding analysis, this reduces the key/value memory-access term by a factor of the number of heads.
 
 ## Historical development
 [[2019 Fast Transformer Decoding One Write-Head is All You Need]] introduces multi-query attention to reduce memory-bandwidth requirements during incremental Transformer decoding.
 
-[[2023 GQA]] frames MQA as the `G = 1` endpoint of [[Grouped-Query Attention]].
+[[2023 GQA]] frames MQA as the $G = 1$ endpoint of [[Grouped-Query Attention]].
 
 ## Related papers
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]]

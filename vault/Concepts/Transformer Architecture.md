@@ -19,7 +19,7 @@ This page is a synthesis hub for transformer internals. It is broader than [[Tra
 - [[Multi-Head Attention]] runs several attention heads in parallel over learned query, key, and value projections.
 - [[Transformer Feed-Forward Networks]] apply the same position-wise MLP to each token after attention.
 - [[Residual Connections]] add sublayer inputs back to sublayer outputs.
-- [[Layer Normalization]] stabilizes sublayer wrappers; [[2017 Attention Is All You Need]] uses `LayerNorm(x + Sublayer(x))`.
+- [[Layer Normalization]] stabilizes sublayer wrappers; [[2017 Attention Is All You Need]] uses $LayerNorm(x + Sublayer(x))$.
 - [[Positional Encoding]] injects order information because self-attention alone does not encode sequence order.
 
 ## Main design axes
@@ -35,8 +35,9 @@ This page is a synthesis hub for transformer internals. It is broader than [[Tra
 - Related math: [[Scaled Dot-Product Attention]], [[Layer Normalization (Math)]], [[RMSNorm (Math)]], [[Rotary Position Embedding (Math)]], [[Expert Routing]], [[Notation Conventions]]
 - Core attention operation:
 
-`Attention(Q,K,V) = softmax(QK^T / sqrt(d_k)) V`.
-
+$$
+\operatorname{Attention}(Q,K,V) = \operatorname{softmax}(QK^T / \sqrt(d_k)) V
+$$
 - Multi-head attention applies that operation to projected subspaces and concatenates head outputs.
 - Position-wise feed-forward blocks transform each token independently after attention has mixed sequence information.
 - MoE variants replace some dense feed-forward blocks with routed expert feed-forward blocks.

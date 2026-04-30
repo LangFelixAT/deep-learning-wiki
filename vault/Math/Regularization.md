@@ -9,7 +9,7 @@
 Track methods that constrain learning to improve generalization or optimization behavior.
 
 ## Definitions
-- L2 regularization adds a squared-parameter penalty to the loss, often written `(lambda' / 2) ||theta||_2^2`.
+- L2 regularization adds a squared-parameter penalty to the loss, often written $(\lambda' / 2) ||\theta||_2^2$.
 - [[Weight Decay]] directly shrinks parameters during an optimizer step.
 - [[2017 Decoupled Weight Decay Regularization]] shows that L2 regularization and weight decay are equivalent for standard SGD after coefficient rescaling, but not generally equivalent for adaptive optimizers.
 

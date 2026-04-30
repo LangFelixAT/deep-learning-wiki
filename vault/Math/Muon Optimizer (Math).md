@@ -9,19 +9,19 @@
 Describe the high-level mathematical structure of Muon: momentum followed by approximate orthogonalization of hidden-layer matrix updates.
 
 ## Canonical notation
-- `W_t`: hidden-layer weight matrix at timestep `t`.
-- `G_t`: gradient or momentum-derived update matrix for `W_t`.
-- `M_t`: momentum buffer for a matrix parameter.
-- `beta`: momentum coefficient.
-- `eta`: learning rate for the Muon update.
-- `lambda`: decoupled weight decay factor.
-- `A, B`: matrix dimensions for a parameter of shape `[A, B]`.
-- `Ortho(G)`: idealized semi-orthogonalized version of update matrix `G`.
-- `U S V^T`: singular value decomposition of `G`.
+- $W_t$: hidden-layer weight matrix at timestep $t$.
+- $G_t$: gradient or momentum-derived update matrix for $W_t$.
+- $M_t$: momentum buffer for a matrix parameter.
+- $\beta$: momentum coefficient.
+- $\eta$: learning rate for the Muon update.
+- $\lambda$: decoupled weight decay factor.
+- $A, B$: matrix dimensions for a parameter of shape $[A, B]$.
+- $Ortho(G)$: idealized semi-orthogonalized version of update matrix $G$.
+- $U S V^T$: singular value decomposition of $G$.
 
 ## Definitions
 - Matrix parameter: a 2D hidden-layer weight tensor that Muon is intended to optimize.
-- Semi-orthogonal matrix: a rectangular matrix satisfying either `O^T O = I` or `O O^T = I`, depending on shape.
+- Semi-orthogonal matrix: a rectangular matrix satisfying either $O^T O = I$ or $O O^T = I$, depending on shape.
 - Orthogonalized update: an update matrix whose singular values are pushed toward a common scale.
 - Newton-Schulz iteration: an iterative matrix method used by the source implementation to approximate orthogonalization.
 
@@ -35,62 +35,71 @@ Describe the high-level mathematical structure of Muon: momentum followed by app
 ## Main result
 Muon can be summarized as:
 
-```text
+
+$$
 momentum_update -> approximate_orthogonalization -> weight_update
-```
+$$
 
-For an update matrix `G`, the idealized orthogonalization target is:
+For an update matrix $G$, the idealized orthogonalization target is:
 
-```text
+
+$$
 Ortho(G) = U V^T
-```
+$$
 
 where:
 
-```text
+
+$$
 G = U S V^T
-```
+$$
 
 The source implementation approximates this operation with a Newton-Schulz-style iteration rather than computing the SVD directly.
 
 ## Derivation
 - Start from a gradient-like matrix update for a hidden weight matrix:
 
-```text
-G_t = grad_W L_t(W_t)
-```
+
+$$
+G_t = \nabla_W L_t(W_t)
+$$
 
 - Maintain a momentum-style update. A simplified non-Nesterov form is:
 
-```text
-M_t = beta M_{t-1} + (1 - beta) G_t
-```
+
+$$
+M_t = \beta M_{t-1} + (1 - \beta) G_t
+$$
 
 - Orthogonalize or approximately orthogonalize the momentum-derived update:
 
-```text
+
+$$
 U_t = Ortho(M_t)
-```
+$$
 
 - Apply decoupled weight decay and the Muon update:
 
-```text
-W_{t+1} = (1 - eta lambda) W_t - eta U_t
-```
+
+$$
+W_{t+1} = (1 - \eta \lambda) W_t - \eta U_t
+$$
 
 - [[2025 Muon is Scalable for LLM Training]] uses a practical scaled update:
 
-```text
-W_t = W_{t-1} - eta_t (0.2 * O_t * sqrt(max(A, B)) + lambda W_{t-1})
-```
+
+$$
+W_t = W_{t-1} - \eta_t (0.2 * O_t * \sqrt(\max(A, B)) + \lambda W_{t-1})
+$$
 
 The source motivates this with a theoretical update RMS of approximately:
 
-```text
-sqrt(1 / max(A, B))
-```
 
-for a full-rank matrix of shape `[A, B]`.
+$$
+\sqrt(1 / \max(A, B))
+$$
+
+for a full-rank matrix of shape $[A, B]$.
 
 - Skipped steps: the exact Newton-Schulz polynomial iteration, coefficient tuning, and convergence behavior are not fully derived here.
 - Skipped steps: the proof of the update RMS lemma from the Moonshot AI report is not expanded here.

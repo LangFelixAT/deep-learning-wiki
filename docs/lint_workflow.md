@@ -26,6 +26,8 @@ Check:
 - Use Obsidian links such as `[[ELBO]]` for real note relationships.
 - Prefer simple note-title links such as `[[ELBO]]`.
 - Avoid folder-qualified link targets such as `Math/ELBO|ELBO` unless there is a deliberate reason.
+- Use Obsidian/MathJax math delimiters: inline math as `$...$`, display equations as `$$...$$`.
+- Do not wrap mathematical variables or formulas in backticks; reserve backticks for literal code, filenames, commands, and pseudocode.
 - Keep filenames unique across the vault so links stay unambiguous.
 - If a planned concept is important enough to link, create a short stub rather than leaving a dangling link.
 - Do not create excessive links; link relationships that are meaningful for navigation or synthesis.
@@ -91,6 +93,8 @@ Pay special attention to:
 - `z_t`
 - `Q`, `K`, `V`, `d_k`
 - `n_h`, `d_h`, `d_c`
+
+Also check for formula-like backtick spans such as `` `q_phi(z|x)` `` or `` `epsilon_theta(x_t,t)` `` and convert them to MathJax notation.
 
 If notation differs across sources, do not silently normalize equations. Mention the source-specific notation and mark uncertain mappings as `Needs verification`.
 

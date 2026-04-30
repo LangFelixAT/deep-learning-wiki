@@ -24,7 +24,7 @@ FlashAttention is an IO-aware exact attention algorithm that computes the same s
 The paper shifts the attention-efficiency discussion from only FLOPs to memory movement, showing that the way attention is scheduled across the memory hierarchy can dominate wall-clock speed and memory use.
 
 ## Problem
-Standard attention forms the score matrix `S = QK^T` and probability matrix `P = softmax(S)`, both of size `N x N`. For long sequences, materializing and repeatedly reading/writing these matrices in high-bandwidth memory creates large IO cost.
+Standard attention forms the score matrix $S = QK^T$ and probability matrix $P = \operatorname{softmax}(S)$, both of size $N \times N$. For long sequences, materializing and repeatedly reading/writing these matrices in high-bandwidth memory creates large IO cost.
 
 Approximate attention methods reduce compute, but the source argues that FLOP reduction alone does not guarantee wall-clock speedup when memory access dominates.
 
@@ -43,12 +43,15 @@ The algorithm avoids writing the full `N x N` attention matrix to slow memory.
 ## Method
 - Start from standard attention:
 
-`S = QK^T`.
-
-`P = softmax(S)`.
-
-`O = PV`.
-
+$$
+S = QK^T
+$$
+$$
+P = \operatorname{softmax}(S)
+$$
+$$
+O = PV
+$$
 - Split `Q`, `K`, and `V` into blocks.
 - Load blocks into fast SRAM rather than repeatedly materializing large intermediates in HBM.
 - Use online softmax statistics so each block can contribute to the exact final softmax result.
@@ -57,12 +60,14 @@ The algorithm avoids writing the full `N x N` attention matrix to slow memory.
 ## Important equations
 Standard attention:
 
-`O = softmax(QK^T)V`.
-
+$$
+O = \operatorname{softmax}(QK^T)V
+$$
 The paper computes the same output:
 
-`O = softmax(QK^T)V`.
-
+$$
+O = \operatorname{softmax}(QK^T)V
+$$
 The difference is the computation schedule and memory access pattern, not the mathematical attention function.
 
 Conceptual online softmax state:

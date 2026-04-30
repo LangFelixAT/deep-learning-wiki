@@ -65,27 +65,31 @@ The repository's auxiliary optimizer uses Muon for selected matrix parameters an
 ## Important equations
 The writeup describes orthogonalization as replacing an update matrix `G` by an approximately nearest semi-orthogonal matrix:
 
-```text
+
+$$
 Ortho(G) = argmin_O ||O - G||_F
-```
+$$
 
 subject to one of the semi-orthogonality constraints:
 
-```text
+
+$$
 O^T O = I
-```
+$$
 
 or
 
-```text
+
+$$
 O O^T = I
-```
+$$
 
-If `G = U S V^T`, the idealized orthogonalized update is:
+If $G = U S V^T$, the idealized orthogonalized update is:
 
-```text
+
+$$
 Ortho(G) = U V^T
-```
+$$
 
 The source uses Newton-Schulz iteration as a practical approximate method instead of computing a full SVD.
 

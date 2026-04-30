@@ -53,23 +53,31 @@ See [[Multi-Head Latent Attention (Math)]] for the focused math note.
 
 Standard MHA cache requirement from the source:
 
-`2 n_h d_h l` elements per token.
+$2 n_h d_h l$ elements per token.
 
 MLA low-rank KV compression:
 
-`c_t^{KV} = W^{DKV} h_t`
+$$
+c_t^{KV} = W^{DKV} h_t
+$$
 
-`k_t^C = W^{UK} c_t^{KV}`
+$$
+k_t^C = W^{UK} c_t^{KV}
+$$
 
-`v_t^C = W^{UV} c_t^{KV}`
+$$
+v_t^C = W^{UV} c_t^{KV}
+$$
 
 With decoupled RoPE, the source states DeepSeek-V2 caches:
 
-`(d_c + d_h^R) l` elements per token.
+$(d_c + d_h^R) l$ elements per token.
 
 High-level DeepSeekMoE output:
 
-`h'_t = u_t + shared expert outputs + gated routed expert outputs`
+$$
+h'_t = u_t + shared expert outputs + gated routed expert outputs
+$$
 
 Needs verification: full MLA equations and DeepSeekMoE balance losses should be expanded only in focused math notes.
 

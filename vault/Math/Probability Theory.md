@@ -8,18 +8,18 @@
 Define the probability tools needed for deep learning notes.
 
 ## Canonical notation
-- `x`: observed variable or data sample.
-- `z`: latent variable.
-- `p(x)`: probability mass or density function.
-- `p(x,z)`: joint distribution.
-- `p(z|x)`: conditional distribution.
-- `E_p[f(x)]`: expectation of `f(x)` under distribution `p`.
+- $x$: observed variable or data sample.
+- $z$: latent variable.
+- $p(x)$: probability mass or density function.
+- $p(x,z)$: joint distribution.
+- $p(z|x)$: conditional distribution.
+- $E_p[f(x)]$: expectation of $f(x)$ under distribution $p$.
 
 ## Definitions
 - A probability distribution assigns mass or density to possible outcomes.
-- A joint distribution `p(x,z)` describes two variables together.
-- A marginal distribution sums or integrates out variables, for example `p(x) = integral p(x,z) dz` in the continuous latent-variable case.
-- A conditional distribution describes one variable given another, for example `p(z|x)`.
+- A joint distribution $p(x,z)$ describes two variables together.
+- A marginal distribution sums or integrates out variables, for example $p(x) = \int p(x,z) dz$ in the continuous latent-variable case.
+- A conditional distribution describes one variable given another, for example $p(z|x)$.
 - An expectation averages a function under a distribution.
 
 ## Assumptions
@@ -30,15 +30,17 @@ Define the probability tools needed for deep learning notes.
 ## Derivation
 - Marginalization removes a variable from a joint distribution:
 
-```text
-p(x) = integral p(x,z) dz
-```
+
+$$
+p(x) = \int p(x,z) dz
+$$
 
 - Conditioning relates joint, marginal, and conditional distributions:
 
-```text
+
+$$
 p(x,z) = p(z|x) p(x) = p(x|z) p(z)
-```
+$$
 
 - Skipped steps: discrete versions with sums, measure-theoretic assumptions, and normalization conditions.
 

@@ -37,31 +37,36 @@ Instead of computing normalization statistics across a mini-batch for each neuro
 Each training case gets its own normalization statistics, and learned gain and bias parameters are applied after normalization.
 
 ## Method
-- For a layer with summed inputs `a_i`, compute the layer mean over hidden units.
+- For a layer with summed inputs $a_i$, compute the layer mean over hidden units.
 - Compute the layer standard deviation over hidden units.
 - Normalize each summed input using that mean and standard deviation.
-- Apply learned per-unit gain `g_i` and bias `b_i`.
+- Apply learned per-unit gain $g_i$ and bias $b_i$.
 - In recurrent networks, compute these statistics separately at each time step.
 
 ## Important equations
 Layer mean:
 
-`mu = (1/H) sum_{i=1}^H a_i`.
-
+$$
+\mu = (1/H) \sum_{i=1}^H a_i
+$$
 Layer standard deviation:
 
-`sigma^2 = (1/H) sum_{i=1}^H (a_i - mu)^2`.
-
-`sigma = sqrt((1/H) sum_{i=1}^H (a_i - mu)^2)`.
-
+$$
+\sigma^2 = (1/H) \sum_{i=1}^H (a_i - \mu)^2
+$$
+$$
+\sigma = \sqrt((1/H) \sum_{i=1}^H (a_i - \mu)^2)
+$$
 Layer-normalized activation form:
 
-`h_i = f((g_i / sigma)(a_i - mu) + b_i)`.
-
+$$
+h_i = f((g_i / \sigma)(a_i - \mu) + b_i)
+$$
 For an RNN timestep:
 
-`h_t = f[(g / sigma_t) odot (a_t - mu_t) + b]`.
-
+$$
+h_t = f[(g / \sigma_t) odot (a_t - \mu_t) + b]
+$$
 ## Results
 - Claim from source: layer normalization performs the same computation at training and test time.
 - Claim from source: layer normalization can be applied to recurrent neural networks by computing normalization statistics separately at each time step.

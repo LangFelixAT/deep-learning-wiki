@@ -9,14 +9,14 @@
 Define the RMSNorm operation from [[2019 Root Mean Square Layer Normalization]] and contrast it with [[Layer Normalization (Math)]].
 
 ## Canonical notation
-- `a_i`: summed input or activation component for feature `i`
-- `n`: number of features in the normalized vector
-- `a`: vector of summed inputs
-- `RMS(a)`: root mean square of `a`
-- `g_i`: learned gain for feature `i`
-- `bar_a_i`: normalized value for feature `i`
-- `p`: partial ratio used by pRMSNorm, written as a fraction
-- `k`: number of features used for partial RMS estimation
+- $a_i$: summed input or activation component for feature $i$
+- $n$: number of features in the normalized vector
+- $a$: vector of summed inputs
+- $\operatorname{RMS}(a)$: root mean square of $a$
+- $g_i$: learned gain for feature $i$
+- $bar_a_i$: normalized value for feature $i$
+- $p$: partial ratio used by pRMSNorm, written as a fraction
+- $k$: number of features used for partial RMS estimation
 
 ## Definitions
 - Source: [[2019 Root Mean Square Layer Normalization]].
@@ -33,32 +33,37 @@ Define the RMSNorm operation from [[2019 Root Mean Square Layer Normalization]] 
 ## Main result
 RMS statistic:
 
-`RMS(a) = sqrt((1/n) sum_{i=1}^n a_i^2)`.
-
+$$
+\operatorname{RMS}(a) = \sqrt((1/n) \sum_{i=1}^n a_i^2)
+$$
 RMSNorm:
 
-`bar_a_i = a_i / RMS(a) * g_i`.
-
+$$
+bar_a_i = a_i / \operatorname{RMS}(a) * g_i
+$$
 pRMSNorm:
 
-`RMS_p(a) = sqrt((1/k) sum_{i=1}^k a_i^2)`, where `k = ceil(n p)`.
-
+$$
+RMS_p(a) = \sqrt{(1/k) \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
+$$
 ## Derivation
-- Start with a vector of summed inputs `a = (a_1, ..., a_n)`.
-- LayerNorm computes a mean `mu` and standard deviation `sigma`.
+- Start with a vector of summed inputs $a = (a_1, ..., a_n)$.
+- LayerNorm computes a mean $\mu$ and standard deviation $\sigma$.
 - RMSNorm removes the mean computation.
 - Compute the root mean square of the vector.
 - Divide each component by the RMS.
-- Apply learned gain `g_i`.
+- Apply learned gain $g_i$.
 
-For positive scale `alpha`, re-scaling invariance follows from RMS linearity:
+For positive scale $\alpha$, re-scaling invariance follows from RMS linearity:
 
-`RMS(alpha a) = alpha RMS(a)`.
-
+$$
+\operatorname{RMS}(\alpha a) = \alpha \operatorname{RMS}(a)
+$$
 Then:
 
-`alpha a_i / RMS(alpha a) = alpha a_i / (alpha RMS(a)) = a_i / RMS(a)`.
-
+$$
+\alpha a_i / \operatorname{RMS}(\alpha a) = \alpha a_i / (\alpha \operatorname{RMS}(a)) = a_i / \operatorname{RMS}(a)
+$$
 Skipped steps:
 - Full gradient derivation from the paper.
 - Full invariance table comparison across BatchNorm, WeightNorm, LayerNorm, RMSNorm, and pRMSNorm.

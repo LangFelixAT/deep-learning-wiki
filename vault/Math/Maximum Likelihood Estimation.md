@@ -8,11 +8,11 @@
 Define likelihood-based parameter estimation for model training.
 
 ## Canonical notation
-- `x`: observed data.
-- `theta`: model parameters.
-- `p_theta(x)`: likelihood of data under parameters `theta`.
-- `log p_theta(x)`: log likelihood.
-- `D = {x_i}`: dataset.
+- $x$: observed data.
+- $\theta$: model parameters.
+- $p_{\theta}(x)$: likelihood of data under parameters $\theta$.
+- $\log p_{\theta}(x)$: log likelihood.
+- $D = {x_i}$: dataset.
 
 ## Definitions
 - Maximum likelihood estimation chooses parameters that make the observed data likely under the model.
@@ -21,30 +21,33 @@ Define likelihood-based parameter estimation for model training.
 - Negative log likelihood is the loss form minimized in many training setups.
 
 ## Assumptions
-- A parameterized probabilistic model `p_theta(x)` is defined.
+- A parameterized probabilistic model $p_{\theta}(x)$ is defined.
 - Datapoints are often assumed independent and identically distributed for the basic objective.
 - The likelihood or an estimator/lower bound of it must be tractable enough to optimize.
 
 ## Derivation
-- For a dataset `D = {x_i}`, the maximum likelihood objective is:
+- For a dataset $D = {x_i}$, the maximum likelihood objective is:
 
-```text
-theta* = argmax_theta product_i p_theta(x_i)
-```
+
+$$
+\theta* = \argmax_\theta product_i p_{\theta}(x_i)
+$$
 
 - Taking logs gives:
 
-```text
-theta* = argmax_theta sum_i log p_theta(x_i)
-```
+
+$$
+\theta* = \argmax_\theta \sum_i \log p_{\theta}(x_i)
+$$
 
 - Equivalently, training often minimizes:
 
-```text
-- sum_i log p_theta(x_i)
-```
 
-- In latent-variable models, `p_theta(x)` may be intractable, motivating bounds such as the [[ELBO]].
+$$
+- \sum_i \log p_{\theta}(x_i)
+$$
+
+- In latent-variable models, $p_{\theta}(x)$ may be intractable, motivating bounds such as the [[ELBO]].
 - Skipped steps: connection between MLE and empirical risk minimization / KL minimization.
 
 ## Interpretation

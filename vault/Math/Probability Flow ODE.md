@@ -9,12 +9,13 @@ Define the deterministic process associated with a score-based SDE.
 
 ## Definitions
 - Source: [[2021 Score-Based Generative Modeling through SDEs]].
-- For a diffusion process, there exists a deterministic ODE with the same marginal densities `p_t(x)` as the SDE.
+- For a diffusion process, there exists a deterministic ODE with the same marginal densities $p_t(x)$ as the SDE.
 - Probability flow ODE:
 
-`dx = [f(x,t) - 1/2 g(t)^2 grad_x log p_t(x)] dt`.
-
-- With a learned score model, use `s_theta(x,t) approx grad_x log p_t(x)`.
+$$
+dx = [f(x,t) - 1/2 g(t)^2 \nabla_x \log p_t(x)] dt
+$$
+- With a learned score model, use $s_{\theta}(x,t) \approx \nabla_x \log p_t(x)$.
 - In practice, sampling requires numerically integrating this ODE with finitely many model evaluations.
 
 ## Assumptions
@@ -22,7 +23,7 @@ Define the deterministic process associated with a score-based SDE.
 - The ODE shares marginal distributions with the SDE under the conditions stated in the paper. Needs verification: formal assumptions are not expanded here.
 
 ## Derivation
-- Start from the forward SDE coefficients `f(x,t)` and `g(t)`.
+- Start from the forward SDE coefficients $f(x,t)$ and $g(t)$.
 - Replace the stochastic reverse process with a deterministic flow that has matching time marginals.
 - Substitute the learned score network for the true score.
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]] emphasizes that using the ODE for sampling requires numerical integration: choose discrete times, choose an integration scheme, and evaluate the denoiser or score field along the trajectory.
@@ -31,7 +32,7 @@ Define the deterministic process associated with a score-based SDE.
 
 ## Interpretation
 - The probability flow ODE gives a deterministic sampling path associated with the stochastic SDE.
-- It shares the same marginal distributions `p_t(x)` as the SDE, but produces deterministic trajectories.
+- It shares the same marginal distributions $p_t(x)$ as the SDE, but produces deterministic trajectories.
 - In EDM's design-space view, sampler quality depends partly on numerical-analysis choices such as step spacing and integration order.
 - DPM-Solver emphasizes that higher-order ODE methods can reduce discretization error and therefore reduce the number of required sampling steps.
 - The paper notes that it enables deterministic sampling and exact likelihood computation; details are outside this foundational note.

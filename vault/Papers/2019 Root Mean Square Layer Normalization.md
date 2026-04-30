@@ -46,28 +46,41 @@ RMSNorm removes the re-centering operation from LayerNorm and normalizes activat
 ## Important equations
 LayerNorm background:
 
-`mu = (1/n) sum_i a_i`
+$$
+\mu = (1/n) \sum_i a_i
+$$
 
-`sigma = sqrt((1/n) sum_i (a_i - mu)^2)`
+$$
+\sigma = \sqrt((1/n) \sum_i (a_i - \mu)^2)
+$$
 
-`bar_a_i = (a_i - mu) / sigma * g_i`
+$$
+bar_a_i = (a_i - \mu) / \sigma * g_i
+$$
 
 RMSNorm:
 
-`RMS(a) = sqrt((1/n) sum_i a_i^2)`
+$$
+\operatorname{RMS}(a) = \sqrt((1/n) \sum_i a_i^2)
+$$
 
-`bar_a_i = a_i / RMS(a) * g_i`
+$$
+bar_a_i = a_i / \operatorname{RMS}(a) * g_i
+$$
 
 Linearity property used for re-scaling invariance:
 
-For positive scale `alpha`:
+For positive scale $\alpha$:
 
-`RMS(alpha x) = alpha RMS(x)`
+$$
+\operatorname{RMS}(\alpha x) = \alpha \operatorname{RMS}(x)
+$$
 
-pRMSNorm estimates RMS from the first `p%` of summed inputs. If `p` is written as a fraction, then:
+pRMSNorm estimates RMS from the first $p\%$ of summed inputs. If $p$ is written as a fraction, then:
 
-`RMS_p(a) = sqrt((1/k) sum_{i=1}^k a_i^2)`, where `k = ceil(n p)`.
-
+$$
+RMS_p(a) = \sqrt{(1/k) \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
+$$
 ## Results
 - Claim from source: RMSNorm achieves comparable performance to LayerNorm across the paper's evaluated tasks while reducing running time.
 - Claim from source: the paper reports speedups of 7% to 64% across different models and implementations.

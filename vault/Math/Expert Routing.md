@@ -9,26 +9,28 @@
 Define the routing mechanism used to assign token representations to experts in Switch-style [[Mixture of Experts]] layers.
 
 ## Canonical notation
-- `x`: token representation
-- `N`: number of experts
-- `E_i(x)`: output of expert `i` on token `x`
-- `W_r`: router weight matrix
-- `h(x)`: router logits
-- `p_i(x)`: router probability for expert `i`
-- `T`: selected expert index set
-- `f_i`: fraction of tokens dispatched to expert `i`
-- `P_i`: fraction of router probability allocated to expert `i`
-- `alpha`: load-balancing loss coefficient
+- $x$: token representation
+- $N$: number of experts
+- $E_i(x)$: output of expert $i$ on token $x$
+- $W_r$: router weight matrix
+- $h(x)$: router logits
+- $p_i(x)$: router probability for expert $i$
+- $T$: selected expert index set
+- $f_i$: fraction of tokens dispatched to expert $i$
+- $P_i$: fraction of router probability allocated to expert $i$
+- $\alpha$: load-balancing loss coefficient
 - See [[Notation Conventions]] for shared MoE notation across concept and math notes.
 
 ## Definitions
 - Source: [[2021 Switch Transformers]]
-- Router logits: `h(x) = W_r x`.
+- Router logits: $h(x) = W_r x$.
 - Router probability:
 
-`p_i(x) = exp(h_i(x)) / sum_j exp(h_j(x))`
+$$
+p_i(x) = \exp(h_i(x)) / \sum_j \exp(h_j(x))
+$$
 
-- Top-1 routing selects `argmax_i p_i(x)`.
+- Top-1 routing selects $\argmax_i p_i(x)$.
 - Expert capacity is the maximum number of tokens an expert processes in a batch.
 
 ## Assumptions
@@ -41,12 +43,14 @@ Define the routing mechanism used to assign token representations to experts in 
 ## Main result
 Switch routing is top-1 MoE routing: each token activates one expert, enabling parameter count to scale with the number of experts while per-token expert computation remains roughly fixed.
 
-For selected expert `i* = argmax_i p_i(x)`, the Switch layer output for the token is:
+For selected expert $i* = \argmax_i p_i(x)$, the Switch layer output for the token is:
 
-`y = p_{i*}(x) E_{i*}(x)`
+$$
+y = p_{i*}(x) E_{i*}(x)
+$$
 
 ## Derivation
-- Compute router logits `h(x) = W_r x`.
+- Compute router logits $h(x) = W_r x$.
 - Convert logits to router probabilities with softmax.
 - Choose the top-probability expert for each token.
 - Apply only the selected expert to the token.
@@ -54,9 +58,11 @@ For selected expert `i* = argmax_i p_i(x)`, the Switch layer output for the toke
 - Apply the capacity constraint. If too many tokens select the same expert, overflow tokens are dropped from expert computation.
 - Add a load-balancing loss during training:
 
-`loss = alpha * N * sum_i f_i * P_i`
+$$
+loss = \alpha * N * \sum_i f_i * P_i
+$$
 
-where `f_i` is based on hard assignments and `P_i` is based on router probability mass.
+where $f_i$ is based on hard assignments and $P_i$ is based on router probability mass.
 
 - Skipped steps: full gradient analysis of the auxiliary loss.
 

@@ -14,10 +14,10 @@ In autoregressive decoding, the [[KV Cache]] can become a major memory bottlenec
 ## Mathematical formulation
 - Related math: [[Scaled Dot-Product Attention]], [[Multi-Head Latent Attention (Math)]]
 - Primary source context: [[2024 DeepSeek-V2 Technical Report]]
-- MLA computes a compressed KV latent from token hidden state `h_t`.
+- MLA computes a compressed KV latent from token hidden state $h_t$.
 - Keys and values can be reconstructed from this latent with up-projection matrices.
 - The source states that, with decoupled RoPE, DeepSeek-V2 caches the compressed KV latent plus a decoupled RoPE key during generation.
-- In the source's notation, MHA caches `2 n_h d_h l` elements per token, while MLA caches `(d_c + d_h^R) l` elements per token.
+- In the source's notation, MHA caches $2 n_h d_h l$ elements per token, while MLA caches $(d_c + d_h^R) l$ elements per token.
 - See [[Multi-Head Latent Attention (Math)]] for the math-note version of the MLA equations.
 
 ## Historical development

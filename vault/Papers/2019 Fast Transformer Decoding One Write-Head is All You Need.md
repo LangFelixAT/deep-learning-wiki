@@ -43,38 +43,46 @@ The paper's "one write-head" wording refers to writing one shared set of keys an
 - Start from Transformer multi-head attention.
 - Analyze batched training attention versus incremental decoding attention.
 - Show that incremental decoding repeatedly reloads large cached key/value tensors.
-- Modify attention so `P_q` remains per-head, while `P_k` and `P_v` are shared across heads.
+- Modify attention so $P_q$ remains per-head, while $P_k$ and $P_v$ are shared across heads.
 - Compare quality and speed against multi-head baselines and smaller-head alternatives.
 
 ## Important equations
 Standard multi-head projections in the paper's notation:
 
-`Q = einsum("bnd,hdk->bhnk", X, P_q)`.
-
-`K = einsum("bmd,hdk->bhmk", M, P_k)`.
-
-`V = einsum("bmd,hdv->bhmv", M, P_v)`.
-
+$$
+Q = einsum("bnd,hdk->bhnk", X, P_q)
+$$
+$$
+K = einsum("bmd,hdk->bhmk", M, P_k)
+$$
+$$
+V = einsum("bmd,hdv->bhmv", M, P_v)
+$$
 Multi-query attention keeps per-head queries but removes the head dimension from keys and values:
 
-`Q = einsum("bnd,hdk->bhnk", X, P_q)`.
+$$
+Q = einsum("bnd,hdk->bhnk", X, P_q)
+$$
+$$
+K = einsum("bmd,dk->bmk", M, P_k)
+$$
+$$
+V = einsum("bmd,dv->bmv", M, P_v)
+$$
+Incremental multi-head attention stores previous keys and values with shapes like $prev_K: [b,h,m,k]$ and $prev_V: [b,h,m,v]$.
 
-`K = einsum("bmd,dk->bmk", M, P_k)`.
-
-`V = einsum("bmd,dv->bmv", M, P_v)`.
-
-Incremental multi-head attention stores previous keys and values with shapes like `prev_K: [b,h,m,k]` and `prev_V: [b,h,m,v]`.
-
-Incremental multi-query attention stores previous keys and values with shapes like `prev_K: [b,m,k]` and `prev_V: [b,m,v]`.
+Incremental multi-query attention stores previous keys and values with shapes like $prev_K: [b,m,k]$ and $prev_V: [b,m,v]$.
 
 Under the paper's simplifying assumptions, incremental multi-head attention has memory-access/computation ratio:
 
-`Theta(n / d + 1 / b)`.
-
+$$
+Th\eta(n / d + 1 / b)
+$$
 Incremental multi-query attention changes this to:
 
-`Theta(1 / d + n / (d h) + 1 / b)`.
-
+$$
+Th\eta(1 / d + n / (d h) + 1 / b)
+$$
 The source emphasizes the reduction of the `n / d` term by a factor of the number of heads `h`.
 
 ## Results

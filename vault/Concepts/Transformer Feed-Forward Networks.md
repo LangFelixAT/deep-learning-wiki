@@ -15,8 +15,9 @@ Attention mixes information across positions. The feed-forward block then transf
 - Related math: [[Expert Routing]]
 - In [[2017 Attention Is All You Need]], each encoder and decoder layer contains:
 
-`FFN(x) = max(0, xW_1 + b_1) W_2 + b_2`.
-
+$$
+FFN(x) = \max(0, xW_1 + b_1) W_2 + b_2
+$$
 - The same feed-forward network is applied separately and identically to each position.
 - In [[2021 Switch Transformers]], some dense feed-forward sublayers are replaced by sparse expert feed-forward layers selected by [[Expert Routing]].
 - [[2024 DeepSeekMoE]] further refines MoE feed-forward layers with fine-grained routed experts and shared experts.

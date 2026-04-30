@@ -9,14 +9,15 @@ Describe the multi-noise-level sampling procedure used by NCSNs.
 
 ## Definitions
 - Source: [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]].
-- Annealed Langevin dynamics samples using a sequence of noise levels `sigma_1 > ... > sigma_L`.
-- It uses a noise-conditional score network `s_theta(x, sigma_i)`.
-- Update at noise level `sigma_i`:
+- Annealed Langevin dynamics samples using a sequence of noise levels $\sigma_1 > ... > \sigma_L$.
+- It uses a noise-conditional score network $s_{\theta}(x, \sigma_i)$.
+- Update at noise level $\sigma_i$:
 
-`tilde_x_t = tilde_x_{t-1} + alpha_i/2 * s_theta(tilde_x_{t-1}, sigma_i) + sqrt(alpha_i) z_t`.
-
+$$
+tilde_x_t = tilde_x_{t-1} + \alpha_i/2 * s_{\theta}(tilde_x_{t-1}, \sigma_i) + \sqrt(\alpha_i) z_t
+$$
 ## Assumptions
-- The NCSN estimates scores of Gaussian-perturbed distributions `q_{sigma_i}(x)`.
+- The NCSN estimates scores of Gaussian-perturbed distributions $q_{\sigma_i}(x)$.
 - The largest noise level should make modes less isolated and low-density regions easier to traverse.
 - The smallest noise level should be close enough to the original data distribution.
 - Needs verification: exact schedule choices are implementation details and not covered here.

@@ -68,20 +68,25 @@ The full MLA and DeepSeekMoE derivations are out of scope for this map ingest. S
 
 High-level MLA compression:
 
-`c_t^{KV} = W^{DKV} h_t`
+$$
+c_t^{KV} = W^{DKV} h_t
+$$
 
 The source states that only the compressed KV latent and a decoupled RoPE key need to be cached during generation.
 
 High-level DeepSeekMoE output structure:
 
-`h'_t = u_t + shared expert outputs + gated routed expert outputs`
+$$
+h'_t = u_t + shared expert outputs + gated routed expert outputs
+$$
 
 The routed experts are selected by top-k affinity scores, while shared experts are always included.
 
 Auxiliary-loss-free load balancing:
 
-`s_{i,t} + b_i` is used for top-k routing decisions, while the gate value is still derived from the original affinity score `s_{i,t}`.
-
+$$
+s_{i,t} + b_i \quad \text{for top-k routing decisions; gate value uses } s_{i,t}
+$$
 The source states that expert bias terms are adjusted during training according to whether an expert is overloaded or underloaded.
 
 ## Results

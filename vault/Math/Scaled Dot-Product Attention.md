@@ -9,10 +9,10 @@
 Define the attention operation used as the core computation in the original Transformer.
 
 ## Canonical notation
-- `Q`: query matrix
-- `K`: key matrix
-- `V`: value matrix
-- `d_k`: key/query dimensionality
+- $Q$: query matrix
+- $K$: key matrix
+- $V$: value matrix
+- $d_k$: key/query dimensionality
 - See [[Notation Conventions]] for cross-page attention notation.
 
 ## Definitions
@@ -22,40 +22,41 @@ Define the attention operation used as the core computation in the original Tran
 - The weights are computed from query-key compatibility scores.
 
 ## Assumptions
-- Queries and keys have dimension `d_k`.
-- Values have dimension `d_v`.
+- Queries and keys have dimension $d_k$.
+- Values have dimension $d_v$.
 - The attention operation is applied to matrices of queries, keys, and values.
 
 ## Main result
-`Attention(Q,K,V) = softmax(QK^T / sqrt(d_k)) V`.
-
+$$
+\operatorname{Attention}(Q,K,V) = \operatorname{softmax}(QK^T / \sqrt(d_k)) V
+$$
 ## Derivation
-- Compute dot-product scores between queries and keys: `QK^T`.
-- Scale the scores by `1 / sqrt(d_k)`.
+- Compute dot-product scores between queries and keys: $QK^T$.
+- Scale the scores by $1 / \sqrt(d_k)$.
 - Apply softmax row-wise to obtain attention weights.
-- Multiply the attention weights by `V` to produce weighted sums of values.
+- Multiply the attention weights by $V$ to produce weighted sums of values.
 - Skipped steps: gradient analysis of the softmax saturation issue.
 
 ## Interpretation
-The query-key dot product measures compatibility. The softmax turns compatibilities into weights over values. The scaling factor reduces the magnitude of dot products when `d_k` is large.
+The query-key dot product measures compatibility. The softmax turns compatibilities into weights over values. The scaling factor reduces the magnitude of dot products when $d_k$ is large.
 
 [[2021 RoFormer]] modifies query and key representations with rotary position embeddings before this dot product, so the compatibility score can depend on relative position.
 
-[[2019 Fast Transformer Decoding One Write-Head is All You Need]] keeps the same dot-product attention operation but changes how keys and values are shared across heads in [[Multi-Query Attention]]. This mainly affects the stored key/value tensors used during decoding, not the basic `softmax(QK^T / sqrt(d_k)) V` operation.
+[[2019 Fast Transformer Decoding One Write-Head is All You Need]] keeps the same dot-product attention operation but changes how keys and values are shared across heads in [[Multi-Query Attention]]. This mainly affects the stored key/value tensors used during decoding, not the basic $\operatorname{softmax}(QK^T / \sqrt(d_k)) V$ operation.
 
 [[2023 GQA]] likewise keeps the same attention operation while choosing an intermediate number of shared key/value groups.
 
-[[2022 FlashAttention]] also computes the same attention function, but changes the memory schedule: it avoids materializing the full `QK^T` and `softmax(QK^T)` matrices in slow memory.
+[[2022 FlashAttention]] also computes the same attention function, but changes the memory schedule: it avoids materializing the full $QK^T$ and $\operatorname{softmax}(QK^T)$ matrices in slow memory.
 
 [[Multi-Head Latent Attention]] changes the query/key/value parameterization and cache representation while still using scaled dot-product compatibility inside each attention head.
 
 ## Alternative formulations
 - Additive attention uses a feed-forward network for compatibility scoring.
-- Unscaled dot-product attention omits the `1 / sqrt(d_k)` factor.
+- Unscaled dot-product attention omits the $1 / \sqrt(d_k)$ factor.
 - [[FlashAttention]] is not an approximation to scaled dot-product attention; it is an exact IO-aware implementation strategy.
 
 ## Common mistakes
-- Forgetting that `Q`, `K`, and `V` are learned projections, not necessarily raw token embeddings.
+- Forgetting that $Q$, $K$, and $V$ are learned projections, not necessarily raw token embeddings.
 - Treating attention weights as explanations without checking the model and task context.
 - Omitting the scaling factor when describing the original Transformer.
 - Assuming [[FlashAttention]] changes the attention function or turns exact attention into a linear-time attention method.

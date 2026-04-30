@@ -14,22 +14,24 @@ Learn representations by pulling related examples together and pushing unrelated
 - A similarity function scores whether two embeddings align.
 
 ## Positive vs negative pairs
-- Positive: `(image_i, text_i)`.
-- Negative: `(image_i, text_j)` for `j != i`.
-- In a batch of `N` image-text pairs, the correct `N` pairs are positives and the other cross-pairs are negatives.
+- Positive: $(image_i, text_i)$.
+- Negative: $(image_i, text_j)$ for $j \ne i$.
+- In a batch of $N$ image-text pairs, the correct $N$ pairs are positives and the other cross-pairs are negatives.
 
 ## Similarity objective
 CLIP normalizes image and text embeddings and compares them with dot products, equivalent to cosine similarity after normalization:
 
-`sim(i, t) = normalize(i) dot normalize(t)`.
-
-The objective increases `sim(image_i, text_i)` and decreases `sim(image_i, text_j)` for mismatched `j`.
+$$
+\operatorname{sim}(i, t) = \operatorname{normalize}(i) dot \operatorname{normalize}(t)
+$$
+The objective increases $\operatorname{sim}(image_i, text_i)$ and decreases $\operatorname{sim}(image_i, text_j)$ for mismatched $j$.
 
 ## InfoNCE-style structure
-For one image embedding `i`, a light image-to-text contrastive term has the form:
+For one image embedding $i$, a light image-to-text contrastive term has the form:
 
-`-log exp(sim(i, t_pos) / tau) / sum_j exp(sim(i, t_j) / tau)`.
-
+$$
+-\log \exp(sim(i, t_pos) / \tau) / \sum_j \exp(sim(i, t_j) / \tau)
+$$
 CLIP uses a symmetric version: image-to-text matching and text-to-image matching are both optimized.
 
 ## Assumptions

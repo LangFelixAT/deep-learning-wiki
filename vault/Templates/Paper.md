@@ -28,6 +28,7 @@
 ## Method
 
 ## Important equations
+Use `$...$` for inline math and `$$...$$` for display equations. Use backticks only for literal code or pseudocode.
 
 ## Results
 

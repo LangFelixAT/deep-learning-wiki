@@ -9,41 +9,45 @@ Formulate diffusion modeling in a learned latent space rather than directly in p
 
 ## Definitions
 - Source: [[2022 Latent Diffusion Models]].
-- `x` is an image in pixel space.
-- `E` is an encoder and `D` is a decoder.
+- $x$ is an image in pixel space.
+- $E$ is an encoder and $D$ is a decoder.
 - The latent representation is:
 
-`z = E(x)`.
-
+$$
+z = E(x)
+$$
 - Reconstruction is:
 
-`x_hat = D(z) = D(E(x))`.
-
+$$
+\hat{x} = D(z) = D(E(x))
+$$
 ## Formulation in latent space
-Instead of corrupting and denoising `x_t`, latent diffusion corrupts and denoises `z_t`.
+Instead of corrupting and denoising $x_t$, latent diffusion corrupts and denoises $z_t$.
 
 The latent diffusion objective is structurally:
 
-`L_LDM = E_{E(x), epsilon, t}[||epsilon - epsilon_theta(z_t,t)||_2^2]`.
-
+$$
+L_LDM = E_{E(x), \epsilon, t}[||\epsilon - \epsilon_{\theta}(z_t,t)||_2^2]
+$$
 For conditional generation:
 
-`epsilon_theta(z_t,t,y)`.
-
+$$
+\epsilon_{\theta}(z_t,t,y)
+$$
 ## Relation between x and z
-- `x` lives in pixel space.
-- `z` lives in the learned latent space.
-- The encoder moves from `x` to `z`.
-- The decoder moves from `z` back to image space.
-- The diffusion model is trained on noisy versions of `z`, not noisy versions of `x`.
+- $x$ lives in pixel space.
+- $z$ lives in the learned latent space.
+- The encoder moves from $x$ to $z$.
+- The decoder moves from $z$ back to image space.
+- The diffusion model is trained on noisy versions of $z$, not noisy versions of $x$.
 
 ## Where diffusion happens
-- Forward noising: applied to latent `z`.
-- Reverse denoising: learned over latent states `z_t`.
-- Final image synthesis: decode the final latent with `D`.
+- Forward noising: applied to latent $z$.
+- Reverse denoising: learned over latent states $z_t$.
+- Final image synthesis: decode the final latent with $D$.
 
 ## Connection to existing diffusion math
-- The objective mirrors the DDPM noise-prediction objective, replacing `x_t` with `z_t`.
+- The objective mirrors the DDPM noise-prediction objective, replacing $x_t$ with $z_t$.
 - The same ideas from [[Diffusion Forward Process]], [[Diffusion Reverse Process]], and [[Score Matching]] apply after changing the data space from pixels to latents.
 - Conditioning and [[Classifier-Free Guidance]] can be applied to latent predictions.
 
@@ -54,9 +58,9 @@ For conditional generation:
 - The decoder can map generated latents back to images with acceptable reconstruction quality.
 
 ## Derivation
-- Train or choose an autoencoder giving `z = E(x)`.
-- Apply the diffusion forward process to `z`.
-- Train `epsilon_theta(z_t,t)` to predict the latent noise.
+- Train or choose an autoencoder giving $z = E(x)$.
+- Apply the diffusion forward process to $z$.
+- Train $\epsilon_{\theta}(z_t,t)$ to predict the latent noise.
 - Sample by reversing the latent noising process.
 - Decode the final latent.
 - Skipped steps: autoencoder training objective and architecture-specific details.
@@ -66,7 +70,7 @@ Latent diffusion changes the domain of diffusion, not the basic denoising princi
 
 ## Common mistakes
 - Thinking latent diffusion removes the diffusion sampling loop.
-- Confusing the autoencoder latent with the noise latent `z_t` at a diffusion timestep.
+- Confusing the autoencoder latent with the noise latent $z_t$ at a diffusion timestep.
 - Assuming the decoder is optional; generated latents still need to be mapped back to pixels.
 - Treating latent diffusion as unrelated to DDPM-style noise prediction.
 

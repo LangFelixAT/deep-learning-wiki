@@ -49,30 +49,33 @@ The source uses Muon for matrix-shaped parameters and AdamW for non-matrix param
 
 The base Muon update is described as:
 
-```text
-M_t = mu M_{t-1} + grad L_t(W_{t-1})
+
+$$
+M_t = \mu M_{t-1} + \nabla L_t(W_{t-1})
 O_t = Newton-Schulz(M_t)
-W_t = W_{t-1} - eta_t O_t
-```
+W_t = W_{t-1} - \eta_t O_t
+$$
 
 The scaled version adds weight decay and update RMS adjustment:
 
-```text
-W_t = W_{t-1} - eta_t (0.2 * O_t * sqrt(max(A, B)) + lambda W_{t-1})
-```
 
-where `[A, B]` is the matrix shape.
+$$
+W_t = W_{t-1} - \eta_t (0.2 * O_t * \sqrt(\max(A, B)) + \lambda W_{t-1})
+$$
+
+where $[A, B]$ is the matrix shape.
 
 ## Important equations
 Source claim for theoretical Muon update RMS:
 
-```text
-update RMS ~= sqrt(1 / max(A, B))
-```
 
-for a full-rank matrix of shape `[A, B]`.
+$$
+update RMS \approx \sqrt(1 / \max(A, B))
+$$
 
-The paper uses this to motivate shape-dependent scaling by `sqrt(max(A, B))`, then matches the resulting update RMS to an empirical AdamW-like range.
+for a full-rank matrix of shape $[A, B]$.
+
+The paper uses this to motivate shape-dependent scaling by $\sqrt(\max(A, B))$, then matches the resulting update RMS to an empirical AdamW-like range.
 
 ## Results
 Claim from source:
@@ -96,7 +99,7 @@ This note does not ingest full benchmark tables.
 - Adding weight decay is important for scaling Muon.
 - Without weight decay, some weights and layer output RMS values can grow too large during longer training.
 - Muon's update RMS varies with parameter shape.
-- The source proposes scaling Muon updates by `sqrt(max(A, B))` and matching update RMS to an empirical AdamW-like range.
+- The source proposes scaling Muon updates by $\sqrt(\max(A, B))$ and matching update RMS to an empirical AdamW-like range.
 - The source reports no loss spike or gradient norm spike in Moonlight training.
 - The source reports sparse large-attention-logit events early in training and says they decrease as training progresses.
 - The source reports that applying weight decay to RMSNorm gamma is important for stability.

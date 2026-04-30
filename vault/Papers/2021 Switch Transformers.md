@@ -49,31 +49,43 @@ Replace selected dense feed-forward sublayers in a transformer with a Switch fee
 ## Important equations
 Router probabilities:
 
-`p_i(x) = exp(h_i(x)) / sum_j exp(h_j(x))`
+$$
+p_i(x) = \exp(h_i(x)) / \sum_j \exp(h_j(x))
+$$
 
-where the paper defines router logits from `h(x) = W_r x`.
+where the paper defines router logits from $h(x) = W_r x$.
 
 General top-k MoE output:
 
-`y = sum_{i in T} p_i(x) E_i(x)`
+$$
+y = \sum_{i in T} p_i(x) E_i(x)
+$$
 
 For Switch routing, `T` contains only the top-1 expert.
 
 Switch top-1 output:
 
-`i* = argmax_i p_i(x)`
+$$
+i* = \argmax_i p_i(x)
+$$
 
-`y = p_{i*}(x) E_{i*}(x)`
+$$
+y = p_{i*}(x) E_{i*}(x)
+$$
 
 Expert capacity:
 
-`expert capacity = (tokens per batch / number of experts) * capacity factor`
+$$
+expert capacity = (tokens per batch / number of experts) * capacity factor
+$$
 
 Auxiliary load-balancing loss:
 
-`loss = alpha * N * sum_i f_i * P_i`
+$$
+loss = \alpha * N * \sum_i f_i * P_i
+$$
 
-where `f_i` is the fraction of tokens dispatched to expert `i`, and `P_i` is the fraction of router probability assigned to expert `i` across the batch.
+where $f_i$ is the fraction of tokens dispatched to expert $i$, and $P_i$ is the fraction of router probability assigned to expert $i$ across the batch.
 
 ## Results
 - Claim from source: Switch Transformer simplifies MoE routing by using a single selected expert per token.

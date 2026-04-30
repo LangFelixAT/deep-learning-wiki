@@ -128,6 +128,11 @@ Do not skip algebraic steps unless explicitly marked as skipped.
 
 When notation differs across sources, define canonical notation and mention alternatives.
 
+Format mathematics for Obsidian/MathJax:
+- inline math uses `$...$`
+- display equations use `$$...$$`
+- backticks are only for literal code, commands, filenames, or pseudocode
+
 ## Rules for concept notes
 
 Concept notes synthesize multiple sources.

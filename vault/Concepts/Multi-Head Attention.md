@@ -15,11 +15,13 @@ A single attention head produces one weighted combination of values. Multiple he
 - Related math: [[Scaled Dot-Product Attention]]
 - In [[2017 Attention Is All You Need]]:
 
-`MultiHead(Q,K,V) = Concat(head_1, ..., head_h) W^O`.
-
-`head_i = Attention(Q W_i^Q, K W_i^K, V W_i^V)`.
-
-- In the original Transformer base model, the paper uses `h = 8` heads with `d_k = d_v = d_model / h = 64`, so reducing each head's dimensionality keeps the total cost similar to full-dimensional single-head attention.
+$$
+\operatorname{MultiHead}(Q,K,V) = \operatorname{Concat}(head_1, ..., head_h) W^O
+$$
+$$
+head_i = \operatorname{Attention}(Q W_i^Q, K W_i^K, V W_i^V)
+$$
+- In the original Transformer base model, the paper uses $h = 8$ heads with $d_k = d_v = d_model / h = 64$, so reducing each head's dimensionality keeps the total cost similar to full-dimensional single-head attention.
 
 ## Historical development
 [[2017 Attention Is All You Need]] introduces multi-head attention as a central Transformer component.

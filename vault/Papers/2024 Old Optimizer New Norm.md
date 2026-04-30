@@ -41,9 +41,10 @@ The paper uses this lens to reinterpret Adam, Shampoo, and Prodigy after disabli
 ## Method
 The source starts from the steepest descent objective:
 
-```text
-arg min_delta [ g^T delta + (lambda / 2) ||delta||^2 ]
-```
+
+$$
+arg min_delta [ g^T delta + (\lambda / 2) ||delta||^2 ]
+$$
 
 It then studies which update direction is produced by different choices of norm:
 - Euclidean/Frobenius norms lead to gradient-descent-like updates.
@@ -53,9 +54,10 @@ It then studies which update direction is produced by different choices of norm:
 ## Important equations
 Generic steepest descent objective:
 
-```text
-arg min_delta [ g^T delta + (lambda / 2) ||delta||^2 ]
-```
+
+$$
+arg min_delta [ g^T delta + (\lambda / 2) ||delta||^2 ]
+$$
 
 The source separates the solution into:
 - a step size depending on the dual norm of the gradient
@@ -63,15 +65,17 @@ The source separates the solution into:
 
 For Shampoo without accumulation, the source writes the matrix update as:
 
-```text
+
+$$
 (G G^T)^(-1/4) G (G^T G)^(-1/4) = U V^T
-```
+$$
 
 where:
 
-```text
+
+$$
 G = U S V^T
-```
+$$
 
 This connects Shampoo-style updates to semi-orthogonal matrix directions.
 

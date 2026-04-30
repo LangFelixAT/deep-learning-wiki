@@ -20,8 +20,8 @@ The paper asks how to generalize discrete noise-perturbation generative models i
 
 ## Core ideas
 - A forward SDE gradually transforms data into a tractable prior distribution by injecting noise.
-- A reverse-time SDE transforms prior noise back into data, but requires the score `grad_x log p_t(x)` at each time.
-- A time-dependent score network `s_theta(x,t)` estimates the score field of intermediate perturbed distributions.
+- A reverse-time SDE transforms prior noise back into data, but requires the score $\nabla_x \log p_t(x)$ at each time.
+- A time-dependent score network $s_{\theta}(x,t)$ estimates the score field of intermediate perturbed distributions.
 - SMLD and DDPM can be viewed as discretizations of different SDEs.
 - A probability flow ODE has the same marginal distributions as the SDE but gives a deterministic trajectory.
 - Predictor-corrector samplers combine a numerical reverse-SDE step with score-based correction steps such as Langevin dynamics.
@@ -29,24 +29,29 @@ The paper asks how to generalize discrete noise-perturbation generative models i
 ## Important equations
 Forward SDE:
 
-`dx = f(x,t) dt + g(t) dw`.
-
+$$
+dx = f(x,t) dt + g(t) dw
+$$
 Reverse-time SDE:
 
-`dx = [f(x,t) - g(t)^2 grad_x log p_t(x)] dt + g(t) d w_bar`.
-
+$$
+dx = [f(x,t) - g(t)^2 \nabla_x \log p_t(x)] dt + g(t) d w_bar
+$$
 Time-dependent score model:
 
-`s_theta(x,t) approx grad_x log p_t(x)`.
-
+$$
+s_{\theta}(x,t) \approx \nabla_x \log p_t(x)
+$$
 Continuous score matching objective:
 
-`E_t[lambda(t) E_{x(0)} E_{x(t)|x(0)} ||s_theta(x(t),t) - grad_{x(t)} log p_{0t}(x(t)|x(0))||_2^2]`.
-
+$$
+E_t[\lambda(t) E_{x(0)} E_{x(t)|x(0)} ||s_{\theta}(x(t),t) - \nabla_{x(t)} \log p_{0t}(x(t)|x(0))||_2^2]
+$$
 Probability flow ODE:
 
-`dx = [f(x,t) - 1/2 g(t)^2 grad_x log p_t(x)] dt`.
-
+$$
+dx = [f(x,t) - 1/2 g(t)^2 \nabla_x \log p_t(x)] dt
+$$
 ## Claims from source
 - Claim from source: a forward SDE can smoothly transform a complex data distribution into a known prior distribution by injecting noise.
 - Claim from source: the corresponding reverse-time SDE transforms the prior distribution back into the data distribution by removing noise.

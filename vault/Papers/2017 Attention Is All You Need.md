@@ -52,30 +52,37 @@ Self-attention lets each position directly attend to other positions in the sequ
 ## Important equations
 Scaled dot-product attention:
 
-`Attention(Q,K,V) = softmax(QK^T / sqrt(d_k)) V`.
-
+$$
+\operatorname{Attention}(Q,K,V) = \operatorname{softmax}(QK^T / \sqrt(d_k)) V
+$$
 Multi-head attention:
 
-`MultiHead(Q,K,V) = Concat(head_1, ..., head_h) W^O`.
-
+$$
+\operatorname{MultiHead}(Q,K,V) = \operatorname{Concat}(head_1, ..., head_h) W^O
+$$
 Each head:
 
-`head_i = Attention(Q W_i^Q, K W_i^K, V W_i^V)`.
-
+$$
+head_i = \operatorname{Attention}(Q W_i^Q, K W_i^K, V W_i^V)
+$$
 Position-wise feed-forward network:
 
-`FFN(x) = max(0, xW_1 + b_1) W_2 + b_2`.
-
+$$
+FFN(x) = \max(0, xW_1 + b_1) W_2 + b_2
+$$
 Sublayer wrapper:
 
-`LayerNorm(x + Sublayer(x))`.
-
+$$
+LayerNorm(x + Sublayer(x))
+$$
 Sinusoidal positional encoding:
 
-`PE(pos,2i) = sin(pos / 10000^(2i/d_model))`.
-
-`PE(pos,2i+1) = cos(pos / 10000^(2i/d_model))`.
-
+$$
+\operatorname{PE}(pos,2i) = sin(pos / 10000^(2i/d_model))
+$$
+$$
+\operatorname{PE}(pos,2i+1) = cos(pos / 10000^(2i/d_model))
+$$
 ## Results
 - Claim from source: the Transformer achieves strong machine translation results while being more parallelizable and requiring less training time than the recurrent/convolutional baselines considered in the paper.
 - Claim from source: self-attention has constant maximum path length between positions, while recurrent layers require a path length linear in sequence length.
@@ -93,7 +100,7 @@ Detailed benchmark tables are outside this ingest scope.
 - Claim from source: the Transformer relies entirely on attention mechanisms for sequence transduction, dispensing with recurrence and convolutions.
 - Claim from source: recurrent models have inherently sequential computation across positions, limiting parallelization during training.
 - Claim from source: self-attention relates different positions of a single sequence to compute a sequence representation.
-- Claim from source: scaled dot-product attention divides dot products by `sqrt(d_k)` to counteract large dot-product magnitudes that can push softmax into small-gradient regions.
+- Claim from source: scaled dot-product attention divides dot products by $\sqrt(d_k)$ to counteract large dot-product magnitudes that can push softmax into small-gradient regions.
 - Claim from source: multi-head attention is beneficial because it allows attention to different representation subspaces at different positions.
 - Claim from source: positional encodings are added because the model contains no recurrence or convolution and therefore needs position information injected.
 

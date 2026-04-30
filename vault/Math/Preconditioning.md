@@ -9,11 +9,11 @@
 Define preconditioning as the transformation of gradients before an optimization step, with emphasis on why it matters for adaptive and matrix-aware optimizers.
 
 ## Canonical notation
-- `theta_t`: parameter vector at timestep `t`.
-- `g_t`: gradient at timestep `t`.
-- `P_t`: preconditioner.
-- `alpha`: learning rate.
-- `||.||`: update norm in steepest-descent views.
+- $\theta_t$: parameter vector at timestep $t$.
+- $g_t$: gradient at timestep $t$.
+- $P_t$: preconditioner.
+- $\alpha$: learning rate.
+- $||.||$: update norm in steepest-descent views.
 
 ## Definitions
 - Preconditioner: a matrix or operator that transforms the gradient direction before the update.
@@ -25,34 +25,37 @@ Define preconditioning as the transformation of gradients before an optimization
 ## Assumptions
 - The objective is differentiable with respect to parameters.
 - The preconditioner is chosen to make optimization better conditioned or better scaled.
-- The exact meaning of `P_t` depends on the optimizer source.
+- The exact meaning of $P_t$ depends on the optimizer source.
 
 ## Main result
 A generic preconditioned gradient step can be written as:
 
-```text
-theta_{t+1} = theta_t - alpha P_t g_t
-```
 
-For coordinatewise methods, `P_t` is effectively diagonal. For matrix-aware methods, `P_t` may use matrix or tensor structure.
+$$
+\theta_{t+1} = \theta_t - \alpha P_t g_t
+$$
+
+For coordinatewise methods, $P_t$ is effectively diagonal. For matrix-aware methods, $P_t$ may use matrix or tensor structure.
 
 From the steepest-descent perspective in [[2024 Old Optimizer New Norm]], choosing an update norm is another way to specify optimizer geometry.
 
 ## Derivation
 - Start from gradient descent:
 
-```text
-theta_{t+1} = theta_t - alpha g_t
-```
+
+$$
+\theta_{t+1} = \theta_t - \alpha g_t
+$$
 
 - Insert a transformation before the gradient is applied:
 
-```text
-theta_{t+1} = theta_t - alpha P_t g_t
-```
 
-- If `P_t` rescales coordinates independently, the update resembles diagonal adaptive methods.
-- If `P_t` mixes coordinates or acts along tensor dimensions, the update can reflect richer geometry.
+$$
+\theta_{t+1} = \theta_t - \alpha P_t g_t
+$$
+
+- If $P_t$ rescales coordinates independently, the update resembles diagonal adaptive methods.
+- If $P_t$ mixes coordinates or acts along tensor dimensions, the update can reflect richer geometry.
 - Skipped steps: curvature-based derivations and second-order methods are not developed here.
 
 ## Interpretation
