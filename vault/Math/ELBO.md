@@ -20,11 +20,11 @@ See [[Notation Conventions]] for wiki-level notation for $p_{\theta}(x,z)$, $p_{
 
 ## Definitions
 - In general variational inference, the ELBO is an objective optimized over an approximate posterior family.
-- In [[2013 Auto-Encoding Variational Bayes]], the lower bound for one datapoint is written as $L(\theta, \phi; x^(i))$.
+- In [[2013 Auto-Encoding Variational Bayes]], the lower bound for one datapoint is written as $L(\theta, \phi; x^{(i)})$.
 - The approximate posterior is $q_{\phi}(z|x)$.
 - The true posterior is $p_{\theta}(z|x)$.
 - The joint model is $p_{\theta}(x,z) = p_{\theta}(z)p_{\theta}(x|z)$ in the paper's main latent-variable setup.
-- The paper uses the decomposition $\log p_{\theta}(x^(i)) = D_{KL}(q_{\phi}(z|x^(i)) || p_{\theta}(z|x^(i))) + L(\theta, \phi; x^(i))$.
+- The paper uses the decomposition $\log p_{\theta}(x^{(i)}) = D_{KL}(q_{\phi}(z|x^{(i)}) || p_{\theta}(z|x^{(i)})) + L(\theta, \phi; x^{(i)})$.
 - In [[2019 Introduction to Variational Autoencoders]], the ELBO is defined as $L_{\theta,\phi}(x) = E_{q_{\phi}(z|x)}[\log p_{\theta}(x,z) - \log q_{\phi}(z|x)]$.
 - The tutorial presents the ELBO as the marginal log likelihood minus the posterior-approximation KL: $L_{\theta,\phi}(x) = \log p_{\theta}(x) - D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))$.
 
@@ -39,12 +39,12 @@ See [[Notation Conventions]] for wiki-level notation for $p_{\theta}(x,z)$, $p_{
 - The foundational derivation assumes an inference model $q_{\phi}(z|x)$ whose support and expectations make the displayed KL and ELBO terms well-defined. Needs verification: support conditions should be made explicit in a fuller derivation.
 
 ## Derivation
-- Start with $\log p_{\theta}(x^(i))$.
-- Add an approximate posterior $q_{\phi}(z|x^(i))$.
-- Decompose the marginal log likelihood into a KL divergence from $q_{\phi}(z|x^(i))$ to the true posterior plus a residual term $L(\theta, \phi; x^(i))$.
+- Start with $\log p_{\theta}(x^{(i)})$.
+- Add an approximate posterior $q_{\phi}(z|x^{(i)})$.
+- Decompose the marginal log likelihood into a KL divergence from $q_{\phi}(z|x^{(i)})$ to the true posterior plus a residual term $L(\theta, \phi; x^{(i)})$.
 - Since KL divergence is non-negative, the residual term is a lower bound.
-- Rewrite the lower bound as an expectation under $q_{\phi}(z|x)$: $E_q[-\log q_{\phi}(z|x) + \log p_{\theta}(x,z)]$.
-- Split the joint term into prior and likelihood to obtain the reconstruction-plus-prior form: $-D_{KL}(q_{\phi}(z|x) || p_{\theta}(z)) + E_q[\log p_{\theta}(x|z)]$.
+- Rewrite the lower bound as an expectation under $q_{\phi}(z|x)$: $E_{q}[-\log q_{\phi}(z|x) + \log p_{\theta}(x,z)]$.
+- Split the joint term into prior and likelihood to obtain the reconstruction-plus-prior form: $-D_{KL}(q_{\phi}(z|x) || p_{\theta}(z)) + E_{q}[\log p_{\theta}(x|z)]$.
 - Apply the reparameterization $z = g_\phi(\epsilon, x)$ so the Monte Carlo lower-bound estimator is differentiable with respect to $\phi$.
 - Skipped steps: full algebraic expansion of the KL decomposition and the Gaussian closed-form KL; see [[2013 Auto-Encoding Variational Bayes]] and [[KL Divergence]].
 - The 2019 tutorial derives the same decomposition by inserting $q_{\phi}(z|x)$ into $\log p_{\theta}(x)$ and separating the result into the ELBO plus $D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))$.

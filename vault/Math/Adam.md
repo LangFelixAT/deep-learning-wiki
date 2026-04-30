@@ -41,9 +41,9 @@ Adam updates parameters as:
 $$
 m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t
 v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2
-\hat{m}_t = m_t / (1 - \beta_1^t)
-\hat{v}_t = v_t / (1 - \beta_2^t)
-\theta_t = \theta_{t-1} - \alpha * \hat{m}_t / (\sqrt(\hat{v}_t) + \epsilon)
+\hat{m}_t = \frac{m_t}{1 - \beta_1^t}
+\hat{v}_t = \frac{v_t}{1 - \beta_2^t}
+\theta_t = \theta_{t-1} - \alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}
 $$
 
 ## Derivation
@@ -72,15 +72,15 @@ $$
 
 
 $$
-\hat{m}_t = m_t / (1 - \beta_1^t)
-\hat{v}_t = v_t / (1 - \beta_2^t)
+\hat{m}_t = \frac{m_t}{1 - \beta_1^t}
+\hat{v}_t = \frac{v_t}{1 - \beta_2^t}
 $$
 
 - Use the corrected first moment as the update direction and the corrected second raw moment as an elementwise scale estimate:
 
 
 $$
-\theta_t = \theta_{t-1} - \alpha * \hat{m}_t / (\sqrt(\hat{v}_t) + \epsilon)
+\theta_t = \theta_{t-1} - \alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}
 $$
 
 - Skipped steps: the source paper's convergence proof and regret-bound derivation are not expanded here.

@@ -32,12 +32,12 @@ Condition dropout training:
 Classifier-free guided score:
 
 $$
-s_guided(x_t,t,c) = (1 + w) s_{\theta}(x_t,t,c) - w s_{\theta}(x_t,t)
+s_{guided}(x_t,t,c) = (1 + w) s_{\theta}(x_t,t,c) - w s_{\theta}(x_t,t)
 $$
 Equivalent noise-prediction form:
 
 $$
-\epsilon_guided(x_t,t,c) = (1 + w) \epsilon_{\theta}(x_t,t,c) - w \epsilon_{\theta}(x_t,t)
+\epsilon_{guided}(x_t,t,c) = (1 + w) \epsilon_{\theta}(x_t,t,c) - w \epsilon_{\theta}(x_t,t)
 $$
 Needs verification: exact signs and scaling depend on whether the model is written in score, noise, or denoised-data parameterization.
 

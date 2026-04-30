@@ -22,7 +22,7 @@ Define the high-level Shampoo optimizer update as tensor-aware preconditioning f
 - Full-matrix preconditioner: a preconditioner over a flattened parameter vector; expressive but expensive for large tensors.
 - Coordinatewise adaptive method: an optimizer such as diagonal AdaGrad, [[Adam]], or [[AdamW]] that rescales each coordinate separately.
 - Tensor-aware preconditioning: using the matrix or tensor shape of a parameter when constructing the update.
-- Matrix inverse power: a matrix function such as $L_t^(-1/4)$ computed from a positive definite preconditioner.
+- Matrix inverse power: a matrix function such as $L_t^{-1/4}$ computed from a positive definite preconditioner.
 
 ## Assumptions
 - The parameter has matrix or tensor structure.
@@ -43,7 +43,7 @@ and updates:
 
 
 $$
-W_{t+1} = W_t - \eta L_t^(-1/4) G_t R_t^(-1/4)
+W_{t+1} = W_t - \eta L_t^{-1/4} G_t R_t^{-1/4}
 $$
 
 This approximates a richer preconditioned update while avoiding the full preconditioner over $vec(W_t)$.
@@ -69,14 +69,14 @@ $$
 
 
 $$
-preconditioned_gradient = L_t^(-1/4) G_t R_t^(-1/4)
+\tilde{G}_t = L_t^{-1/4} G_t R_t^{-1/4}
 $$
 
 - Use this transformed gradient in the update:
 
 
 $$
-W_{t+1} = W_t - \eta * preconditioned_gradient
+W_{t+1} = W_t - \eta * \tilde{G}_t
 $$
 
 - Skipped steps: proof of the `1/4` exponent, convergence guarantees, and matrix trace inequalities from the source.

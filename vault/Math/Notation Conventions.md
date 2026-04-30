@@ -79,8 +79,8 @@ Collect canonical notation used across the wiki so related math and concept note
 - $update RMS$: root mean square magnitude of an optimizer update.
 - `delta`: vector update in [[Steepest Descent]] notes.
 - `Delta W`: matrix update in optimizer-geometry notes.
-- $||.||$: chosen update norm; source-specific.
-- $||.||_*$: dual norm.
+- $\|\cdot\|$: chosen update norm; source-specific.
+- $\|\cdot\|_*$: dual norm.
 
 ### Efficient LLM architecture
 - `KV cache`: stored keys and values reused during autoregressive decoding.

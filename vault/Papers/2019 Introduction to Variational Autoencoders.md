@@ -32,7 +32,7 @@ $$
 In deep latent-variable models, this marginal likelihood is typically intractable, which makes direct maximum-likelihood learning difficult. The posterior
 
 $$
-p_{\theta}(z|x) = p_{\theta}(x,z) / p_{\theta}(x)
+p_{\theta}(z|x) = \frac{p_{\theta}(x,z)}{p_{\theta}(x)}
 $$
 
 is also typically intractable because it depends on the same marginal likelihood. The tutorial frames VAEs as a way to make learning and inference computationally tractable by introducing an approximate posterior.
@@ -59,7 +59,7 @@ $$
 Posterior identity:
 
 $$
-p_{\theta}(z|x) = p_{\theta}(x,z) / p_{\theta}(x)
+p_{\theta}(z|x) = \frac{p_{\theta}(x,z)}{p_{\theta}(x)}
 $$
 Approximate posterior objective:
 

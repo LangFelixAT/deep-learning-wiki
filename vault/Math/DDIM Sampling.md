@@ -13,12 +13,12 @@ Define the DDIM sampling update and how it differs from DDPM sampling.
 - $\bar{\alpha}_t$ denotes the cumulative noise schedule term used in the DDPM marginal:
 
 $$
-x_t = \sqrt(\bar{\alpha}_t) x_0 + \sqrt(1 - \bar{\alpha}_t) \epsilon
+x_t = \sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon
 $$
 - The clean-sample prediction is:
 
 $$
-\hat{x}_0 = (x_t - \sqrt(1 - \bar{\alpha}_t) \epsilon_{\theta}(x_t,t)) / \sqrt(\bar{\alpha}_t)
+\hat{x}_0 = \frac{x_t - \sqrt{1 - \bar{\alpha}_t} \epsilon_{\theta}(x_t,t)}{\sqrt{\bar{\alpha}_t}}
 $$
 - $\eta$ controls the stochasticity of the DDIM/DDPM-family sampling update through $\sigma_t$.
 
@@ -32,7 +32,7 @@ $$
 For a step from $t$ to $t-1$, DDIM sampling can be written as:
 
 $$
-x_{t-1} = \sqrt(\bar{\alpha}_{t-1}) \hat{x}_0 + \sqrt(1 - \bar{\alpha}_{t-1} - \sigma_t^2) \epsilon_{\theta}(x_t,t) + \sigma_t \epsilon
+x_{t-1} = \sqrt{\bar{\alpha}_{t-1}} \hat{x}_0 + \sqrt{1 - \bar{\alpha}_{t-1} - \sigma_t^2} \epsilon_{\theta}(x_t,t) + \sigma_t \epsilon
 $$
 where $\epsilon ~ \mathcal{N}(0,I)$ when stochastic noise is used.
 

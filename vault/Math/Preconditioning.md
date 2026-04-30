@@ -13,7 +13,7 @@ Define preconditioning as the transformation of gradients before an optimization
 - $g_t$: gradient at timestep $t$.
 - $P_t$: preconditioner.
 - $\alpha$: learning rate.
-- $||.||$: update norm in steepest-descent views.
+- $\|\cdot\|$: update norm in steepest-descent views.
 
 ## Definitions
 - Preconditioner: a matrix or operator that transforms the gradient direction before the update.

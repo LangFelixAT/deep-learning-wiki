@@ -47,25 +47,25 @@ RMSNorm removes the re-centering operation from LayerNorm and normalizes activat
 LayerNorm background:
 
 $$
-\mu = (1/n) \sum_i a_i
+\mu = \frac{1}{n} \sum_i a_i
 $$
 
 $$
-\sigma = \sqrt((1/n) \sum_i (a_i - \mu)^2)
+\sigma = \sqrt{\frac{1}{n} \sum_i (a_i - \mu)^2}
 $$
 
 $$
-bar_a_i = (a_i - \mu) / \sigma * g_i
+\bar{a}_i = \frac{a_i - \mu}{\sigma} g_i
 $$
 
 RMSNorm:
 
 $$
-\operatorname{RMS}(a) = \sqrt((1/n) \sum_i a_i^2)
+\operatorname{RMS}(a) = \sqrt{\frac{1}{n} \sum_i a_i^2}
 $$
 
 $$
-bar_a_i = a_i / \operatorname{RMS}(a) * g_i
+\bar{a}_i = \frac{a_i}{\operatorname{RMS}(a)} g_i
 $$
 
 Linearity property used for re-scaling invariance:
@@ -79,7 +79,7 @@ $$
 pRMSNorm estimates RMS from the first $p\%$ of summed inputs. If $p$ is written as a fraction, then:
 
 $$
-RMS_p(a) = \sqrt{(1/k) \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
+RMS_p(a) = \sqrt{\frac{1}{k} \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
 $$
 ## Results
 - Claim from source: RMSNorm achieves comparable performance to LayerNorm across the paper's evaluated tasks while reducing running time.

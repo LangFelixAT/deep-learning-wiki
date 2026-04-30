@@ -16,7 +16,7 @@ The auto-encoder analogy comes from sampling a latent code from the encoder and 
 
 ## Mathematical formulation
 - Related math: [[ELBO]], [[KL Divergence]]
-- Source formulation: maximize an ELBO of the form $-D_{KL}(q_{\phi}(z|x) || p_{\theta}(z)) + E_q[\log p_{\theta}(x|z)]$.
+- Source formulation: maximize an ELBO of the form $-D_{KL}(q_{\phi}(z|x) || p_{\theta}(z)) + E_{q}[\log p_{\theta}(x|z)]$.
 - This objective is a lower bound on the marginal log likelihood $\log p_{\theta}(x)$.
 - General tutorial formulation: $L_{\theta,\phi}(x) = E_{q_{\phi}(z|x)}[\log p_{\theta}(x,z) - \log q_{\phi}(z|x)]$.
 

@@ -30,7 +30,7 @@ Diffusion probabilistic models often need hundreds or thousands of sequential ne
 Parameterized probability-flow / diffusion ODE:
 
 $$
-dx_t / dt = f(t) x_t + g(t)^2 / (2 \sigma_t) \epsilon_{\theta}(x_t,t)
+\frac{dx_t}{dt} = f(t) x_t + \frac{g(t)^2}{2 \sigma_t} \epsilon_{\theta}(x_t,t)
 $$
 Noise schedule marginal form:
 
@@ -40,12 +40,12 @@ $$
 Half-log-SNR variable:
 
 $$
-\lambda_t = \log(\alpha_t / \sigma_t)
+\lambda_t = \log\left(\frac{\alpha_t}{\sigma_t}\right)
 $$
 Source-level solution idea:
 
 $$
-x_t = \alpha_t / \alpha_s x_s - \alpha_t \int_{\lambda_s}^{\lambda_t} \exp(-\lambda) \epsilon_{\theta}(x_\lambda, \lambda) d \lambda
+x_t = \frac{\alpha_t}{\alpha_s} x_s - \alpha_t \int_{\lambda_s}^{\lambda_t} \exp(-\lambda) \epsilon_{\theta}(x_\lambda, \lambda) d \lambda
 $$
 Needs verification: notation differs across DPM-Solver, DDPM, SDE, and EDM sources; this note keeps only the structural form.
 

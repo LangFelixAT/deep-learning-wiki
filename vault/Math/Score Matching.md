@@ -19,29 +19,29 @@ Define objectives that learn score functions for probability models.
 ## Definitions
 - Source: [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]].
 - The score of a probability density $p(x)$ is $\nabla_x \log p(x)$.
-- The score is invariant to the normalization constant: if $p(x) = unnormalized_p(x) / Z$, then $\nabla_x \log p(x) = \nabla_x \log unnormalized_p(x)$.
-- A score network $s_{\theta}(x)$ is trained to approximate $\nabla_x \log p_data(x)$.
+- The score is invariant to the normalization constant: if $p(x) = \frac{\tilde{p}(x)}{Z}$, then $\nabla_x \log p(x) = \nabla_x \log \tilde{p}(x)$.
+- A score network $s_{\theta}(x)$ is trained to approximate $\nabla_x \log p_{\mathrm{data}}(x)$.
 - In continuous-time formulations, the score becomes time-dependent: $s_{\theta}(x,t) \approx \nabla_x \log p_t(x)$.
 - In conditional diffusion models, the score can also be conditioned: $s_{\theta}(x,t,c) \approx \nabla_x \log p_t(x|c)$.
 - Conceptually, score matching targets:
 
 $$
-1/2 E_{p_data}[||s_{\theta}(x) - \nabla_x \log p_data(x)||_2^2]
+\frac{1}{2}\mathbb{E}_{p_{\mathrm{data}}}\left[\left\|s_{\theta}(x) - \nabla_x \log p_{\mathrm{data}}(x)\right\|_2^2\right]
 $$
-- Since $\nabla_x \log p_data(x)$ is unknown, basic score matching uses an objective equivalent up to constants:
+- Since $\nabla_x \log p_{\mathrm{data}}(x)$ is unknown, basic score matching uses an objective equivalent up to constants:
 
 $$
-E_{p_data(x)}[\operatorname{tr}(\nabla_x s_{\theta}(x)) + 1/2 ||s_{\theta}(x)||_2^2]
+\mathbb{E}_{p_{\mathrm{data}}(x)}\left[\operatorname{tr}(\nabla_x s_{\theta}(x)) + \frac{1}{2}\left\|s_{\theta}(x)\right\|_2^2\right]
 $$
 - Denoising score matching perturbs data with $q_\sigma(\tilde{x}|x)$ and trains on:
 
 $$
-1/2 E_{q_\sigma(\tilde{x}|x)p_data(x)}[||s_{\theta}(\tilde{x}) - \nabla_{\tilde{x}} \log q_\sigma(\tilde{x}|x)||_2^2]
+\frac{1}{2}\mathbb{E}_{q_\sigma(\tilde{x}|x)p_{\mathrm{data}}(x)}\left[\left\|s_{\theta}(\tilde{x}) - \nabla_{\tilde{x}} \log q_\sigma(\tilde{x}|x)\right\|_2^2\right]
 $$
 - For Gaussian perturbation $q_\sigma(\tilde{x}|x) = \mathcal{N}(\tilde{x}; x, \sigma^2 I)$, the target is:
 
 $$
-\nabla_{\tilde{x}} \log q_\sigma(\tilde{x}|x) = -(\tilde{x} - x) / \sigma^2
+\nabla_{\tilde{x}} \log q_\sigma(\tilde{x}|x) = -\frac{\tilde{x} - x}{\sigma^2}
 $$
 - [[2020 Denoising Diffusion Probabilistic Models]] connects the DDPM noise-prediction parameterization to denoising score matching over multiple noise levels.
 - [[2021 Score-Based Generative Modeling through SDEs]] uses a time-dependent score model $s_{\theta}(x,t)$ to approximate $\nabla_x \log p_t(x)$ along a continuous noising process.
@@ -63,12 +63,13 @@ $$
 - The NCSN objective combines denoising score matching losses across noise levels:
 
 $$
-L(\theta; {\sigma_i}) = (1/L) \sum_i \lambda(\sigma_i) ell(\theta; \sigma_i)
+L(\theta; \{\sigma_i\}) = \frac{1}{L} \sum_i \lambda(\sigma_i) \ell(\theta; \sigma_i)
 $$
 - In the SDE formulation, the discrete noise-level objective becomes a continuous-time objective over $t$:
 
 $$
-E_t[\lambda(t) E_{x(0)} E_{x(t)|x(0)} ||s_{\theta}(x(t),t) - \nabla_{x(t)} \log p_{0t}(x(t)|x(0))||_2^2]
+\mathbb{E}_t\left[\lambda(t)\mathbb{E}_{x(0)}\mathbb{E}_{x(t)|x(0)}
+\left\|s_{\theta}(x(t),t) - \nabla_{x(t)} \log p_{0t}(x(t)|x(0))\right\|_2^2\right]
 $$
 - In DDPM, the variational term for the reverse mean can be reparameterized so the model predicts $\epsilon$ from $x_t$.
 - The resulting weighted mean-squared noise-prediction objective resembles denoising score matching over multiple noise scales.

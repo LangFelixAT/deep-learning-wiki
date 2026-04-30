@@ -28,11 +28,11 @@ Define the attention operation used as the core computation in the original Tran
 
 ## Main result
 $$
-\operatorname{Attention}(Q,K,V) = \operatorname{softmax}(QK^T / \sqrt(d_k)) V
+\operatorname{Attention}(Q,K,V) = \operatorname{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V
 $$
 ## Derivation
 - Compute dot-product scores between queries and keys: $QK^T$.
-- Scale the scores by $1 / \sqrt(d_k)$.
+- Scale the scores by $\frac{1}{\sqrt{d_k}}$.
 - Apply softmax row-wise to obtain attention weights.
 - Multiply the attention weights by $V$ to produce weighted sums of values.
 - Skipped steps: gradient analysis of the softmax saturation issue.
@@ -42,7 +42,7 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 
 [[2021 RoFormer]] modifies query and key representations with rotary position embeddings before this dot product, so the compatibility score can depend on relative position.
 
-[[2019 Fast Transformer Decoding One Write-Head is All You Need]] keeps the same dot-product attention operation but changes how keys and values are shared across heads in [[Multi-Query Attention]]. This mainly affects the stored key/value tensors used during decoding, not the basic $\operatorname{softmax}(QK^T / \sqrt(d_k)) V$ operation.
+[[2019 Fast Transformer Decoding One Write-Head is All You Need]] keeps the same dot-product attention operation but changes how keys and values are shared across heads in [[Multi-Query Attention]]. This mainly affects the stored key/value tensors used during decoding, not the basic $\operatorname{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V$ operation.
 
 [[2023 GQA]] likewise keeps the same attention operation while choosing an intermediate number of shared key/value groups.
 
@@ -52,7 +52,7 @@ The query-key dot product measures compatibility. The softmax turns compatibilit
 
 ## Alternative formulations
 - Additive attention uses a feed-forward network for compatibility scoring.
-- Unscaled dot-product attention omits the $1 / \sqrt(d_k)$ factor.
+- Unscaled dot-product attention omits the $\frac{1}{\sqrt{d_k}}$ factor.
 - [[FlashAttention]] is not an approximation to scaled dot-product attention; it is an exact IO-aware implementation strategy.
 
 ## Common mistakes

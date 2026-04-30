@@ -30,14 +30,14 @@ Define likelihood-based parameter estimation for model training.
 
 
 $$
-\theta* = \argmax_\theta product_i p_{\theta}(x_i)
+\theta^* = \arg\max_{\theta} \prod_i p_{\theta}(x_i)
 $$
 
 - Taking logs gives:
 
 
 $$
-\theta* = \argmax_\theta \sum_i \log p_{\theta}(x_i)
+\theta^* = \arg\max_{\theta} \sum_i \log p_{\theta}(x_i)
 $$
 
 - Equivalently, training often minimizes:

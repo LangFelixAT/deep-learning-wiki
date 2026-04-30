@@ -20,7 +20,7 @@ $$
 - For Gaussian corruption $x = y + n$ with $n ~ \mathcal{N}(0, \sigma^2 I)$, the score and denoiser are related by:
 
 $$
-\nabla_x \log p(x; \sigma) = (D(x; \sigma) - x) / \sigma^2
+\nabla_x \log p(x; \sigma) = \frac{D(x; \sigma) - x}{\sigma^2}
 $$
 ## Assumptions
 - The denoiser relation above assumes Gaussian corruption with noise scale $\sigma$.
@@ -38,12 +38,12 @@ $$
 - EDM writes the denoiser around a raw neural network $F_\theta$:
 
 $$
-D_\theta(x; \sigma) = c_skip(\sigma) x + c_out(\sigma) F_\theta(c_in(\sigma) x; c_noise(\sigma))
+D_\theta(x; \sigma) = c_{skip}(\sigma) x + c_{out}(\sigma) F_\theta(c_{in}(\sigma) x; c_{noise}(\sigma))
 $$
-- $c_in(\sigma)$ scales the noisy input.
-- $c_noise(\sigma)$ encodes the noise level as a conditioning input.
-- $c_skip(\sigma)$ controls how much of the noisy input bypasses the raw network.
-- $c_out(\sigma)$ scales the raw network output.
+- $c_{in}(\sigma)$ scales the noisy input.
+- $c_{noise}(\sigma)$ encodes the noise level as a conditioning input.
+- $c_{skip}(\sigma)$ controls how much of the noisy input bypasses the raw network.
+- $c_{out}(\sigma)$ scales the raw network output.
 
 ## Preconditioning idea
 - Preconditioning separates the denoiser definition from the raw neural network output.

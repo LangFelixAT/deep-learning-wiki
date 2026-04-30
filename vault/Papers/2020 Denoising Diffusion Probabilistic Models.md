@@ -48,37 +48,37 @@ $$
 Forward transition:
 
 $$
-q(x_t|x_{t-1}) = \mathcal{N}(x_t; \sqrt(1 - \beta_t) x_{t-1}, \beta_t I)
+q(x_t|x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t} x_{t-1}, \beta_t I)
 $$
 Closed-form noisy sample:
 
 $$
-q(x_t|x_0) = \mathcal{N}(x_t; \sqrt(\bar{\alpha}_t) x_0, (1 - \bar{\alpha}_t) I)
+q(x_t|x_0) = \mathcal{N}(x_t; \sqrt{\bar{\alpha}_t} x_0, (1 - \bar{\alpha}_t) I)
 $$
 Variational bound on negative log likelihood:
 
 $$
-L = E_q[-\log p_{\theta}(x_{0:T}) + \log q(x_{1:T}|x_0)], \quad E[-\log p_{\theta}(x_0)] \le L
+L = E_{q}[-\log p_{\theta}(x_{0:T}) + \log q(x_{1:T}|x_0)], \quad E[-\log p_{\theta}(x_0)] \le L
 $$
 Forward-process posterior used in the rewritten bound:
 
 $$
-q(x_{t-1}|x_t,x_0) = \mathcal{N}(x_{t-1}; \mu_tilde_t(x_t,x_0), \beta_tilde_t I)
+q(x_{t-1}|x_t,x_0) = \mathcal{N}(x_{t-1}; \tilde{\mu}_t(x_t,x_0), \tilde{\beta}_t I)
 $$
 Noise-prediction parameterization:
 
 $$
-\mu_{\theta}(x_t,t) = 1/\sqrt(\alpha_t) * (x_t - \beta_t / \sqrt(1 - \bar{\alpha}_t) * \epsilon_{\theta}(x_t,t))
+\mu_{\theta}(x_t,t) = \frac{1}{\sqrt{\alpha_t}}\left(x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha}_t}} \epsilon_{\theta}(x_t,t)\right)
 $$
 Simplified training objective:
 
 $$
-L_{simple}(\theta) = E_{t,x_0,\epsilon}[||\epsilon - \epsilon_{\theta}(\sqrt(\bar{\alpha}_t)x_0 + \sqrt(1 - \bar{\alpha}_t)\epsilon, t)||^2]
+L_{simple}(\theta) = E_{t,x_0,\epsilon}[||\epsilon - \epsilon_{\theta}(\sqrt{\bar{\alpha}_t}x_0 + \sqrt{1 - \bar{\alpha}_t}\epsilon, t)||^2]
 $$
 Basic sampling step:
 
 $$
-x_{t-1} = 1/\sqrt(\alpha_t) * (x_t - (1 - \alpha_t)/\sqrt(1 - \bar{\alpha}_t) * \epsilon_{\theta}(x_t,t)) + \sigma_t z
+x_{t-1} = \frac{1}{\sqrt{\alpha_t}}\left(x_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar{\alpha}_t}} \epsilon_{\theta}(x_t,t)\right) + \sigma_t z
 $$
 ## Claims from source
 - Claim from source: diffusion models are parameterized Markov chains trained using variational inference to produce samples matching data after finite time.

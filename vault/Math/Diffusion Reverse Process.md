@@ -17,7 +17,7 @@ $$
 - In the 2015 paper, the reverse trajectory is written:
 
 $$
-p(x^(0:T)) = p(x^(T)) \prod_{t=1}^T p(x^(t-1)|x^(t))
+p(x^{(0:T)}) = p(x^{(T)}) \prod_{t=1}^T p(x^{(t-1)}|x^{(t)})
 $$
 - The prior is $p(x_T) = \mathcal{N}(0,I)$.
 - Reverse transitions are Gaussian:
@@ -39,13 +39,13 @@ $$
 - DDPM parameterizes the mean using a network that predicts the noise added at timestep $t$:
 
 $$
-\mu_{\theta}(x_t,t) = 1/\sqrt(\alpha_t) * (x_t - \beta_t/\sqrt(1 - \bar{\alpha}_t) * \epsilon_{\theta}(x_t,t))
+\mu_{\theta}(x_t,t) = \frac{1}{\sqrt{\alpha_t}}\left(x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha}_t}} \epsilon_{\theta}(x_t,t)\right)
 $$
 - Sampling starts with $x_T ~ \mathcal{N}(0,I)$.
 - For $t = T, ..., 1$, sample Gaussian noise $z$ and compute:
 
 $$
-x_{t-1} = 1/\sqrt(\alpha_t) * (x_t - (1 - \alpha_t)/\sqrt(1 - \bar{\alpha}_t) * \epsilon_{\theta}(x_t,t)) + \sigma_t z
+x_{t-1} = \frac{1}{\sqrt{\alpha_t}}\left(x_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar{\alpha}_t}} \epsilon_{\theta}(x_t,t)\right) + \sigma_t z
 $$
 - At the final step the paper's algorithm sets $z = 0$.
 - Skipped steps: derivation from the Gaussian posterior mean and variance formulas.

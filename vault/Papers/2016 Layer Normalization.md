@@ -47,26 +47,27 @@ Each training case gets its own normalization statistics, and learned gain and b
 Layer mean:
 
 $$
-\mu = (1/H) \sum_{i=1}^H a_i
+\mu = \frac{1}{H} \sum_{i=1}^H a_i
 $$
 Layer standard deviation:
 
 $$
-\sigma^2 = (1/H) \sum_{i=1}^H (a_i - \mu)^2
+\sigma^2 = \frac{1}{H} \sum_{i=1}^H (a_i - \mu)^2
 $$
 $$
-\sigma = \sqrt((1/H) \sum_{i=1}^H (a_i - \mu)^2)
+\sigma = \sqrt{\frac{1}{H} \sum_{i=1}^H (a_i - \mu)^2}
 $$
 Layer-normalized activation form:
 
 $$
-h_i = f((g_i / \sigma)(a_i - \mu) + b_i)
+h_i = f\left(\frac{g_i}{\sigma}(a_i - \mu) + b_i\right)
 $$
 For an RNN timestep:
 
 $$
-h_t = f[(g / \sigma_t) odot (a_t - \mu_t) + b]
+h_t = f\left[\left(\frac{g}{\sigma_t}\right) \odot (a_t - \mu_t) + b\right]
 $$
+Here $\odot$ denotes elementwise multiplication.
 ## Results
 - Claim from source: layer normalization performs the same computation at training and test time.
 - Claim from source: layer normalization can be applied to recurrent neural networks by computing normalization statistics separately at each time step.

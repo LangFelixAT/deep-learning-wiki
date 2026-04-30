@@ -17,7 +17,7 @@ Define weight decay and distinguish it from related regularization ideas.
 
 ## Definitions
 - Weight decay is a training mechanism that penalizes or shrinks parameter magnitudes.
-- L2 regularization adds a penalty term to the loss, often written $(\lambda' / 2) ||\theta||_2^2$.
+- L2 regularization adds a penalty term to the loss, often written $\frac{\lambda'}{2}\|\theta\|_2^2$.
 - For standard SGD, L2 regularization and weight decay can be equivalent after rescaling the coefficient by the learning rate.
 - For adaptive optimizers, this equivalence does not generally hold because L2 penalty gradients are affected by adaptive coordinatewise scaling.
 
@@ -40,7 +40,7 @@ $$
 \theta_{t+1} = (1 - \lambda) \theta_t - \alpha \nabla f_t(\theta_t)
 $$
 
-- These match when $\lambda' = \lambda / \alpha$.
+- These match when $\lambda' = \frac{\lambda}{\alpha}$.
 - For adaptive methods, the L2 term is also transformed by the adaptive preconditioner, while decoupled weight decay applies parameter shrinkage separately.
 
 ## Interpretation

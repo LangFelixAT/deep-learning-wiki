@@ -34,7 +34,7 @@ $$
 Denoising-score relation for Gaussian corruption:
 
 $$
-\nabla_x \log p(x; \sigma) = (D(x; \sigma) - x) / \sigma^2
+\nabla_x \log p(x; \sigma) = \frac{D(x; \sigma) - x}{\sigma^2}
 $$
 Probability-flow ODE in sigma-space:
 
@@ -44,9 +44,9 @@ $$
 Preconditioned denoiser:
 
 $$
-D_\theta(x; \sigma) = c_skip(\sigma) x + c_out(\sigma) F_\theta(c_in(\sigma) x; c_noise(\sigma))
+D_\theta(x; \sigma) = c_{skip}(\sigma) x + c_{out}(\sigma) F_\theta(c_{in}(\sigma) x; c_{noise}(\sigma))
 $$
-Needs verification: exact coefficient choices such as $c_skip$, $c_out$, $c_in$, and $c_noise$ are source-specific EDM design recommendations and are not expanded here.
+Needs verification: exact coefficient choices such as $c_{skip}$, $c_{out}$, $c_{in}$, and $c_{noise}$ are source-specific EDM design recommendations and are not expanded here.
 
 ## Claims from source
 - Claim from source: diffusion model design can be clarified by separating concrete design choices.

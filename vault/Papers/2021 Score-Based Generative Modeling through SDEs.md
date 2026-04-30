@@ -35,7 +35,7 @@ $$
 Reverse-time SDE:
 
 $$
-dx = [f(x,t) - g(t)^2 \nabla_x \log p_t(x)] dt + g(t) d w_bar
+dx = [f(x,t) - g(t)^2 \nabla_x \log p_t(x)] dt + g(t) d \bar{w}
 $$
 Time-dependent score model:
 
@@ -45,12 +45,12 @@ $$
 Continuous score matching objective:
 
 $$
-E_t[\lambda(t) E_{x(0)} E_{x(t)|x(0)} ||s_{\theta}(x(t),t) - \nabla_{x(t)} \log p_{0t}(x(t)|x(0))||_2^2]
+E_{t}[\lambda(t) E_{x(0)} E_{x(t)|x(0)} ||s_{\theta}(x(t),t) - \nabla_{x(t)} \log p_{0t}(x(t)|x(0))||_2^2]
 $$
 Probability flow ODE:
 
 $$
-dx = [f(x,t) - 1/2 g(t)^2 \nabla_x \log p_t(x)] dt
+dx = \left[f(x,t) - \frac{1}{2} g(t)^2 \nabla_x \log p_t(x)\right] dt
 $$
 ## Claims from source
 - Claim from source: a forward SDE can smoothly transform a complex data distribution into a known prior distribution by injecting noise.

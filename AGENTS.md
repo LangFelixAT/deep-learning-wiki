@@ -131,6 +131,12 @@ When notation differs across sources, define canonical notation and mention alte
 Format mathematics for Obsidian/MathJax:
 - inline math uses `$...$`
 - display equations use `$$...$$`
+- grouped superscripts and function arguments must use braces, for example `$x^{(t)}$` and `$\sqrt{d_k}$`
+- multi-character subscripts use braces, for example `$c_{skip}$`, `$L_{LDM}$`, and `$D_{KL}$`
+- avoid ASCII pseudo-LaTeX in formulas; use `$\tilde{x}_t$`, `$\frac{\alpha_i}{2}$`, and `$\mathbb{E}$` rather than `tilde_x_t`, `alpha_i/2`, or plain `E`
+- use proper LaTeX operators and norm delimiters, for example `$\arg\max_i p_i(x)$`, `$\arg\min_{\delta}$`, and `$\|\delta\|^2$`
+- use named accents/operators when needed, for example `$\bar{a}_i$`, `$\operatorname{einsum}$`, `$\Theta(\cdot)$`, and `$\odot$`
+- prefer `\frac{...}{...}` for mathematical fractions in display equations and substantial inline formulas; use `/` only for simple prose ratios or code-like notation
 - backticks are only for literal code, commands, filenames, or pseudocode
 
 ## Rules for concept notes

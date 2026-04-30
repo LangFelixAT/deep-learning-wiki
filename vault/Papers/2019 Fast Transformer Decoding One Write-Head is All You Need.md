@@ -47,27 +47,27 @@ The paper's "one write-head" wording refers to writing one shared set of keys an
 - Compare quality and speed against multi-head baselines and smaller-head alternatives.
 
 ## Important equations
-Standard multi-head projections in the paper's notation:
+Standard multi-head projections in the paper's notation. Here $\operatorname{einsum}$ denotes Einstein-summation tensor indexing notation:
 
 $$
-Q = einsum("bnd,hdk->bhnk", X, P_q)
+Q = \operatorname{einsum}(\text{"bnd,hdk->bhnk"}, X, P_q)
 $$
 $$
-K = einsum("bmd,hdk->bhmk", M, P_k)
+K = \operatorname{einsum}(\text{"bmd,hdk->bhmk"}, M, P_k)
 $$
 $$
-V = einsum("bmd,hdv->bhmv", M, P_v)
+V = \operatorname{einsum}(\text{"bmd,hdv->bhmv"}, M, P_v)
 $$
 Multi-query attention keeps per-head queries but removes the head dimension from keys and values:
 
 $$
-Q = einsum("bnd,hdk->bhnk", X, P_q)
+Q = \operatorname{einsum}(\text{"bnd,hdk->bhnk"}, X, P_q)
 $$
 $$
-K = einsum("bmd,dk->bmk", M, P_k)
+K = \operatorname{einsum}(\text{"bmd,dk->bmk"}, M, P_k)
 $$
 $$
-V = einsum("bmd,dv->bmv", M, P_v)
+V = \operatorname{einsum}(\text{"bmd,dv->bmv"}, M, P_v)
 $$
 Incremental multi-head attention stores previous keys and values with shapes like $prev_K: [b,h,m,k]$ and $prev_V: [b,h,m,v]$.
 
@@ -76,12 +76,12 @@ Incremental multi-query attention stores previous keys and values with shapes li
 Under the paper's simplifying assumptions, incremental multi-head attention has memory-access/computation ratio:
 
 $$
-Th\eta(n / d + 1 / b)
+\Theta\left(\frac{n}{d} + \frac{1}{b}\right)
 $$
 Incremental multi-query attention changes this to:
 
 $$
-Th\eta(1 / d + n / (d h) + 1 / b)
+\Theta\left(\frac{1}{d} + \frac{n}{d h} + \frac{1}{b}\right)
 $$
 The source emphasizes the reduction of the `n / d` term by a factor of the number of heads `h`.
 

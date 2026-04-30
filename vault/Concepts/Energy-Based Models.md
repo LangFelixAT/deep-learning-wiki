@@ -14,7 +14,7 @@ This page is still a stub because the wiki has not yet ingested a dedicated EBM 
 
 ## Mathematical formulation
 - Related math: [[Score Matching]]
-- For an energy-based model $p(x) = \exp(-E(x)) / Z$, the score is $\nabla_x \log p(x) = -\nabla_x E(x)$ because the normalization constant $Z$ does not depend on $x$.
+- For an energy-based model $p(x) = \frac{\exp(-E(x))}{Z}$, the score is $\nabla_x \log p(x) = -\nabla_x E(x)$ because the normalization constant $Z$ does not depend on $x$.
 
 ## Score-based connection
 [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] notes that score matching was originally proposed for learning energy-based models and that their approach can train EBMs by using the gradient of an energy-based model as the score model.

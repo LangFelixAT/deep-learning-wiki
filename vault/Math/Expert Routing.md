@@ -27,10 +27,10 @@ Define the routing mechanism used to assign token representations to experts in 
 - Router probability:
 
 $$
-p_i(x) = \exp(h_i(x)) / \sum_j \exp(h_j(x))
+p_i(x) = \frac{\exp(h_i(x))}{\sum_j \exp(h_j(x))}
 $$
 
-- Top-1 routing selects $\argmax_i p_i(x)$.
+- Top-1 routing selects $\arg\max_i p_i(x)$.
 - Expert capacity is the maximum number of tokens an expert processes in a batch.
 
 ## Assumptions
@@ -43,10 +43,10 @@ $$
 ## Main result
 Switch routing is top-1 MoE routing: each token activates one expert, enabling parameter count to scale with the number of experts while per-token expert computation remains roughly fixed.
 
-For selected expert $i* = \argmax_i p_i(x)$, the Switch layer output for the token is:
+For selected expert $i^* = \arg\max_i p_i(x)$, the Switch layer output for the token is:
 
 $$
-y = p_{i*}(x) E_{i*}(x)
+y = p_{i^*}(x) E_{i^*}(x)
 $$
 
 ## Derivation

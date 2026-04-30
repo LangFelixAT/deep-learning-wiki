@@ -50,7 +50,7 @@ Replace selected dense feed-forward sublayers in a transformer with a Switch fee
 Router probabilities:
 
 $$
-p_i(x) = \exp(h_i(x)) / \sum_j \exp(h_j(x))
+p_i(x) = \frac{\exp(h_i(x))}{\sum_j \exp(h_j(x))}
 $$
 
 where the paper defines router logits from $h(x) = W_r x$.
@@ -66,17 +66,17 @@ For Switch routing, `T` contains only the top-1 expert.
 Switch top-1 output:
 
 $$
-i* = \argmax_i p_i(x)
+i^* = \arg\max_i p_i(x)
 $$
 
 $$
-y = p_{i*}(x) E_{i*}(x)
+y = p_{i^*}(x) E_{i^*}(x)
 $$
 
 Expert capacity:
 
 $$
-expert capacity = (tokens per batch / number of experts) * capacity factor
+\operatorname{expert\ capacity} = \frac{\operatorname{tokens\ per\ batch}}{\operatorname{number\ of\ experts}} \cdot \operatorname{capacity\ factor}
 $$
 
 Auxiliary load-balancing loss:

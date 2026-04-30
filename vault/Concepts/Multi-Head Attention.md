@@ -21,7 +21,7 @@ $$
 $$
 head_i = \operatorname{Attention}(Q W_i^Q, K W_i^K, V W_i^V)
 $$
-- In the original Transformer base model, the paper uses $h = 8$ heads with $d_k = d_v = d_model / h = 64$, so reducing each head's dimensionality keeps the total cost similar to full-dimensional single-head attention.
+- In the original Transformer base model, the paper uses $h = 8$ heads with $d_k = d_v = \frac{d_{model}}{h} = 64$, so reducing each head's dimensionality keeps the total cost similar to full-dimensional single-head attention.
 
 ## Historical development
 [[2017 Attention Is All You Need]] introduces multi-head attention as a central Transformer component.

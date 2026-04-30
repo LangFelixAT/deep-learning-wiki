@@ -67,7 +67,7 @@ $$
 These are sliced into $n_h$ heads, then each head computes:
 
 $$
-o_{t,i} = \sum_{j=1}^t softmax_j(q_{t,i}^T k_{j,i} / \sqrt(d_h)) v_{j,i}
+o_{t,i} = \sum_{j=1}^t \operatorname{softmax}_j\left(\frac{q_{t,i}^T k_{j,i}}{\sqrt{d_h}}\right) v_{j,i}
 $$
 
 $$
@@ -127,7 +127,7 @@ $$
 The attention computation becomes:
 
 $$
-o_{t,i} = \sum_{j=1}^t softmax_j(q_{t,i}^T k_{j,i} / \sqrt(d_h + d_h^R)) v_{j,i}^C
+o_{t,i} = \sum_{j=1}^t \operatorname{softmax}_j\left(\frac{q_{t,i}^T k_{j,i}}{\sqrt{d_h + d_h^R}}\right) v_{j,i}^C
 $$
 
 $$

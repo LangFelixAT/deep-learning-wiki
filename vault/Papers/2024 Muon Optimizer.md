@@ -67,7 +67,7 @@ The writeup describes orthogonalization as replacing an update matrix `G` by an 
 
 
 $$
-Ortho(G) = argmin_O ||O - G||_F
+\operatorname{Ortho}(G) = \arg\min_O \|O - G\|_F
 $$
 
 subject to one of the semi-orthogonality constraints:

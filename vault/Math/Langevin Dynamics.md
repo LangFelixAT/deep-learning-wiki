@@ -14,9 +14,9 @@ Describe the sampling procedure that uses a score function to generate samples.
 - Update:
 
 $$
-tilde_x_t = tilde_x_{t-1} + \epsilon/2 * \nabla_x \log p(tilde_x_{t-1}) + \sqrt(\epsilon) xi_t
+\tilde{x}_t = \tilde{x}_{t-1} + \frac{\epsilon}{2} \nabla_x \log p(\tilde{x}_{t-1}) + \sqrt{\epsilon} \xi_t
 $$
-- $xi_t ~ \mathcal{N}(0,I)$ denotes the Gaussian noise term. This avoids overloading $z_t$, which is used elsewhere for latent diffusion states.
+- $\xi_t \sim \mathcal{N}(0,I)$ denotes the Gaussian noise term. This avoids overloading $z_t$, which is used elsewhere for latent diffusion states.
 
 ## Assumptions
 - The score function is available or estimated.

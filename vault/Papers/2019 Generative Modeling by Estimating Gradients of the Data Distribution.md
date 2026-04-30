@@ -19,11 +19,11 @@ Song and Ermon propose score-based generative modeling: estimate gradients of no
 The paper studies how to generate samples from an unknown data distribution without explicitly learning a normalized density or using adversarial training.
 
 A naive score-based approach faces two major obstacles:
-- if data lie on a low-dimensional manifold, the ambient-space score $\nabla_x \log p_data(x)$ may be undefined or score matching may be inconsistent;
+- if data lie on a low-dimensional manifold, the ambient-space score $\nabla_x \log p_{\mathrm{data}}(x)$ may be undefined or score matching may be inconsistent;
 - low-density regions have few data samples, making score estimation inaccurate and Langevin dynamics mixing slow.
 
 ## Core ideas
-- Learn the score function $\nabla_x \log p_data(x)$ directly with score matching.
+- Learn the score function $\nabla_x \log p_{\mathrm{data}}(x)$ directly with score matching.
 - Use Langevin dynamics to sample using only an estimated score function.
 - Perturb data with multiple Gaussian noise levels so the perturbed distributions have broader support and fill low-density regions.
 - Train one noise-conditional score network $s_{\theta}(x, \sigma)$ to estimate scores for all noise levels.
@@ -33,22 +33,22 @@ A naive score-based approach faces two major obstacles:
 Score function:
 
 $$
-score_p(x) = \nabla_x \log p(x)
+s_p(x) = \nabla_x \log p(x)
 $$
 Basic score matching target:
 
 $$
-1/2 E_{p_data}[||s_{\theta}(x) - \nabla_x \log p_data(x)||_2^2]
+\frac{1}{2}\mathbb{E}_{p_{\mathrm{data}}}\left[\left\|s_{\theta}(x) - \nabla_x \log p_{\mathrm{data}}(x)\right\|_2^2\right]
 $$
 Equivalent score matching objective up to a constant:
 
 $$
-E_{p_data(x)}[\operatorname{tr}(\nabla_x s_{\theta}(x)) + 1/2 ||s_{\theta}(x)||_2^2]
+\mathbb{E}_{p_{\mathrm{data}}(x)}\left[\operatorname{tr}(\nabla_x s_{\theta}(x)) + \frac{1}{2}\left\|s_{\theta}(x)\right\|_2^2\right]
 $$
 Denoising score matching objective for perturbation $q_\sigma(\tilde{x}|x)$:
 
 $$
-1/2 E_{q_\sigma(\tilde{x}|x)p_data(x)}[||s_{\theta}(\tilde{x}) - \nabla_{\tilde{x}} \log q_\sigma(\tilde{x}|x)||_2^2]
+\frac{1}{2}\mathbb{E}_{q_\sigma(\tilde{x}|x)p_{\mathrm{data}}(x)}\left[\left\|s_{\theta}(\tilde{x}) - \nabla_{\tilde{x}} \log q_\sigma(\tilde{x}|x)\right\|_2^2\right]
 $$
 Gaussian perturbation:
 
@@ -58,7 +58,7 @@ $$
 Gaussian denoising target:
 
 $$
-\nabla_{\tilde{x}} \log q_\sigma(\tilde{x}|x) = -(\tilde{x} - x) / \sigma^2
+\nabla_{\tilde{x}} \log q_\sigma(\tilde{x}|x) = -\frac{\tilde{x} - x}{\sigma^2}
 $$
 Noise conditional score network target:
 
@@ -68,17 +68,17 @@ $$
 Multi-noise objective:
 
 $$
-L(\theta; {\sigma_i}) = (1/L) \sum_i \lambda(\sigma_i) ell(\theta; \sigma_i)
+L(\theta; \{\sigma_i\}) = \frac{1}{L} \sum_i \lambda(\sigma_i) \ell(\theta; \sigma_i)
 $$
 Langevin dynamics:
 
 $$
-tilde_x_t = tilde_x_{t-1} + \epsilon/2 * \nabla_x \log p(tilde_x_{t-1}) + \sqrt(\epsilon) z_t
+\tilde{x}_t = \tilde{x}_{t-1} + \frac{\epsilon}{2} \nabla_x \log p(\tilde{x}_{t-1}) + \sqrt{\epsilon} z_t
 $$
 Annealed Langevin update:
 
 $$
-tilde_x_t = tilde_x_{t-1} + \alpha_i/2 * s_{\theta}(tilde_x_{t-1}, \sigma_i) + \sqrt(\alpha_i) z_t
+\tilde{x}_t = \tilde{x}_{t-1} + \frac{\alpha_i}{2} s_{\theta}(\tilde{x}_{t-1}, \sigma_i) + \sqrt{\alpha_i} z_t
 $$
 ## Claims from source
 - Claim from source: the score is the gradient of the log-density with respect to the input.

@@ -14,9 +14,9 @@ Define the reverse stochastic process used to generate samples from noise.
 - For forward SDE $dx = f(x,t) dt + g(t) dw$, the reverse-time SDE is:
 
 $$
-dx = [f(x,t) - g(t)^2 \nabla_x \log p_t(x)] dt + g(t) d w_bar
+dx = [f(x,t) - g(t)^2 \nabla_x \log p_t(x)] dt + g(t) d \bar{w}
 $$
-- $w_bar$ is a Wiener process when time flows backward.
+- $\bar{w}$ is a Wiener process when time flows backward.
 - The score $\nabla_x \log p_t(x)$ is approximated by $s_{\theta}(x,t)$.
 - The reverse drift depends on the score of the forward marginals $p_t(x)$.
 

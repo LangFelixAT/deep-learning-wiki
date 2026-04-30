@@ -13,7 +13,7 @@ Describe how diffusion sampling can be viewed as numerical integration of an ODE
 - A noise-prediction diffusion ODE can be written structurally as:
 
 $$
-dx_t / dt = f(t) x_t + g(t)^2 / (2 \sigma_t) \epsilon_{\theta}(x_t,t)
+\frac{dx_t}{dt} = f(t) x_t + \frac{g(t)^2}{2 \sigma_t} \epsilon_{\theta}(x_t,t)
 $$
 - Needs verification: exact signs and scalings depend on whether the model is parameterized as noise prediction, score prediction, or denoiser prediction, and on the chosen noise schedule.
 - $\epsilon_{\theta}(x_t,t)$ is the learned noise-prediction network.

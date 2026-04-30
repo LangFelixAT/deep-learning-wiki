@@ -23,7 +23,7 @@ Define AdamW as [[Adam]] with decoupled [[Weight Decay]], and clarify why this d
 
 
 $$
-f_t^reg(\theta) = f_t(\theta) + (\lambda' / 2) ||\theta||_2^2
+f_t^{reg}(\theta) = f_t(\theta) + \frac{\lambda'}{2}\|\theta\|_2^2
 $$
 
 - Weight decay directly shrinks parameters during the optimizer step.
@@ -41,7 +41,7 @@ For standard SGD, L2 regularization and weight decay can be equivalent after res
 
 
 $$
-\lambda' = \lambda / \alpha
+\lambda' = \frac{\lambda}{\alpha}
 $$
 
 For adaptive gradient methods, the equivalence generally fails because the L2 penalty gradient is also scaled by the adaptive preconditioner.
@@ -50,7 +50,7 @@ AdamW keeps weight decay outside the adaptive gradient step:
 
 
 $$
-\theta_t = \theta_{t-1} - \eta_t * (\alpha * \hat{m}_t / (\sqrt(\hat{v}_t) + \epsilon) + \lambda \theta_{t-1})
+\theta_t = \theta_{t-1} - \eta_t \left(\alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon} + \lambda \theta_{t-1}\right)
 $$
 
 In this high-level AdamW form, $\hat{m}_t$ and $\hat{v}_t$ are computed from the loss gradient rather than from an L2-augmented gradient.
@@ -61,7 +61,7 @@ In this high-level AdamW form, $\hat{m}_t$ and $\hat{v}_t$ are computed from the
 
 $$
 \theta_{t+1}
-  = \theta_t - \alpha \nabla(f_t(\theta_t) + (\lambda' / 2) ||\theta_t||_2^2)
+  = \theta_t - \alpha \nabla\left(f_t(\theta_t) + \frac{\lambda'}{2}\|\theta_t\|_2^2\right)
   = \theta_t - \alpha \nabla f_t(\theta_t) - \alpha \lambda' \theta_t
 $$
 

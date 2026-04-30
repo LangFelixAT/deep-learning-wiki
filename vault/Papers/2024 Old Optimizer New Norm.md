@@ -43,7 +43,7 @@ The source starts from the steepest descent objective:
 
 
 $$
-arg min_delta [ g^T delta + (\lambda / 2) ||delta||^2 ]
+\arg\min_{\delta}\left[g^T \delta + \frac{\lambda}{2}\|\delta\|^2\right]
 $$
 
 It then studies which update direction is produced by different choices of norm:
@@ -56,7 +56,7 @@ Generic steepest descent objective:
 
 
 $$
-arg min_delta [ g^T delta + (\lambda / 2) ||delta||^2 ]
+\arg\min_{\delta}\left[g^T \delta + \frac{\lambda}{2}\|\delta\|^2\right]
 $$
 
 The source separates the solution into:
@@ -67,7 +67,7 @@ For Shampoo without accumulation, the source writes the matrix update as:
 
 
 $$
-(G G^T)^(-1/4) G (G^T G)^(-1/4) = U V^T
+(G G^T)^{-1/4} G (G^T G)^{-1/4} = U V^T
 $$
 
 where:

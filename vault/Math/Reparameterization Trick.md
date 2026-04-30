@@ -63,7 +63,7 @@ z = g_\phi(\epsilon, x)
 $$
 
 $$
-L_tilde_{\theta,\phi}(x) = \log p_{\theta}(x,z) - \log q_{\phi}(z|x)
+\tilde{L}_{\theta,\phi}(x) = \log p_{\theta}(x,z) - \log q_{\phi}(z|x)
 $$
 - Because $z$ is now expressed as a differentiable function of $\phi$, gradients of the expectation with respect to $\phi$ can be estimated by backpropagation through the transformed sample.
 - Skipped steps: full measure-change derivation and log-density/Jacobian details.

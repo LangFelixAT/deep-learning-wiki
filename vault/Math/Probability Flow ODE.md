@@ -13,7 +13,7 @@ Define the deterministic process associated with a score-based SDE.
 - Probability flow ODE:
 
 $$
-dx = [f(x,t) - 1/2 g(t)^2 \nabla_x \log p_t(x)] dt
+dx = \left[f(x,t) - \frac{1}{2} g(t)^2 \nabla_x \log p_t(x)\right] dt
 $$
 - With a learned score model, use $s_{\theta}(x,t) \approx \nabla_x \log p_t(x)$.
 - In practice, sampling requires numerically integrating this ODE with finitely many model evaluations.

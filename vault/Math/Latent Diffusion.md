@@ -27,7 +27,7 @@ Instead of corrupting and denoising $x_t$, latent diffusion corrupts and denoise
 The latent diffusion objective is structurally:
 
 $$
-L_LDM = E_{E(x), \epsilon, t}[||\epsilon - \epsilon_{\theta}(z_t,t)||_2^2]
+L_{LDM} = \mathbb{E}_{E(x), \epsilon, t}\left[\left\|\epsilon - \epsilon_{\theta}(z_t,t)\right\|_2^2\right]
 $$
 For conditional generation:
 

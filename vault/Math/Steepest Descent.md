@@ -33,30 +33,28 @@ The generic steepest descent step solves:
 
 
 $$
-arg min_delta [ g^T delta + (\lambda / 2) ||delta||^2 ]
+\arg\min_{\delta}\left[g^T \delta + \frac{\lambda}{2}\|\delta\|^2\right]
 $$
 
 The choice of norm affects the update direction. The solution can be viewed as:
 
 
-$$
-step size: proportional to ||g||_* / \lambda
-step direction: the unit-norm direction most aligned with g
-$$
+- step size: proportional to $\frac{\|g\|_*}{\lambda}$
+- step direction: the unit-norm direction most aligned with $g$
 
 ## Derivation
 - Start from a first-order local model of the loss:
 
 
 $$
-L(\theta + delta) \approx L(\theta) + g^T delta
+L(\theta + \delta) \approx L(\theta) + g^T \delta
 $$
 
 - Penalize update size using a chosen norm:
 
 
 $$
-g^T delta + (\lambda / 2) ||delta||^2
+g^T \delta + \frac{\lambda}{2}\|\delta\|^2
 $$
 
 - Write `delta` as a magnitude times a unit-norm direction.

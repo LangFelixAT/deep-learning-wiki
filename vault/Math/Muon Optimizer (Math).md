@@ -33,12 +33,7 @@ Describe the high-level mathematical structure of Muon: momentum followed by app
 - Empirical performance claims are source claims, not proof of general superiority.
 
 ## Main result
-Muon can be summarized as:
-
-
-$$
-momentum_update -> approximate_orthogonalization -> weight_update
-$$
+Muon can be summarized as: momentum update -> approximate orthogonalization -> weight update.
 
 For an update matrix $G$, the idealized orthogonalization target is:
 
@@ -89,14 +84,14 @@ $$
 
 
 $$
-W_t = W_{t-1} - \eta_t (0.2 * O_t * \sqrt(\max(A, B)) + \lambda W_{t-1})
+W_t = W_{t-1} - \eta_t (0.2 * O_t * \sqrt{\max(A, B)} + \lambda W_{t-1})
 $$
 
 The source motivates this with a theoretical update RMS of approximately:
 
 
 $$
-\sqrt(1 / \max(A, B))
+\sqrt{\frac{1}{\max(A, B)}}
 $$
 
 for a full-rank matrix of shape $[A, B]$.

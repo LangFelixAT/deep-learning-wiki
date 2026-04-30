@@ -31,20 +31,20 @@ Define the layer normalization operation introduced in [[2016 Layer Normalizatio
 Layer mean:
 
 $$
-\mu = (1/H) \sum_{i=1}^H a_i
+\mu = \frac{1}{H} \sum_{i=1}^H a_i
 $$
 Layer standard deviation:
 
 $$
-\sigma^2 = (1/H) \sum_{i=1}^H (a_i - \mu)^2
+\sigma^2 = \frac{1}{H} \sum_{i=1}^H (a_i - \mu)^2
 $$
 $$
-\sigma = \sqrt((1/H) \sum_{i=1}^H (a_i - \mu)^2)
+\sigma = \sqrt{\frac{1}{H} \sum_{i=1}^H (a_i - \mu)^2}
 $$
 Layer-normalized activation:
 
 $$
-h_i = f((g_i / \sigma)(a_i - \mu) + b_i)
+h_i = f\left(\frac{g_i}{\sigma}(a_i - \mu) + b_i\right)
 $$
 ## Derivation
 - Start from a vector of summed inputs $a = (a_1, ..., a_H)$ for one layer and one training case.

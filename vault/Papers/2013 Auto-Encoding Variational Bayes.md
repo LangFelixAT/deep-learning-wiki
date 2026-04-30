@@ -35,9 +35,9 @@ This reparameterization gives a differentiable Monte Carlo estimator of the vari
 The method starts from the variational lower bound for each datapoint:
 
 $$
-\log p_{\theta}(x^(i)) = D_{KL}(q_{\phi}(z|x^(i)) || p_{\theta}(z|x^(i))) + L(\theta, \phi; x^(i))
+\log p_{\theta}(x^{(i)}) = D_{KL}(q_{\phi}(z|x^{(i)}) || p_{\theta}(z|x^{(i)})) + L(\theta, \phi; x^{(i)})
 $$
-Because the KL term is non-negative, $L(\theta, \phi; x^(i))$ is a lower bound on the marginal log likelihood.
+Because the KL term is non-negative, $L(\theta, \phi; x^{(i)})$ is a lower bound on the marginal log likelihood.
 
 The paper then:
 - defines a recognition model $q_{\phi}(z|x)$ as an approximation to the true posterior;
@@ -52,17 +52,17 @@ In the VAE example, the prior is $p_{\theta}(z) = \mathcal{N}(0, I)$, the approx
 Variational decomposition:
 
 $$
-\log p_{\theta}(x^(i)) = D_{KL}(q_{\phi}(z|x^(i)) || p_{\theta}(z|x^(i))) + L(\theta, \phi; x^(i))
+\log p_{\theta}(x^{(i)}) = D_{KL}(q_{\phi}(z|x^{(i)}) || p_{\theta}(z|x^{(i)})) + L(\theta, \phi; x^{(i)})
 $$
 Lower bound:
 
 $$
-L(\theta, \phi; x^(i)) = E_q_{\phi}(z|x) [-\log q_{\phi}(z|x) + \log p_{\theta}(x,z)]
+L(\theta, \phi; x^{(i)}) = \mathbb{E}_{q_{\phi}(z|x)}[-\log q_{\phi}(z|x) + \log p_{\theta}(x,z)]
 $$
 Alternative lower bound form:
 
 $$
-L(\theta, \phi; x^(i)) = -D_{KL}(q_{\phi}(z|x^(i)) || p_{\theta}(z)) + E_q_{\phi}(z|x^(i))[\log p_{\theta}(x^(i)|z)]
+L(\theta, \phi; x^{(i)}) = -D_{KL}(q_{\phi}(z|x^{(i)}) || p_{\theta}(z)) + \mathbb{E}_{q_{\phi}(z|x^{(i)})}[\log p_{\theta}(x^{(i)}|z)]
 $$
 Reparameterization:
 
@@ -72,17 +72,17 @@ $$
 Generic SGVB estimator:
 
 $$
-L_A \approx (1/L) \sum_l [\log p_{\theta}(x^(i), z^(i,l)) - \log q_{\phi}(z^(i,l)|x^(i))]
+L_A \approx (1/L) \sum_l [\log p_{\theta}(x^{(i)}, z^{(i,l)}) - \log q_{\phi}(z^{(i,l)}|x^{(i)})]
 $$
 Lower-variance estimator when the KL term is analytic:
 
 $$
-L_B \approx -D_{KL}(q_{\phi}(z|x^(i)) || p_{\theta}(z)) + (1/L) \sum_l \log p_{\theta}(x^(i)|z^(i,l))
+L_B \approx -D_{KL}(q_{\phi}(z|x^{(i)}) || p_{\theta}(z)) + (1/L) \sum_l \log p_{\theta}(x^{(i)}|z^{(i,l)})
 $$
 Minibatch estimator:
 
 $$
-L(\theta, \phi; X) \approx (N/M) \sum_i L(\theta, \phi; x^(i))
+L(\theta, \phi; X) \approx (N/M) \sum_i L(\theta, \phi; x^{(i)})
 $$
 Gaussian VAE reparameterization:
 

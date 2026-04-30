@@ -650,3 +650,51 @@ Format:
 - Pages updated: AGENTS.md, docs/ingestion_workflow.md, docs/lint_workflow.md, prompts/ingest_paper.md, prompts/math_derivation_prompt.md, vault/Templates/Math.md, vault/Templates/Paper.md, math-heavy notes across `vault/Math`, `vault/Concepts`, and `vault/Papers`, [[log]]
 - Key concepts: [[Notation Conventions]]
 - Notes: Confirmed that Obsidian renders formulas through MathJax delimiters: inline math uses `$...$` and display equations use `$$...$$`. Converted formula-like backtick spans and text-fenced equation blocks to Obsidian-compatible math delimiters, fixed conversion artifacts in diffusion notation, and anchored the rule in operating docs, prompts, and templates. Backticks remain reserved for literal code, paths, commands, and pseudocode.
+
+## [2026-04-30] lint | LaTeX grouping cleanup
+
+- Source: Obsidian rendering review
+- Pages created:
+- Pages updated: AGENTS.md, docs/ingestion_workflow.md, docs/lint_workflow.md, vault/Templates/Math.md, vault/Templates/Paper.md, selected math-heavy notes across `vault/Math`, `vault/Concepts`, and `vault/Papers`, [[log]]
+- Key concepts: [[Notation Conventions]]
+- Notes: Fixed grouped superscripts such as `x^(t)` so they render as `$x^{(t)}$` in Obsidian/MathJax. Also fixed straightforward grouped square-root expressions such as `$\sqrt(d_k)$` to `$\sqrt{d_k}$`. Added the grouped-expression rule to operating guidance and templates.
+
+## [2026-04-30] lint | LaTeX expression cleanup
+
+- Source: Obsidian rendering review
+- Pages created:
+- Pages updated: AGENTS.md, docs/lint_workflow.md, vault/Templates/Math.md, vault/Templates/Paper.md, [[Annealed Langevin Dynamics]], [[Langevin Dynamics]], [[Score Matching]], [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]], [[Noise Conditional Score Networks]], [[Score-Based Generative Models]], [[log]]
+- Key concepts: [[Score Matching]], [[Langevin Dynamics]], [[Annealed Langevin Dynamics]]
+- Notes: Replaced ASCII pseudo-LaTeX in score-sampling equations, such as `tilde_x_t` and `alpha_i/2`, with proper MathJax syntax such as `$\tilde{x}_t$` and `$\frac{\alpha_i}{2}$`. Added the rule to guidance/templates so future equations prefer real LaTeX notation over ASCII approximations.
+
+## [2026-04-30] lint | LaTeX subscript grouping cleanup
+
+- Source: Obsidian rendering review
+- Pages created:
+- Pages updated: AGENTS.md, docs/ingestion_workflow.md, docs/lint_workflow.md, vault/Templates/Math.md, vault/Templates/Paper.md, [[Diffusion Parameterization]], [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]], [[Classifier-Free Guidance]], [[Reverse-Time SDE]], [[2022 Latent Diffusion Models]], [[Latent Diffusion]], [[KL Divergence]], [[log]]
+- Key concepts: [[Notation Conventions]]
+- Notes: Fixed multi-character subscripts that MathJax rendered one character at a time, such as `c_skip`, `s_guided`, `L_LDM`, and `D_KL`, by converting them to grouped forms such as `$c_{skip}$`, `$s_{guided}$`, `$L_{LDM}$`, and `$D_{KL}$`. Added the grouped-subscript rule to guidance and templates.
+
+## [2026-04-30] lint | LaTeX operator cleanup
+
+- Source: Obsidian rendering review
+- Pages created:
+- Pages updated: AGENTS.md, docs/ingestion_workflow.md, docs/lint_workflow.md, vault/Templates/Math.md, vault/Templates/Paper.md, [[Expert Routing]], [[2021 Switch Transformers]], [[Maximum Likelihood Estimation]], [[Steepest Descent]], [[2024 Old Optimizer New Norm]], [[Notation Conventions]], [[log]]
+- Key concepts: [[Expert Routing]], [[Steepest Descent]]
+- Notes: Fixed operator formatting such as `\argmax_i` and `i*` by converting to `$\arg\max_i$` and `$i^*$`. Also cleaned related optimization notation such as `arg min_delta`, `||delta||`, and `theta*` to MathJax-friendly forms.
+
+## [2026-05-01] lint | LaTeX accent and operator cleanup
+
+- Source: Obsidian rendering review
+- Pages created:
+- Pages updated: AGENTS.md, docs/lint_workflow.md, vault/Templates/Math.md, vault/Templates/Paper.md, [[RMSNorm]], [[RMSNorm (Math)]], [[2019 Root Mean Square Layer Normalization]], [[2016 Layer Normalization]], [[2019 Fast Transformer Decoding One Write-Head is All You Need]], [[log]]
+- Key concepts: [[RMSNorm]], [[Layer Normalization]], [[Multi-Query Attention]]
+- Notes: Fixed remaining math-rendering issues: `bar_a_i` now uses `$\bar{a}_i$`, LayerNorm's RNN equation uses `$\odot$` with an explanatory note for elementwise multiplication, fast-decoding einsum expressions use `$\operatorname{einsum}$`, and stale `Th\eta` artifacts were corrected to `$\Theta$`. Added the accent/operator rule to guidance and templates.
+
+## [2026-05-01] lint | LaTeX fraction cleanup
+
+- Source: Obsidian rendering review
+- Pages created:
+- Pages updated: AGENTS.md, docs/lint_workflow.md, vault/Templates/Math.md, vault/Templates/Paper.md, [[Adam]], [[2014 Adam]], [[AdamW]], [[2017 Decoupled Weight Decay Regularization]], [[Layer Normalization (Math)]], [[2016 Layer Normalization]], [[RMSNorm]], [[RMSNorm (Math)]], [[2019 Root Mean Square Layer Normalization]], [[Scaled Dot-Product Attention]], [[2017 Attention Is All You Need]], [[Transformer Architecture]], [[Multi-Head Attention]], [[Multi-Head Latent Attention (Math)]], [[Diffusion Reverse Process]], [[2020 Denoising Diffusion Probabilistic Models]], [[DDIM Sampling]], [[2020 Denoising Diffusion Implicit Models]], [[Diffusion Parameterization]], [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]], [[Score Matching]], [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]], [[Bayesian Inference]], [[2019 Introduction to Variational Autoencoders]], [[Energy-Based Models]], [[Expert Routing]], [[2021 Switch Transformers]], [[Contrastive Learning]], [[2021 CLIP]], [[Diffusion ODE Solvers]], [[2022 DPM-Solver]], [[Probability Flow ODE]], [[2021 Score-Based Generative Modeling through SDEs]], [[2022 Scalable Diffusion Models with Transformers]], [[Muon Optimizer (Math)]], [[2025 Muon is Scalable for LLM Training]], [[Regularization]], [[Weight Decay]], [[Steepest Descent]], [[log]]
+- Key concepts: [[Notation Conventions]], [[Scaled Dot-Product Attention]], [[Adam]], [[Diffusion Models]], [[RMSNorm]]
+- Notes: Replaced obvious ASCII division in equations with MathJax-friendly `\frac{...}{...}` forms while leaving prose ratios and code-like notation unchanged. Added a fraction-formatting rule to guidance and templates.

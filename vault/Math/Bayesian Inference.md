@@ -33,7 +33,7 @@ Describe inference over latent variables or parameters using probability.
 
 
 $$
-p(z|x) = p(x|z) p(z) / p(x)
+p(z|x) = \frac{p(x|z)p(z)}{p(x)}
 $$
 
 - The evidence marginalizes over the latent variable:

@@ -14,7 +14,7 @@ Describe the multi-noise-level sampling procedure used by NCSNs.
 - Update at noise level $\sigma_i$:
 
 $$
-tilde_x_t = tilde_x_{t-1} + \alpha_i/2 * s_{\theta}(tilde_x_{t-1}, \sigma_i) + \sqrt(\alpha_i) z_t
+\tilde{x}_t = \tilde{x}_{t-1} + \frac{\alpha_i}{2} s_{\theta}(\tilde{x}_{t-1}, \sigma_i) + \sqrt{\alpha_i} z_t
 $$
 ## Assumptions
 - The NCSN estimates scores of Gaussian-perturbed distributions $q_{\sigma_i}(x)$.

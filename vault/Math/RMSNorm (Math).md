@@ -14,7 +14,7 @@ Define the RMSNorm operation from [[2019 Root Mean Square Layer Normalization]] 
 - $a$: vector of summed inputs
 - $\operatorname{RMS}(a)$: root mean square of $a$
 - $g_i$: learned gain for feature $i$
-- $bar_a_i$: normalized value for feature $i$
+- $\bar{a}_i$: normalized value for feature $i$
 - $p$: partial ratio used by pRMSNorm, written as a fraction
 - $k$: number of features used for partial RMS estimation
 
@@ -34,17 +34,17 @@ Define the RMSNorm operation from [[2019 Root Mean Square Layer Normalization]] 
 RMS statistic:
 
 $$
-\operatorname{RMS}(a) = \sqrt((1/n) \sum_{i=1}^n a_i^2)
+\operatorname{RMS}(a) = \sqrt{\frac{1}{n} \sum_{i=1}^n a_i^2}
 $$
 RMSNorm:
 
 $$
-bar_a_i = a_i / \operatorname{RMS}(a) * g_i
+\bar{a}_i = \frac{a_i}{\operatorname{RMS}(a)} g_i
 $$
 pRMSNorm:
 
 $$
-RMS_p(a) = \sqrt{(1/k) \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
+RMS_p(a) = \sqrt{\frac{1}{k} \sum_{i=1}^k a_i^2}, \quad k = \lceil n p \rceil
 $$
 ## Derivation
 - Start with a vector of summed inputs $a = (a_1, ..., a_n)$.
@@ -62,7 +62,7 @@ $$
 Then:
 
 $$
-\alpha a_i / \operatorname{RMS}(\alpha a) = \alpha a_i / (\alpha \operatorname{RMS}(a)) = a_i / \operatorname{RMS}(a)
+\frac{\alpha a_i}{\operatorname{RMS}(\alpha a)} = \frac{\alpha a_i}{\alpha \operatorname{RMS}(a)} = \frac{a_i}{\operatorname{RMS}(a)}
 $$
 Skipped steps:
 - Full gradient derivation from the paper.

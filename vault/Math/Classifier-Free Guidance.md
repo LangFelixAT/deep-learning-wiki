@@ -33,12 +33,12 @@ Define classifier-free guidance as a way to condition diffusion sampling without
 In score form:
 
 $$
-s_guided(x_t,t,c) = (1 + w) s_{\theta}(x_t,t,c) - w s_{\theta}(x_t,t)
+s_{guided}(x_t,t,c) = (1 + w) s_{\theta}(x_t,t,c) - w s_{\theta}(x_t,t)
 $$
 In noise-prediction form:
 
 $$
-\epsilon_guided(x_t,t,c) = (1 + w) \epsilon_{\theta}(x_t,t,c) - w \epsilon_{\theta}(x_t,t)
+\epsilon_{guided}(x_t,t,c) = (1 + w) \epsilon_{\theta}(x_t,t,c) - w \epsilon_{\theta}(x_t,t)
 $$
 Needs verification: signs and coefficients must be checked against the model parameterization used by a specific sampler.
 

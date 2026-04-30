@@ -48,7 +48,7 @@ The update uses matrix inverse powers on both sides of the gradient:
 
 
 $$
-W_{t+1} = W_t - \eta L_t^(-1/4) G_t R_t^(-1/4)
+W_{t+1} = W_t - \eta L_t^{-1/4} G_t R_t^{-1/4}
 $$
 
 For higher-order tensors, the source generalizes this idea by maintaining one preconditioner per tensor dimension and applying the inverse factors along those dimensions.
@@ -60,7 +60,7 @@ Matrix Shampoo update:
 $$
 L_t = L_{t-1} + G_t G_t^T
 R_t = R_{t-1} + G_t^T G_t
-W_{t+1} = W_t - \eta L_t^(-1/4) G_t R_t^(-1/4)
+W_{t+1} = W_t - \eta L_t^{-1/4} G_t R_t^{-1/4}
 $$
 
 The source initializes preconditioners with a small positive multiple of the identity for numerical stability.

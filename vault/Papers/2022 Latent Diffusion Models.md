@@ -35,12 +35,12 @@ $$
 Pixel diffusion objective, structurally:
 
 $$
-L_DM = E_{x, \epsilon, t}[||\epsilon - \epsilon_{\theta}(x_t,t)||_2^2]
+L_{DM} = \mathbb{E}_{x, \epsilon, t}\left[\left\|\epsilon - \epsilon_{\theta}(x_t,t)\right\|_2^2\right]
 $$
 Latent diffusion objective:
 
 $$
-L_LDM = E_{E(x), \epsilon, t}[||\epsilon - \epsilon_{\theta}(z_t,t)||_2^2]
+L_{LDM} = \mathbb{E}_{E(x), \epsilon, t}\left[\left\|\epsilon - \epsilon_{\theta}(z_t,t)\right\|_2^2\right]
 $$
 Conditional latent diffusion:
 

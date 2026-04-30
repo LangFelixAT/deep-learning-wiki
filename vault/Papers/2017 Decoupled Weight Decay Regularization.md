@@ -50,7 +50,7 @@ SGD with L2-regularized loss:
 
 
 $$
-f_t^reg(\theta) = f_t(\theta) + (\lambda' / 2) ||\theta||_2^2
+f_t^{reg}(\theta) = f_t(\theta) + \frac{\lambda'}{2}\|\theta\|_2^2
 \theta_{t+1} = \theta_t - \alpha \nabla f_t(\theta_t) - \alpha \lambda' \theta_t
 $$
 
@@ -58,7 +58,7 @@ These are equivalent for standard SGD when:
 
 
 $$
-\lambda' = \lambda / \alpha
+\lambda' = \frac{\lambda}{\alpha}
 $$
 
 Adaptive optimizer with preconditioner $M_t$ and L2 regularization:
@@ -79,7 +79,7 @@ High-level AdamW update:
 
 
 $$
-\theta_t = \theta_{t-1} - \eta_t * (\alpha * \hat{m}_t / (\sqrt(\hat{v}_t) + \epsilon) + \lambda \theta_{t-1})
+\theta_t = \theta_{t-1} - \eta_t \left(\alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon} + \lambda \theta_{t-1}\right)
 $$
 
 where the Adam moment estimates are computed from the loss gradient, not from the L2-augmented gradient.

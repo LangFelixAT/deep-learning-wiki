@@ -19,7 +19,7 @@ Measure difference between probability distributions.
 - In [[2013 Auto-Encoding Variational Bayes]], $D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))$ measures the divergence between the approximate posterior and the true posterior.
 - The ELBO decomposition relies on KL non-negativity.
 - The VAE objective often uses $D_{KL}(q_{\phi}(z|x) || p_{\theta}(z))$, the divergence from the approximate posterior to the prior.
-- General definition: D_KL(q(z) || p(z)) = E_q[log q(z) - log p(z)]
+- General definition: $D_{KL}(q(z) || p(z)) = \mathbb{E}_{q}[\log q(z) - \log p(z)]$.
 - In [[2019 Introduction to Variational Autoencoders]], $D_{KL}(q_{\phi}(z|x) || p_{\theta}(z|x))$ is the gap between $\log p_{\theta}(x)$ and the ELBO.
 
 ## Assumptions

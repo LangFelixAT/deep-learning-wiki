@@ -34,12 +34,12 @@ $$
 Noise-prediction estimate of the clean sample:
 
 $$
-\hat{x}_0 = (x_t - \sqrt(1 - \bar{\alpha}_t) \epsilon_{\theta}(x_t,t)) / \sqrt(\bar{\alpha}_t)
+\hat{x}_0 = \frac{x_t - \sqrt{1 - \bar{\alpha}_t} \epsilon_{\theta}(x_t,t)}{\sqrt{\bar{\alpha}_t}}
 $$
 DDIM-style sampling update:
 
 $$
-x_{t-1} = \sqrt(\bar{\alpha}_{t-1}) \hat{x}_0 + \sqrt(1 - \bar{\alpha}_{t-1} - \sigma_t^2) \epsilon_{\theta}(x_t,t) + \sigma_t \epsilon
+x_{t-1} = \sqrt{\bar{\alpha}_{t-1}} \hat{x}_0 + \sqrt{1 - \bar{\alpha}_{t-1} - \sigma_t^2} \epsilon_{\theta}(x_t,t) + \sigma_t \epsilon
 $$
 The deterministic DDIM case sets $\sigma_t = 0$, commonly described through $\eta = 0$.
 

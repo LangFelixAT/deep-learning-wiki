@@ -34,7 +34,7 @@ $$
 Patch/token count for a square latent of spatial size `I x I` with patch size `p`:
 
 $$
-T = (I / p)^2
+T = \left(\frac{I}{p}\right)^2
 $$
 Patch-token view:
 

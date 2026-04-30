@@ -60,7 +60,7 @@ The scaled version adds weight decay and update RMS adjustment:
 
 
 $$
-W_t = W_{t-1} - \eta_t (0.2 * O_t * \sqrt(\max(A, B)) + \lambda W_{t-1})
+W_t = W_{t-1} - \eta_t (0.2 * O_t * \sqrt{\max(A, B)} + \lambda W_{t-1})
 $$
 
 where $[A, B]$ is the matrix shape.
@@ -70,12 +70,12 @@ Source claim for theoretical Muon update RMS:
 
 
 $$
-update RMS \approx \sqrt(1 / \max(A, B))
+\operatorname{update\ RMS} \approx \sqrt{\frac{1}{\max(A, B)}}
 $$
 
 for a full-rank matrix of shape $[A, B]$.
 
-The paper uses this to motivate shape-dependent scaling by $\sqrt(\max(A, B))$, then matches the resulting update RMS to an empirical AdamW-like range.
+The paper uses this to motivate shape-dependent scaling by $\sqrt{\max(A, B)}$, then matches the resulting update RMS to an empirical AdamW-like range.
 
 ## Results
 Claim from source:
@@ -99,7 +99,7 @@ This note does not ingest full benchmark tables.
 - Adding weight decay is important for scaling Muon.
 - Without weight decay, some weights and layer output RMS values can grow too large during longer training.
 - Muon's update RMS varies with parameter shape.
-- The source proposes scaling Muon updates by $\sqrt(\max(A, B))$ and matching update RMS to an empirical AdamW-like range.
+- The source proposes scaling Muon updates by $\sqrt{\max(A, B)}$ and matching update RMS to an empirical AdamW-like range.
 - The source reports no loss spike or gradient norm spike in Moonlight training.
 - The source reports sparse large-attention-logit events early in training and says they decrease as training progresses.
 - The source reports that applying weight decay to RMSNorm gamma is important for stability.

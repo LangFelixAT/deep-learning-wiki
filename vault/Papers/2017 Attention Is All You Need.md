@@ -53,7 +53,7 @@ Self-attention lets each position directly attend to other positions in the sequ
 Scaled dot-product attention:
 
 $$
-\operatorname{Attention}(Q,K,V) = \operatorname{softmax}(QK^T / \sqrt(d_k)) V
+\operatorname{Attention}(Q,K,V) = \operatorname{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V
 $$
 Multi-head attention:
 
@@ -78,10 +78,10 @@ $$
 Sinusoidal positional encoding:
 
 $$
-\operatorname{PE}(pos,2i) = sin(pos / 10000^(2i/d_model))
+\operatorname{PE}(pos,2i) = \sin\left(\frac{pos}{10000^{2i/d_{model}}}\right)
 $$
 $$
-\operatorname{PE}(pos,2i+1) = cos(pos / 10000^(2i/d_model))
+\operatorname{PE}(pos,2i+1) = \cos\left(\frac{pos}{10000^{2i/d_{model}}}\right)
 $$
 ## Results
 - Claim from source: the Transformer achieves strong machine translation results while being more parallelizable and requiring less training time than the recurrent/convolutional baselines considered in the paper.
@@ -100,7 +100,7 @@ Detailed benchmark tables are outside this ingest scope.
 - Claim from source: the Transformer relies entirely on attention mechanisms for sequence transduction, dispensing with recurrence and convolutions.
 - Claim from source: recurrent models have inherently sequential computation across positions, limiting parallelization during training.
 - Claim from source: self-attention relates different positions of a single sequence to compute a sequence representation.
-- Claim from source: scaled dot-product attention divides dot products by $\sqrt(d_k)$ to counteract large dot-product magnitudes that can push softmax into small-gradient regions.
+- Claim from source: scaled dot-product attention divides dot products by $\sqrt{d_k}$ to counteract large dot-product magnitudes that can push softmax into small-gradient regions.
 - Claim from source: multi-head attention is beneficial because it allows attention to different representation subspaces at different positions.
 - Claim from source: positional encodings are added because the model contains no recurrence or convolution and therefore needs position information injected.
 

@@ -30,7 +30,7 @@ The objective increases $\operatorname{sim}(image_i, text_i)$ and decreases $\op
 For one image embedding $i$, a light image-to-text contrastive term has the form:
 
 $$
--\log \exp(sim(i, t_pos) / \tau) / \sum_j \exp(sim(i, t_j) / \tau)
+-\log \frac{\exp\left(\frac{\operatorname{sim}(i, t_{pos})}{\tau}\right)}{\sum_j \exp\left(\frac{\operatorname{sim}(i, t_j)}{\tau}\right)}
 $$
 CLIP uses a symmetric version: image-to-text matching and text-to-image matching are both optimized.
 

@@ -19,12 +19,12 @@ $$
 - In the 2015 paper, the forward trajectory is written with superscript time notation:
 
 $$
-q(x^(0:T)) = q(x^(0)) \prod_{t=1}^T q(x^(t)|x^(t-1))
+q(x^{(0:T)}) = q(x^{(0)}) \prod_{t=1}^T q(x^{(t)}|x^{(t-1)})
 $$
 - Gaussian transition:
 
 $$
-q(x_t|x_{t-1}) = \mathcal{N}(x_t; \sqrt(1 - \beta_t)x_{t-1}, \beta_t I)
+q(x_t|x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t}x_{t-1}, \beta_t I)
 $$
 - Let $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \prod_{s=1}^t \alpha_s$.
 
@@ -39,7 +39,7 @@ $$
 - Because each step is Gaussian and linear in $x_{t-1}$, the marginal noised sample at arbitrary timestep has closed form:
 
 $$
-q(x_t|x_0) = \mathcal{N}(x_t; \sqrt(\bar{\alpha}_t)x_0, (1 - \bar{\alpha}_t)I)
+q(x_t|x_0) = \mathcal{N}(x_t; \sqrt{\bar{\alpha}_t}x_0, (1 - \bar{\alpha}_t)I)
 $$
 - Equivalently, one can sample:
 

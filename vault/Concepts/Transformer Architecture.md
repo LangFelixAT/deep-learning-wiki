@@ -36,7 +36,7 @@ This page is a synthesis hub for transformer internals. It is broader than [[Tra
 - Core attention operation:
 
 $$
-\operatorname{Attention}(Q,K,V) = \operatorname{softmax}(QK^T / \sqrt(d_k)) V
+\operatorname{Attention}(Q,K,V) = \operatorname{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V
 $$
 - Multi-head attention applies that operation to projected subspaces and concatenates head outputs.
 - Position-wise feed-forward blocks transform each token independently after attention has mixed sequence information.
