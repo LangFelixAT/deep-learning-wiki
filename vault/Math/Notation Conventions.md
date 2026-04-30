@@ -56,6 +56,9 @@ Collect canonical notation used across the wiki so related math and concept note
 - `beta_1`: Adam first moment exponential decay rate.
 - `beta_2`: Adam second raw moment exponential decay rate.
 - `epsilon`: small numerical constant used in optimizer denominators.
+- `lambda`: weight decay factor in [[AdamW]] and [[Weight Decay]] notes.
+- `lambda'`: L2 regularization coefficient when distinguishing L2 penalties from decoupled weight decay.
+- `eta_t`: schedule multiplier used in [[2017 Decoupled Weight Decay Regularization]].
 
 ### Efficient LLM architecture
 - `KV cache`: stored keys and values reused during autoregressive decoding.
@@ -79,6 +82,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - Assuming `epsilon_theta` and `s_theta` have the same sign and scaling across parameterizations.
 - Confusing number of query heads with number of key/value heads in MQA, GQA, and MLA notes.
 - Treating `v_t` in [[Adam]] as a centered variance rather than a second raw moment estimate.
+- Treating `lambda` and `lambda'` as interchangeable without checking whether a note is using weight decay or L2 regularization.
 
 ## Related concepts
 - [[Variational Inference]]
@@ -88,6 +92,8 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[Scaled Dot-Product Attention]]
 - [[RMSNorm (Math)]]
 - [[Adam]]
+- [[AdamW]]
+- [[Weight Decay]]
 - [[Multi-Head Latent Attention (Math)]]
 - [[Expert Routing]]
 
@@ -98,6 +104,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[2022 Elucidating the Design Space of Diffusion-Based Generative Models]]
 - [[2017 Attention Is All You Need]]
 - [[2014 Adam]]
+- [[2017 Decoupled Weight Decay Regularization]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2021 Switch Transformers]]
 

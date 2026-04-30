@@ -97,6 +97,7 @@ Seed pages:
 - [[Scaling Laws]]
 
 Needed backbone:
+- optimization geometry for adaptive methods
 - Muon optimizer
 - Shampoo-style matrix-aware optimizers
 - learning-rate schedules

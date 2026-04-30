@@ -530,3 +530,11 @@ Format:
 - Pages updated: [[Adam]], [[Gradient Descent]], [[Weight Decay]], [[Optimization and Training Stability]], [[Notation Conventions]], docs/research_roadmap.md, [[Home]], [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
 - Key concepts: [[Adam]], [[Gradient Descent]], [[Weight Decay]], [[AdamW]], [[Optimization and Training Stability]]
 - Notes: Ingested Adam with focus on stochastic gradient descent context, first and second moment estimates, bias correction, elementwise adaptive learning rates, the Adam update rule, and hyperparameter roles for `alpha`, `beta_1`, `beta_2`, and `epsilon`. Excluded convergence proof details, regret-bound derivation, extensive benchmark tables, AdaMax derivation, AdamW details, and modern optimizer claims not in the paper.
+
+## [2026-04-30] ingest | Decoupled Weight Decay Regularization
+
+- Source: data/raw/papers/adamw_loshchilov_hutter_2017.pdf
+- Pages created: [[2017 Decoupled Weight Decay Regularization]]
+- Pages updated: [[AdamW]], [[Adam]], [[Weight Decay]], [[Regularization]], [[Optimization and Training Stability]], [[Notation Conventions]], docs/research_roadmap.md, [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[AdamW]], [[Adam]], [[Weight Decay]], [[Regularization]], [[Gradient Descent]], [[Optimization and Training Stability]]
+- Notes: Ingested AdamW with focus on the difference between L2 regularization and weight decay, why they are equivalent for vanilla SGD after coefficient rescaling, why the equivalence fails for adaptive optimizers, how Adam with L2 regularization couples the penalty to adaptive learning rates, and the high-level AdamW decoupled update. Excluded benchmark tables, SGDW details beyond brief comparison, schedule tuning, extensive experimental setup, later optimizer variants, and modern claims not grounded in the paper.

@@ -35,7 +35,7 @@
 - [[Forward SDE]] - continuous-time noising process from data to prior noise (type: math, status: partially verified)
 - [[Reverse-Time SDE]] - score-dependent reverse stochastic process for generation (type: math, status: partially verified)
 - [[Probability Flow ODE]] - deterministic process sharing SDE marginal distributions (type: math, status: partially verified)
-- [[Regularization]] - constraints and penalties for generalization and training behavior (type: math, status: stub)
+- [[Regularization]] - constraints and penalties for generalization, including L2 regularization and weight decay distinctions (type: math, status: developing)
 
 ## Generative models
 
@@ -85,8 +85,8 @@
 - [[Optimization and Training Stability]] - synthesis page for optimization methods and training-stability mechanisms (type: concept, status: developing)
 - [[Gradient Descent]] - gradient-based iterative optimization and SGD baseline for Adam-style methods (type: math, status: developing)
 - [[Adam]] - adaptive stochastic optimizer using moment estimates and bias correction (type: math, status: partially verified)
-- [[AdamW]] - planned math note for decoupled weight decay in Adam-style optimization (type: math, status: stub)
-- [[Weight Decay]] - parameter decay and related regularization (type: math, status: stub)
+- [[AdamW]] - Adam with weight decay decoupled from adaptive gradient scaling (type: math, status: partially verified)
+- [[Weight Decay]] - parameter shrinkage and its distinction from L2 regularization under adaptive optimizers (type: math, status: partially verified)
 - [[Normalization]] - rescaling and standardization techniques used in neural networks (type: concept, status: developing)
 - [[Scaling Laws]] - relationships between performance and scale (type: concept, status: stub)
 
@@ -101,6 +101,7 @@
 - [[2014 Adam]] - Kingma and Ba paper introducing Adam for stochastic optimization with adaptive moment estimates (type: paper, status: studied)
 - [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] - Sohl-Dickstein et al. paper introducing diffusion probabilistic models as learned reversals of gradual noising processes (type: paper, status: studied)
 - [[2016 Layer Normalization]] - Ba, Kiros, and Hinton paper introducing layer normalization for neural networks and recurrent sequence models (type: paper, status: studied)
+- [[2017 Decoupled Weight Decay Regularization]] - Loshchilov and Hutter paper introducing AdamW and the L2 versus weight-decay distinction for adaptive optimizers (type: paper, status: studied)
 - [[2017 Attention Is All You Need]] - Vaswani et al. paper introducing the Transformer architecture based on self-attention and multi-head attention (type: paper, status: studied)
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
 - [[2019 Root Mean Square Layer Normalization]] - Zhang and Sennrich paper introducing RMSNorm as a simpler alternative to LayerNorm (type: paper, status: studied)

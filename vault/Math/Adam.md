@@ -85,6 +85,7 @@ theta_t = theta_{t-1} - alpha * hat_m_t / (sqrt(hat_v_t) + epsilon)
 - Bias correction matters most early in training and when `beta_1` or `beta_2` are close to 1, because zero initialization otherwise pulls the moment estimates downward.
 - `alpha` controls the global step scale, while `beta_1` and `beta_2` control memory in the first and second moment estimates.
 - Adam can be viewed as [[Gradient Descent]] with momentum-like smoothing and coordinatewise adaptive scaling.
+- [[AdamW]] modifies how [[Weight Decay]] is applied with Adam: the decay term is separated from Adam's adaptive loss-gradient step.
 
 ## Alternative formulations
 - The source notes a computationally reordered update using a time-dependent effective stepsize `alpha_t`, but the clearer algorithmic form above is the canonical form for this wiki.
@@ -94,7 +95,7 @@ theta_t = theta_{t-1} - alpha * hat_m_t / (sqrt(hat_v_t) + epsilon)
 - Treating `v_t` as a centered variance. In Adam, `v_t` is a second raw moment estimate of squared gradients.
 - Forgetting bias correction when reasoning about early timesteps.
 - Treating `epsilon` as a learning-rate parameter. It is primarily a small denominator-stabilizing constant.
-- Assuming AdamW is just Adam plus ordinary L2 regularization. Needs verification from the AdamW source.
+- Assuming AdamW is just Adam plus ordinary L2 regularization. [[2017 Decoupled Weight Decay Regularization]] argues that this is not true for adaptive optimizers.
 
 ## Related concepts
 - [[Gradient Descent]]
@@ -104,10 +105,12 @@ theta_t = theta_{t-1} - alpha * hat_m_t / (sqrt(hat_v_t) + epsilon)
 
 ## Related papers
 - [[2014 Adam]]
+- [[2017 Decoupled Weight Decay Regularization]]
 
 ## Source references
 - [[2014 Adam]]
+- [[2017 Decoupled Weight Decay Regularization]]
 
 ## Verification status
 - Status: partially verified
-- Needs verification: details of AdamW, convergence edge cases, and later optimizer comparisons require separate sources.
+- Needs verification: convergence edge cases and later optimizer comparisons require separate sources.

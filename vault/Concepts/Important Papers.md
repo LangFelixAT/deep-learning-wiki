@@ -18,6 +18,7 @@ This page answers which papers are acting as anchors for the current concept and
 - [[2014 Adam]] - adaptive moment estimation for stochastic optimization.
 - [[2015 Deep Unsupervised Learning using Nonequilibrium Thermodynamics]] - early diffusion probabilistic modeling.
 - [[2016 Layer Normalization]] - layer normalization for neural sequence models.
+- [[2017 Decoupled Weight Decay Regularization]] - AdamW and the distinction between L2 regularization and decoupled weight decay.
 - [[2017 Attention Is All You Need]] - Transformer architecture, self-attention, and multi-head attention.
 - [[2019 Introduction to Variational Autoencoders]] - VAE tutorial and ELBO interpretation.
 - [[2019 Root Mean Square Layer Normalization]] - RMSNorm as a simpler normalization alternative to LayerNorm.
