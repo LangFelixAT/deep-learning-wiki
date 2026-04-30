@@ -36,9 +36,10 @@
 - [[Reverse-Time SDE]] - score-dependent reverse stochastic process for generation (type: math, status: partially verified)
 - [[Probability Flow ODE]] - deterministic process sharing SDE marginal distributions (type: math, status: partially verified)
 - [[Regularization]] - constraints and penalties for generalization, including L2 regularization and weight decay distinctions (type: math, status: developing)
+- [[Preconditioning]] - transforming gradients before updates, from coordinatewise adaptive scaling to structured matrix/tensor methods (type: math, status: developing)
+- [[Shampoo]] - tensor-aware preconditioned optimizer using per-dimension matrix preconditioners (type: math, status: partially verified)
 - [[Muon Optimizer (Math)]] - high-level mathematical structure of Muon as momentum plus approximate update orthogonalization (type: math, status: partially verified)
 - [[Newton-Schulz Iteration]] - iterative matrix method used by Muon for approximate orthogonalization (type: math, status: stub)
-- [[Shampoo]] - planned math note for the matrix/tensor-aware optimizer that bridges AdamW and Muon (type: math, status: stub)
 
 ## Generative models
 
@@ -89,8 +90,10 @@
 - [[Gradient Descent]] - gradient-based iterative optimization and SGD baseline for Adam-style methods (type: math, status: developing)
 - [[Adam]] - adaptive stochastic optimizer using moment estimates and bias correction (type: math, status: partially verified)
 - [[AdamW]] - Adam with weight decay decoupled from adaptive gradient scaling (type: math, status: partially verified)
+- [[Preconditioning]] - optimization update transformation used by adaptive and matrix-aware methods (type: math, status: developing)
+- [[Shampoo]] - matrix/tensor-aware preconditioning method that bridges coordinatewise adaptive methods and later matrix-aware optimizers (type: math, status: partially verified)
 - [[Muon Optimizer]] - emerging optimizer that orthogonalizes hidden-layer matrix updates with Newton-Schulz iteration (type: concept, status: developing)
-- [[Matrix-Aware Optimizers]] - optimizer family that uses matrix or tensor structure rather than only coordinatewise scaling (type: concept, status: stub)
+- [[Matrix-Aware Optimizers]] - optimizer family that uses matrix or tensor structure rather than only coordinatewise scaling (type: concept, status: developing)
 - [[Weight Decay]] - parameter shrinkage and its distinction from L2 regularization under adaptive optimizers (type: math, status: partially verified)
 - [[Normalization]] - rescaling and standardization techniques used in neural networks (type: concept, status: developing)
 - [[Scaling Laws]] - relationships between performance and scale (type: concept, status: stub)
@@ -108,6 +111,7 @@
 - [[2016 Layer Normalization]] - Ba, Kiros, and Hinton paper introducing layer normalization for neural networks and recurrent sequence models (type: paper, status: studied)
 - [[2017 Decoupled Weight Decay Regularization]] - Loshchilov and Hutter paper introducing AdamW and the L2 versus weight-decay distinction for adaptive optimizers (type: paper, status: studied)
 - [[2017 Attention Is All You Need]] - Vaswani et al. paper introducing the Transformer architecture based on self-attention and multi-head attention (type: paper, status: studied)
+- [[2018 Shampoo]] - Gupta, Koren, and Singer paper introducing tensor-aware preconditioned stochastic optimization (type: paper, status: studied)
 - [[2019 Introduction to Variational Autoencoders]] - Kingma and Welling tutorial covering VAE foundations, latent-variable models, inference, and ELBO interpretation (type: paper, status: studied)
 - [[2019 Root Mean Square Layer Normalization]] - Zhang and Sennrich paper introducing RMSNorm as a simpler alternative to LayerNorm (type: paper, status: studied)
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]] - Shazeer paper introducing multi-query attention to reduce key/value memory bandwidth during incremental Transformer decoding (type: paper, status: studied)

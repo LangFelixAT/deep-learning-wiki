@@ -20,6 +20,7 @@ The timeline is a navigation aid: it shows when the wiki's current anchor ideas 
 - 2016: [[2016 Layer Normalization]] introduces layer normalization as a normalization method suited to recurrent and sequence models.
 - 2017: [[2017 Decoupled Weight Decay Regularization]] introduces AdamW by decoupling weight decay from adaptive gradient updates.
 - 2017: [[2017 Attention Is All You Need]] introduces the Transformer architecture based on self-attention and multi-head attention.
+- 2018: [[2018 Shampoo]] introduces tensor-aware preconditioning with per-dimension preconditioners for matrix and tensor optimization.
 - 2019: [[2019 Introduction to Variational Autoencoders]] consolidates VAE foundations, latent-variable modeling, variational approximation, and ELBO interpretation.
 - 2019: [[2019 Root Mean Square Layer Normalization]] introduces RMSNorm as a simpler normalization method that removes LayerNorm mean-centering.
 - 2019: [[2019 Generative Modeling by Estimating Gradients of the Data Distribution]] develops score-based generative modeling with noise-conditional score networks and annealed Langevin dynamics.
@@ -49,7 +50,7 @@ The timeline is a navigation aid: it shows when the wiki's current anchor ideas 
 - Sparse model scaling: [[Mixture of Experts]], [[DeepSeekMoE]], [[Expert Routing]]
 - LLM systems: [[LLM Training Systems]]
 - Representation learning: [[CLIP]], [[Contrastive Learning]]
-- Optimization and training: [[Gradient Descent]], [[Adam]], [[AdamW]], [[Muon Optimizer]], [[Matrix-Aware Optimizers]], [[Weight Decay]], [[Normalization]], [[Layer Normalization]]
+- Optimization and training: [[Gradient Descent]], [[Preconditioning]], [[Adam]], [[AdamW]], [[Shampoo]], [[Muon Optimizer]], [[Matrix-Aware Optimizers]], [[Weight Decay]], [[Normalization]], [[Layer Normalization]]
 
 ## Related concepts
 - [[Important Papers]]

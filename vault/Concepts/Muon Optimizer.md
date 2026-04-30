@@ -23,10 +23,11 @@ The central intuition is that hidden-layer matrix updates may be dominated by a 
 ## Historical development
 Muon appears in this wiki after [[Adam]] and [[AdamW]] as a newer optimizer direction. It is not yet as historically settled as those sources.
 
-The first source-grounded anchor here is [[2024 Muon Optimizer]], a blog/repository source. The source connects Muon to [[Shampoo]] and to Newton-Schulz-based approximate matrix orthogonalization.
+The first source-grounded anchor here is [[2024 Muon Optimizer]], a blog/repository source. [[2018 Shampoo]] now grounds the older tensor-aware preconditioning side of the matrix-aware optimizer branch.
 
 ## Related papers
 - [[2024 Muon Optimizer]]
+- [[2018 Shampoo]]
 - [[2014 Adam]]
 - [[2017 Decoupled Weight Decay Regularization]]
 
@@ -43,7 +44,7 @@ The first source-grounded anchor here is [[2024 Muon Optimizer]], a blog/reposit
 
 ## Open questions
 - Needs verification: whether Muon should be treated as a generally useful optimizer or primarily as an emerging empirical result.
-- Needs verification: how Muon compares to [[Shampoo]] after a source-grounded Shampoo ingest.
+- Needs verification: the exact mathematical and empirical comparison between Muon and [[Shampoo]].
 - Needs verification: how Muon behaves for finetuning and reinforcement-learning workloads.
 
 ## My understanding
@@ -51,3 +52,4 @@ Muon is important because it points toward optimizer design that depends on para
 
 ## Source notes
 - [[2024 Muon Optimizer]]
+- [[2018 Shampoo]]

@@ -20,6 +20,7 @@ This page answers which papers are acting as anchors for the current concept and
 - [[2016 Layer Normalization]] - layer normalization for neural sequence models.
 - [[2017 Decoupled Weight Decay Regularization]] - AdamW and the distinction between L2 regularization and decoupled weight decay.
 - [[2017 Attention Is All You Need]] - Transformer architecture, self-attention, and multi-head attention.
+- [[2018 Shampoo]] - tensor-aware preconditioning for stochastic optimization.
 - [[2019 Introduction to Variational Autoencoders]] - VAE tutorial and ELBO interpretation.
 - [[2019 Root Mean Square Layer Normalization]] - RMSNorm as a simpler normalization alternative to LayerNorm.
 - [[2019 Fast Transformer Decoding One Write-Head is All You Need]] - multi-query attention and key/value memory bandwidth during decoding.
@@ -50,6 +51,7 @@ This page answers which papers are acting as anchors for the current concept and
 - [[Mixture of Experts]]
 - [[DeepSeekMoE]]
 - [[LLM Training Systems]]
+- [[Optimization and Training Stability]]
 
 ## Related non-paper sources
 - [[2024 Muon Optimizer]] - blog/repository source for the emerging Muon optimizer.

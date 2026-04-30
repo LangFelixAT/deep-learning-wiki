@@ -554,3 +554,11 @@ Format:
 - Pages updated: [[AdamW]], [[Optimization and Training Stability]], [[Notation Conventions]], docs/research_roadmap.md, [[Home]], [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
 - Key concepts: [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[Newton-Schulz Iteration]], [[Matrix-Aware Optimizers]], [[Shampoo]], [[AdamW]]
 - Notes: Ingested the Muon source bundle as a blog/repository source, not as a peer-reviewed paper. Focused on Muon as an optimizer for hidden-layer 2D parameters, momentum followed by approximate orthogonalization, Newton-Schulz iteration as the practical method, AdamW as the companion optimizer for incompatible parameter classes, and the Shampoo relationship as a future bridge. Kept empirical speedrun and scaling claims labeled as source claims or future connections.
+
+## [2026-04-30] ingest | Shampoo
+
+- Source: data/raw/papers/shampoo_preconditioned_tensor_optimization_gupta_2018.pdf
+- Pages created: [[2018 Shampoo]], [[Preconditioning]]
+- Pages updated: [[Shampoo]], [[Matrix-Aware Optimizers]], [[Optimization and Training Stability]], [[Muon Optimizer]], [[Muon Optimizer (Math)]], [[2024 Muon Optimizer]], [[Notation Conventions]], docs/research_roadmap.md, [[Home]], [[Deep Learning Timeline]], [[Important Papers]], [[index]], [[log]]
+- Key concepts: [[Shampoo]], [[Preconditioning]], [[Matrix-Aware Optimizers]], [[Adam]], [[AdamW]], [[Muon Optimizer]]
+- Notes: Ingested Shampoo with focus on why preconditioning helps, why full-matrix preconditioning is expensive, matrix/tensor-aware per-dimension preconditioners, the high-level matrix update, and the bridge from coordinatewise adaptive optimizers toward matrix-aware methods. Excluded convergence proof, trace inequality derivations, benchmark tables, implementation details, distributed Shampoo variants, SOAP, Muon derivation, and large-scale LLM claims.

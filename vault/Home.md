@@ -73,8 +73,10 @@
 ### Optimization and training
 - [[Optimization and Training Stability]]
 - [[Gradient Descent]]
+- [[Preconditioning]]
 - [[Adam]]
 - [[AdamW]]
+- [[Shampoo]]
 - [[Muon Optimizer]]
 - [[Matrix-Aware Optimizers]]
 - [[Weight Decay]]

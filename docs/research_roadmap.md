@@ -89,8 +89,10 @@ Current status: early foundation.
 Seed pages:
 - [[Optimization and Training Stability]]
 - [[Gradient Descent]]
+- [[Preconditioning]]
 - [[Adam]]
 - [[AdamW]]
+- [[Shampoo]]
 - [[Muon Optimizer]]
 - [[Muon Optimizer (Math)]]
 - [[Matrix-Aware Optimizers]]
@@ -101,7 +103,6 @@ Seed pages:
 
 Needed backbone:
 - optimization geometry for adaptive methods
-- [[Shampoo]]
 - Old Optimizer, New Norm
 - Muon scaling and independent comparison sources
 - learning-rate schedules

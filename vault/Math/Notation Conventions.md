@@ -60,7 +60,10 @@ Collect canonical notation used across the wiki so related math and concept note
 - `lambda'`: L2 regularization coefficient when distinguishing L2 penalties from decoupled weight decay.
 - `eta_t`: schedule multiplier used in [[2017 Decoupled Weight Decay Regularization]].
 - `W_t`: matrix-valued weight parameter in matrix-aware optimizer notes.
-- `G_t`: gradient or update matrix in [[Muon Optimizer (Math)]].
+- `G_t`: gradient or update matrix in matrix-aware optimizer notes.
+- `L_t`: left preconditioner in the matrix case of [[Shampoo]].
+- `R_t`: right preconditioner in the matrix case of [[Shampoo]].
+- `P_t`: generic preconditioner in [[Preconditioning]].
 - `M_t`: momentum buffer or generic adaptive preconditioner depending on optimizer context.
 - `Ortho(G)`: idealized orthogonalized update matrix in [[Muon Optimizer (Math)]].
 - `U S V^T`: singular value decomposition notation used in matrix-aware optimizer notes.
@@ -89,6 +92,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - Treating `v_t` in [[Adam]] as a centered variance rather than a second raw moment estimate.
 - Treating `lambda` and `lambda'` as interchangeable without checking whether a note is using weight decay or L2 regularization.
 - Reusing `M_t` without checking context: in AdamW notes it may denote a generic preconditioner, while in Muon notes it may denote a momentum buffer.
+- Reusing `epsilon` without checking context: it can be an optimizer denominator constant, a preconditioner stabilizer, or Gaussian noise in diffusion notes.
 
 ## Related concepts
 - [[Variational Inference]]
@@ -100,6 +104,8 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[Adam]]
 - [[AdamW]]
 - [[Weight Decay]]
+- [[Preconditioning]]
+- [[Shampoo]]
 - [[Muon Optimizer (Math)]]
 - [[Newton-Schulz Iteration]]
 - [[Multi-Head Latent Attention (Math)]]
@@ -113,6 +119,7 @@ The same symbols are reused differently across deep learning subfields. A centra
 - [[2017 Attention Is All You Need]]
 - [[2014 Adam]]
 - [[2017 Decoupled Weight Decay Regularization]]
+- [[2018 Shampoo]]
 - [[2024 Muon Optimizer]]
 - [[2024 DeepSeek-V2 Technical Report]]
 - [[2021 Switch Transformers]]

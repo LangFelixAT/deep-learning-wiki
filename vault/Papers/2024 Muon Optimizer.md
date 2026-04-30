@@ -19,7 +19,7 @@ Focus:
 - momentum update followed by approximate orthogonalization
 - Newton-Schulz iteration as the practical orthogonalization method
 - why AdamW remains used for embeddings, heads, scalar/vector parameters, gains, and biases
-- relationship to Shampoo and matrix-aware optimization as a future bridge
+- relationship to Shampoo and matrix-aware optimization as a high-level bridge
 - empirical claims only as source claims
 
 Excluded:
@@ -99,7 +99,7 @@ These are not treated here as settled consensus. They should be re-evaluated wit
 ## Limitations
 - The main source is a blog/repository source, not a peer-reviewed paper.
 - The source itself lists open questions about scale, distributed Newton-Schulz computation, and whether Muon works outside pretraining.
-- The relationship to [[Shampoo]] is only sketched here; it needs a separate Shampoo ingest.
+- The relationship to [[Shampoo]] is only sketched here; exact comparisons should use [[2018 Shampoo]] and later sources.
 - The relationship to Bernstein-Newhouse's norm framing needs a separate source ingest.
 
 ## Claim from source
@@ -134,9 +134,9 @@ This makes Muon a natural next step in the wiki after [[Adam]] and [[AdamW]], bu
 ## Connections to papers
 - [[2014 Adam]]
 - [[2017 Decoupled Weight Decay Regularization]]
+- [[2018 Shampoo]]
 
 ## Questions
-- Should [[Shampoo]] be ingested before deeper Muon math?
 - Which later source best validates Muon at LLM scale?
 - How should matrix-aware optimizers be organized relative to coordinatewise adaptive optimizers?
 

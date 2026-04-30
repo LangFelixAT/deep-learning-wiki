@@ -77,7 +77,7 @@ W_{t+1} = (1 - eta lambda) W_t - eta U_t
 ```
 
 - Skipped steps: the exact Newton-Schulz polynomial iteration, coefficient tuning, and convergence behavior are not fully derived here.
-- Skipped steps: the relationship to Shampoo-style preconditioning is marked as `Needs verification` until [[Shampoo]] is ingested.
+- Skipped steps: the relationship to Shampoo-style preconditioning is kept high-level; [[2018 Shampoo]] grounds Shampoo itself, but this note does not derive a formal equivalence between Shampoo and Muon.
 
 ## Interpretation
 Muon replaces the raw or momentum-smoothed matrix update with a matrix whose singular values are more balanced. This is different from [[AdamW]], which rescales coordinates using first and second moment estimates.
@@ -87,7 +87,7 @@ In source terms, Muon is not a universal replacement for AdamW. It is a matrix-p
 ## Alternative formulations
 - The source describes Nesterov-style momentum as the practical default.
 - The implementation supports convolution filters by flattening them into a matrix-like form.
-- The source relates Muon to [[Shampoo]] and orthogonalized-gradient methods, but this wiki has not yet ingested those sources in detail.
+- The source relates Muon to [[Shampoo]] and orthogonalized-gradient methods, but exact relationships should be checked against each source before making stronger claims.
 
 ## Common mistakes
 - Treating Muon as an optimizer for all parameters.
@@ -100,11 +100,13 @@ In source terms, Muon is not a universal replacement for AdamW. It is a matrix-p
 - [[Newton-Schulz Iteration]]
 - [[Matrix-Aware Optimizers]]
 - [[Shampoo]]
+- [[Preconditioning]]
 - [[AdamW]]
 - [[Gradient Descent]]
 - [[Weight Decay]]
 
 ## Related papers
+- [[2018 Shampoo]]
 - [[2024 Muon Optimizer]]
 
 ## Source references
@@ -112,4 +114,4 @@ In source terms, Muon is not a universal replacement for AdamW. It is a matrix-p
 
 ## Verification status
 - Status: partially verified
-- Needs verification: full Newton-Schulz derivation, Shampoo relationship, and large-scale empirical claims.
+- Needs verification: full Newton-Schulz derivation, exact Shampoo/Muon relationship, and large-scale empirical claims.
