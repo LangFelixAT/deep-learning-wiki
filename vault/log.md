@@ -730,3 +730,11 @@ Format:
 - Pages updated: AGENTS.md, docs/ingestion_workflow.md, docs/lint_workflow.md, prompts/ingest_paper.md, prompts/math_derivation_prompt.md, vault/Templates/Math.md, vault/Templates/Paper.md, [[log]]
 - Key concepts: [[Notation Conventions]]
 - Notes: Anchored the math-formatting rules discovered during the Obsidian cleanup in the main agent instructions, ingestion/lint workflows, reusable prompts, and templates. Future ingests should use MathJax notation for expectations, distributions, KL separators, inequalities, fractions, norms, grouped subscripts/superscripts, and avoid raw ASCII operators such as `*`, `||`, `<=`, `>=`, and `~` in equations.
+
+## [2026-05-26] manual | Quartz web wiki layer
+
+- Source: Local publishing setup
+- Pages created:
+- Pages updated: docs/web_wiki_layer.md, README.md, quartz/quartz.config.yaml, quartz/package.json, .gitignore, [[log]]
+- Key concepts: [[Home]], [[Transformer Architecture]], [[Efficient LLM Architecture]]
+- Notes: Added a Quartz-based web wiki layer that renders the canonical `vault/` Markdown directly. The vault remains the source of truth; Quartz is used for local browsing with wikilinks, search, backlinks, graph view, and LaTeX rendering.

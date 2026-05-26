@@ -219,3 +219,14 @@ __marimo__/
 
 # Obsidian
 .obsidian/
+
+# Quartz web wiki layer
+quartz/content/
+quartz/docs/
+quartz/.github/
+quartz/node_modules/
+quartz/public/
+quartz/.quartz/
+quartz/.quartz-cache/
+quartz/prof/
+quartz/tsconfig.tsbuildinfo
